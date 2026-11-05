@@ -1,0 +1,20 @@
+kind = "solution"
+spec = "polynomial-multiplication/negacyclic@1.0.0"
+fingerprint = "sha256:e4000ee01ca295cf"
+
+[entry]
+init = "fherma_init"
+run  = "fherma_run"
+free = "fherma_free"
+
+
+[build]
+command = "cmake -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build"
+
+
+[runtime]
+language = "cpp"
+
+# How it starts, given the directory of one point. Generated, and here so it
+# can be read rather than guessed at.
+run = "./build/solution"

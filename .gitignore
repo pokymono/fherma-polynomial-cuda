@@ -1,0 +1,10 @@
+.venv/
+build/
+tests/data/
+__pycache__/
+*.so
+*.o
+evidence/*.html
+experiments/
+evidence/
+GOAL.json
