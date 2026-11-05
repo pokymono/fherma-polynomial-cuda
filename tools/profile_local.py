@@ -13,7 +13,7 @@ profile=profile.replace('    dim3 full(', '    cudaEventRecord(ev[1]);\n    dim3
 profile=profile.replace('    if(s.n<=65536)', '    cudaEventRecord(ev[2]);\n    if(s.n<=65536)')
 profile=profile.replace('    if(s.crt_weights) {', '    cudaEventRecord(ev[3]);\n    if(s.crt_weights) {')
 profile=profile.replace('        tensor_product<false>', '        cudaEventRecord(ev[4]);\n        tensor_product<false>')
-profile=profile.replace('        reconstruct<true>', '        cudaEventRecord(ev[5]);\n        reconstruct<true>')
+profile=profile.replace('        if(s.gap&&s.wide<=128)', '        cudaEventRecord(ev[5]);\n        if(s.gap&&s.wide<=128)')
 profile=profile.replace('    check(cudaGetLastError()', '    cudaEventRecord(ev[6]);\n    check(cudaGetLastError()')
 profile=profile.replace('"copy answer"); return out;', '"copy answer"); cudaEventRecord(ev[7]); cudaEventSynchronize(ev[7]); for(int i=0;i<7;++i) {float ms=0; cudaEventElapsedTime(&ms,ev[i],ev[i+1]); std::fprintf(stderr,"%s%.6f",i?",":"profile_ms:",ms);} std::fprintf(stderr,"\\n"); for(auto e:ev) cudaEventDestroy(e); return out;')
 path=root/'experiments/current_profile.cu';path.write_text(profile)

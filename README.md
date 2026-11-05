@@ -35,7 +35,7 @@ cmake --build build -j
 ```
 
 Requires a C++17 compiler and a CUDA toolkit with support for the target GPU.
-The tensor implementation uses unsigned INT8 WMMA (SM75 or newer). CMake defaults
+The tensor implementation uses unsigned INT8 MMA (SM80 or newer). CMake defaults
 to the build host's native CUDA architecture; it can be overridden with
 `-DCMAKE_CUDA_ARCHITECTURES=120` for Blackwell.
 
@@ -48,7 +48,9 @@ are unmodified. FHERMA replaces them with its official harness when benchmarking
 `tests/reference.py` uses independent GMP integer multiplication with carry-free
 coefficient packing, with a schoolbook cross-check for small cases. The local
 suite includes zero, unit, maximal, impulse, and random inputs across 11 points,
-including both competition sizes.
+including both competition sizes. The extended `tools/stress_local.py` suite
+adds 20 fresh random cases at each competition size, wraparound and carry
+boundaries, wider coefficients, and a larger transform fallback.
 
 ```
 python tools/validate_local.py

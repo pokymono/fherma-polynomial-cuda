@@ -3,11 +3,11 @@
 #include "fherma.h"
 #include "big_unsigned.h"
 #include <cuda_runtime.h>
-#include <mma.h>
 #include <memory>
 #include <string>
 
 namespace {
+constexpr uint32_t NTT_TILE=512;
 struct Prime {
     uint32_t p, negative_inverse, radix, radix_shoup, reduce32;
     double reciprocal;
@@ -77,62 +77,67 @@ __global__ void pad_inputs(const uint32_t* a,const uint32_t* b,uint32_t* padded,
     padded[at+total]=col<limbs?b[size_t(row)*limbs+col]:0;
 }
 
-// Each unsigned byte dot product fits exactly in int32. A block computes
-// 64 coefficients against 64 byte columns, reusing B across four row tiles.
+// Native INT8 MMA processes 32 byte products per instruction. The register
+// layout follows the PTX m16n8k32 fragment contract (SM80 and later).
+__device__ __forceinline__ void mma_bytes(uint32_t (&d)[4],const uint32_t (&a)[4],uint32_t b0,uint32_t b1) {
+    asm volatile("mma.sync.aligned.m16n8k32.row.col.s32.u8.u8.s32 "
+                 "{%0,%1,%2,%3}, {%4,%5,%6,%7}, {%8,%9}, {%0,%1,%2,%3};"
+                 : "+r"(d[0]),"+r"(d[1]),"+r"(d[2]),"+r"(d[3])
+                 : "r"(a[0]),"r"(a[1]),"r"(a[2]),"r"(a[3]),"r"(b0),"r"(b1));
+}
 template<bool Encode>
 __global__ void tensor_product(const uint8_t* inputs,const uint8_t* weights,
                                uint32_t* out,uint64_t* dots,const Prime* fields,
                                const uint32_t* twist,uint32_t n,uint32_t count,
                                uint32_t k_bytes) {
-    using namespace nvcuda;
-    __shared__ __align__(32) uint8_t shared_a[64*32],shared_b[64*32];
-    __shared__ __align__(32) int shared_c[4][256];
-    uint32_t warp=threadIdx.x/32,lane=threadIdx.x%32;
+    __shared__ __align__(32) uint32_t shared_a[64][8],shared_b[64][8];
+    uint32_t warp=threadIdx.x/32,lane=threadIdx.x%32,group=lane/4,member=lane%4;
     uint32_t row_base=blockIdx.x*64,word_base=blockIdx.y*16+warp*4;
     const uint8_t* source=inputs+size_t(blockIdx.z)*n*k_bytes;
-    wmma::fragment<wmma::matrix_a,16,16,16,uint8_t,wmma::row_major> a;
-    wmma::fragment<wmma::matrix_b,16,16,16,uint8_t,wmma::col_major> b;
-    wmma::fragment<wmma::accumulator,16,16,16,int> acc[4];
-    #pragma unroll
-    for(int m=0;m<4;++m) wmma::fill_fragment(acc[m],0);
-    for(uint32_t k=0;k<k_bytes;k+=16) {
-        if(threadIdx.x<64) {
-            uint32_t row=row_base+threadIdx.x;
-            uint4 values=make_uint4(0,0,0,0);
-            if(row<n) values=*reinterpret_cast<const uint4*>(source+size_t(row)*k_bytes+k);
-            *reinterpret_cast<uint4*>(shared_a+threadIdx.x*32)=values;
-        } else {
-            uint32_t col=blockIdx.y*64+threadIdx.x-64;
-            *reinterpret_cast<uint4*>(shared_b+(threadIdx.x-64)*32)=*reinterpret_cast<const uint4*>(weights+size_t(col)*k_bytes+k);
-        }
+    uint32_t acc[4][2][4]={};
+    for(uint32_t k=0;k<k_bytes;k+=32) {
+        uint32_t row=threadIdx.x/2,part=threadIdx.x%2;
+        uint4 values=make_uint4(0,0,0,0);
+        if(row_base+row<n) values=*reinterpret_cast<const uint4*>(source+size_t(row_base+row)*k_bytes+k+part*16);
+        *reinterpret_cast<uint4*>(&shared_a[row][part*4])=values;
+        *reinterpret_cast<uint4*>(&shared_b[row][part*4])=*reinterpret_cast<const uint4*>(weights+size_t(blockIdx.y*64+row)*k_bytes+k+part*16);
         __syncthreads();
-        wmma::load_matrix_sync(b,shared_b+warp*16*32,32);
+        uint32_t b[2][2];
+        #pragma unroll
+        for(int col=0;col<2;++col) {
+            b[col][0]=shared_b[warp*16+col*8+group][member];
+            b[col][1]=shared_b[warp*16+col*8+group][member+4];
+        }
         #pragma unroll
         for(int m=0;m<4;++m) {
-            wmma::load_matrix_sync(a,shared_a+m*16*32,32);
-            wmma::mma_sync(acc[m],a,b,acc[m]);
+            uint32_t a[4]={shared_a[m*16+group][member],shared_a[m*16+group+8][member],
+                           shared_a[m*16+group][member+4],shared_a[m*16+group+8][member+4]};
+            mma_bytes(acc[m][0],a,b[0][0],b[0][1]);
+            mma_bytes(acc[m][1],a,b[1][0],b[1][1]);
         }
         __syncthreads();
     }
     #pragma unroll
     for(int m=0;m<4;++m) {
-        wmma::store_matrix_sync(shared_c[warp],acc[m],16,wmma::mem_row_major);
-        __syncwarp();
-        for(uint32_t at=lane;at<64;at+=32) {
-            uint32_t row=at/4,word=word_base+at%4,i=row_base+m*16+row;
-            if(i>=n||word>=count) continue;
-            const int* values=shared_c[warp]+row*16+(at%4)*4;
-            uint64_t sum=uint64_t(values[0])+(uint64_t(values[1])<<8)+(uint64_t(values[2])<<16)+(uint64_t(values[3])<<24);
-            if(Encode) {
-                Prime f=fields[word];
-                uint32_t high=sum>>32,low=uint32_t(sum);
-                high-=__umulhi(high,f.reduce32)*f.p; if(high>=f.p) high-=f.p;
-                low-=__umulhi(low,f.reduce32)*f.p; if(low>=f.p) low-=f.p;
-                uint32_t value=add_mod(shoup(high,f.radix,f.radix_shoup,f.p),low,f.p);
-                out[(size_t(blockIdx.z)*count+word)*n+i]=mont(value,twist[size_t(word)*n+i],f);
-            } else dots[size_t(word)*n+i]=sum;
+        #pragma unroll
+        for(int col=0;col<2;++col) {
+            #pragma unroll
+            for(int half=0;half<2;++half) {
+                uint32_t first=acc[m][col][half*2],second=acc[m][col][half*2+1];
+                uint32_t third=__shfl_xor_sync(0xffffffffu,first,1),fourth=__shfl_xor_sync(0xffffffffu,second,1);
+                uint32_t i=row_base+m*16+group+half*8,word=word_base+col*2+member/2;
+                if((member&1)||i>=n||word>=count) continue;
+                uint64_t sum=uint64_t(first)+(uint64_t(second)<<8)+(uint64_t(third)<<16)+(uint64_t(fourth)<<24);
+                if(Encode) {
+                    Prime f=fields[word];
+                    uint32_t high=sum>>32,low=uint32_t(sum);
+                    high-=__umulhi(high,f.reduce32)*f.p; if(high>=f.p) high-=f.p;
+                    low-=__umulhi(low,f.reduce32)*f.p; if(low>=f.p) low-=f.p;
+                    uint32_t value=add_mod(shoup(high,f.radix,f.radix_shoup,f.p),low,f.p);
+                    out[(size_t(blockIdx.z)*count+word)*n+i]=mont(value,twist[size_t(word)*n+i],f);
+                } else dots[size_t(i)*count+word]=sum;
+            }
         }
-        __syncwarp();
     }
 }
 __global__ void forward(uint32_t* data,const Prime* fields,const uint32_t* roots,uint32_t n,uint32_t length) {
@@ -168,11 +173,11 @@ template<bool Inverse>
 __global__ void high_stages(uint32_t* data,const Prime* fields,const uint32_t* roots,
                             const uint32_t* factors,uint32_t n) {
     extern __shared__ uint32_t tile[];
-    uint32_t rows=n/256,col_base=blockIdx.x*32,prime=blockIdx.y;
+    uint32_t rows=n/NTT_TILE,col_base=blockIdx.x*32,prime=blockIdx.y;
     Prime f=fields[prime];
     uint32_t* source=data+(size_t(blockIdx.z)*gridDim.y+prime)*n;
     for(uint32_t t=threadIdx.x;t<rows*32;t+=blockDim.x)
-        tile[t]=source[(t/32)*256+col_base+t%32];
+        tile[t]=source[(t/32)*NTT_TILE+col_base+t%32];
     __syncthreads();
     uint32_t count=__ffs(rows)-1;
     for(uint32_t stage=0;stage<count;++stage) {
@@ -182,7 +187,7 @@ __global__ void high_stages(uint32_t* data,const Prime* fields,const uint32_t* r
             uint32_t pair=t/32,col=t%32,j=pair&(half-1);
             uint32_t row=((pair>>(log_length-1))<<log_length)+j;
             uint32_t a=tile[row*32+col],b=tile[(row+half)*32+col];
-            uint32_t root=roots[size_t(prime)*(n/2)+(j*256+col_base+col)*stride];
+            uint32_t root=roots[size_t(prime)*(n/2)+(j*NTT_TILE+col_base+col)*stride];
             if(Inverse) {
                 b=mont(b,root,f); tile[row*32+col]=add_mod(a,b,f.p); tile[(row+half)*32+col]=sub_mod(a,b,f.p);
             } else {
@@ -192,7 +197,7 @@ __global__ void high_stages(uint32_t* data,const Prime* fields,const uint32_t* r
         __syncthreads();
     }
     for(uint32_t t=threadIdx.x;t<rows*32;t+=blockDim.x) {
-        uint32_t i=(t/32)*256+col_base+t%32,value=tile[t];
+        uint32_t i=(t/32)*NTT_TILE+col_base+t%32,value=tile[t];
         if(Inverse) value=mont(value,factors[size_t(prime)*n+i],f);
         source[i]=value;
     }
@@ -201,7 +206,7 @@ __global__ void high_stages(uint32_t* data,const Prime* fields,const uint32_t* r
 __global__ void middle_stages(uint32_t* data,const Prime* fields,const uint32_t* roots,
                               const uint32_t* inverse_roots,const uint32_t* factors,
                               uint32_t n,uint32_t columns) {
-    __shared__ uint32_t a[256],b[256];
+    __shared__ uint32_t a[NTT_TILE],b[NTT_TILE];
     uint32_t prime=blockIdx.y,start=blockIdx.x*columns,thread=threadIdx.x;
     size_t offset=size_t(prime)*n+start;
     Prime f=fields[prime];
@@ -247,6 +252,146 @@ __global__ void transpose_residues(const uint32_t* data,uint32_t* out,
         if(coefficient+y+j<n) out[size_t(coefficient+y+j)*padded_r+prime+x]=tile[x][y+j];
 }
 
+// Carry propagation is a warp-wide generate/propagate scan. The highest
+// non-propagating bit determines the carry at each lane.
+__device__ __forceinline__ uint32_t carry_scan(bool generate,bool propagate,uint32_t& chain) {
+    constexpr uint32_t mask=0xffffffffu;
+    uint32_t lane=threadIdx.x%32;
+    uint32_t generators=__ballot_sync(mask,generate),propagators=__ballot_sync(mask,propagate);
+    uint32_t stops=(~propagators)&(mask>>(31-lane));
+    uint32_t outgoing=stops?((generators>>(31-__clz(stops)))&1):chain;
+    uint32_t incoming=__shfl_up_sync(mask,outgoing,1);
+    if(lane==0) incoming=chain;
+    chain=__shfl_sync(mask,outgoing,31);
+    return incoming;
+}
+template<int Chunks>
+__device__ __forceinline__ void collapse_words(const uint64_t (&raw)[Chunks],uint32_t (&words)[Chunks]) {
+    uint32_t lane=threadIdx.x%32,chain=0,previous_high=0;
+    #pragma unroll
+    for(int k=0;k<Chunks;++k) {
+        uint32_t high=raw[k]>>32;
+        uint32_t preceding=__shfl_up_sync(0xffffffffu,high,1);
+        if(lane==0) preceding=previous_high;
+        previous_high=__shfl_sync(0xffffffffu,high,31);
+        uint64_t sum=uint64_t(uint32_t(raw[k]))+preceding;
+        uint32_t low=uint32_t(sum);
+        uint32_t incoming=carry_scan((sum>>32)!=0,low==0xffffffffu,chain);
+        words[k]=low+incoming;
+    }
+}
+template<int Chunks>
+__device__ __forceinline__ uint32_t subtract_words(uint32_t (&a)[Chunks],const uint32_t (&b)[Chunks]) {
+    uint32_t chain=0;
+    #pragma unroll
+    for(int k=0;k<Chunks;++k) {
+        uint32_t incoming=carry_scan(a[k]<b[k],a[k]==b[k],chain);
+        a[k]=a[k]-b[k]-incoming;
+    }
+    return chain;
+}
+template<int Chunks>
+__device__ __forceinline__ uint32_t add_words(uint32_t (&a)[Chunks],const uint32_t (&b)[Chunks]) {
+    uint32_t chain=0;
+    #pragma unroll
+    for(int k=0;k<Chunks;++k) {
+        uint64_t sum=uint64_t(a[k])+b[k];
+        uint32_t low=uint32_t(sum),incoming=carry_scan((sum>>32)!=0,low==0xffffffffu,chain);
+        a[k]=low+incoming;
+    }
+    return chain;
+}
+template<int Chunks>
+__device__ __forceinline__ int compare_words(const uint32_t (&a)[Chunks],const uint32_t (&b)[Chunks]) {
+    #pragma unroll
+    for(int k=Chunks-1;k>=0;--k) {
+        uint32_t different=__ballot_sync(0xffffffffu,a[k]!=b[k]);
+        if(different) return __shfl_sync(0xffffffffu,a[k]<b[k]?-1:1,31-__clz(different));
+    }
+    return 0;
+}
+template<int Chunks>
+__device__ __forceinline__ uint32_t fetch_word(const uint32_t (&a)[Chunks],uint32_t index) {
+    uint32_t value=0;
+    #pragma unroll
+    for(int k=0;k<Chunks;++k) {
+        uint32_t v=__shfl_sync(0xffffffffu,a[k],index%32);
+        if(index/32==k) value=v;
+    }
+    return value;
+}
+template<int Chunks>
+__global__ void reconstruct_warp(const uint32_t* data,const Prime* fields,
+                                const uint32_t* product,const uint32_t* half_product,const uint32_t* q,
+                                uint32_t* out,const uint64_t* dots,uint32_t n,uint32_t r,uint32_t padded_r,
+                                uint32_t wide,uint32_t limbs,uint32_t width,uint32_t gap) {
+    uint32_t i=(blockIdx.x*blockDim.x+threadIdx.x)/32,lane=threadIdx.x%32;
+    if(i>=n) return;
+    double estimate=0;
+    for(uint32_t k=lane;k<r;k+=32) estimate+=data[size_t(i)*padded_r+k]*fields[k].reciprocal;
+    for(int offset=16;offset;offset>>=1) estimate+=__shfl_xor_sync(0xffffffffu,estimate,offset);
+    uint32_t quotient=uint32_t(estimate);
+    uint32_t value[Chunks],p[Chunks],half[Chunks],modulus[Chunks],multiple[Chunks];
+    uint64_t raw[Chunks],scaled[Chunks];
+    #pragma unroll
+    for(int k=0;k<Chunks;++k) {
+        uint32_t j=k*32+lane;
+        raw[k]=j<wide?dots[size_t(i)*wide+j]:0;
+        p[k]=j<wide?product[j]:0; half[k]=j<wide?half_product[j]:0;
+        modulus[k]=j<wide?q[j]:0;
+        scaled[k]=uint64_t(p[k])*quotient;
+    }
+    collapse_words(raw,value); collapse_words(scaled,multiple);
+    uint32_t negative_quotient=subtract_words(value,multiple);
+    while(negative_quotient) if(add_words(value,p)) negative_quotient=0;
+    while(compare_words(value,p)>=0) subtract_words(value,p);
+    bool negative=compare_words(value,half)>0;
+    if(negative) {
+        #pragma unroll
+        for(int k=0;k<Chunks;++k) multiple[k]=p[k];
+        subtract_words(multiple,value);
+        #pragma unroll
+        for(int k=0;k<Chunks;++k) value[k]=multiple[k];
+    }
+    uint32_t whole=width/32,bits=width%32;
+    while(true) {
+        bool high=false;
+        #pragma unroll
+        for(int k=0;k<Chunks;++k) {
+            uint32_t j=k*32+lane,v=value[k];
+            if(j==whole&&bits) v>>=bits;
+            if(j>=whole) high|=v!=0;
+        }
+        if(!__any_sync(0xffffffffu,high)) break;
+        #pragma unroll
+        for(int k=0;k<Chunks;++k) {
+            uint32_t j=k*32+lane,low=value[k];
+            if(j>whole||(j==whole&&!bits)) low=0;
+            else if(j==whole) low&=(uint32_t(1)<<bits)-1;
+            uint32_t h=fetch_word(value,j+whole)>>bits;
+            if(bits) h|=fetch_word(value,j+whole+1)<<(32-bits);
+            raw[k]=uint64_t(h)*gap+low;
+        }
+        collapse_words(raw,value);
+    }
+    while(compare_words(value,modulus)>=0) subtract_words(value,modulus);
+    bool nonzero=false;
+    #pragma unroll
+    for(int k=0;k<Chunks;++k) nonzero|=value[k]!=0;
+    nonzero=__any_sync(0xffffffffu,nonzero);
+    if(negative&&nonzero) {
+        #pragma unroll
+        for(int k=0;k<Chunks;++k) multiple[k]=modulus[k];
+        subtract_words(multiple,value);
+        #pragma unroll
+        for(int k=0;k<Chunks;++k) value[k]=multiple[k];
+    }
+    #pragma unroll
+    for(int k=0;k<Chunks;++k) {
+        uint32_t j=k*32+lane;
+        if(j<limbs) out[size_t(i)*limbs+j]=value[k];
+    }
+}
 __device__ int compare_wide(const uint32_t* x,const uint32_t* y,uint32_t n,uint32_t words,uint32_t i) {
     for(uint32_t j=words;j-->0;) {
         uint32_t a=x[size_t(j)*n+i],b=y[j]; if(a!=b) return a<b?-1:1;
@@ -271,7 +416,7 @@ __global__ void reconstruct(const uint32_t* data,const Prime* fields,const uint3
     uint32_t quotient=uint32_t(estimate); uint64_t carry=0,borrow=0;
     for(uint32_t j=0;j<wide;++j) {
         uint64_t lo=carry,hi=0;
-        if(Tensor) lo+=dots[size_t(j)*n+i];
+        if(Tensor) lo+=dots[size_t(i)*wide+j];
         else for(uint32_t k=0;k<r;++k) {
             uint64_t term=uint64_t(data[size_t(k)*n+i])*crt[size_t(j)*r+k];
             uint64_t before=lo; lo+=term; hi+=lo<before;
@@ -443,10 +588,10 @@ fherma::Outputs fherma_run(void* state,const fherma::Inputs& in) {
         tensor_product<true><<<tiles,128>>>(s.byte_inputs,s.byte_weights,s.residues,nullptr,s.fields,s.twist,s.n,s.primes,s.padded_bytes);
     } else encode<<<both,256>>>(s.a,s.b,s.residues,s.fields,s.twist,s.n,s.limbs);
     if(s.n<=65536) {
-        uint32_t columns=s.n<256?s.n:256;
-        if(s.n>256) high_stages<false><<<dim3(8,s.primes,2),256,(s.n/256)*32*sizeof(uint32_t)>>>(s.residues,s.fields,s.roots,s.finish,s.n);
-        middle_stages<<<dim3(s.n/columns,s.primes),128>>>(s.residues,s.fields,s.roots,s.inverse_roots,s.finish,s.n,columns);
-        if(s.n>256) high_stages<true><<<dim3(8,s.primes),256,(s.n/256)*32*sizeof(uint32_t)>>>(s.residues,s.fields,s.inverse_roots,s.finish,s.n);
+        uint32_t columns=s.n<NTT_TILE?s.n:NTT_TILE;
+        if(s.n>NTT_TILE) high_stages<false><<<dim3(NTT_TILE/32,s.primes,2),256,(s.n/NTT_TILE)*32*sizeof(uint32_t)>>>(s.residues,s.fields,s.roots,s.finish,s.n);
+        middle_stages<<<dim3(s.n/columns,s.primes),NTT_TILE/2>>>(s.residues,s.fields,s.roots,s.inverse_roots,s.finish,s.n,columns);
+        if(s.n>NTT_TILE) high_stages<true><<<dim3(NTT_TILE/32,s.primes),256,(s.n/NTT_TILE)*32*sizeof(uint32_t)>>>(s.residues,s.fields,s.inverse_roots,s.finish,s.n);
     } else {
         for(uint32_t length=s.n;length>1;length>>=1) forward<<<both_pairs,256>>>(s.residues,s.fields,s.roots,s.n,length);
         pointwise<<<full,256>>>(s.residues,s.fields,s.n);
@@ -456,6 +601,10 @@ fherma::Outputs fherma_run(void* state,const fherma::Inputs& in) {
     if(s.crt_weights) {
         transpose_residues<<<dim3((s.n+31)/32,s.padded_r/32),dim3(32,8)>>>(s.residues,s.crt_inputs,s.n,s.primes,s.padded_r);
         tensor_product<false><<<dim3((s.n+63)/64,(s.wide+15)/16),128>>>(reinterpret_cast<const uint8_t*>(s.crt_inputs),s.crt_weights,nullptr,s.crt_dots,nullptr,nullptr,s.n,s.wide,s.padded_r*4);
+        if(s.gap&&s.wide<=128) {
+            if(s.wide<=64) reconstruct_warp<2><<<(s.n+3)/4,128>>>(s.crt_inputs,s.fields,s.product,s.half_product,s.q,s.answer,s.crt_dots,s.n,s.primes,s.padded_r,s.wide,s.limbs,s.width,s.gap);
+            else reconstruct_warp<4><<<(s.n+3)/4,128>>>(s.crt_inputs,s.fields,s.product,s.half_product,s.q,s.answer,s.crt_dots,s.n,s.primes,s.padded_r,s.wide,s.limbs,s.width,s.gap);
+        } else
         reconstruct<true><<<(s.n+127)/128,128>>>(s.residues,s.fields,s.crt,s.product,s.half_product,s.q,s.scratch,s.answer,s.n,s.primes,s.wide,s.limbs,s.width,s.gap,s.crt_dots);
     } else reconstruct<false><<<(s.n+127)/128,128>>>(s.residues,s.fields,s.crt,s.product,s.half_product,s.q,s.scratch,s.answer,s.n,s.primes,s.wide,s.limbs,s.width,s.gap,nullptr);
     check(cudaGetLastError(),"polynomial kernels");
