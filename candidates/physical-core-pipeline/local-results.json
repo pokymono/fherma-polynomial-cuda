@@ -1,0 +1,22 @@
+{
+  "source_files_sha256": {
+    "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+    "parallel_copy.h": "c0b1db7f880a08c5e6397460083b80b5b05132a2b0b94219513f4ea97649a083",
+    "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+    "solve.cu": "de3595023d2b2135d6c479d3088a619f4dc8e61ebc32831c443822f1d8f69adf",
+    "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+    "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+    "cpu_placement.h": "be4a34ec72f1cef427d9f67f3e18706ef9195cbb07c09347f828bb9daa3b65f1",
+    "queued_copy.h": "d4e686b227812f1f25f5bc3b500bd6aedd73f289cb8af3d252e58b3cceeca6fa",
+    "output_worker.h": "790e575a14f1867e091facc40fe000459ba879cf73ee3951c4e977b875d03dcc"
+  },
+  "binary_sha256": "8aafff64f5b3f5fe92f066c94b3a3bdb4350122eec5b8710c7cf05362e7994ad",
+  "hardware": "RTX 3050 Laptop, SM86",
+  "official": false,
+  "validated_cases": 138,
+  "streaming_queue_stress_jobs": 15360,
+  "affinity_helper_test": "passed; caller affinity unchanged",
+  "full_local_candidate_affinity": "fallback on eight physical cores",
+  "sm120_compile": true,
+  "standalone_blackwell_status": "not yet measured"
+}

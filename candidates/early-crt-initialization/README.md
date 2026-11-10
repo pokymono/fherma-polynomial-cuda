@@ -19,7 +19,7 @@ without spills. The CPU queue previously passed 15,360 jobs across six team
 sizes. Local main-point runtime was about 9.58 ms, compared with about 9.28 ms
 for the version that initializes padding later. Moving initialization earlier
 is a target-hardware scheduling experiment, not a claimed local improvement.
-A standalone Blackwell evaluation is required.
+Its standalone Blackwell result is recorded below.
 
 FHERMA artifact path: `candidates/early-crt-initialization`.
 

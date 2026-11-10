@@ -1,0 +1,129 @@
+{
+  "run": "6af3022a698e99b16a77e967",
+  "official_score": false,
+  "configuration_medians_last_3": {
+    "ahead=1 streaming=0 idle=50 reference=0": {
+      "total": 1.675476,
+      "input": 1.1512,
+      "core": 0.090112,
+      "output": 0.338848,
+      "cpu_staging": 0.841052,
+      "cpu_total": 1.622691
+    },
+    "ahead=2 streaming=0 idle=50 reference=0": {
+      "total": 1.886023,
+      "input": 1.278592,
+      "core": 0.092544,
+      "output": 0.337152,
+      "cpu_staging": 0.775978,
+      "cpu_total": 1.83304
+    },
+    "ahead=4 streaming=0 idle=50 reference=0": {
+      "total": 1.876991,
+      "input": 1.353344,
+      "core": 0.090112,
+      "output": 0.348576,
+      "cpu_staging": 0.838919,
+      "cpu_total": 1.822921
+    },
+    "ahead=16 streaming=0 idle=50 reference=0": {
+      "total": 1.748632,
+      "input": 1.200224,
+      "core": 0.09152,
+      "output": 0.339872,
+      "cpu_staging": 0.826832,
+      "cpu_total": 1.694903
+    },
+    "ahead=1 streaming=1 idle=50 reference=0": {
+      "total": 2.249055,
+      "input": 1.633376,
+      "core": 0.090688,
+      "output": 0.33904,
+      "cpu_staging": 1.596796,
+      "cpu_total": 2.195392
+    },
+    "ahead=2 streaming=1 idle=50 reference=0": {
+      "total": 1.487452,
+      "input": 0.84704,
+      "core": 0.088064,
+      "output": 0.335392,
+      "cpu_staging": 0.607049,
+      "cpu_total": 1.434287
+    },
+    "ahead=4 streaming=1 idle=50 reference=0": {
+      "total": 1.734974,
+      "input": 0.883008,
+      "core": 0.091712,
+      "output": 0.33776,
+      "cpu_staging": 0.60847,
+      "cpu_total": 1.682079
+    },
+    "ahead=16 streaming=1 idle=50 reference=0": {
+      "total": 1.895811,
+      "input": 0.941888,
+      "core": 0.09136,
+      "output": 0.338496,
+      "cpu_staging": 0.565306,
+      "cpu_total": 1.842587
+    },
+    "ahead=2 streaming=0 idle=50 reference=1": {
+      "total": 1.826645,
+      "input": 1.164512,
+      "core": 0.152992,
+      "output": 0.337216,
+      "cpu_staging": 0.932111,
+      "cpu_total": 1.772883
+    },
+    "ahead=2 streaming=0 idle=0 reference=0": {
+      "total": 1.275238,
+      "input": 0.77344,
+      "core": 0.093568,
+      "output": 0.33984,
+      "cpu_staging": 0.425208,
+      "cpu_total": 1.225752
+    }
+  },
+  "topology": [
+    "11:38:55 OUT cpu_topology:id=0 package=0 core=0",
+    "11:38:55 OUT cpu_topology:id=1 package=0 core=0",
+    "11:38:55 OUT cpu_topology:id=2 package=0 core=1",
+    "11:38:55 OUT cpu_topology:id=3 package=0 core=1",
+    "11:38:55 OUT cpu_topology:id=4 package=0 core=2",
+    "11:38:55 OUT cpu_topology:id=5 package=0 core=2",
+    "11:38:55 OUT cpu_topology:id=6 package=0 core=3",
+    "11:38:55 OUT cpu_topology:id=7 package=0 core=3",
+    "11:38:55 OUT cpu_topology:id=8 package=0 core=4",
+    "11:38:55 OUT cpu_topology:id=9 package=0 core=4",
+    "11:38:55 OUT cpu_topology:id=10 package=0 core=5",
+    "11:38:55 OUT cpu_topology:id=11 package=0 core=5",
+    "11:38:55 OUT cpu_topology:id=12 package=0 core=6",
+    "11:38:55 OUT cpu_topology:id=13 package=0 core=6",
+    "11:38:55 OUT cpu_topology:id=14 package=0 core=7",
+    "11:38:55 OUT cpu_topology:id=15 package=0 core=7",
+    "11:38:55 OUT cpu_topology:id=16 package=0 core=8",
+    "11:38:55 OUT cpu_topology:id=17 package=0 core=8",
+    "11:38:55 OUT cpu_topology:id=18 package=0 core=9",
+    "11:38:55 OUT cpu_topology:id=19 package=0 core=9",
+    "11:38:55 OUT cpu_topology:id=20 package=0 core=10",
+    "11:38:55 OUT cpu_topology:id=21 package=0 core=10",
+    "11:38:55 OUT cpu_topology:id=22 package=0 core=11",
+    "11:38:55 OUT cpu_topology:id=23 package=0 core=11"
+  ],
+  "commit": "97bf1ba362547549f018bbc658ebbb59dcc5e16d",
+  "artifact": "diagnostics/queue-window-matrix",
+  "hardware": {
+    "arch": "x86_64",
+    "cores": 24,
+    "memory_gb": 214,
+    "memory_cap_gb": 200,
+    "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition \u00b7 97887 MiB",
+    "gpu_memory_gb": 95.6,
+    "cpu": "Intel(R) Xeon(R) 6776P",
+    "kernel": "6.11.0-1016-nvidia",
+    "os": "linux"
+  },
+  "passed": 3,
+  "cases": 3,
+  "finished_at": "2026-11-10T11:38:59.158Z",
+  "note": "All modes matched exact outputs. Idle intervals are included in the official outer timer. Inner timings are diagnostic leads, not standalone leaderboard values."
+}
