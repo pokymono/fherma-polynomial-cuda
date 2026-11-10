@@ -1,0 +1,6 @@
+{
+  "checks": 251760,
+  "passed": 251760,
+  "arithmetic": "Exact 32-bit Shoup multiplication for 31-bit NTT fields",
+  "proof": "q=floor(b*2^32/p), t=floor(a*q/2^32). For 0<=a,b<p<2^31, 0<=a*b-t*p<2*p<2^32; one conditional subtraction yields a*b mod p. Compact roots are converted from r*R to r, so multiplying an R-domain operand preserves that domain."
+}

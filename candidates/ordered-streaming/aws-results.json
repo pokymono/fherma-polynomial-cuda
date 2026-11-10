@@ -1,0 +1,1078 @@
+{
+  "official": false,
+  "hardware": "AWS g7e.2xlarge; 3 input copy workers; caller also scatters output",
+  "runs": [
+    {
+      "name": "wc-monitored-3",
+      "N": 32768,
+      "W": 868,
+      "passed": 24,
+      "median_ms": 0.6631005,
+      "random_median_ms": 0.669839,
+      "timings": {
+        "init_s": 0.468611019,
+        "cases": [
+          {
+            "i": 0,
+            "seconds": 0.001820379,
+            "status": "ok"
+          },
+          {
+            "i": 1,
+            "seconds": 0.00056521,
+            "status": "ok"
+          },
+          {
+            "i": 2,
+            "seconds": 0.000547172,
+            "status": "ok"
+          },
+          {
+            "i": 3,
+            "seconds": 0.000544182,
+            "status": "ok"
+          },
+          {
+            "i": 4,
+            "seconds": 0.000540218,
+            "status": "ok"
+          },
+          {
+            "i": 5,
+            "seconds": 0.000542738,
+            "status": "ok"
+          },
+          {
+            "i": 6,
+            "seconds": 0.000542875,
+            "status": "ok"
+          },
+          {
+            "i": 7,
+            "seconds": 0.000534185,
+            "status": "ok"
+          },
+          {
+            "i": 8,
+            "seconds": 0.000529914,
+            "status": "ok"
+          },
+          {
+            "i": 9,
+            "seconds": 0.000545528,
+            "status": "ok"
+          },
+          {
+            "i": 10,
+            "seconds": 0.000505703,
+            "status": "ok"
+          },
+          {
+            "i": 11,
+            "seconds": 0.000679799,
+            "status": "ok"
+          },
+          {
+            "i": 12,
+            "seconds": 0.000680326,
+            "status": "ok"
+          },
+          {
+            "i": 13,
+            "seconds": 0.00065817,
+            "status": "ok"
+          },
+          {
+            "i": 14,
+            "seconds": 0.000684246,
+            "status": "ok"
+          },
+          {
+            "i": 15,
+            "seconds": 0.000684031,
+            "status": "ok"
+          },
+          {
+            "i": 16,
+            "seconds": 0.000697455,
+            "status": "ok"
+          },
+          {
+            "i": 17,
+            "seconds": 0.000671647,
+            "status": "ok"
+          },
+          {
+            "i": 18,
+            "seconds": 0.000677874,
+            "status": "ok"
+          },
+          {
+            "i": 19,
+            "seconds": 0.000681753,
+            "status": "ok"
+          },
+          {
+            "i": 20,
+            "seconds": 0.000690093,
+            "status": "ok"
+          },
+          {
+            "i": 21,
+            "seconds": 0.000652907,
+            "status": "ok"
+          },
+          {
+            "i": 22,
+            "seconds": 0.000668031,
+            "status": "ok"
+          },
+          {
+            "i": 23,
+            "seconds": 0.000685067,
+            "status": "ok"
+          }
+        ]
+      },
+      "binary_sha256": "80d473174fb5e216cc69e6304ce39a50f8130ca1c30c30cc2d40c9a51406bb07"
+    },
+    {
+      "name": "wc-monitored-3",
+      "N": 65536,
+      "W": 1747,
+      "passed": 24,
+      "median_ms": 1.4367855,
+      "random_median_ms": 1.4329255,
+      "timings": {
+        "init_s": 0.525651934,
+        "cases": [
+          {
+            "i": 0,
+            "seconds": 0.006044753,
+            "status": "ok"
+          },
+          {
+            "i": 1,
+            "seconds": 0.001504086,
+            "status": "ok"
+          },
+          {
+            "i": 2,
+            "seconds": 0.001503045,
+            "status": "ok"
+          },
+          {
+            "i": 3,
+            "seconds": 0.00146452,
+            "status": "ok"
+          },
+          {
+            "i": 4,
+            "seconds": 0.001473406,
+            "status": "ok"
+          },
+          {
+            "i": 5,
+            "seconds": 0.001415261,
+            "status": "ok"
+          },
+          {
+            "i": 6,
+            "seconds": 0.001435249,
+            "status": "ok"
+          },
+          {
+            "i": 7,
+            "seconds": 0.001432122,
+            "status": "ok"
+          },
+          {
+            "i": 8,
+            "seconds": 0.001396846,
+            "status": "ok"
+          },
+          {
+            "i": 9,
+            "seconds": 0.001438322,
+            "status": "ok"
+          },
+          {
+            "i": 10,
+            "seconds": 0.001433729,
+            "status": "ok"
+          },
+          {
+            "i": 11,
+            "seconds": 0.001445758,
+            "status": "ok"
+          },
+          {
+            "i": 12,
+            "seconds": 0.00145579,
+            "status": "ok"
+          },
+          {
+            "i": 13,
+            "seconds": 0.001444966,
+            "status": "ok"
+          },
+          {
+            "i": 14,
+            "seconds": 0.001406768,
+            "status": "ok"
+          },
+          {
+            "i": 15,
+            "seconds": 0.001410826,
+            "status": "ok"
+          },
+          {
+            "i": 16,
+            "seconds": 0.001406006,
+            "status": "ok"
+          },
+          {
+            "i": 17,
+            "seconds": 0.00147144,
+            "status": "ok"
+          },
+          {
+            "i": 18,
+            "seconds": 0.001456409,
+            "status": "ok"
+          },
+          {
+            "i": 19,
+            "seconds": 0.001449457,
+            "status": "ok"
+          },
+          {
+            "i": 20,
+            "seconds": 0.001407842,
+            "status": "ok"
+          },
+          {
+            "i": 21,
+            "seconds": 0.001391715,
+            "status": "ok"
+          },
+          {
+            "i": 22,
+            "seconds": 0.001427379,
+            "status": "ok"
+          },
+          {
+            "i": 23,
+            "seconds": 0.001392946,
+            "status": "ok"
+          }
+        ]
+      },
+      "binary_sha256": "80d473174fb5e216cc69e6304ce39a50f8130ca1c30c30cc2d40c9a51406bb07"
+    },
+    {
+      "name": "ordered-streaming-cmake/solution",
+      "N": 32768,
+      "W": 868,
+      "passed": 24,
+      "median_ms": 0.3713565,
+      "random_median_ms": 0.371184,
+      "timings": {
+        "init_s": 0.189669196,
+        "cases": [
+          {
+            "i": 0,
+            "seconds": 0.001330567,
+            "status": "ok"
+          },
+          {
+            "i": 1,
+            "seconds": 0.000382162,
+            "status": "ok"
+          },
+          {
+            "i": 2,
+            "seconds": 0.000373778,
+            "status": "ok"
+          },
+          {
+            "i": 3,
+            "seconds": 0.000382642,
+            "status": "ok"
+          },
+          {
+            "i": 4,
+            "seconds": 0.000370466,
+            "status": "ok"
+          },
+          {
+            "i": 5,
+            "seconds": 0.000371332,
+            "status": "ok"
+          },
+          {
+            "i": 6,
+            "seconds": 0.000372306,
+            "status": "ok"
+          },
+          {
+            "i": 7,
+            "seconds": 0.000376678,
+            "status": "ok"
+          },
+          {
+            "i": 8,
+            "seconds": 0.000380452,
+            "status": "ok"
+          },
+          {
+            "i": 9,
+            "seconds": 0.000375045,
+            "status": "ok"
+          },
+          {
+            "i": 10,
+            "seconds": 0.000370424,
+            "status": "ok"
+          },
+          {
+            "i": 11,
+            "seconds": 0.000370922,
+            "status": "ok"
+          },
+          {
+            "i": 12,
+            "seconds": 0.000370935,
+            "status": "ok"
+          },
+          {
+            "i": 13,
+            "seconds": 0.0003693,
+            "status": "ok"
+          },
+          {
+            "i": 14,
+            "seconds": 0.000370003,
+            "status": "ok"
+          },
+          {
+            "i": 15,
+            "seconds": 0.000370378,
+            "status": "ok"
+          },
+          {
+            "i": 16,
+            "seconds": 0.000370053,
+            "status": "ok"
+          },
+          {
+            "i": 17,
+            "seconds": 0.000371452,
+            "status": "ok"
+          },
+          {
+            "i": 18,
+            "seconds": 0.000371275,
+            "status": "ok"
+          },
+          {
+            "i": 19,
+            "seconds": 0.000370025,
+            "status": "ok"
+          },
+          {
+            "i": 20,
+            "seconds": 0.000383353,
+            "status": "ok"
+          },
+          {
+            "i": 21,
+            "seconds": 0.000371093,
+            "status": "ok"
+          },
+          {
+            "i": 22,
+            "seconds": 0.000372985,
+            "status": "ok"
+          },
+          {
+            "i": 23,
+            "seconds": 0.000371381,
+            "status": "ok"
+          }
+        ]
+      },
+      "binary_sha256": "85769331aa71bf63f4d8df9ad86a3e72e8c95e304d0971296e5c8df159a7e0eb"
+    },
+    {
+      "name": "ordered-streaming-cmake/solution",
+      "N": 65536,
+      "W": 1747,
+      "passed": 24,
+      "median_ms": 1.1255169999999999,
+      "random_median_ms": 1.124082,
+      "timings": {
+        "init_s": 0.386378395,
+        "cases": [
+          {
+            "i": 0,
+            "seconds": 0.006574768,
+            "status": "ok"
+          },
+          {
+            "i": 1,
+            "seconds": 0.001373197,
+            "status": "ok"
+          },
+          {
+            "i": 2,
+            "seconds": 0.001143753,
+            "status": "ok"
+          },
+          {
+            "i": 3,
+            "seconds": 0.001123564,
+            "status": "ok"
+          },
+          {
+            "i": 4,
+            "seconds": 0.001125248,
+            "status": "ok"
+          },
+          {
+            "i": 5,
+            "seconds": 0.001114275,
+            "status": "ok"
+          },
+          {
+            "i": 6,
+            "seconds": 0.001104609,
+            "status": "ok"
+          },
+          {
+            "i": 7,
+            "seconds": 0.001116449,
+            "status": "ok"
+          },
+          {
+            "i": 8,
+            "seconds": 0.001131368,
+            "status": "ok"
+          },
+          {
+            "i": 9,
+            "seconds": 0.001109355,
+            "status": "ok"
+          },
+          {
+            "i": 10,
+            "seconds": 0.001125786,
+            "status": "ok"
+          },
+          {
+            "i": 11,
+            "seconds": 0.00112165,
+            "status": "ok"
+          },
+          {
+            "i": 12,
+            "seconds": 0.001135235,
+            "status": "ok"
+          },
+          {
+            "i": 13,
+            "seconds": 0.001139926,
+            "status": "ok"
+          },
+          {
+            "i": 14,
+            "seconds": 0.001126677,
+            "status": "ok"
+          },
+          {
+            "i": 15,
+            "seconds": 0.001122222,
+            "status": "ok"
+          },
+          {
+            "i": 16,
+            "seconds": 0.00112751,
+            "status": "ok"
+          },
+          {
+            "i": 17,
+            "seconds": 0.001122916,
+            "status": "ok"
+          },
+          {
+            "i": 18,
+            "seconds": 0.001122364,
+            "status": "ok"
+          },
+          {
+            "i": 19,
+            "seconds": 0.001131981,
+            "status": "ok"
+          },
+          {
+            "i": 20,
+            "seconds": 0.001126911,
+            "status": "ok"
+          },
+          {
+            "i": 21,
+            "seconds": 0.001146961,
+            "status": "ok"
+          },
+          {
+            "i": 22,
+            "seconds": 0.001118772,
+            "status": "ok"
+          },
+          {
+            "i": 23,
+            "seconds": 0.001121749,
+            "status": "ok"
+          }
+        ]
+      },
+      "binary_sha256": "85769331aa71bf63f4d8df9ad86a3e72e8c95e304d0971296e5c8df159a7e0eb"
+    },
+    {
+      "name": "ordered-streaming-cmake/solution",
+      "N": 32768,
+      "W": 868,
+      "passed": 24,
+      "median_ms": 0.3724555,
+      "random_median_ms": 0.37195399999999995,
+      "timings": {
+        "init_s": 0.188753615,
+        "cases": [
+          {
+            "i": 0,
+            "seconds": 0.001687591,
+            "status": "ok"
+          },
+          {
+            "i": 1,
+            "seconds": 0.000398602,
+            "status": "ok"
+          },
+          {
+            "i": 2,
+            "seconds": 0.000384204,
+            "status": "ok"
+          },
+          {
+            "i": 3,
+            "seconds": 0.000374967,
+            "status": "ok"
+          },
+          {
+            "i": 4,
+            "seconds": 0.000384704,
+            "status": "ok"
+          },
+          {
+            "i": 5,
+            "seconds": 0.000390723,
+            "status": "ok"
+          },
+          {
+            "i": 6,
+            "seconds": 0.000369954,
+            "status": "ok"
+          },
+          {
+            "i": 7,
+            "seconds": 0.000367329,
+            "status": "ok"
+          },
+          {
+            "i": 8,
+            "seconds": 0.000369394,
+            "status": "ok"
+          },
+          {
+            "i": 9,
+            "seconds": 0.000373852,
+            "status": "ok"
+          },
+          {
+            "i": 10,
+            "seconds": 0.000367641,
+            "status": "ok"
+          },
+          {
+            "i": 11,
+            "seconds": 0.0003688,
+            "status": "ok"
+          },
+          {
+            "i": 12,
+            "seconds": 0.000382914,
+            "status": "ok"
+          },
+          {
+            "i": 13,
+            "seconds": 0.000371125,
+            "status": "ok"
+          },
+          {
+            "i": 14,
+            "seconds": 0.00037225,
+            "status": "ok"
+          },
+          {
+            "i": 15,
+            "seconds": 0.000371732,
+            "status": "ok"
+          },
+          {
+            "i": 16,
+            "seconds": 0.000370127,
+            "status": "ok"
+          },
+          {
+            "i": 17,
+            "seconds": 0.000370328,
+            "status": "ok"
+          },
+          {
+            "i": 18,
+            "seconds": 0.000372176,
+            "status": "ok"
+          },
+          {
+            "i": 19,
+            "seconds": 0.000367309,
+            "status": "ok"
+          },
+          {
+            "i": 20,
+            "seconds": 0.000372661,
+            "status": "ok"
+          },
+          {
+            "i": 21,
+            "seconds": 0.000375494,
+            "status": "ok"
+          },
+          {
+            "i": 22,
+            "seconds": 0.000372824,
+            "status": "ok"
+          },
+          {
+            "i": 23,
+            "seconds": 0.000376151,
+            "status": "ok"
+          }
+        ]
+      },
+      "binary_sha256": "85769331aa71bf63f4d8df9ad86a3e72e8c95e304d0971296e5c8df159a7e0eb"
+    },
+    {
+      "name": "ordered-streaming-cmake/solution",
+      "N": 65536,
+      "W": 1747,
+      "passed": 24,
+      "median_ms": 1.133008,
+      "random_median_ms": 1.1325655000000001,
+      "timings": {
+        "init_s": 0.391896972,
+        "cases": [
+          {
+            "i": 0,
+            "seconds": 0.006610392,
+            "status": "ok"
+          },
+          {
+            "i": 1,
+            "seconds": 0.001242159,
+            "status": "ok"
+          },
+          {
+            "i": 2,
+            "seconds": 0.001150554,
+            "status": "ok"
+          },
+          {
+            "i": 3,
+            "seconds": 0.001130384,
+            "status": "ok"
+          },
+          {
+            "i": 4,
+            "seconds": 0.001122988,
+            "status": "ok"
+          },
+          {
+            "i": 5,
+            "seconds": 0.001112522,
+            "status": "ok"
+          },
+          {
+            "i": 6,
+            "seconds": 0.001126055,
+            "status": "ok"
+          },
+          {
+            "i": 7,
+            "seconds": 0.001142514,
+            "status": "ok"
+          },
+          {
+            "i": 8,
+            "seconds": 0.001140729,
+            "status": "ok"
+          },
+          {
+            "i": 9,
+            "seconds": 0.001176584,
+            "status": "ok"
+          },
+          {
+            "i": 10,
+            "seconds": 0.001160842,
+            "status": "ok"
+          },
+          {
+            "i": 11,
+            "seconds": 0.001160643,
+            "status": "ok"
+          },
+          {
+            "i": 12,
+            "seconds": 0.001139058,
+            "status": "ok"
+          },
+          {
+            "i": 13,
+            "seconds": 0.001118048,
+            "status": "ok"
+          },
+          {
+            "i": 14,
+            "seconds": 0.001130022,
+            "status": "ok"
+          },
+          {
+            "i": 15,
+            "seconds": 0.00113176,
+            "status": "ok"
+          },
+          {
+            "i": 16,
+            "seconds": 0.001132757,
+            "status": "ok"
+          },
+          {
+            "i": 17,
+            "seconds": 0.001140781,
+            "status": "ok"
+          },
+          {
+            "i": 18,
+            "seconds": 0.001138243,
+            "status": "ok"
+          },
+          {
+            "i": 19,
+            "seconds": 0.001132374,
+            "status": "ok"
+          },
+          {
+            "i": 20,
+            "seconds": 0.001133259,
+            "status": "ok"
+          },
+          {
+            "i": 21,
+            "seconds": 0.001123946,
+            "status": "ok"
+          },
+          {
+            "i": 22,
+            "seconds": 0.001122936,
+            "status": "ok"
+          },
+          {
+            "i": 23,
+            "seconds": 0.001126119,
+            "status": "ok"
+          }
+        ]
+      },
+      "binary_sha256": "85769331aa71bf63f4d8df9ad86a3e72e8c95e304d0971296e5c8df159a7e0eb"
+    },
+    {
+      "name": "wc-monitored-3",
+      "N": 32768,
+      "W": 868,
+      "passed": 24,
+      "median_ms": 0.506455,
+      "random_median_ms": 0.5024475,
+      "timings": {
+        "init_s": 0.319440539,
+        "cases": [
+          {
+            "i": 0,
+            "seconds": 0.00190806,
+            "status": "ok"
+          },
+          {
+            "i": 1,
+            "seconds": 0.000604498,
+            "status": "ok"
+          },
+          {
+            "i": 2,
+            "seconds": 0.000566161,
+            "status": "ok"
+          },
+          {
+            "i": 3,
+            "seconds": 0.00055063,
+            "status": "ok"
+          },
+          {
+            "i": 4,
+            "seconds": 0.000533524,
+            "status": "ok"
+          },
+          {
+            "i": 5,
+            "seconds": 0.000555923,
+            "status": "ok"
+          },
+          {
+            "i": 6,
+            "seconds": 0.000499533,
+            "status": "ok"
+          },
+          {
+            "i": 7,
+            "seconds": 0.000505243,
+            "status": "ok"
+          },
+          {
+            "i": 8,
+            "seconds": 0.000498959,
+            "status": "ok"
+          },
+          {
+            "i": 9,
+            "seconds": 0.000502195,
+            "status": "ok"
+          },
+          {
+            "i": 10,
+            "seconds": 0.000479192,
+            "status": "ok"
+          },
+          {
+            "i": 11,
+            "seconds": 0.000493648,
+            "status": "ok"
+          },
+          {
+            "i": 12,
+            "seconds": 0.000509628,
+            "status": "ok"
+          },
+          {
+            "i": 13,
+            "seconds": 0.000496396,
+            "status": "ok"
+          },
+          {
+            "i": 14,
+            "seconds": 0.000493376,
+            "status": "ok"
+          },
+          {
+            "i": 15,
+            "seconds": 0.000485687,
+            "status": "ok"
+          },
+          {
+            "i": 16,
+            "seconds": 0.000511339,
+            "status": "ok"
+          },
+          {
+            "i": 17,
+            "seconds": 0.000492902,
+            "status": "ok"
+          },
+          {
+            "i": 18,
+            "seconds": 0.0005027,
+            "status": "ok"
+          },
+          {
+            "i": 19,
+            "seconds": 0.000486271,
+            "status": "ok"
+          },
+          {
+            "i": 20,
+            "seconds": 0.000517573,
+            "status": "ok"
+          },
+          {
+            "i": 21,
+            "seconds": 0.000507667,
+            "status": "ok"
+          },
+          {
+            "i": 22,
+            "seconds": 0.000512907,
+            "status": "ok"
+          },
+          {
+            "i": 23,
+            "seconds": 0.000519913,
+            "status": "ok"
+          }
+        ]
+      },
+      "binary_sha256": "80d473174fb5e216cc69e6304ce39a50f8130ca1c30c30cc2d40c9a51406bb07"
+    },
+    {
+      "name": "wc-monitored-3",
+      "N": 65536,
+      "W": 1747,
+      "passed": 24,
+      "median_ms": 1.4170260000000001,
+      "random_median_ms": 1.4118799999999998,
+      "timings": {
+        "init_s": 0.522230374,
+        "cases": [
+          {
+            "i": 0,
+            "seconds": 0.005805403,
+            "status": "ok"
+          },
+          {
+            "i": 1,
+            "seconds": 0.002210535,
+            "status": "ok"
+          },
+          {
+            "i": 2,
+            "seconds": 0.0021392,
+            "status": "ok"
+          },
+          {
+            "i": 3,
+            "seconds": 0.00211216,
+            "status": "ok"
+          },
+          {
+            "i": 4,
+            "seconds": 0.001434434,
+            "status": "ok"
+          },
+          {
+            "i": 5,
+            "seconds": 0.001376175,
+            "status": "ok"
+          },
+          {
+            "i": 6,
+            "seconds": 0.001435936,
+            "status": "ok"
+          },
+          {
+            "i": 7,
+            "seconds": 0.001379366,
+            "status": "ok"
+          },
+          {
+            "i": 8,
+            "seconds": 0.001351627,
+            "status": "ok"
+          },
+          {
+            "i": 9,
+            "seconds": 0.001388392,
+            "status": "ok"
+          },
+          {
+            "i": 10,
+            "seconds": 0.001386788,
+            "status": "ok"
+          },
+          {
+            "i": 11,
+            "seconds": 0.001435786,
+            "status": "ok"
+          },
+          {
+            "i": 12,
+            "seconds": 0.001436277,
+            "status": "ok"
+          },
+          {
+            "i": 13,
+            "seconds": 0.001410226,
+            "status": "ok"
+          },
+          {
+            "i": 14,
+            "seconds": 0.001423526,
+            "status": "ok"
+          },
+          {
+            "i": 15,
+            "seconds": 0.001392954,
+            "status": "ok"
+          },
+          {
+            "i": 16,
+            "seconds": 0.001381175,
+            "status": "ok"
+          },
+          {
+            "i": 17,
+            "seconds": 0.001408484,
+            "status": "ok"
+          },
+          {
+            "i": 18,
+            "seconds": 0.001415424,
+            "status": "ok"
+          },
+          {
+            "i": 19,
+            "seconds": 0.001443545,
+            "status": "ok"
+          },
+          {
+            "i": 20,
+            "seconds": 0.001418628,
+            "status": "ok"
+          },
+          {
+            "i": 21,
+            "seconds": 0.001409844,
+            "status": "ok"
+          },
+          {
+            "i": 22,
+            "seconds": 0.001418785,
+            "status": "ok"
+          },
+          {
+            "i": 23,
+            "seconds": 0.001413534,
+            "status": "ok"
+          }
+        ]
+      },
+      "binary_sha256": "80d473174fb5e216cc69e6304ce39a50f8130ca1c30c30cc2d40c9a51406bb07"
+    }
+  ]
+}

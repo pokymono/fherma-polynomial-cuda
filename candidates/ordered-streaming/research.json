@@ -1,0 +1,105 @@
+{
+  "date": "2026-11-10",
+  "objective": "Optimize exact FHERMA polynomial multiplication at N65536 W1747 and N32768 W868",
+  "hardware": "AWS g7e.2xlarge, RTX PRO 6000 Blackwell Server Edition SM120; 4 physical CPU cores; CUDA 12.8",
+  "sources": [
+    {
+      "title": "Cheddar",
+      "url": "https://arxiv.org/html/2407.13055v1",
+      "read_status": "Read arithmetic and NTT design sections 3.1-4.2",
+      "technique": "32-bit fields, lazy modular corrections, register stages and tiled transforms",
+      "application_or_limit": "v103: lazy middle kernel 63.616 to 54.560 us under NCU; no repeatable complete-call gain. v104: narrower high blocks correct but nearly neutral."
+    },
+    {
+      "title": "Neo (ISCA 2025)",
+      "url": "https://doi.org/10.1145/3695053.3731408",
+      "read_status": "Read publisher text on matrix reformulation, base conversion and radix-16 NTT",
+      "technique": "Tensor cores can accelerate suitably reformulated arithmetic",
+      "application_or_limit": "Existing INT8 tensor conversion is relevant. FP64 tensor-core and batched A100 results do not directly transfer to SM120 single-call latency."
+    },
+    {
+      "title": "TensorFHE",
+      "url": "https://arxiv.org/pdf/2212.14191",
+      "read_status": "Read selected NTT and tensor-core sections, not the entire paper",
+      "technique": "Digit decomposition and batched tensor-core arithmetic",
+      "application_or_limit": "Existing exact unsigned INT8 conversion and reconstruction already use this broad technique; no claimed additional implementation from this reading."
+    },
+    {
+      "title": "Improved NTT with Tensor Cores (2026), author implementation",
+      "url": "https://github.com/Terminus-IMRC/tensor-core-ntt",
+      "read_status": "Read README and modular arithmetic implementation; paper DOI full text was unavailable",
+      "technique": "Specialized 64-bit Montgomery-friendly moduli and byte-digit dot products",
+      "application_or_limit": "Not a drop-in change for the present 31-bit field family. Needs a separately proven and benchmarked redesign."
+    },
+    {
+      "title": "Chameleon",
+      "url": "https://arxiv.org/html/2410.05934v1",
+      "read_status": "Read GPU NTT optimization sections V-A and V-B",
+      "technique": "Butterfly decomposition, register aggregation, coefficient shuffling and fusion",
+      "application_or_limit": "Register stages and shuffles already present. Used actual occupancy evidence to test narrower high-stage CTAs; end-to-end benefit was too small to select."
+    },
+    {
+      "title": "cuPQC 0.6 NTT",
+      "url": "https://nvidia.github.io/cuPQC/releases/v0.6/",
+      "read_status": "Read release and device NTT feature documentation",
+      "technique": "Device-side and staged NTT interfaces",
+      "application_or_limit": "Potential comparison baseline. Confirm official image library version and negacyclic boundary conversion before adding a dependency; not implemented."
+    },
+    {
+      "title": "The Modern CUDA Toolbox in Practice",
+      "url": "https://developer.nvidia.com/blog/the-modern-cuda-toolbox-in-practice-a-step-by-step-optimization-walkthrough/",
+      "read_status": "Read optimization walkthrough",
+      "technique": "Pinned transfers, explicit streams and measured overlap",
+      "application_or_limit": "v097 merged A/B transfers; v099 separated output compute chains from ordered DMA; v101 combined both, yielding repeatable complete-call improvements."
+    },
+    {
+      "title": "CUDA C++ Best Practices Guide",
+      "url": "https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/",
+      "read_status": "Read host/device transfer and overlap guidance",
+      "technique": "Batch small copies, use pinned staging, account for registration costs",
+      "application_or_limit": "Direct output registration was too expensive; mapped direct GPU output v102 was slower. Kept staging and ordered DMA."
+    },
+    {
+      "title": "VROOM (USENIX Security 2026)",
+      "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/langowski",
+      "read_status": "Read abstract and author metadata only; full PDF access failed",
+      "technique": "General-modulus RNS arithmetic across CPU/GPU",
+      "application_or_limit": "Research lead only. No performance claim or implementation is attributed to unseen full text."
+    },
+    {
+      "title": "MIT Han Lab ncu-report-skill",
+      "url": "https://github.com/mit-han-lab/ncu-report-skill/blob/main/SKILL.md",
+      "read_status": "Read skill and relevant references; ran analysis helpers on three fresh full reports",
+      "technique": "Collect full metrics, per-line stalls and timelines before choosing changes",
+      "application_or_limit": "Applied. High-stage root accesses wasted sectors; v107 repacked twiddles by stage and column. SM120 and NCU 2026.1 metrics were used instead of assuming B200/NCU 2026.3."
+    },
+    {
+      "title": "MIT Han Lab KernelWiki",
+      "url": "https://github.com/mit-han-lab/KernelWiki/blob/master/SKILL.md",
+      "read_status": "Reviewed skill scope",
+      "technique": "Architecture-specific CUDA knowledge",
+      "application_or_limit": "Reviewed, not applied wholesale: SM100/SM90 instructions and tuning do not automatically apply to SM120."
+    },
+    {
+      "title": "K-Dense optimize-for-gpu",
+      "url": "https://github.com/K-Dense-AI/scientific-agent-skills/blob/main/skills/optimize-for-gpu/SKILL.md",
+      "read_status": "Reviewed skill scope",
+      "technique": "Python and GPU application profiling",
+      "application_or_limit": "Not selected for this raw CUDA/C++ kernel; no global skill install."
+    },
+    {
+      "title": "Nsight Systems User Guide",
+      "url": "https://docs.nvidia.com/nsight-systems/UserGuide/index.html",
+      "read_status": "Read graph tracing and overhead documentation",
+      "technique": "Node traces expose copy/compute dependencies but perturb runtime",
+      "application_or_limit": "Applied to v108. Node trace shows about 34 us per input DMA strip. v109 caller participation in packing passed exactness but slowed the complete main call to about 1.43 ms versus 1.13 ms control; rejected."
+    }
+  ],
+  "evidence_boundary": "All candidate timings in this research record are development measurements. Only a separate official run can establish leaderboard performance. Inaccessible papers are explicitly marked.",
+  "remaining_priorities": [
+    "Reduce CPU preparation or transfer gaps without making the launch thread compete with input packing; naive caller packing was rejected.",
+    "Use a full execution timeline to decide whether more arithmetic work lies on the critical path.",
+    "Measure one substantial consolidated candidate on the official runner after source-matched exactness checks.",
+    "Treat a tensor-core NTT or alternate modulus family as a separate exact-arithmetic redesign, not an unverified parameter tweak."
+  ]
+}
