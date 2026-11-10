@@ -1,0 +1,18 @@
+{
+  "official": false,
+  "local_gpu": "RTX3050 SM86",
+  "independent_random_oracle_cases": 1,
+  "all_inner_outputs_compared": true,
+  "source_sha256": {
+    "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+    "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+    "implementation.cuh": "2f9f59af493a85ff959c073d02a5596858556fb089790feabd16e9b6ca84fc7f",
+    "solve.cu": "c4350ffcdd946d90140d8eb047c20244cd1def5addb77991cc9a6ec7817d3d1b",
+    "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+    "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+    "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503",
+    "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+    "cpu_copy.h": "8e4202867263ee796d490ce78340666a84da04e491625c919bb712a6e5e2c3a8"
+  },
+  "notes": "One random outer case with 567 total complete inner calls (7 modes x 3 rounds x 3 positions x (2 warmups+1 measurement)). Local harness has no warmups; no timing log was expected for outer call zero."
+}
