@@ -47,8 +47,68 @@
     "aws": "Affinity placement and caller restoration passed; physical cores: 4"
   },
   "official": {
-    "status": "not_submitted",
-    "score": null
+    "official": true,
+    "commit": "a1477c968fdcf5934ca3a2ee49914e20198cf870",
+    "artifact": "candidates/ordered-streaming",
+    "run": "6af33259698e99b16a7b147a",
+    "url": "https://www.fherma.io/kernels/polynomial-multiplication/specifications/negacyclic/runs/6af33259698e99b16a7b147a",
+    "status": "finished",
+    "passed": 40,
+    "cases": 40,
+    "finished_at": "2026-11-10T15:05:33.411Z",
+    "hardware": {
+      "arch": "x86_64",
+      "cores": 24,
+      "memory_gb": 214,
+      "memory_cap_gb": 200,
+      "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition \u00b7 97887 MiB",
+      "gpu_memory_gb": 95.6,
+      "cpu": "Intel(R) Xeon(R) 6776P",
+      "kernel": "6.11.0-1016-nvidia",
+      "os": "linux"
+    },
+    "points": [
+      {
+        "point": "N65536-W1747",
+        "seeds": 20,
+        "passed": 20,
+        "seconds": {
+          "min": 0.001032658,
+          "median": 0.0010712435,
+          "mean": 0.00111262795,
+          "max": 0.00133935
+        },
+        "memory_mb": {
+          "min": 441.7,
+          "median": 441.7,
+          "max": 441.7
+        }
+      },
+      {
+        "point": "N32768-W868",
+        "seeds": 20,
+        "passed": 20,
+        "seconds": {
+          "min": 0.000364685,
+          "median": 0.0003752785,
+          "mean": 0.00037751305,
+          "max": 0.000418097
+        },
+        "memory_mb": {
+          "min": 140.3,
+          "median": 140.3,
+          "max": 140.3
+        }
+      }
+    ],
+    "rank_observed": 13,
+    "rank_observed_at_utc": "2026-11-10T15:29:47.207856+00:00"
   },
-  "evidence_boundary": "AWS measurements are not official leaderboard scores. Source and binary hashes match the validated artifacts."
+  "evidence_boundary": "AWS measurements are not official leaderboard scores. Source and binary hashes match the validated artifacts.",
+  "gpu_memcheck": {
+    "tool": "Compute Sanitizer 2025.1.0 (CUDA 12.8)",
+    "errors": 0,
+    "leaked_bytes": 0,
+    "log": "gpu-memcheck.log"
+  }
 }

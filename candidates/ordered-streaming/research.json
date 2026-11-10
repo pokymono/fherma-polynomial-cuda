@@ -62,9 +62,10 @@
     {
       "title": "VROOM (USENIX Security 2026)",
       "url": "https://www.usenix.org/conference/usenixsecurity26/presentation/langowski",
-      "read_status": "Read abstract and author metadata only; full PDF access failed",
+      "read_status": "Read abstract and metadata; downloaded checksum-verified v6.0.0 author artifact and read GPU README, Montgomery reductions, correction epilogue, and warp-accumulation implementation excerpts. Full paper PDF remained inaccessible.",
       "technique": "General-modulus RNS arithmetic across CPU/GPU",
-      "application_or_limit": "Research lead only. No performance claim or implementation is attributed to unseen full text."
+      "application_or_limit": "Author code uses subtractive Montgomery arithmetic and explicitly bounded redundant ranges, consistent with techniques already tested here. The artifact documents a floor-versus-ceiling conversion correction; our independent integer CRT and Shoup checks remain required. No new implementation was copied.",
+      "artifact": "https://zenodo.org/records/22146086"
     },
     {
       "title": "MIT Han Lab ncu-report-skill",
@@ -101,5 +102,34 @@
     "Use a full execution timeline to decide whether more arithmetic work lies on the critical path.",
     "Measure one substantial consolidated candidate on the official runner after source-matched exactness checks.",
     "Treat a tensor-core NTT or alternate modulus family as a separate exact-arithmetic redesign, not an unverified parameter tweak."
-  ]
+  ],
+  "post_submission_experiments": [
+    {
+      "candidate": "v109 caller packing",
+      "outcome": "Exact, but main latency about 1.43 ms versus 1.13 ms control; rejected."
+    },
+    {
+      "candidate": "v110 incremental vector output",
+      "outcome": "Standard reserve/insert avoids zeroing but loses parallel output overlap; main about 1.735 ms, rejected."
+    },
+    {
+      "candidate": "v111 row-block NTT decomposition",
+      "outcome": "138 local exact cases and repeated AWS exact checks. Main about 1.145 ms, slightly slower. Extra central high-stage kernels measured about 34 and 21 us."
+    },
+    {
+      "candidate": "v112 row granularity",
+      "outcome": "Eight row chunks improve small point to about 0.353 ms but slow main to about 1.197 ms; not submitted."
+    },
+    {
+      "candidate": "v113 column granularity",
+      "outcome": "Eight column strips improve small point to about 0.344 ms but slow main to about 1.188 ms. Retained as a possible size-specific follow-up, not submitted."
+    }
+  ],
+  "official_result": {
+    "run": "6af33259698e99b16a7b147a",
+    "main_ms": 1.0712435,
+    "small_ms": 0.3752785,
+    "passed": 40,
+    "rank_observed": 13
+  }
 }

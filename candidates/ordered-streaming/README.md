@@ -6,6 +6,10 @@ the measured improvements from experiments v094, v096, v097, v099, v107, and
 v108. This directory has its own validation record; another candidate's official
 score does not apply to it.
 
+Official run at source commit `a1477c968fdcf5934ca3a2ee49914e20198cf870` passed **40/40** cases,
+with medians **1.0712435 ms** (main) and **0.3752785 ms** (small).
+See [official-results.json](official-results.json) and the [platform run](https://www.fherma.io/kernels/polynomial-multiplication/specifications/negacyclic/runs/6af33259698e99b16a7b147a).
+
 ## Changes
 
 Persistent input workers own disjoint rows for the entire call. A release flag

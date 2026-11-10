@@ -11,13 +11,14 @@ Inputs and output are canonical, coefficient-major arrays of little-endian
 `(N=32768, W=868)`.
 
 The fastest validated official entry at the main competition point is
-[`candidates/wc-monitored-copy`](candidates/wc-monitored-copy/README.md), at commit
-`d8c6b891b904113ad3a94014955cf8f2159d614f`. It passed all 40 official cases on
-Blackwell with medians of **1.2879635 ms** and **0.444297 ms**, respectively.
-[Official run](https://www.fherma.io/kernels/polynomial-multiplication/specifications/negacyclic/runs/6af3114a698e99b16a7985a6).
+[`candidates/ordered-streaming`](candidates/ordered-streaming/README.md), at commit
+`a1477c968fdcf5934ca3a2ee49914e20198cf870`. It passed all 40 official cases on
+Blackwell with medians of **1.0712435 ms** and **0.3752785 ms**, respectively.
+[Official run](https://www.fherma.io/kernels/polynomial-multiplication/specifications/negacyclic/runs/6af33259698e99b16a7b147a).
+The main-point latency is 16.8% lower than the previous best 1.2879635 ms entry.
 Use that directory in the CMake commands below to reproduce this version;
-`src/` preserves the original baseline. Newer experiments have separate
-directories and do not inherit this result.
+`src/` preserves the original baseline. Experimental measurements have separate
+records and do not inherit the official result.
 
 ## Algorithm
 
@@ -41,7 +42,7 @@ operand-dependent computation happens in initialization.
 ## Build and platform settings
 
 ```
-cmake -S candidates/wc-monitored-copy -B build/reproduce -DCMAKE_BUILD_TYPE=Release
+cmake -S candidates/ordered-streaming -B build/reproduce -DCMAKE_BUILD_TYPE=Release
 cmake --build build/reproduce -j
 ```
 
@@ -51,7 +52,7 @@ to the build host's native CUDA architecture; it can be overridden with
 `-DCMAKE_CUDA_ARCHITECTURES=120` for Blackwell.
 
 For FHERMA, select the **cpp** harness, the **cupqc** image, this repository at an
-exact commit, and artifact path **candidates/wc-monitored-copy**. The generated `main.cpp` and `fherma.h`
+exact commit, and artifact path **candidates/ordered-streaming**. The generated `main.cpp` and `fherma.h`
 are unmodified. FHERMA replaces them with its official harness when benchmarking.
 
 ## Local verification
