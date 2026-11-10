@@ -199,6 +199,27 @@
       "url": "https://cdrdv2-public.intel.com/826934/826934_Intel_Xeon_6_CPUs_PnP_Profiles_TA_Rev_1_07.pdf",
       "read_status": "Search excerpt only; direct PDF returned403",
       "application_or_limit": "Uncore scaling is a hypothesis for host/transfer idle sensitivity, not an established cause or a recommendation to modify runner settings."
+    },
+    {
+      "title": "Twill OSDI2026, optimal software pipelining and warp specialization",
+      "url": "https://research.nvidia.com/publication/2026-07_optimal-software-pipelining-and-warp-specialization-tensor-core-gpus",
+      "read_status": "Read abstract, introduction, architecture background and scheduling sections3.1 through3.3 of the author PDF. Evaluation and solver formulation not fully read.",
+      "technique": "Treat resource capacity and data dependencies together; asynchronous waits and register pressure can defeat naive overlap.",
+      "application_or_limit": "No Twill solver used and no claimed optimality. Motivates testing the final CRT staging mechanism and tile shapes. SM100 tensor-memory assumptions do not apply automatically to SM120."
+    },
+    {
+      "title": "NVIDIA TMA programming guide and nvFuser swizzle layout",
+      "url": "https://docs.nvidia.com/cuda/archive/13.1.0/cuda-programming-guide/04-special-topics/async-copies.html",
+      "read_status": "Read tensor-map encoding, asynchronous transaction barriers, and128byte/64byte swizzle guidance; cross-checked NVIDIA/Fuser doc/dev/tma.md.",
+      "technique": "One-thread multidimensional asynchronous transfers with explicit barrier completion and native shared-memory swizzle.",
+      "application_or_limit": "v203 stages CRT input and weight tiles through TMA; requires actual SM120 validation. Pre-SM90 fallback is separate evidence."
+    },
+    {
+      "title": "phanerozoic fhe-ntt author kernel card",
+      "url": "https://huggingface.co/kernels/phanerozoic/fhe-ntt",
+      "read_status": "Read Method, Measured, Correctness and Requirements sections. Source implementation not read.",
+      "technique": "59bit Shoup butterflies and stage-by-stage batched NTT.",
+      "application_or_limit": "Measured sizes4096/8192 and per-stage launches do not match the65536 large-integer transfer-bound target. Not integrated."
     }
   ],
   "evidence_boundary": "All candidate timings in this research record are development measurements. Only a separate official run can establish leaderboard performance. Inaccessible papers are explicitly marked.",
@@ -10352,5 +10373,2806 @@
         }
       ]
     }
-  ]
+  ],
+  "late_night_experiments_187_to_200": {
+    "updated_at": "2026-11-10T23:27:43.700476+00:00",
+    "hardware": "AWS g7e.4xlarge SM120; 8 physical CPU cores; CUDA12.8",
+    "evidence_boundary": "Unscored development timings. Official inner diagnostics are separate, and neither is a ranked score. Every completed configuration has 48 exact outputs; see reports for build hashes.",
+    "comparisons": {
+      "cluster_prefix": {
+        "evidence": "evidence/aws_large_archive/aws_large_cluster_prefix_results.json",
+        "build_count": 6,
+        "build_failures": [],
+        "runs": [
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.38783350000000005,
+            "random_median_ms": 0.3870035
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.123543,
+            "random_median_ms": 1.1227805
+          },
+          {
+            "name": "cluster0-vector0-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.334872,
+            "random_median_ms": 0.3326955
+          },
+          {
+            "name": "cluster0-vector0-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0625840000000002,
+            "random_median_ms": 1.0625840000000002
+          },
+          {
+            "name": "cluster1-vector0-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3304645,
+            "random_median_ms": 0.3304065
+          },
+          {
+            "name": "cluster1-vector0-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0626285000000002,
+            "random_median_ms": 1.061859
+          },
+          {
+            "name": "cluster1-vector1-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3312745,
+            "random_median_ms": 0.3310165
+          },
+          {
+            "name": "cluster1-vector1-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0361995,
+            "random_median_ms": 1.0361995
+          },
+          {
+            "name": "cluster0-vector0-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3529305,
+            "random_median_ms": 0.35263950000000005
+          },
+          {
+            "name": "cluster0-vector0-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.048427,
+            "random_median_ms": 1.0461225
+          },
+          {
+            "name": "cluster1-vector0-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.35527149999999996,
+            "random_median_ms": 0.35523299999999997
+          },
+          {
+            "name": "cluster1-vector0-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.047924,
+            "random_median_ms": 1.0467434999999998
+          },
+          {
+            "name": "cluster1-vector1-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.354212,
+            "random_median_ms": 0.35409799999999997
+          },
+          {
+            "name": "cluster1-vector1-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.073985,
+            "random_median_ms": 1.0732799999999998
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3858225,
+            "random_median_ms": 0.385625
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.12036,
+            "random_median_ms": 1.119993
+          }
+        ]
+      },
+      "output_transfer_ramp": {
+        "evidence": "evidence/aws_large_archive/aws_large_output_transfer_ramp_results.json",
+        "build_count": 12,
+        "build_failures": [],
+        "runs": [
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.388946,
+            "random_median_ms": 0.388946
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.114215,
+            "random_median_ms": 1.1135279999999999
+          },
+          {
+            "name": "output-ramp0-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.33344199999999996,
+            "random_median_ms": 0.33239599999999997
+          },
+          {
+            "name": "output-ramp0-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.028397,
+            "random_median_ms": 1.0259095
+          },
+          {
+            "name": "output-ramp3-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.334181,
+            "random_median_ms": 0.3335365
+          },
+          {
+            "name": "output-ramp3-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0318505000000002,
+            "random_median_ms": 1.031083
+          },
+          {
+            "name": "output-ramp4-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3335865,
+            "random_median_ms": 0.33241200000000004
+          },
+          {
+            "name": "output-ramp4-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0777745,
+            "random_median_ms": 1.0777745
+          },
+          {
+            "name": "output-ramp5-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.331906,
+            "random_median_ms": 0.331906
+          },
+          {
+            "name": "output-ramp5-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0764885000000002,
+            "random_median_ms": 1.0757435
+          },
+          {
+            "name": "output-ramp6-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.332986,
+            "random_median_ms": 0.33236699999999997
+          },
+          {
+            "name": "output-ramp6-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0823755,
+            "random_median_ms": 1.0823755
+          },
+          {
+            "name": "output-ramp7-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3336105,
+            "random_median_ms": 0.3330295
+          },
+          {
+            "name": "output-ramp7-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0300460000000002,
+            "random_median_ms": 1.0293709999999998
+          },
+          {
+            "name": "output-ramp0-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.355483,
+            "random_median_ms": 0.3552885
+          },
+          {
+            "name": "output-ramp0-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0807335,
+            "random_median_ms": 1.0803325
+          },
+          {
+            "name": "output-ramp3-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.355771,
+            "random_median_ms": 0.355705
+          },
+          {
+            "name": "output-ramp3-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0771805,
+            "random_median_ms": 1.0771805
+          },
+          {
+            "name": "output-ramp4-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.35502150000000005,
+            "random_median_ms": 0.35396299999999997
+          },
+          {
+            "name": "output-ramp4-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.1102295,
+            "random_median_ms": 1.109531
+          },
+          {
+            "name": "output-ramp5-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.35525249999999997,
+            "random_median_ms": 0.3546195
+          },
+          {
+            "name": "output-ramp5-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.113186,
+            "random_median_ms": 1.1128725000000002
+          },
+          {
+            "name": "output-ramp6-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.354273,
+            "random_median_ms": 0.3540975
+          },
+          {
+            "name": "output-ramp6-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.1165964999999998,
+            "random_median_ms": 1.1169055
+          },
+          {
+            "name": "output-ramp7-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.35493250000000004,
+            "random_median_ms": 0.35398199999999996
+          },
+          {
+            "name": "output-ramp7-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0820955,
+            "random_median_ms": 1.0820955
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.38937200000000005,
+            "random_median_ms": 0.389204
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.1100055,
+            "random_median_ms": 1.1092624999999998
+          }
+        ]
+      },
+      "cluster_inverse": {
+        "evidence": "evidence/aws_large_archive/aws_large_cluster_inverse_results.json",
+        "build_count": 12,
+        "build_failures": [],
+        "runs": [
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.38604350000000004,
+            "random_median_ms": 0.38604350000000004
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.123607,
+            "random_median_ms": 1.123141
+          },
+          {
+            "name": "inverse-cluster0-cols32-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3314395,
+            "random_median_ms": 0.330275
+          },
+          {
+            "name": "inverse-cluster0-cols32-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.026809,
+            "random_median_ms": 1.0262470000000001
+          },
+          {
+            "name": "inverse-cluster2-cols32-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.33467100000000005,
+            "random_median_ms": 0.334206
+          },
+          {
+            "name": "inverse-cluster2-cols32-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0234010000000002,
+            "random_median_ms": 1.022313
+          },
+          {
+            "name": "inverse-cluster4-cols32-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.33172250000000003,
+            "random_median_ms": 0.33172250000000003
+          },
+          {
+            "name": "inverse-cluster4-cols32-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0234795,
+            "random_median_ms": 1.0230955000000002
+          },
+          {
+            "name": "inverse-cluster8-cols32-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3314705,
+            "random_median_ms": 0.3302795
+          },
+          {
+            "name": "inverse-cluster8-cols32-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0687484999999999,
+            "random_median_ms": 1.067031
+          },
+          {
+            "name": "inverse-cluster4-cols16-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.331859,
+            "random_median_ms": 0.330914
+          },
+          {
+            "name": "inverse-cluster4-cols16-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.01919,
+            "random_median_ms": 1.0182035
+          },
+          {
+            "name": "inverse-cluster8-cols16-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.33263849999999995,
+            "random_median_ms": 0.332161
+          },
+          {
+            "name": "inverse-cluster8-cols16-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0550920000000001,
+            "random_median_ms": 1.053294
+          },
+          {
+            "name": "inverse-cluster0-cols32-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.353317,
+            "random_median_ms": 0.352881
+          },
+          {
+            "name": "inverse-cluster0-cols32-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0903535,
+            "random_median_ms": 1.0899385000000001
+          },
+          {
+            "name": "inverse-cluster2-cols32-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3530855,
+            "random_median_ms": 0.3530855
+          },
+          {
+            "name": "inverse-cluster2-cols32-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0849104999999999,
+            "random_median_ms": 1.083991
+          },
+          {
+            "name": "inverse-cluster4-cols32-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.353954,
+            "random_median_ms": 0.3531995
+          },
+          {
+            "name": "inverse-cluster4-cols32-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.088823,
+            "random_median_ms": 1.0877550000000002
+          },
+          {
+            "name": "inverse-cluster8-cols32-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.354129,
+            "random_median_ms": 0.354129
+          },
+          {
+            "name": "inverse-cluster8-cols32-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.1308615000000002,
+            "random_median_ms": 1.1300385
+          },
+          {
+            "name": "inverse-cluster4-cols16-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3550295,
+            "random_median_ms": 0.3550295
+          },
+          {
+            "name": "inverse-cluster4-cols16-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0875165,
+            "random_median_ms": 1.0864655
+          },
+          {
+            "name": "inverse-cluster8-cols16-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3545345,
+            "random_median_ms": 0.35429150000000004
+          },
+          {
+            "name": "inverse-cluster8-cols16-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.1188535000000002,
+            "random_median_ms": 1.118519
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.38764400000000004,
+            "random_median_ms": 0.386819
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.1208504999999997,
+            "random_median_ms": 1.119502
+          }
+        ]
+      },
+      "transform_geometry": {
+        "evidence": "evidence/aws_large_archive/aws_large_transform_geometry_results.json",
+        "build_count": 8,
+        "build_failures": [],
+        "runs": [
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.38813,
+            "random_median_ms": 0.387723
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.1235855000000001,
+            "random_median_ms": 1.1229625
+          },
+          {
+            "name": "transform-tile512-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.333672,
+            "random_median_ms": 0.3330755
+          },
+          {
+            "name": "transform-tile512-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.031965,
+            "random_median_ms": 1.0310229999999998
+          },
+          {
+            "name": "transform-tile256-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3338495,
+            "random_median_ms": 0.333596
+          },
+          {
+            "name": "transform-tile256-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.1611795,
+            "random_median_ms": 1.1606055
+          },
+          {
+            "name": "transform-tile128-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.369711,
+            "random_median_ms": 0.3695875
+          },
+          {
+            "name": "transform-tile128-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.4359045000000001,
+            "random_median_ms": 1.4356345000000001
+          },
+          {
+            "name": "transform-tile1024-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.338673,
+            "random_median_ms": 0.338213
+          },
+          {
+            "name": "transform-tile1024-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0396545,
+            "random_median_ms": 1.0385929999999999
+          },
+          {
+            "name": "transform-tile512-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.35437,
+            "random_median_ms": 0.35437
+          },
+          {
+            "name": "transform-tile512-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.090265,
+            "random_median_ms": 1.088925
+          },
+          {
+            "name": "transform-tile256-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.355572,
+            "random_median_ms": 0.355572
+          },
+          {
+            "name": "transform-tile256-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.2187365,
+            "random_median_ms": 1.2184745
+          },
+          {
+            "name": "transform-tile128-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.38848750000000004,
+            "random_median_ms": 0.387905
+          },
+          {
+            "name": "transform-tile128-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.4802464999999998,
+            "random_median_ms": 1.4797040000000001
+          },
+          {
+            "name": "transform-tile1024-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.35902999999999996,
+            "random_median_ms": 0.358631
+          },
+          {
+            "name": "transform-tile1024-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.1008215000000001,
+            "random_median_ms": 1.1006520000000002
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3871105,
+            "random_median_ms": 0.387031
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.1192075,
+            "random_median_ms": 1.1185559999999999
+          }
+        ]
+      },
+      "encoder_geometry": {
+        "evidence": "evidence/aws_large_archive/aws_large_encoder_geometry_results.json",
+        "build_count": 15,
+        "build_failures": [],
+        "runs": [
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.38745,
+            "random_median_ms": 0.38695549999999995
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.119861,
+            "random_median_ms": 1.120886
+          },
+          {
+            "name": "encode-m64-r16-k64-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3299275,
+            "random_median_ms": 0.3299275
+          },
+          {
+            "name": "encode-m64-r16-k64-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.028351,
+            "random_median_ms": 1.027941
+          },
+          {
+            "name": "encode-m32-r16-k64-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3310265,
+            "random_median_ms": 0.330828
+          },
+          {
+            "name": "encode-m32-r16-k64-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0284909999999998,
+            "random_median_ms": 1.027874
+          },
+          {
+            "name": "encode-m128-r16-k64-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.33164800000000005,
+            "random_median_ms": 0.329269
+          },
+          {
+            "name": "encode-m128-r16-k64-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0380810000000003,
+            "random_median_ms": 1.0375655
+          },
+          {
+            "name": "encode-m64-r32-k64-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3328575,
+            "random_median_ms": 0.3328575
+          },
+          {
+            "name": "encode-m64-r32-k64-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0272105,
+            "random_median_ms": 1.0271379999999999
+          },
+          {
+            "name": "encode-m32-r32-k64-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3316185,
+            "random_median_ms": 0.33133399999999996
+          },
+          {
+            "name": "encode-m32-r32-k64-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0303069999999999,
+            "random_median_ms": 1.0297794999999998
+          },
+          {
+            "name": "encode-m128-r32-k64-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.33091800000000005,
+            "random_median_ms": 0.33091800000000005
+          },
+          {
+            "name": "encode-m128-r32-k64-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0348835,
+            "random_median_ms": 1.0347325
+          },
+          {
+            "name": "encode-m64-r8-k64-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.32940499999999995,
+            "random_median_ms": 0.3281
+          },
+          {
+            "name": "encode-m64-r8-k64-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0310409999999999,
+            "random_median_ms": 1.0310409999999999
+          },
+          {
+            "name": "encode-m32-r8-k64-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3345075,
+            "random_median_ms": 0.3334095
+          },
+          {
+            "name": "encode-m32-r8-k64-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0313385000000002,
+            "random_median_ms": 1.0302244999999999
+          },
+          {
+            "name": "encode-m64-r16-k128-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3333385,
+            "random_median_ms": 0.33236400000000005
+          },
+          {
+            "name": "encode-m64-r16-k128-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.029507,
+            "random_median_ms": 1.0290120000000003
+          },
+          {
+            "name": "encode-m64-r32-k128-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.33123500000000006,
+            "random_median_ms": 0.33078399999999997
+          },
+          {
+            "name": "encode-m64-r32-k128-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0262565,
+            "random_median_ms": 1.025922
+          },
+          {
+            "name": "encode-m64-r16-k64-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3548055,
+            "random_median_ms": 0.3544995
+          },
+          {
+            "name": "encode-m64-r16-k64-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.092312,
+            "random_median_ms": 1.0913085
+          },
+          {
+            "name": "encode-m32-r16-k64-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3539115,
+            "random_median_ms": 0.352885
+          },
+          {
+            "name": "encode-m32-r16-k64-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.092224,
+            "random_median_ms": 1.092224
+          },
+          {
+            "name": "encode-m128-r16-k64-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.35325799999999996,
+            "random_median_ms": 0.352564
+          },
+          {
+            "name": "encode-m128-r16-k64-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0962440000000002,
+            "random_median_ms": 1.0947775000000002
+          },
+          {
+            "name": "encode-m64-r32-k64-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.352347,
+            "random_median_ms": 0.351666
+          },
+          {
+            "name": "encode-m64-r32-k64-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0899915,
+            "random_median_ms": 1.0894365
+          },
+          {
+            "name": "encode-m32-r32-k64-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3536535,
+            "random_median_ms": 0.35351000000000005
+          },
+          {
+            "name": "encode-m32-r32-k64-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0927110000000002,
+            "random_median_ms": 1.0924355
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.388305,
+            "random_median_ms": 0.388053
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.1219875,
+            "random_median_ms": 1.121948
+          }
+        ]
+      },
+      "variable_output": {
+        "evidence": "evidence/aws_large_archive/aws_large_variable_output_results.json",
+        "build_count": 14,
+        "build_failures": [],
+        "runs": [
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3876255,
+            "random_median_ms": 0.38754
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.1198215000000002,
+            "random_median_ms": 1.119181
+          },
+          {
+            "name": "output-b32-i32-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.33330999999999994,
+            "random_median_ms": 0.3325335
+          },
+          {
+            "name": "output-b32-i32-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.029941,
+            "random_median_ms": 1.029941
+          },
+          {
+            "name": "output-b16-i32-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3341145,
+            "random_median_ms": 0.332758
+          },
+          {
+            "name": "output-b16-i32-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0274915,
+            "random_median_ms": 1.0267685000000002
+          },
+          {
+            "name": "output-b8-i32-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.33159649999999996,
+            "random_median_ms": 0.329969
+          },
+          {
+            "name": "output-b8-i32-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.041535,
+            "random_median_ms": 1.0403930000000001
+          },
+          {
+            "name": "output-b16-i64-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.331392,
+            "random_median_ms": 0.330459
+          },
+          {
+            "name": "output-b16-i64-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0487015,
+            "random_median_ms": 1.0484445
+          },
+          {
+            "name": "output-b8-i64-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.33345149999999996,
+            "random_median_ms": 0.3326505
+          },
+          {
+            "name": "output-b8-i64-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0513700000000001,
+            "random_median_ms": 1.0512525000000001
+          },
+          {
+            "name": "output-b32-i64-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3316425,
+            "random_median_ms": 0.3309015
+          },
+          {
+            "name": "output-b32-i64-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0384784999999999,
+            "random_median_ms": 1.0371130000000002
+          },
+          {
+            "name": "output-b16-i128-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.333503,
+            "random_median_ms": 0.3326205
+          },
+          {
+            "name": "output-b16-i128-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0817489999999998,
+            "random_median_ms": 1.0799905
+          },
+          {
+            "name": "output-b32-i32-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.35479550000000004,
+            "random_median_ms": 0.3540485
+          },
+          {
+            "name": "output-b32-i32-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.093836,
+            "random_median_ms": 1.0934579999999998
+          },
+          {
+            "name": "output-b16-i32-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3538385,
+            "random_median_ms": 0.35341750000000005
+          },
+          {
+            "name": "output-b16-i32-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0883889999999998,
+            "random_median_ms": 1.0874365
+          },
+          {
+            "name": "output-b8-i32-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.35364450000000003,
+            "random_median_ms": 0.353369
+          },
+          {
+            "name": "output-b8-i32-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0930384999999998,
+            "random_median_ms": 1.0927385
+          },
+          {
+            "name": "output-b16-i64-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3530235,
+            "random_median_ms": 0.352849
+          },
+          {
+            "name": "output-b16-i64-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0953414999999997,
+            "random_median_ms": 1.095138
+          },
+          {
+            "name": "output-b8-i64-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.35310150000000007,
+            "random_median_ms": 0.35263649999999996
+          },
+          {
+            "name": "output-b8-i64-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.105869,
+            "random_median_ms": 1.1055269999999997
+          },
+          {
+            "name": "output-b32-i64-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3551485,
+            "random_median_ms": 0.354084
+          },
+          {
+            "name": "output-b32-i64-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0876169999999998,
+            "random_median_ms": 1.0868035
+          },
+          {
+            "name": "output-b16-i128-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.353895,
+            "random_median_ms": 0.3533535
+          },
+          {
+            "name": "output-b16-i128-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.1171179999999998,
+            "random_median_ms": 1.116709
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.387581,
+            "random_median_ms": 0.3871325
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.1234315,
+            "random_median_ms": 1.1225365
+          }
+        ]
+      },
+      "shared_inverse": {
+        "evidence": "evidence/aws_large_archive/aws_large_shared_inverse_results.json",
+        "build_count": 14,
+        "build_failures": [],
+        "runs": [
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3886195,
+            "random_median_ms": 0.388537
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.1102049999999999,
+            "random_median_ms": 1.1097469999999998
+          },
+          {
+            "name": "shared-inverse0-f4-c4-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.33102800000000004,
+            "random_median_ms": 0.330781
+          },
+          {
+            "name": "shared-inverse0-f4-c4-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.027664,
+            "random_median_ms": 1.027664
+          },
+          {
+            "name": "shared-inverse1-f2-c4-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.33249799999999996,
+            "random_median_ms": 0.33225
+          },
+          {
+            "name": "shared-inverse1-f2-c4-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0595405,
+            "random_median_ms": 1.058698
+          },
+          {
+            "name": "shared-inverse1-f4-c4-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.331574,
+            "random_median_ms": 0.33100399999999996
+          },
+          {
+            "name": "shared-inverse1-f4-c4-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0231925,
+            "random_median_ms": 1.020991
+          },
+          {
+            "name": "shared-inverse1-f8-c4-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.329734,
+            "random_median_ms": 0.329734
+          },
+          {
+            "name": "shared-inverse1-f8-c4-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.028157,
+            "random_median_ms": 1.0256470000000002
+          },
+          {
+            "name": "shared-inverse1-f2-c8-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.330852,
+            "random_median_ms": 0.3304625
+          },
+          {
+            "name": "shared-inverse1-f2-c8-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.024375,
+            "random_median_ms": 1.0236480000000001
+          },
+          {
+            "name": "shared-inverse1-f4-c8-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.330007,
+            "random_median_ms": 0.330007
+          },
+          {
+            "name": "shared-inverse1-f4-c8-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0224315,
+            "random_median_ms": 1.0221959999999999
+          },
+          {
+            "name": "shared-inverse1-f4-c16-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.33115249999999996,
+            "random_median_ms": 0.33115249999999996
+          },
+          {
+            "name": "shared-inverse1-f4-c16-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.021346,
+            "random_median_ms": 1.0212455
+          },
+          {
+            "name": "shared-inverse0-f4-c4-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.35372050000000005,
+            "random_median_ms": 0.3534675
+          },
+          {
+            "name": "shared-inverse0-f4-c4-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0788385,
+            "random_median_ms": 1.0781779999999999
+          },
+          {
+            "name": "shared-inverse1-f2-c4-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.35626199999999997,
+            "random_median_ms": 0.3558155
+          },
+          {
+            "name": "shared-inverse1-f2-c4-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.111971,
+            "random_median_ms": 1.1113799999999998
+          },
+          {
+            "name": "shared-inverse1-f4-c4-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.354224,
+            "random_median_ms": 0.3535125
+          },
+          {
+            "name": "shared-inverse1-f4-c4-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0811614999999999,
+            "random_median_ms": 1.079968
+          },
+          {
+            "name": "shared-inverse1-f8-c4-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.355031,
+            "random_median_ms": 0.35459050000000003
+          },
+          {
+            "name": "shared-inverse1-f8-c4-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0772099999999998,
+            "random_median_ms": 1.0767989999999998
+          },
+          {
+            "name": "shared-inverse1-f2-c8-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.355775,
+            "random_median_ms": 0.3552645
+          },
+          {
+            "name": "shared-inverse1-f2-c8-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.07559,
+            "random_median_ms": 1.0757919999999999
+          },
+          {
+            "name": "shared-inverse1-f4-c8-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3544395,
+            "random_median_ms": 0.3535575
+          },
+          {
+            "name": "shared-inverse1-f4-c8-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0778325000000002,
+            "random_median_ms": 1.07693
+          },
+          {
+            "name": "shared-inverse1-f4-c16-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.35405850000000005,
+            "random_median_ms": 0.35384350000000003
+          },
+          {
+            "name": "shared-inverse1-f4-c16-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0723905,
+            "random_median_ms": 1.071525
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.38900749999999995,
+            "random_median_ms": 0.38887700000000003
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.1104025000000002,
+            "random_median_ms": 1.1100925
+          }
+        ]
+      },
+      "middle_lanes_cache": {
+        "evidence": "evidence/aws_large_archive/aws_large_middle_lanes_cache_results.json",
+        "build_count": 18,
+        "build_failures": [],
+        "runs": [
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.388196,
+            "random_median_ms": 0.3876595
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.122697,
+            "random_median_ms": 1.1222625
+          },
+          {
+            "name": "middle-lanes32-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.33147899999999997,
+            "random_median_ms": 0.330474
+          },
+          {
+            "name": "middle-lanes32-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0247815,
+            "random_median_ms": 1.0247815
+          },
+          {
+            "name": "middle-lanes16-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.334485,
+            "random_median_ms": 0.333022
+          },
+          {
+            "name": "middle-lanes16-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0345805,
+            "random_median_ms": 1.033151
+          },
+          {
+            "name": "middle-lanes8-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.328743,
+            "random_median_ms": 0.328072
+          },
+          {
+            "name": "middle-lanes8-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0315375,
+            "random_median_ms": 1.0311405
+          },
+          {
+            "name": "middle-lanes4-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3304415,
+            "random_median_ms": 0.3289015
+          },
+          {
+            "name": "middle-lanes4-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0739425,
+            "random_median_ms": 1.073559
+          },
+          {
+            "name": "middle-lanes32-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.353264,
+            "random_median_ms": 0.35282149999999995
+          },
+          {
+            "name": "middle-lanes32-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0912644999999999,
+            "random_median_ms": 1.0896844999999997
+          },
+          {
+            "name": "middle-lanes16-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3543115,
+            "random_median_ms": 0.35419
+          },
+          {
+            "name": "middle-lanes16-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0910279999999999,
+            "random_median_ms": 1.0910279999999999
+          },
+          {
+            "name": "middle-lanes8-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.352545,
+            "random_median_ms": 0.3524145
+          },
+          {
+            "name": "middle-lanes8-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.09517,
+            "random_median_ms": 1.0948215
+          },
+          {
+            "name": "middle-lanes4-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.35224249999999996,
+            "random_median_ms": 0.35218200000000005
+          },
+          {
+            "name": "middle-lanes4-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.1316795,
+            "random_median_ms": 1.1314199999999999
+          },
+          {
+            "name": "operand-cache0-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3318525,
+            "random_median_ms": 0.330819
+          },
+          {
+            "name": "operand-cache0-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0310045,
+            "random_median_ms": 1.0304075
+          },
+          {
+            "name": "operand-cache6-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.33159649999999996,
+            "random_median_ms": 0.330971
+          },
+          {
+            "name": "operand-cache6-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0277735000000001,
+            "random_median_ms": 1.0277735000000001
+          },
+          {
+            "name": "operand-cache7-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3304345,
+            "random_median_ms": 0.3293435
+          },
+          {
+            "name": "operand-cache7-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0249975,
+            "random_median_ms": 1.024738
+          },
+          {
+            "name": "operand-cache0-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.352359,
+            "random_median_ms": 0.351938
+          },
+          {
+            "name": "operand-cache0-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.089696,
+            "random_median_ms": 1.08908
+          },
+          {
+            "name": "operand-cache6-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.35338749999999997,
+            "random_median_ms": 0.35307649999999996
+          },
+          {
+            "name": "operand-cache6-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0863425,
+            "random_median_ms": 1.0863425
+          },
+          {
+            "name": "operand-cache7-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.352055,
+            "random_median_ms": 0.351742
+          },
+          {
+            "name": "operand-cache7-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0915974999999998,
+            "random_median_ms": 1.0906010000000002
+          },
+          {
+            "name": "tensor-quotient0-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.332976,
+            "random_median_ms": 0.331192
+          },
+          {
+            "name": "tensor-quotient0-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0317775,
+            "random_median_ms": 1.02754
+          },
+          {
+            "name": "tensor-quotient1-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3319035,
+            "random_median_ms": 0.3306705
+          },
+          {
+            "name": "tensor-quotient1-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.026193,
+            "random_median_ms": 1.025613
+          },
+          {
+            "name": "tensor-quotient0-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.353781,
+            "random_median_ms": 0.3531679999999999
+          },
+          {
+            "name": "tensor-quotient0-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0933725,
+            "random_median_ms": 1.092831
+          },
+          {
+            "name": "tensor-quotient1-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.354106,
+            "random_median_ms": 0.3534295
+          },
+          {
+            "name": "tensor-quotient1-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0884405,
+            "random_median_ms": 1.0880115
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.38655100000000003,
+            "random_median_ms": 0.385851
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.1247775000000002,
+            "random_median_ms": 1.124618
+          }
+        ]
+      },
+      "tail_fusion": {
+        "evidence": "evidence/aws_large_archive/aws_large_tail_fusion_results.json",
+        "build_count": 12,
+        "build_failures": [],
+        "runs": [
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.38928499999999994,
+            "random_median_ms": 0.38899249999999996
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.1217445,
+            "random_median_ms": 1.120644
+          },
+          {
+            "name": "tail-f0-q0-p0-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.333609,
+            "random_median_ms": 0.3339175
+          },
+          {
+            "name": "tail-f0-q0-p0-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.029476,
+            "random_median_ms": 1.0283775
+          },
+          {
+            "name": "tail-f0-q1-p0-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.331166,
+            "random_median_ms": 0.331166
+          },
+          {
+            "name": "tail-f0-q1-p0-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.026748,
+            "random_median_ms": 1.026106
+          },
+          {
+            "name": "tail-f1-q0-p0-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.332295,
+            "random_median_ms": 0.332165
+          },
+          {
+            "name": "tail-f1-q0-p0-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0235614999999998,
+            "random_median_ms": 1.0235614999999998
+          },
+          {
+            "name": "tail-f1-q1-p0-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.33315,
+            "random_median_ms": 0.332486
+          },
+          {
+            "name": "tail-f1-q1-p0-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0237740000000002,
+            "random_median_ms": 1.022795
+          },
+          {
+            "name": "tail-f1-q1-p1-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.331034,
+            "random_median_ms": 0.331299
+          },
+          {
+            "name": "tail-f1-q1-p1-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0185114999999998,
+            "random_median_ms": 1.0170184999999998
+          },
+          {
+            "name": "tail-f2-q1-p1-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3316535,
+            "random_median_ms": 0.3310505
+          },
+          {
+            "name": "tail-f2-q1-p1-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0196095,
+            "random_median_ms": 1.0194225000000001
+          },
+          {
+            "name": "tail-f0-q0-p0-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3546815,
+            "random_median_ms": 0.354142
+          },
+          {
+            "name": "tail-f0-q0-p0-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0951785,
+            "random_median_ms": 1.091733
+          },
+          {
+            "name": "tail-f0-q1-p0-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3557065,
+            "random_median_ms": 0.3557065
+          },
+          {
+            "name": "tail-f0-q1-p0-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.089303,
+            "random_median_ms": 1.0884635
+          },
+          {
+            "name": "tail-f1-q0-p0-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.353466,
+            "random_median_ms": 0.3527955
+          },
+          {
+            "name": "tail-f1-q0-p0-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0828865,
+            "random_median_ms": 1.0810015
+          },
+          {
+            "name": "tail-f1-q1-p0-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.354772,
+            "random_median_ms": 0.3545805
+          },
+          {
+            "name": "tail-f1-q1-p0-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.083866,
+            "random_median_ms": 1.0827034999999998
+          },
+          {
+            "name": "tail-f1-q1-p1-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.353616,
+            "random_median_ms": 0.3532975
+          },
+          {
+            "name": "tail-f1-q1-p1-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0848645,
+            "random_median_ms": 1.0843785000000001
+          },
+          {
+            "name": "tail-f2-q1-p1-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.353887,
+            "random_median_ms": 0.3536785
+          },
+          {
+            "name": "tail-f2-q1-p1-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0837584999999998,
+            "random_median_ms": 1.0836880000000002
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3891275,
+            "random_median_ms": 0.389044
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.122147,
+            "random_median_ms": 1.121494
+          }
+        ]
+      },
+      "deferred_allocation": {
+        "evidence": "evidence/aws_large_archive/aws_large_deferred_allocation_results.json",
+        "build_count": 12,
+        "build_failures": [],
+        "runs": [
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3899105,
+            "random_median_ms": 0.389528
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.113251,
+            "random_median_ms": 1.1126055
+          },
+          {
+            "name": "allocate-after-1-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.331992,
+            "random_median_ms": 0.33166199999999996
+          },
+          {
+            "name": "allocate-after-1-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.029705,
+            "random_median_ms": 1.0284844999999998
+          },
+          {
+            "name": "allocate-after0-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.333037,
+            "random_median_ms": 0.33215350000000005
+          },
+          {
+            "name": "allocate-after0-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0314495,
+            "random_median_ms": 1.0300705
+          },
+          {
+            "name": "allocate-after3-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3295705,
+            "random_median_ms": 0.32933150000000005
+          },
+          {
+            "name": "allocate-after3-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0301759999999998,
+            "random_median_ms": 1.0301759999999998
+          },
+          {
+            "name": "allocate-after7-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.329192,
+            "random_median_ms": 0.3276695
+          },
+          {
+            "name": "allocate-after7-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.025651,
+            "random_median_ms": 1.0247005
+          },
+          {
+            "name": "allocate-after15-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3659075,
+            "random_median_ms": 0.3645075
+          },
+          {
+            "name": "allocate-after15-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.189662,
+            "random_median_ms": 1.1826165
+          },
+          {
+            "name": "allocate-after16-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.4037255,
+            "random_median_ms": 0.4013145
+          },
+          {
+            "name": "allocate-after16-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.2104715,
+            "random_median_ms": 1.202011
+          },
+          {
+            "name": "allocate-after-1-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.352506,
+            "random_median_ms": 0.3521815
+          },
+          {
+            "name": "allocate-after-1-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.091575,
+            "random_median_ms": 1.0905935000000002
+          },
+          {
+            "name": "allocate-after0-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.347393,
+            "random_median_ms": 0.347393
+          },
+          {
+            "name": "allocate-after0-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0871079999999997,
+            "random_median_ms": 1.0871079999999997
+          },
+          {
+            "name": "allocate-after3-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.34630350000000004,
+            "random_median_ms": 0.34630350000000004
+          },
+          {
+            "name": "allocate-after3-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0843525,
+            "random_median_ms": 1.083618
+          },
+          {
+            "name": "allocate-after7-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.35439750000000003,
+            "random_median_ms": 0.35439750000000003
+          },
+          {
+            "name": "allocate-after7-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0837185000000003,
+            "random_median_ms": 1.08282
+          },
+          {
+            "name": "allocate-after15-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.352476,
+            "random_median_ms": 0.352476
+          },
+          {
+            "name": "allocate-after15-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0823115,
+            "random_median_ms": 1.08171
+          },
+          {
+            "name": "allocate-after16-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.35428650000000006,
+            "random_median_ms": 0.35428650000000006
+          },
+          {
+            "name": "allocate-after16-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.083335,
+            "random_median_ms": 1.083016
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.38744349999999994,
+            "random_median_ms": 0.38696149999999996
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.121655,
+            "random_median_ms": 1.119195
+          }
+        ]
+      },
+      "split_input_dma": {
+        "evidence": "evidence/aws_large_archive/aws_large_split_input_dma_results.json",
+        "build_count": 14,
+        "build_failures": [],
+        "runs": [
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.38576,
+            "random_median_ms": 0.3855655
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.1236760000000001,
+            "random_median_ms": 1.121913
+          },
+          {
+            "name": "split0-B32-streams8-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.331714,
+            "random_median_ms": 0.3313265
+          },
+          {
+            "name": "split0-B32-streams8-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.018245,
+            "random_median_ms": 1.0164950000000001
+          },
+          {
+            "name": "split1-B32-streams8-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3318485,
+            "random_median_ms": 0.331487
+          },
+          {
+            "name": "split1-B32-streams8-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.00759,
+            "random_median_ms": 1.0072824999999999
+          },
+          {
+            "name": "split1-B8-streams8-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.33102450000000005,
+            "random_median_ms": 0.3304915
+          },
+          {
+            "name": "split1-B8-streams8-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.015401,
+            "random_median_ms": 1.0143375
+          },
+          {
+            "name": "split1-B1-streams8-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.331505,
+            "random_median_ms": 0.3297915
+          },
+          {
+            "name": "split1-B1-streams8-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0238245,
+            "random_median_ms": 1.0236709999999998
+          },
+          {
+            "name": "split1-B32-streams2-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.39896099999999995,
+            "random_median_ms": 0.39884649999999994
+          },
+          {
+            "name": "split1-B32-streams2-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0088899999999998,
+            "random_median_ms": 1.0085155
+          },
+          {
+            "name": "split1-B8-streams2-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.39869150000000003,
+            "random_median_ms": 0.398549
+          },
+          {
+            "name": "split1-B8-streams2-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.262814,
+            "random_median_ms": 1.304618
+          },
+          {
+            "name": "split1-B32-streams1-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.47465699999999994,
+            "random_median_ms": 0.474361
+          },
+          {
+            "name": "split1-B32-streams1-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0224425,
+            "random_median_ms": 1.0216485
+          },
+          {
+            "name": "split0-B32-streams8-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3571735,
+            "random_median_ms": 0.356806
+          },
+          {
+            "name": "split0-B32-streams8-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.084758,
+            "random_median_ms": 1.083143
+          },
+          {
+            "name": "split1-B32-streams8-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.35466600000000004,
+            "random_median_ms": 0.3545765
+          },
+          {
+            "name": "split1-B32-streams8-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0721695,
+            "random_median_ms": 1.0713039999999998
+          },
+          {
+            "name": "split1-B8-streams8-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3557045,
+            "random_median_ms": 0.355383
+          },
+          {
+            "name": "split1-B8-streams8-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0832789999999999,
+            "random_median_ms": 1.0829864999999999
+          },
+          {
+            "name": "split1-B1-streams8-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.35641199999999995,
+            "random_median_ms": 0.35576499999999994
+          },
+          {
+            "name": "split1-B1-streams8-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0865835000000001,
+            "random_median_ms": 1.0852760000000001
+          },
+          {
+            "name": "split1-B32-streams2-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.42189899999999997,
+            "random_median_ms": 0.4214425
+          },
+          {
+            "name": "split1-B32-streams2-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.072109,
+            "random_median_ms": 1.0717564999999998
+          },
+          {
+            "name": "split1-B8-streams2-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.4213,
+            "random_median_ms": 0.42093749999999996
+          },
+          {
+            "name": "split1-B8-streams2-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0845049999999998,
+            "random_median_ms": 1.0838655
+          },
+          {
+            "name": "split1-B32-streams1-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.49541500000000005,
+            "random_median_ms": 0.4954095
+          },
+          {
+            "name": "split1-B32-streams1-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0898139999999998,
+            "random_median_ms": 1.089039
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.38865350000000004,
+            "random_median_ms": 0.388214
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.108257,
+            "random_median_ms": 1.107876
+          }
+        ]
+      },
+      "reconstruct_groups": {
+        "evidence": "evidence/aws_large_archive/aws_large_reconstruct_groups_results.json",
+        "build_count": 8,
+        "build_failures": [],
+        "runs": [
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.386676,
+            "random_median_ms": 0.3862005
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.122589,
+            "random_median_ms": 1.1216795
+          },
+          {
+            "name": "reconstruct-L32-fusion2-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.332112,
+            "random_median_ms": 0.3319055
+          },
+          {
+            "name": "reconstruct-L32-fusion2-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0215224999999999,
+            "random_median_ms": 1.0214809999999999
+          },
+          {
+            "name": "reconstruct-L16-fusion2-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.330177,
+            "random_median_ms": 0.329296
+          },
+          {
+            "name": "reconstruct-L16-fusion2-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0245425,
+            "random_median_ms": 1.023011
+          },
+          {
+            "name": "reconstruct-L8-fusion2-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.33458350000000003,
+            "random_median_ms": 0.333435
+          },
+          {
+            "name": "reconstruct-L8-fusion2-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0474445,
+            "random_median_ms": 1.0470750000000002
+          },
+          {
+            "name": "reconstruct-L16-fusion1-cpu4",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3311735,
+            "random_median_ms": 0.3308095
+          },
+          {
+            "name": "reconstruct-L16-fusion1-cpu4",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0267985,
+            "random_median_ms": 1.0257539999999998
+          },
+          {
+            "name": "reconstruct-L32-fusion2-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.355459,
+            "random_median_ms": 0.35531699999999994
+          },
+          {
+            "name": "reconstruct-L32-fusion2-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0845020000000003,
+            "random_median_ms": 1.0839675000000002
+          },
+          {
+            "name": "reconstruct-L16-fusion2-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.35392949999999995,
+            "random_median_ms": 0.35352300000000003
+          },
+          {
+            "name": "reconstruct-L16-fusion2-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0892265,
+            "random_median_ms": 1.0882794999999998
+          },
+          {
+            "name": "reconstruct-L8-fusion2-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3547845,
+            "random_median_ms": 0.3547845
+          },
+          {
+            "name": "reconstruct-L8-fusion2-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.108988,
+            "random_median_ms": 1.107944
+          },
+          {
+            "name": "reconstruct-L16-fusion1-cpu7",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.35325999999999996,
+            "random_median_ms": 0.352545
+          },
+          {
+            "name": "reconstruct-L16-fusion1-cpu7",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0902405,
+            "random_median_ms": 1.088888
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 32768,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3880165,
+            "random_median_ms": 0.387637
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 65536,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.1214475,
+            "random_median_ms": 1.1207895
+          }
+        ]
+      }
+    },
+    "official_results": [
+      "diagnostics/prefix-middle/RESULTS.json",
+      "diagnostics/cluster-inverse/RESULTS.json",
+      "diagnostics/tensor-quotient/RESULTS.json"
+    ],
+    "decision": "Prefix AWS improvement did not carry to official. Inverse/transpose fusion has a small confirmed official improvement. Tensor quotient is exact but combinations offer only about 1 percent official warm improvement. Ordered input DMA is undergoing official unscored comparison. No large ranked improvement established."
+  }
 }

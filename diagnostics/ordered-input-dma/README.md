@@ -13,3 +13,12 @@ output in full. The returned output also has an independent harness oracle.
 There are 54 measured calls per outer call, split between warm and 20 ms idle
 samples; the mode order rotates and includes a repeated control. These
 inner diagnostics are not standalone or ranked latency measurements.
+
+Official unscored run `6af3a860698e99b16a7f4b1b` passed all three outer cases
+on commit `e78b0c70e69f646aef32e71594e5ed428591ea38`. All 162 measured
+inner calls are retained in `RESULTS.json`. Warm medians were 0.998747 ms
+for the first control, 0.991015 ms for eight compute streams, 0.991841 ms
+for two streams, 0.989862 ms when allocation followed input dispatch seven,
+and 0.988897 ms when it followed dispatch three. The repeated control was
+0.997488 ms. Idle results were variable; no idle improvement is established.
+This supports a modest warm-call scheduling gain, not a ranked score.
