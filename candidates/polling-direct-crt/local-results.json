@@ -94,7 +94,7 @@
       "passed": 8
     }
   ],
-  "standalone_blackwell_status": "not yet measured",
+  "standalone_blackwell_status": "Passed 40/40 official cases; see official-results.json",
   "configuration": {
     "main_chunks": 8,
     "small_chunks": 4,

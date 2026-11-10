@@ -17,10 +17,9 @@ The main point uses eight chunks on two nonblocking CUDA streams; the smaller
 point uses four chunks. Parameter-only setup allocates buffers and captures CUDA
 graphs without executing operand-dependent work. No input or output is cached.
 
-The preceding diagnostic with sleeping workers reached approximately 2 ms per
-mode on Blackwell and passed three cases. That is a different artifact and is
-not a standalone score for this polling version. See local-results.json for
-this exact source's independent local validation and the official platform for
-its eventual standalone result.
+At commit `cb97d955a355072811cde271cd523078e614ecaa`, this candidate passed
+40/40 official cases on Blackwell. The main median was 1.765170 ms and the
+secondary median was 0.8324135 ms. See official-results.json and
+[the official run](https://www.fherma.io/kernels/polynomial-multiplication/specifications/negacyclic/runs/6af2eb87698e99b16a768a19).
 
 FHERMA artifact path: `candidates/polling-direct-crt`.

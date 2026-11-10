@@ -1,0 +1,19 @@
+{
+  "official": false,
+  "hardware": "RTX 3050 Laptop, SM86",
+  "source_files_sha256": {
+    "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+    "parallel_copy.h": "072d251eb43c0da18bac6d26d1e48314b2a598432e9a5e0f312eb4f5413edc46",
+    "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+    "solve.cu": "a5f8ba33ba3234d7e0064e706b84a2d7d71a3dd35af2b0dd7604b870ae8f27e4",
+    "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+    "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+    "output_worker.h": "06280091de8bf4cd41ff0bc4c83ca6ad71edb919f6a25cab3b68216ed76dd9dc"
+  },
+  "binary_sha256": "555a52e0e33126fb196e840d2e7138f4ce841999375af3bf7ef5a73b25e04fa1",
+  "validated_cases": 138,
+  "output_worker_stress_checks": 1003,
+  "sm120_compile": true,
+  "sm120_spill_bytes": 0,
+  "standalone_blackwell_status": "not yet measured"
+}
