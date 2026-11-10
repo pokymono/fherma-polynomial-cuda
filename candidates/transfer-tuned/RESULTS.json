@@ -1,0 +1,204 @@
+{
+  "official": true,
+  "ranked": false,
+  "run": "6af36f89698e99b16a7caf03",
+  "url": "https://www.fherma.io/kernels/polynomial-multiplication/specifications/negacyclic/runs/6af36f89698e99b16a7caf03",
+  "commit": "184722bc64260b571bddecd05892f8c6d7780c8c",
+  "runner": {
+    "id": "6aa6690fd4413d278e91947e",
+    "name": "fherma-gpu-rtx6000",
+    "reference": false,
+    "machine": {
+      "arch": "x86_64",
+      "cores": 24,
+      "memory_gb": 214,
+      "memory_cap_gb": 200,
+      "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition \u00b7 97887 MiB",
+      "gpu_memory_gb": 95.6,
+      "cpu": "Intel(R) Xeon(R) 6776P",
+      "kernel": "6.11.0-1016-nvidia",
+      "os": "linux"
+    }
+  },
+  "status": "finished",
+  "passed": 6,
+  "cases": 6,
+  "finished_at": "2026-11-10T19:25:36.942Z",
+  "points": [
+    {
+      "point": "N65536-W1747",
+      "seeds": 3,
+      "passed": 3,
+      "unjudged": 0,
+      "lost": 0,
+      "seconds": {
+        "min": 0.001073758,
+        "median": 0.001155817,
+        "mean": 0.0011468096666666667,
+        "max": 0.001210854
+      },
+      "memory_mb": {
+        "min": 251.3,
+        "median": 251.3,
+        "max": 251.3
+      },
+      "metrics": {
+        "gpu_mem_mb": {
+          "min": 999,
+          "max": 999
+        },
+        "gpu_power_w": {
+          "min": 67.6,
+          "max": 67.6
+        },
+        "gpu_util_pct": {
+          "min": 3,
+          "max": 3
+        },
+        "gpu_mem_util_pct": {
+          "min": 1,
+          "max": 1
+        }
+      },
+      "stages": null,
+      "cases": [
+        {
+          "seed": 13,
+          "status": "ok",
+          "seconds": 0.001073758,
+          "memory_mb": 251.3,
+          "passed": true,
+          "encoding_s": null,
+          "encrypt_s": null,
+          "decrypt_s": null,
+          "decoding_s": null,
+          "result_level": null,
+          "ciphertexts_in": null,
+          "ciphertexts_out": null,
+          "note": null,
+          "output_sha": "61a36180c98f965577771d19f46539b9df2a15ac17b0e7f649359521c565fb24"
+        },
+        {
+          "seed": 39,
+          "status": "ok",
+          "seconds": 0.001210854,
+          "memory_mb": 251.3,
+          "passed": true,
+          "encoding_s": null,
+          "encrypt_s": null,
+          "decrypt_s": null,
+          "decoding_s": null,
+          "result_level": null,
+          "ciphertexts_in": null,
+          "ciphertexts_out": null,
+          "note": null,
+          "output_sha": "0e0a01559e3dd1121d792ee0f99c62a2a97fd90b8484a10c828aaf73d7c87b75"
+        },
+        {
+          "seed": 45,
+          "status": "ok",
+          "seconds": 0.001155817,
+          "memory_mb": 251.3,
+          "passed": true,
+          "encoding_s": null,
+          "encrypt_s": null,
+          "decrypt_s": null,
+          "decoding_s": null,
+          "result_level": null,
+          "ciphertexts_in": null,
+          "ciphertexts_out": null,
+          "note": null,
+          "output_sha": "946b40a11019408ca75f273d096d727cb329696839516debbcb135ad1bbe9aa7"
+        }
+      ]
+    },
+    {
+      "point": "N32768-W868",
+      "seeds": 3,
+      "passed": 3,
+      "unjudged": 0,
+      "lost": 0,
+      "seconds": {
+        "min": 0.000346433,
+        "median": 0.000349913,
+        "mean": 0.00035418566666666667,
+        "max": 0.000366211
+      },
+      "memory_mb": {
+        "min": 90.9,
+        "median": 90.9,
+        "max": 90.9
+      },
+      "metrics": {
+        "gpu_mem_mb": {
+          "min": 685,
+          "max": 685
+        },
+        "gpu_power_w": {
+          "min": 51.7,
+          "max": 51.7
+        },
+        "gpu_util_pct": {
+          "min": 3,
+          "max": 3
+        },
+        "gpu_mem_util_pct": {
+          "min": 0,
+          "max": 0
+        }
+      },
+      "stages": null,
+      "cases": [
+        {
+          "seed": 68,
+          "status": "ok",
+          "seconds": 0.000349913,
+          "memory_mb": 90.9,
+          "passed": true,
+          "encoding_s": null,
+          "encrypt_s": null,
+          "decrypt_s": null,
+          "decoding_s": null,
+          "result_level": null,
+          "ciphertexts_in": null,
+          "ciphertexts_out": null,
+          "note": null,
+          "output_sha": "29819b92a6d06234a471d3b4e5e52d1388dd8bd1f260e59cc974e76ad5ca1c14"
+        },
+        {
+          "seed": 91,
+          "status": "ok",
+          "seconds": 0.000366211,
+          "memory_mb": 90.9,
+          "passed": true,
+          "encoding_s": null,
+          "encrypt_s": null,
+          "decrypt_s": null,
+          "decoding_s": null,
+          "result_level": null,
+          "ciphertexts_in": null,
+          "ciphertexts_out": null,
+          "note": null,
+          "output_sha": "a3120eef6a5ff0ddc1acd89c499926a5e96f0a947c633f572359e94b7e9a8548"
+        },
+        {
+          "seed": 96,
+          "status": "ok",
+          "seconds": 0.000346433,
+          "memory_mb": 90.9,
+          "passed": true,
+          "encoding_s": null,
+          "encrypt_s": null,
+          "decrypt_s": null,
+          "decoding_s": null,
+          "result_level": null,
+          "ciphertexts_in": null,
+          "ciphertexts_out": null,
+          "note": null,
+          "output_sha": "1172faaffdff834702eec246d7ee46a5b6834cdf57c33eb2175298b190e2fb32"
+        }
+      ]
+    }
+  ],
+  "decision": "Small standalone median0.349913ms confirms the mapped-input benefit. Main standalone median1.155817ms did not reproduce the warmed diagnostic/proxy improvement. Do not promote this candidate to the ranked implementation. Three seeds do not establish the cause of the main timing spread."
+}
