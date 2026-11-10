@@ -22,3 +22,7 @@ is a target-hardware scheduling experiment, not a claimed local improvement.
 A standalone Blackwell evaluation is required.
 
 FHERMA artifact path: `candidates/early-crt-initialization`.
+
+The standalone official run passed **40/40 cases**, with medians of
+**1.4000485 ms** and **0.4265625 ms**. The main point did not beat the
+1.3373995 ms incumbent. See [the run record](official-results.json).

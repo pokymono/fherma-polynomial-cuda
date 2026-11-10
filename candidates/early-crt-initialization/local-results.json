@@ -15,5 +15,5 @@
   "validated_cases": 138,
   "queued_copy_stress_jobs": 15360,
   "sm120_compile": true,
-  "standalone_blackwell_status": "not yet measured"
+  "standalone_blackwell_status": "40/40 exact; separate official-results.json"
 }

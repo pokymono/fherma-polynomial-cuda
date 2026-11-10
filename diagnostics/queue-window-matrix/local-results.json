@@ -1,0 +1,19 @@
+{
+  "source_files_sha256": {
+    "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+    "parallel_copy.h": "c0b1db7f880a08c5e6397460083b80b5b05132a2b0b94219513f4ea97649a083",
+    "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+    "solve.cu": "98d0e2d1f9f97491368c0dbd7a06a04eb0b82db99dbb6cf28594b6e8e7d5de4a",
+    "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+    "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+    "queued_copy.h": "71df7f3be7c53181e2283a14cd0cfac390d4c42eb215998069cf0be0bed1b066",
+    "output_worker.h": "06280091de8bf4cd41ff0bc4c83ca6ad71edb919f6a25cab3b68216ed76dd9dc"
+  },
+  "binary_sha256": "2b8fa967a3f67f78d4898c0abb750e75496d3a80158e33c3908869e13aa405e3",
+  "hardware": "RTX 3050 Laptop, SM86",
+  "official": false,
+  "validated_cases": 48,
+  "full_computations": 480,
+  "streaming_queue_stress_jobs": 15360,
+  "sm120_compile": true
+}
