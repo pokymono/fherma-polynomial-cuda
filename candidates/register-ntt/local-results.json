@@ -1,0 +1,24 @@
+{
+  "checked_utc": "2026-11-10T06:57:04.838597+00:00",
+  "official": false,
+  "results": {
+    "fresh_n32768_w868": {
+      "baseline": 3.768331,
+      "register_ntt": 3.4834305,
+      "speedup": 1.0817873357886716,
+      "time_reduction_pct": 7.560389466848849
+    },
+    "fresh_n65536_w1747": {
+      "baseline": 15.964400000000001,
+      "register_ntt": 14.623618,
+      "speedup": 1.091686065650785,
+      "time_reduction_pct": 8.398574327879537
+    }
+  },
+  "source_sha256": "094e1a95f487120f559822bba366608018a5a89ca6b777ae54ba4341a718553e",
+  "validated_cases": 138,
+  "sm120_compile": true,
+  "register_spills": 0,
+  "hardware": "NVIDIA GeForce RTX 3050 Laptop GPU, SM86",
+  "method": "Two alternating runs per candidate at each point; medians exclude the first local call. Independent exactness checked separately on 138 cases."
+}
