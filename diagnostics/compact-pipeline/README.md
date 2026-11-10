@@ -29,3 +29,14 @@ oracle case. AWS complete-call measurements on a4-physical-core g7e.2xlarge
 were1.056030ms for compact-tuned (matched original1.067076ms), and1.0536795ms
 for compact-operand (compact controls1.0613095/1.0570755ms). These modest gains
 have not been promoted to the ranked implementation.
+
+## Official unscored result
+
+Run6af3813b698e99b16a7d1590 finished2026-11-10T20:41:30.267Z with3/3
+correct cases. All135 measured inner samples survived the log limit. Warm
+medians were1.034186/1.035471ms for the bracketing baseline,1.022276ms for
+transfer-tuned,1.0165465ms for compact roots, and1.0043255ms for compact plus
+early operand transform. This confirms modest warm-call gains on the official
+GPU. The20ms-idle medians remained1.25–1.38ms, with substantial variation;
+neither arithmetic change resolves that slowdown. See RESULTS.json for every
+sample, counts and ranges. No ranked or standalone claim is made.
