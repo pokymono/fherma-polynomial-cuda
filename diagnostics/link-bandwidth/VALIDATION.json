@@ -1,0 +1,301 @@
+{
+  "purpose": "Unscored link bandwidth diagnostic, not a ranked candidate",
+  "exact_validation": {
+    "source_sha256": "c3d05a2583b42ab0e921331179fd2131dbadd8222d94db5abd3da49352ccd063",
+    "source_files_sha256": {
+      "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+      "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+      "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+      "solve.cu": "c3d05a2583b42ab0e921331179fd2131dbadd8222d94db5abd3da49352ccd063",
+      "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+      "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+      "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503",
+      "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+      "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb"
+    },
+    "binary_sha256": "82f1bf18d52ab0d7241a7bb604490ae3f37f50208a8af906ed0222ddd5b74993",
+    "source": "/home/rishitshivam/work/fherma-polynomial/diagnostics/link-bandwidth/solve.cu",
+    "binary": "/home/rishitshivam/work/fherma-polynomial/build/link-bandwidth",
+    "hardware": "RTX 3050 Laptop, SM86",
+    "official": false,
+    "points": [
+      {
+        "N": 32768,
+        "W": 868,
+        "L": 28,
+        "directory": "fresh_n32768_w868",
+        "passed": 24,
+        "timings": {
+          "init_s": 1.887380036,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.100866972,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 0.100290119,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 0.100562651,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 0.10086075,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 0.100026203,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 0.100019671,
+              "status": "ok"
+            },
+            {
+              "i": 6,
+              "seconds": 0.100031523,
+              "status": "ok"
+            },
+            {
+              "i": 7,
+              "seconds": 0.100020883,
+              "status": "ok"
+            },
+            {
+              "i": 8,
+              "seconds": 0.100025683,
+              "status": "ok"
+            },
+            {
+              "i": 9,
+              "seconds": 0.100994521,
+              "status": "ok"
+            },
+            {
+              "i": 10,
+              "seconds": 0.100108138,
+              "status": "ok"
+            },
+            {
+              "i": 11,
+              "seconds": 0.10000325,
+              "status": "ok"
+            },
+            {
+              "i": 12,
+              "seconds": 0.100701441,
+              "status": "ok"
+            },
+            {
+              "i": 13,
+              "seconds": 0.100224686,
+              "status": "ok"
+            },
+            {
+              "i": 14,
+              "seconds": 0.100236929,
+              "status": "ok"
+            },
+            {
+              "i": 15,
+              "seconds": 0.101000703,
+              "status": "ok"
+            },
+            {
+              "i": 16,
+              "seconds": 0.100694719,
+              "status": "ok"
+            },
+            {
+              "i": 17,
+              "seconds": 0.09998715,
+              "status": "ok"
+            },
+            {
+              "i": 18,
+              "seconds": 0.10052498,
+              "status": "ok"
+            },
+            {
+              "i": 19,
+              "seconds": 0.100581766,
+              "status": "ok"
+            },
+            {
+              "i": 20,
+              "seconds": 0.100012688,
+              "status": "ok"
+            },
+            {
+              "i": 21,
+              "seconds": 0.100250324,
+              "status": "ok"
+            },
+            {
+              "i": 22,
+              "seconds": 0.10072758,
+              "status": "ok"
+            },
+            {
+              "i": 23,
+              "seconds": 0.099962264,
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      {
+        "N": 65536,
+        "W": 1747,
+        "L": 55,
+        "directory": "fresh_n65536_w1747",
+        "passed": 24,
+        "timings": {
+          "init_s": 0.375844115,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.393649204,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 0.389676986,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 0.391182312,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 0.391747614,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 0.390766812,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 0.390837464,
+              "status": "ok"
+            },
+            {
+              "i": 6,
+              "seconds": 0.390520188,
+              "status": "ok"
+            },
+            {
+              "i": 7,
+              "seconds": 0.390676934,
+              "status": "ok"
+            },
+            {
+              "i": 8,
+              "seconds": 0.389540109,
+              "status": "ok"
+            },
+            {
+              "i": 9,
+              "seconds": 0.390806848,
+              "status": "ok"
+            },
+            {
+              "i": 10,
+              "seconds": 0.391643678,
+              "status": "ok"
+            },
+            {
+              "i": 11,
+              "seconds": 0.390687082,
+              "status": "ok"
+            },
+            {
+              "i": 12,
+              "seconds": 0.390652487,
+              "status": "ok"
+            },
+            {
+              "i": 13,
+              "seconds": 0.389617885,
+              "status": "ok"
+            },
+            {
+              "i": 14,
+              "seconds": 0.390666173,
+              "status": "ok"
+            },
+            {
+              "i": 15,
+              "seconds": 0.391740951,
+              "status": "ok"
+            },
+            {
+              "i": 16,
+              "seconds": 0.389704247,
+              "status": "ok"
+            },
+            {
+              "i": 17,
+              "seconds": 0.392025856,
+              "status": "ok"
+            },
+            {
+              "i": 18,
+              "seconds": 0.391725031,
+              "status": "ok"
+            },
+            {
+              "i": 19,
+              "seconds": 0.390903309,
+              "status": "ok"
+            },
+            {
+              "i": 20,
+              "seconds": 0.389643864,
+              "status": "ok"
+            },
+            {
+              "i": 21,
+              "seconds": 0.391291056,
+              "status": "ok"
+            },
+            {
+              "i": 22,
+              "seconds": 0.391316163,
+              "status": "ok"
+            },
+            {
+              "i": 23,
+              "seconds": 0.389616763,
+              "status": "ok"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "source_files_sha256": {
+    "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+    "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+    "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+    "solve.cu": "c3d05a2583b42ab0e921331179fd2131dbadd8222d94db5abd3da49352ccd063",
+    "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+    "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+    "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503",
+    "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+    "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb"
+  },
+  "official_runs": [],
+  "timing_note": "All reported outer harness times include repeated diagnostic transfers and are not multiplication performance."
+}
