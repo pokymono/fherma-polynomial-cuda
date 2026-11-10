@@ -1,0 +1,82 @@
+{
+  "official_ranked": false,
+  "purpose": "Startup transfer and timeline diagnostic; local exactness only",
+  "local_diagnostic": {
+    "source_sha256": "1193ab1dde045d0cc3e643a1057b0079a807ddb4bbb2930d7924e468a1459803",
+    "source_files_sha256": {
+      "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+      "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+      "implementation.cuh": "7ffd7da4910b62bbf45fcbcc4f4e4116caea26d90149629631be9f3614862b4a",
+      "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+      "solve.cu": "1193ab1dde045d0cc3e643a1057b0079a807ddb4bbb2930d7924e468a1459803",
+      "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+      "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+      "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503",
+      "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+      "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb"
+    },
+    "binary_sha256": "0946ee278fa1e11753f7635aa5ffc6ad458a3cdf8917c29019c92906a1b996f4",
+    "source": "/home/rishitshivam/work/fherma-polynomial/diagnostics/startup-transfer/solve.cu",
+    "binary": "/home/rishitshivam/work/fherma-polynomial/build/startup-transfer",
+    "hardware": "RTX 3050 Laptop, SM86",
+    "official": false,
+    "points": [
+      {
+        "N": 65536,
+        "W": 1747,
+        "L": 55,
+        "directory": "diag_transfer_n65536_w1747",
+        "passed": 1,
+        "timings": {
+          "init_s": 2.070097711,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.698026276,
+              "status": "ok"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "event_timing_smoke": {
+    "source_sha256": "68e1ef94378289b6f4fcddccaa6e8617dec138566ca6d971f447e0f60884f1c8",
+    "source_files_sha256": {
+      "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+      "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+      "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+      "solve.cu": "68e1ef94378289b6f4fcddccaa6e8617dec138566ca6d971f447e0f60884f1c8",
+      "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+      "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+      "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503",
+      "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+      "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb"
+    },
+    "binary_sha256": "b7ee94c7e9d2eedbcc2f9f09d0b14bf9110087d57f634f9177eda29e4bcfd530",
+    "source": "/home/rishitshivam/work/fherma-polynomial/experiments/v149-transfer-timeline/solve.cu",
+    "binary": "/home/rishitshivam/work/fherma-polynomial/build/transfer-timeline-local",
+    "hardware": "RTX 3050 Laptop, SM86",
+    "official": false,
+    "points": [
+      {
+        "N": 65536,
+        "W": 1747,
+        "L": 55,
+        "directory": "diag_transfer_n65536_w1747",
+        "passed": 1,
+        "timings": {
+          "init_s": 2.067657209,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.008764442,
+              "status": "ok"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "event_api_reference": "https://docs.nvidia.com/cuda/archive/12.8.1/cuda-runtime-api/group__CUDART__EVENT.html"
+}

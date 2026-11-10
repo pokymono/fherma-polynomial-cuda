@@ -1765,5 +1765,10 @@
     "official_run": "6af36f89698e99b16a7caf03",
     "official_main_ms": 1.155817,
     "official_small_ms": 0.349913
+  },
+  "official_idle_diagnostic": {
+    "result": "diagnostics/idle-transfer/RESULTS.json",
+    "finding": "A 20ms idle interval increases tuned inner median from 1.018680 to 1.336714ms; wide variability, mechanism unproven. 3/3 exact.",
+    "next": "Timed startup transfer size sweep with CPU and external-event CUDA graph timing."
   }
 }
