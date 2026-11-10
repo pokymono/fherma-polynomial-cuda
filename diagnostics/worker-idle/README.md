@@ -18,3 +18,12 @@ reported inner timings alone compare the variants. Baseline modes bracket the
 experiment. Logs are emitted compactly after all measurements. Every result is
 compared and the returned answer is independently checked by the harness. Inputs
 are reused within the current call only, so these are not standalone scores.
+
+Official unscored run `6af378ad698e99b16a7ceaf5` passed 3/3 cases; all
+162 measured inner samples were retained. Baseline warm brackets were
+1.037087/1.037344 ms. The operand pipeline measured 1.022333 ms with normal
+worker waits and 1.019922 ms with PAUSE polling. Baseline PAUSE polling was
+1.039391 ms and did not remove delayed outliers. The tuned/polling mode had no
+>1.2 ms delayed samples in nine trials, but this experiment lacks a simultaneous
+tuned/normal-wait control and idle behaviour varies across runs. It does not
+establish that polling fixes the idle penalty. No ranked candidate was promoted.

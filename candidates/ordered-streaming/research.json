@@ -1786,5 +1786,10 @@
     "change": "Separate forward-A from B-forward/product/inverse; upload A first to overlap its central transform with B upload, preserving input DMA size",
     "local_exact_cases": 48,
     "target_performance": "Not measured yet"
+  },
+  "official_worker_idle_diagnostic": {
+    "result": "diagnostics/worker-idle/RESULTS.json",
+    "finding": "3/3 exact, all162 inner samples retained. Operand pipeline ~1.02ms vs1.037ms warm brackets. Polling alone does not fix idle; tuned polling has9delayed samples without>1.2ms but no paired tuned-wait control.",
+    "decision": "Do not promote CPU polling as an established fix; preserve early operand overlap as a small measured lead."
   }
 }
