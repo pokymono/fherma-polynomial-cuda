@@ -1,0 +1,171 @@
+{
+  "id": "6af30d4e698e99b16a79017b",
+  "passed": 3,
+  "cases": 3,
+  "finished_at": "2026-11-10T12:26:30.216Z",
+  "commit": "bc1838f97e1875066b06cd0b280574ccc1eb3753",
+  "artifact": "diagnostics/host-memory-matrix",
+  "hardware": {
+    "arch": "x86_64",
+    "cores": 24,
+    "memory_gb": 214,
+    "memory_cap_gb": 200,
+    "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition \u00b7 97887 MiB",
+    "gpu_memory_gb": 95.6,
+    "cpu": "Intel(R) Xeon(R) 6776P",
+    "kernel": "6.11.0-1016-nvidia",
+    "os": "linux"
+  },
+  "outer_score_is_diagnostic": true,
+  "inner_mode_medians": [
+    {
+      "lanes": 8.0,
+      "copy": 0.0,
+      "wc": 0.0,
+      "wait": 0.0,
+      "time": 2.182855,
+      "input": 1.647072,
+      "middle": 0.075776,
+      "output": 0.339008,
+      "cpu_staging": 1.508737,
+      "cpu_total": 2.128714
+    },
+    {
+      "lanes": 4.0,
+      "copy": 0.0,
+      "wc": 0.0,
+      "wait": 0.0,
+      "time": 2.593117,
+      "input": 1.960096,
+      "middle": 0.075776,
+      "output": 0.338432,
+      "cpu_staging": 1.894372,
+      "cpu_total": 2.537911
+    },
+    {
+      "lanes": 2.0,
+      "copy": 0.0,
+      "wc": 0.0,
+      "wait": 0.0,
+      "time": 3.422703,
+      "input": 2.55072,
+      "middle": 0.073728,
+      "output": 0.339488,
+      "cpu_staging": 2.480241,
+      "cpu_total": 3.368702
+    },
+    {
+      "lanes": 12.0,
+      "copy": 0.0,
+      "wc": 0.0,
+      "wait": 0.0,
+      "time": 2.253034,
+      "input": 1.700032,
+      "middle": 0.075776,
+      "output": 0.336896,
+      "cpu_staging": 1.597504,
+      "cpu_total": 2.182866
+    },
+    {
+      "lanes": 8.0,
+      "copy": 1.0,
+      "wc": 0.0,
+      "wait": 0.0,
+      "time": 2.566055,
+      "input": 2.048,
+      "middle": 0.075776,
+      "output": 0.338272,
+      "cpu_staging": 1.962187,
+      "cpu_total": 2.511006
+    },
+    {
+      "lanes": 8.0,
+      "copy": 2.0,
+      "wc": 0.0,
+      "wait": 0.0,
+      "time": 1.84975,
+      "input": 1.343072,
+      "middle": 0.07376,
+      "output": 0.335872,
+      "cpu_staging": 1.301014,
+      "cpu_total": 1.797806
+    },
+    {
+      "lanes": 8.0,
+      "copy": 0.0,
+      "wc": 1.0,
+      "wait": 0.0,
+      "time": 1.966683,
+      "input": 1.436576,
+      "middle": 0.075776,
+      "output": 0.335232,
+      "cpu_staging": 1.240222,
+      "cpu_total": 1.898529
+    },
+    {
+      "lanes": 8.0,
+      "copy": 1.0,
+      "wc": 1.0,
+      "wait": 0.0,
+      "time": 1.945833,
+      "input": 1.418752,
+      "middle": 0.075776,
+      "output": 0.338592,
+      "cpu_staging": 1.299376,
+      "cpu_total": 1.889191
+    },
+    {
+      "lanes": 4.0,
+      "copy": 1.0,
+      "wc": 1.0,
+      "wait": 0.0,
+      "time": 2.826356,
+      "input": 2.217696,
+      "middle": 0.075776,
+      "output": 0.337248,
+      "cpu_staging": 2.151244,
+      "cpu_total": 2.772721
+    },
+    {
+      "lanes": 8.0,
+      "copy": 2.0,
+      "wc": 1.0,
+      "wait": 0.0,
+      "time": 1.756055,
+      "input": 1.244064,
+      "middle": 0.07376,
+      "output": 0.338944,
+      "cpu_staging": 1.200208,
+      "cpu_total": 1.702552
+    },
+    {
+      "lanes": 8.0,
+      "copy": 0.0,
+      "wc": 0.0,
+      "wait": 1.0,
+      "time": 1.771544,
+      "input": 1.222688,
+      "middle": 0.075776,
+      "output": 0.336576,
+      "cpu_staging": 1.074739,
+      "cpu_total": 1.707103
+    },
+    {
+      "lanes": 8.0,
+      "copy": 1.0,
+      "wc": 1.0,
+      "wait": 1.0,
+      "time": 1.80559,
+      "input": 1.26384,
+      "middle": 0.075776,
+      "output": 0.335072,
+      "cpu_staging": 1.19373,
+      "cpu_total": 1.752212
+    }
+  ],
+  "cpu_features": {
+    "avx512f": true,
+    "waitpkg": true
+  },
+  "explanation": "Each mode runs a full exact multiplication after a 50 ms in-call idle period. Mode outputs compared exactly; only last three judged case sequences summarized."
+}
