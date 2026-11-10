@@ -1,0 +1,203 @@
+{
+  "official_ranked": false,
+  "local_outer_exact_cases": 1,
+  "local_hardware": "RTX3050 Laptop SM86, cluster launch unsupported; fallback only",
+  "verified_inner_calls_per_outer": 135,
+  "aws_actual_cluster_evidence": "evidence/aws_large_archive/aws_large_cluster_inverse_results.json",
+  "aws_actual_cluster_cases_per_configuration": 48,
+  "source_files_sha256": {
+    "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+    "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+    "implementation.cuh": "96a188a08bbf5d97761b60545e392e6e4570c250128f37b6b3158b5dd653b2b8",
+    "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+    "solve.cu": "a03eaa12ef74a652b05d4ca66a5b381f8834124fa0be94bfdeb2559f88c956c5",
+    "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+    "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+    "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503",
+    "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+    "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb"
+  },
+  "warning": "Official comparison pending; standalone AWS variants executed the real cluster path; local wrapper executes fallback.",
+  "aws_verified_variants": [
+    {
+      "name": "inverse-cluster0-cols32-cpu4",
+      "source_files_sha256": {
+        "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+        "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+        "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+        "solve.cu": "9e3e271d363fd794a8deca5985302e0811503e55eae77a8afcec06414a2758d9",
+        "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+        "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+        "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+        "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+        "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+      },
+      "binary_sha256": "fbd61ae4ce47a7b0a290cfaf05bafbee25ac42990c9b757f530e51b3f7b736ff"
+    },
+    {
+      "name": "inverse-cluster2-cols32-cpu4",
+      "source_files_sha256": {
+        "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+        "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+        "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+        "solve.cu": "9e3e271d363fd794a8deca5985302e0811503e55eae77a8afcec06414a2758d9",
+        "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+        "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+        "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+        "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+        "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+      },
+      "binary_sha256": "21f09a4f9233b063f1e830664a5cc7c63814c22c6fb2dd79156b215d8fd146ea"
+    },
+    {
+      "name": "inverse-cluster4-cols32-cpu4",
+      "source_files_sha256": {
+        "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+        "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+        "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+        "solve.cu": "9e3e271d363fd794a8deca5985302e0811503e55eae77a8afcec06414a2758d9",
+        "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+        "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+        "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+        "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+        "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+      },
+      "binary_sha256": "1d1d56a9418fefac555835b5b35eb79d66cb7635fc513601b6a7c922f5b721c2"
+    },
+    {
+      "name": "inverse-cluster8-cols32-cpu4",
+      "source_files_sha256": {
+        "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+        "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+        "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+        "solve.cu": "9e3e271d363fd794a8deca5985302e0811503e55eae77a8afcec06414a2758d9",
+        "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+        "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+        "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+        "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+        "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+      },
+      "binary_sha256": "44ad1e80b77ad9c1bf6bd9f616f61855969a0f10ae54c88abe2c18ffb8029bc3"
+    },
+    {
+      "name": "inverse-cluster4-cols16-cpu4",
+      "source_files_sha256": {
+        "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+        "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+        "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+        "solve.cu": "9e3e271d363fd794a8deca5985302e0811503e55eae77a8afcec06414a2758d9",
+        "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+        "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+        "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+        "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+        "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+      },
+      "binary_sha256": "4bfeda7aec7c6ace892375508665c37f2f4f62e832b31dc5c9816cc9c1d59af7"
+    },
+    {
+      "name": "inverse-cluster8-cols16-cpu4",
+      "source_files_sha256": {
+        "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+        "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+        "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+        "solve.cu": "9e3e271d363fd794a8deca5985302e0811503e55eae77a8afcec06414a2758d9",
+        "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+        "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+        "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+        "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+        "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+      },
+      "binary_sha256": "04b514dd59738c4942d24b5f6fd2f38e9563ca928471e869fbcab207ddc73f3c"
+    },
+    {
+      "name": "inverse-cluster0-cols32-cpu7",
+      "source_files_sha256": {
+        "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+        "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+        "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+        "solve.cu": "9e3e271d363fd794a8deca5985302e0811503e55eae77a8afcec06414a2758d9",
+        "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+        "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+        "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+        "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+        "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+      },
+      "binary_sha256": "47588f760a2d2a51c202a66e6aa0b7cbf5e416da081e88d7bd6bfb11099c3da8"
+    },
+    {
+      "name": "inverse-cluster2-cols32-cpu7",
+      "source_files_sha256": {
+        "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+        "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+        "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+        "solve.cu": "9e3e271d363fd794a8deca5985302e0811503e55eae77a8afcec06414a2758d9",
+        "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+        "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+        "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+        "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+        "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+      },
+      "binary_sha256": "00f287bde4ac0ce1f5236baf97a6dda0c50b24e812a3fd6e721d28241251307c"
+    },
+    {
+      "name": "inverse-cluster4-cols32-cpu7",
+      "source_files_sha256": {
+        "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+        "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+        "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+        "solve.cu": "9e3e271d363fd794a8deca5985302e0811503e55eae77a8afcec06414a2758d9",
+        "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+        "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+        "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+        "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+        "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+      },
+      "binary_sha256": "595fc3215ce738d8ac1a365a2dfdaf74fb47aca8d6c5dde249a7753125f4cceb"
+    },
+    {
+      "name": "inverse-cluster8-cols32-cpu7",
+      "source_files_sha256": {
+        "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+        "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+        "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+        "solve.cu": "9e3e271d363fd794a8deca5985302e0811503e55eae77a8afcec06414a2758d9",
+        "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+        "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+        "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+        "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+        "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+      },
+      "binary_sha256": "ecd38b5daef436f3170084b224161ba0180f933c7acc3506c0797e0667d81383"
+    },
+    {
+      "name": "inverse-cluster4-cols16-cpu7",
+      "source_files_sha256": {
+        "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+        "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+        "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+        "solve.cu": "9e3e271d363fd794a8deca5985302e0811503e55eae77a8afcec06414a2758d9",
+        "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+        "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+        "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+        "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+        "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+      },
+      "binary_sha256": "25ebfe14a0c938d21d0ae8585aa648a5d4c69d21730e55cd87c96f9cefcd527e"
+    },
+    {
+      "name": "inverse-cluster8-cols16-cpu7",
+      "source_files_sha256": {
+        "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+        "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+        "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+        "solve.cu": "9e3e271d363fd794a8deca5985302e0811503e55eae77a8afcec06414a2758d9",
+        "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+        "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+        "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+        "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+        "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+      },
+      "binary_sha256": "1685e28a1e04a5bd0b46181a21798799b45eb6500e37791a24fc5ac791165b2c"
+    }
+  ]
+}
