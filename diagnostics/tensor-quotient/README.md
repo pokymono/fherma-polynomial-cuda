@@ -22,3 +22,13 @@ Every result is compared in full and the returned result has an independent
 harness oracle. All operand-dependent work stays timed. Cluster execution is
 logged; unsupported hardware uses the ordinary inverse pipeline. These are
 unscored inner-call diagnostics, not leaderboard measurements.
+
+Official unscored run `6af3a482698e99b16a7efb83` passed all three outer cases
+on commit `7e3a12a045d38b15d25271f664f5ccfae6b4ce50`. All 189 measured
+inner calls are in `RESULTS.json`; requested cluster/shared execution was confirmed.
+Warm medians were 1.004115 ms for the control, 1.002007 ms for quotient only,
+0.998662 ms for cluster only, 1.000908 ms for cluster plus quotient and padding
+elimination, 0.994892 ms for the shared-block combination, and 0.997724 ms for
+the full-padding cluster combination. The repeated control was recorded separately.
+Idle samples varied substantially and did not establish an improvement. These
+results support only a small warm-call gain, not a ranked latency claim.
