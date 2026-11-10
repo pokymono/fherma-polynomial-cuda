@@ -18,7 +18,7 @@ by the exact [official host-memory diagnostic](../../diagnostics/host-memory-mat
 That diagnostic found improvements against its own ordinary-copy control, but
 does not establish this combined candidate's full official performance.
 
-The main-point local median was about 8.84 ms on RTX 3050. No leaderboard score
-is claimed for this source until a separate full official run finishes.
+The main-point local median was about 8.84 ms on RTX 3050. The full official run passed 40/40 with medians of **1.2879635 ms** at
+N65536/W1747 and **0.444297 ms** at N32768/W868. See [official results](official-results.json).
 
 FHERMA artifact path: `candidates/wc-monitored-copy`.

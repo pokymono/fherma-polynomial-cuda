@@ -11,6 +11,7 @@ parser.add_argument('source', type=Path)
 parser.add_argument('--name')
 parser.add_argument('--arch', default='sm_86')
 parser.add_argument('--define', action='append', default=[])
+parser.add_argument('--link', action='append', default=[])
 parser.add_argument('--compile-only', action='store_true')
 args = parser.parse_args()
 source = args.source.resolve()
@@ -30,6 +31,7 @@ else:
                     str(source / 'main.cpp'), str(source / 'solve.cu'),
                     '-Xlinker', '-rpath', '-Xlinker', str(cuda / 'lib')])
 command.extend(['-o', str(output)])
+command.extend('-l'+library for library in args.link)
 files = {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in source.iterdir()
          if p.suffix in {'.cu', '.cpp', '.h', '.hpp', '.cuh'} or p.name == 'CMakeLists.txt'}
 log = root / 'evidence' / (name+'_build.log')

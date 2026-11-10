@@ -11,10 +11,10 @@ Inputs and output are canonical, coefficient-major arrays of little-endian
 `(N=32768, W=868)`.
 
 The fastest validated official entry at the main competition point is
-[`candidates/column-streaming`](candidates/column-streaming/README.md), at commit
-`171d76fc955000077126ed120bb8f8ce9e84b6f3`. It passed all 40 official cases on
-Blackwell with medians of **1.3373995 ms** and **0.497236 ms**, respectively.
-[Official run](https://www.fherma.io/kernels/polynomial-multiplication/specifications/negacyclic/runs/6af2f343698e99b16a773bd3).
+[`candidates/wc-monitored-copy`](candidates/wc-monitored-copy/README.md), at commit
+`d8c6b891b904113ad3a94014955cf8f2159d614f`. It passed all 40 official cases on
+Blackwell with medians of **1.2879635 ms** and **0.444297 ms**, respectively.
+[Official run](https://www.fherma.io/kernels/polynomial-multiplication/specifications/negacyclic/runs/6af3114a698e99b16a7985a6).
 Use that directory in the CMake commands below to reproduce this version;
 `src/` preserves the original baseline. Newer experiments have separate
 directories and do not inherit this result.
@@ -41,7 +41,7 @@ operand-dependent computation happens in initialization.
 ## Build and platform settings
 
 ```
-cmake -S candidates/column-streaming -B build/reproduce -DCMAKE_BUILD_TYPE=Release
+cmake -S candidates/wc-monitored-copy -B build/reproduce -DCMAKE_BUILD_TYPE=Release
 cmake --build build/reproduce -j
 ```
 
@@ -51,7 +51,7 @@ to the build host's native CUDA architecture; it can be overridden with
 `-DCMAKE_CUDA_ARCHITECTURES=120` for Blackwell.
 
 For FHERMA, select the **cpp** harness, the **cupqc** image, this repository at an
-exact commit, and artifact path **candidates/column-streaming**. The generated `main.cpp` and `fherma.h`
+exact commit, and artifact path **candidates/wc-monitored-copy**. The generated `main.cpp` and `fherma.h`
 are unmodified. FHERMA replaces them with its official harness when benchmarking.
 
 ## Local verification
