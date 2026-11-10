@@ -1,0 +1,52 @@
+#pragma once
+#include <algorithm>
+#include <array>
+#include <atomic>
+#include <cstdint>
+#include <cstring>
+#include <stdexcept>
+#include <thread>
+#include <vector>
+#if defined(__x86_64__) && defined(__GNUC__)
+#include <immintrin.h>
+
+__attribute__((target("avx512f")))
+inline void copy_512(void* destination,const void* source,size_t bytes,bool streaming) {
+    auto* out=static_cast<unsigned char*>(destination);
+    auto* in=static_cast<const unsigned char*>(source);
+    size_t prefix=std::min(bytes,(64-(reinterpret_cast<uintptr_t>(out)&63))&63);
+    std::memcpy(out,in,prefix);out+=prefix;in+=prefix;bytes-=prefix;
+    size_t i=0;
+    for(;i+256<=bytes;i+=256) {
+        auto a=_mm512_loadu_si512(in+i),b=_mm512_loadu_si512(in+i+64);
+        auto c=_mm512_loadu_si512(in+i+128),d=_mm512_loadu_si512(in+i+192);
+        if(streaming) {
+            _mm512_stream_si512(reinterpret_cast<__m512i*>(out+i),a);
+            _mm512_stream_si512(reinterpret_cast<__m512i*>(out+i+64),b);
+            _mm512_stream_si512(reinterpret_cast<__m512i*>(out+i+128),c);
+            _mm512_stream_si512(reinterpret_cast<__m512i*>(out+i+192),d);
+        } else {
+            _mm512_store_si512(out+i,a);_mm512_store_si512(out+i+64,b);
+            _mm512_store_si512(out+i+128,c);_mm512_store_si512(out+i+192,d);
+        }
+    }
+    for(;i+64<=bytes;i+=64) {
+        auto v=_mm512_loadu_si512(in+i);
+        if(streaming)_mm512_stream_si512(reinterpret_cast<__m512i*>(out+i),v);
+        else _mm512_store_si512(out+i,v);
+    }
+    std::memcpy(out+i,in+i,bytes-i);
+}
+
+inline std::atomic<bool> spin_wait_workers{false},spin_wait_allocator{false};
+
+__attribute__((target("waitpkg")))
+inline void wait_generation(std::atomic<unsigned>& generation,unsigned seen,bool allocator=false) {
+    if((allocator?spin_wait_allocator:spin_wait_workers).load(std::memory_order_relaxed)){_mm_pause();return;}
+    _umonitor(static_cast<void*>(&generation));
+    // Recheck after arming the monitor so a concurrent publication cannot be
+    // missed. A short deadline also bounds destruction latency.
+    if(generation.load(std::memory_order_acquire)==seen)
+        _umwait(1,__rdtsc()+10000); // C0.1: the faster wake-up state.
+}
+#endif

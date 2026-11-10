@@ -193,14 +193,19 @@
       "read_status": "Read current visible replies, including organizer request for implementation details",
       "technique": "Competitors report slower first transfers after idle gaps",
       "application_or_limit": "Possible explanation of standalone versus warmed diagnostic gap. Their measurements are not our measurements; no causal claim or keep-warm implementation."
+    },
+    {
+      "title": "Intel Xeon 6 performance and power profiles",
+      "url": "https://cdrdv2-public.intel.com/826934/826934_Intel_Xeon_6_CPUs_PnP_Profiles_TA_Rev_1_07.pdf",
+      "read_status": "Search excerpt only; direct PDF returned403",
+      "application_or_limit": "Uncore scaling is a hypothesis for host/transfer idle sensitivity, not an established cause or a recommendation to modify runner settings."
     }
   ],
   "evidence_boundary": "All candidate timings in this research record are development measurements. Only a separate official run can establish leaderboard performance. Inaccessible papers are explicitly marked.",
   "remaining_priorities": [
-    "Investigate per-call main latency on the official runner: three standalone samples span1.074-1.211ms despite warmed inner timingnear1.03ms. Instrument stage durations without repeating the operand call.",
-    "Preserve the confirmed small mapped-input improvement separately from the main scheduling experiment.",
-    "Main trace still has about40us of output-copy gaps plus approximately33us after final H2D before the middle transform; these are measurable remaining costs.",
-    "Between-call idle/power-state penalties are a hypothesis supported by public competitor observations, not established as our cause. No keep-warm worker was added; the detailed copy-thread mechanism remains under organizer discussion."
+    "Test host worker wait method under controlled idle, with compact logs retaining all measured cases.",
+    "Measure v150 operand pipeline against beginning and ending baseline brackets.",
+    "Keep investigating output-copy gaps; direct mapped-host final stores and grouped output DMA have already lost in target proxy measurements."
   ],
   "post_submission_experiments": [
     {
@@ -1770,5 +1775,16 @@
     "result": "diagnostics/idle-transfer/RESULTS.json",
     "finding": "A 20ms idle interval increases tuned inner median from 1.018680 to 1.336714ms; wide variability, mechanism unproven. 3/3 exact.",
     "next": "Timed startup transfer size sweep with CPU and external-event CUDA graph timing."
+  },
+  "startup_transfer_diagnostic": {
+    "result": "diagnostics/startup-transfer/RESULTS.json",
+    "finding": "3/3 exact; log tail preserves only final measured case completely. Long idle slows input/CPU/output phases, middle near64us. Larger startup DMA does not consistently restore warm performance.",
+    "caveat": "Instrumented and input-reused, not standalone scores. Input-start-to-middle is robust; strip15 need not be the last input to finish."
+  },
+  "new_operand_pipeline": {
+    "version": "v150",
+    "change": "Separate forward-A from B-forward/product/inverse; upload A first to overlap its central transform with B upload, preserving input DMA size",
+    "local_exact_cases": 48,
+    "target_performance": "Not measured yet"
   }
 }
