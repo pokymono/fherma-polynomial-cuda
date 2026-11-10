@@ -10320,5 +10320,37 @@
     "evidence": "evidence/system_profile_analysis.json",
     "tool": "Nsight Systems2026.3.2.476",
     "finding": "Last warm CPU4 trace: H2D44.857-610.649us, middle B643.897-688.281us, first D2H728.441us, last D2H1022.713us. First captured call and idle call suffered multi-ms host instrumentation/allocation disturbances; not usable performance samples. Ordinary unprofiled full calls determine selection."
-  }
+  },
+  "night_20261110_followup": [
+    {
+      "topic": "Output staging, tail arithmetic and output construction",
+      "official_output_allocation_run": "6af39384698e99b16a7d92e9",
+      "official_results": "diagnostics/output-allocation/RESULTS.json",
+      "local_exact_candidates": [
+        "v175-staging-pages",
+        "v176-crt-padding",
+        "v177-hybrid-boundary",
+        "v178-output-allocation",
+        "v179-tail-field-pipeline"
+      ],
+      "finding": "No substantial full-call gain from huge-page staging, narrowed CRT padding, mapped boundary strips, field-group tail scheduling, or output allocation policies. Every completed AWS candidate passed 48 independent oracle cases. AWS-only keep-warm probe did not help on the matching GPU with this host.",
+      "sources": [
+        {
+          "url": "https://www.fherma.io/kernels/polynomial-multiplication/discussions/6ad2305beb1f4723711fb71d",
+          "read_status": "Read visible full thread; earlier collapsed replies not loaded",
+          "finding": "Entrants report idle transfer penalties and background copies; later NVIDIA replies leave policy under review and request implementation details. Do not treat this as final approval for ranked use."
+        },
+        {
+          "url": "https://www.fherma.io/kernels/polynomial-multiplication/discussions/6ab3d18ca9590da538b9af26",
+          "read_status": "Read full visible discussion",
+          "finding": "Official reply allows custom CUDA/RNS, owned setup staging, and timed registration; excludes harness allocation changes. Older keep-warm statement must be read alongside newer unresolved discussion."
+        },
+        {
+          "url": "https://research.nvidia.com/publication/2026-07_optimal-software-pipelining-and-warp-specialization-tensor-core-gpus",
+          "read_status": "Read abstract and PDF Sections 1 through 3.3",
+          "finding": "Joint scheduling depends on resource and dependency constraints. Paper targets Hopper/Blackwell datacenter asynchronous tensor instructions; no speedup transferred to SM120. Our field-group scheduling test independently regressed."
+        }
+      ]
+    }
+  ]
 }
