@@ -1,0 +1,18 @@
+{
+  "official": false,
+  "local_gpu": "RTX3050 SM86",
+  "independent_random_oracle_cases": 1,
+  "all_inner_outputs_compared": true,
+  "complete_inner_calls": 189,
+  "source_sha256": {
+    "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+    "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+    "implementation.cuh": "2cfbbde3f0eee1fc627aa9c37028c8e545fa017213ee6d35c5a2e01079e1fde6",
+    "solve.cu": "5e28a706fbea8b549afe198c2828a80dee874fa5ae4ccf62be4feca8dd769cdc",
+    "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+    "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+    "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503",
+    "output_worker.h": "7a31f1a62780885e7ba85d595a58e1edc840976dfbe68c429c545048ac8f66af",
+    "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb"
+  }
+}
