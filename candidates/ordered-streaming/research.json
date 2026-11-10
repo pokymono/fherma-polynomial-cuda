@@ -94,6 +94,13 @@
       "read_status": "Read graph tracing and overhead documentation",
       "technique": "Node traces expose copy/compute dependencies but perturb runtime",
       "application_or_limit": "Applied to v108. Node trace shows about 34 us per input DMA strip. v109 caller participation in packing passed exactness but slowed the complete main call to about 1.43 ms versus 1.13 ms control; rejected."
+    },
+    {
+      "title": "CUDA graph event record and wait nodes",
+      "url": "https://docs.nvidia.com/cuda/cuda-runtime-api/cuda_runtime_api/group__CUDART__GRAPH.html",
+      "read_status": "Read native graph event dependency semantics",
+      "technique": "Replace per-call CPU event API submissions with recorded graph dependencies",
+      "application_or_limit": "v118 correctly records last input streams and waits in the tail graph; no reliable whole-call gain."
     }
   ],
   "evidence_boundary": "All candidate timings in this research record are development measurements. Only a separate official run can establish leaderboard performance. Inaccessible papers are explicitly marked.",
@@ -123,6 +130,30 @@
     {
       "candidate": "v113 column granularity",
       "outcome": "Eight column strips improve small point to about 0.344 ms but slow main to about 1.188 ms. Retained as a possible size-specific follow-up, not submitted."
+    },
+    {
+      "candidate": "v114 SM input copy",
+      "outcome": "48 local exact checks and AWS exact checks. GPU-driven staged copies with 64 blocks improve the small point to about 0.349 ms; main about 1.127 ms versus 1.124 ms control. Target-hardware diagnostic pending."
+    },
+    {
+      "candidate": "v115 direct mapped input conversion",
+      "outcome": "48 local exact checks, but main about 34 ms and small about 4 ms. Repeated host-memory reads severely regress; rejected."
+    },
+    {
+      "candidate": "v116 graph output memory operations",
+      "outcome": "138 local exact checks. Native graph memory writes replace output CUDA event synchronization but main about 1.154 ms versus 1.127 ms control; rejected."
+    },
+    {
+      "candidate": "v117 shared-memory cache partition",
+      "outcome": "48 local exact checks plus four CUDA12.8 AWS variants. No repeatable main gain across 0/25/50/100 preferences; controls drifted from 1.153 to 1.192 ms. Not selected."
+    },
+    {
+      "candidate": "v118 graph input event joins",
+      "outcome": "138 local exact checks and 96 candidate AWS exact checks. Main 1.121-1.126 ms, bracketed controls 1.119-1.129 ms; small 0.379-0.383 ms versus 0.371-0.372 ms. No reliable gain; rejected."
+    },
+    {
+      "candidate": "official hardware worker-count diagnostic",
+      "outcome": "Unscored platform run passed 3/3 exact cases on 12 physical / 24 logical cores. Inner medians about 1.035 ms at 8 workers, 1.036 at 10, 1.040 at 6, 1.106 at 4, and 1.304 at 3. No substantial gain from worker-count changes; keep 8."
     }
   ],
   "official_result": {

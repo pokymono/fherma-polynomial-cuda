@@ -1,0 +1,42 @@
+{
+  "official_leaderboard_result": false,
+  "platform_verified_cases": 3,
+  "run": "6af33df3698e99b16a7b6cee",
+  "source_commit": "ff3cccb7366dce7cd38cf2cda39f818090f61e79",
+  "physical_cores": 12,
+  "logical_cpus": 24,
+  "aggregation": "Inner timings across logged warmup and verified cases, excluding the first repeat after each thread reconfiguration. Eight workers were measured twice per case. This is not the platform ranking metric.",
+  "worker_counts": {
+    "8": {
+      "samples": 30,
+      "median_ms": 1.0347265,
+      "min_ms": 1.027572,
+      "max_ms": 6.320332
+    },
+    "3": {
+      "samples": 15,
+      "median_ms": 1.303566,
+      "min_ms": 1.266012,
+      "max_ms": 1.356276
+    },
+    "4": {
+      "samples": 15,
+      "median_ms": 1.106446,
+      "min_ms": 1.085713,
+      "max_ms": 1.169846
+    },
+    "6": {
+      "samples": 15,
+      "median_ms": 1.039828,
+      "min_ms": 1.030813,
+      "max_ms": 1.079577
+    },
+    "10": {
+      "samples": 15,
+      "median_ms": 1.035955,
+      "min_ms": 1.024997,
+      "max_ms": 1.0453
+    }
+  },
+  "conclusion": "Six, eight, and ten workers are close; no substantial improvement over eight. Keep existing worker count."
+}

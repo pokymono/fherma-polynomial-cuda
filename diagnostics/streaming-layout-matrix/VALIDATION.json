@@ -1,0 +1,27 @@
+{
+  "official": false,
+  "hardware": "RTX 3050 Laptop, SM86",
+  "source_files_sha256": {
+    "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+    "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+    "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+    "solve.cu": "a7e61a63b8d2639453adbc2ae66245285e395240c84eef5bf8596658e4fb8a73",
+    "sm_copy.cuh": "5574b911e157de41f8399627feb6897adbc544f634ee1c38792772a54eb9fcf7",
+    "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+    "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+    "baseline.cuh": "2d383303be3f4a585e61608c21fd9b854f483a63b507f35c334e0f5a618c1ba8",
+    "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503",
+    "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+    "columns.cuh": "24ee88a06733e19494d647dc5fc32f09785eeff1b2ad2f69b4874c7413848fa7",
+    "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb"
+  },
+  "binary_sha256": "e0460bd87f1692f544029cd49a847dd777fec25eb3c5d421b2639954da17ef7d",
+  "passed": 48,
+  "check": "Independent GMP checks for 24 fresh cases per challenge point. All four layouts and repeated baseline compared byte-exactly within each call.",
+  "aws": {
+    "passed": 48,
+    "hardware": "AWS g7e.2xlarge SM120 CUDA12.8",
+    "binary_sha256": "1d7da445127a8e1c76ec5540472a7c180728dae69b6c5aa37948e852ad72cf1a",
+    "source_matched": true
+  }
+}
