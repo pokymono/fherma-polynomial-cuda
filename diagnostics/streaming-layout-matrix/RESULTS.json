@@ -1,0 +1,40 @@
+{
+  "official_leaderboard_result": false,
+  "platform_verified_cases": 3,
+  "run": "6af340e1698e99b16a7b7b7e",
+  "source_commit": "d5cd4e1156ddd5b26e56ecbd1292d8378229b04b",
+  "aggregation": "Inner timings across logged warmup and verified cases, excluding each mode first repeat. Includes complete inner calls but excludes parameter-only setup; not the platform ranking metric.",
+  "modes": {
+    "baseline_start": {
+      "samples": 20,
+      "median_ms": 1.0405289999999998,
+      "min_ms": 1.027033,
+      "max_ms": 6.603312
+    },
+    "columns64": {
+      "samples": 20,
+      "median_ms": 1.0573305,
+      "min_ms": 1.047502,
+      "max_ms": 1.160448
+    },
+    "columns128": {
+      "samples": 20,
+      "median_ms": 1.158687,
+      "min_ms": 1.145668,
+      "max_ms": 1.202789
+    },
+    "smcopy64": {
+      "samples": 20,
+      "median_ms": 1.138546,
+      "min_ms": 1.07103,
+      "max_ms": 1.222187
+    },
+    "baseline_end": {
+      "samples": 20,
+      "median_ms": 1.0344665000000002,
+      "min_ms": 1.026277,
+      "max_ms": 1.138088
+    }
+  },
+  "conclusion": "No alternate layout beats the existing 32-column DMA baseline. No new ranked submission justified."
+}

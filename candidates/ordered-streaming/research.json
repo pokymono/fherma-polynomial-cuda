@@ -101,14 +101,21 @@
       "read_status": "Read native graph event dependency semantics",
       "technique": "Replace per-call CPU event API submissions with recorded graph dependencies",
       "application_or_limit": "v118 correctly records last input streams and waits in the tail graph; no reliable whole-call gain."
+    },
+    {
+      "title": "CUDA stream memory operation ordering",
+      "url": "https://docs.nvidia.com/cuda/cuda-driver-api/cuda_driver_api/group__CUDA__MEMOP.html",
+      "read_status": "Read stream memory-write barrier and dependency semantics",
+      "technique": "CUDA-visible graph dependencies plus mapped host completion flags",
+      "application_or_limit": "v116 preserves D2H-before-flag ordering but is slower than the existing CUDA event approach."
     }
   ],
   "evidence_boundary": "All candidate timings in this research record are development measurements. Only a separate official run can establish leaderboard performance. Inaccessible papers are explicitly marked.",
   "remaining_priorities": [
-    "Reduce CPU preparation or transfer gaps without making the launch thread compete with input packing; naive caller packing was rejected.",
-    "Use a full execution timeline to decide whether more arithmetic work lies on the critical path.",
-    "Measure one substantial consolidated candidate on the official runner after source-matched exactness checks.",
-    "Treat a tensor-core NTT or alternate modulus family as a separate exact-arithmetic redesign, not an unverified parameter tweak."
+    "Reduce gaps in the host-to-GPU-to-host transfer pipeline. More CPU workers, larger chunks, SM input copies, and graph event substitutions did not beat the measured baseline.",
+    "Profile the complete pipeline on a host matching the official 12 physical CPU cores; AWS has the same GPU but only four physical cores, so transfer-tuning conclusions require target confirmation.",
+    "For a larger redesign, study an exact transform layout that preserves contiguous host input/output while overlapping conversion and reconstruction; the first row-block decomposition was correct but slower.",
+    "Keep any alternate-modulus or tensor-core NTT redesign separate until mathematical bounds and full-call speedups are established. Arithmetic-only speedups so far did not yield a reliable whole-call improvement."
   ],
   "post_submission_experiments": [
     {
@@ -154,6 +161,14 @@
     {
       "candidate": "official hardware worker-count diagnostic",
       "outcome": "Unscored platform run passed 3/3 exact cases on 12 physical / 24 logical cores. Inner medians about 1.035 ms at 8 workers, 1.036 at 10, 1.040 at 6, 1.106 at 4, and 1.304 at 3. No substantial gain from worker-count changes; keep 8."
+    },
+    {
+      "candidate": "v119 carry-aware lazy reduction in 31-bit fields",
+      "outcome": "312000 independent integer arithmetic checks and 138 local exact cases; two AWS passes checked 96 cases. Retains the same 114 fields, unlike the prior 30-bit lazy variant. Main 1.117-1.126 ms versus controls 1.119-1.121 ms; no reliable full-call gain, not selected."
+    },
+    {
+      "candidate": "official hardware transfer-layout diagnostic",
+      "outcome": "Unscored platform run passed 3/3 exact cases. Inner medians: baseline 1.035-1.041 ms, 64 columns 1.057 ms, 128 columns 1.159 ms, SM input copy 1.139 ms. All alternatives slower on target; no ranked submission."
     }
   ],
   "official_result": {
