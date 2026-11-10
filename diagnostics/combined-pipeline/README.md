@@ -14,3 +14,13 @@ samples, rotating mode order and two controls. The returned output is also
 checked by an independent harness oracle. Execution logs distinguish actual
 cluster/shared fusion and TMA from fallback. These are unscored diagnostics,
 not standalone timings or ranked results.
+
+Official unscored run `6af3abe4698e99b16a7f7d17` passed all3 outer cases
+on commit `6298f458bbe707aecbfde08c4ed653eb2e3577a0`. All189 measured
+inner calls are in `RESULTS.json`, with actual TMA and cluster execution
+confirmed. Warm medians were0.988962ms for the control,0.982090ms for
+shared fusion plus quotient,0.981733ms for cluster fusion,0.980517ms
+for cluster plus quotient,0.983470ms for aligned dots and0.979980ms
+for TMA plus shared fusion and quotient. The repeated control was0.987170ms.
+Idle medians remained substantially slower and variable. This establishes a
+small combined warm-call improvement, not a standalone or ranked result.
