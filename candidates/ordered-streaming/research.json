@@ -140,7 +140,7 @@
     },
     {
       "candidate": "v114 SM input copy",
-      "outcome": "48 local exact checks and AWS exact checks. GPU-driven staged copies with 64 blocks improve the small point to about 0.349 ms; main about 1.127 ms versus 1.124 ms control. Target-hardware diagnostic pending."
+      "outcome": "48 local exact checks and AWS exact checks. Small-point AWS latency improved to about 0.349 ms, but the later official-hardware diagnostic measured main inner latency about 1.139 ms versus baseline 1.035-1.041 ms. Rejected for the ranked main point."
     },
     {
       "candidate": "v115 direct mapped input conversion",
