@@ -1,0 +1,112 @@
+{
+  "official": false,
+  "hardware": "RTX 3050 Laptop, SM86",
+  "source_files_sha256": {
+    "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+    "parallel_copy.h": "072d251eb43c0da18bac6d26d1e48314b2a598432e9a5e0f312eb4f5413edc46",
+    "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+    "solve.cu": "a4edaf91c0c16950f17451a59ab0c5f99e89df4242ecbf0c0a339f0690874709",
+    "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+    "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b"
+  },
+  "binary_sha256": "53a509510fb1fee68114fc48d5db2f4ee715b6998e15bbbc8f76b2fff33b3277",
+  "checked_utc": "2026-11-10T09:50:20.245441+00:00",
+  "validated_cases": 138,
+  "exact_points": [
+    {
+      "N": 1,
+      "W": 2,
+      "passed": 6
+    },
+    {
+      "N": 2,
+      "W": 5,
+      "passed": 6
+    },
+    {
+      "N": 8,
+      "W": 16,
+      "passed": 6
+    },
+    {
+      "N": 64,
+      "W": 32,
+      "passed": 8
+    },
+    {
+      "N": 64,
+      "W": 33,
+      "passed": 6
+    },
+    {
+      "N": 64,
+      "W": 31,
+      "passed": 6
+    },
+    {
+      "N": 128,
+      "W": 4096,
+      "passed": 8
+    },
+    {
+      "N": 128,
+      "W": 128,
+      "passed": 6
+    },
+    {
+      "N": 256,
+      "W": 256,
+      "passed": 6
+    },
+    {
+      "N": 1024,
+      "W": 512,
+      "passed": 6
+    },
+    {
+      "N": 8192,
+      "W": 256,
+      "passed": 6
+    },
+    {
+      "N": 32768,
+      "W": 868,
+      "passed": 24
+    },
+    {
+      "N": 32768,
+      "W": 868,
+      "passed": 6
+    },
+    {
+      "N": 65536,
+      "W": 1747,
+      "passed": 6
+    },
+    {
+      "N": 65536,
+      "W": 1747,
+      "passed": 24
+    },
+    {
+      "N": 131072,
+      "W": 128,
+      "passed": 8
+    }
+  ],
+  "standalone_blackwell_status": "not yet measured",
+  "configuration": {
+    "main_chunks": 8,
+    "small_chunks": 4,
+    "streams": 2,
+    "cpu_lanes": 8,
+    "streaming_stores": false
+  },
+  "sm120_compile": true,
+  "sm120_spill_bytes": 0,
+  "copy_stress": {
+    "passed": 1080,
+    "sessions": 60,
+    "streaming_store_path_also_tested": true
+  }
+}
