@@ -43,7 +43,7 @@
       "url": "https://nvidia.github.io/cuPQC/releases/v0.6/",
       "read_status": "Read release and device NTT feature documentation",
       "technique": "Device-side and staged NTT interfaces",
-      "application_or_limit": "Potential comparison baseline. Confirm official image library version and negacyclic boundary conversion before adding a dependency; not implemented."
+      "application_or_limit": "External SDK 0.6 wrapper attempted. Monolithic nvlink crashed; isolated wrapper failed on undefined twiddle helper references and a linker internal error. No correctness or speed claim."
     },
     {
       "title": "The Modern CUDA Toolbox in Practice",
@@ -172,6 +172,20 @@
       "read_status": "Read sections2.2 and2.3 on signed Montgomery, Plantard, and butterfly bounds",
       "technique": "Review exact operand bounds before adopting modular shortcuts",
       "application_or_limit": "No Plantard implementation copied; use independent integer oracle for widened operands."
+    },
+    {
+      "title": "FHERMA organizer transfer discussion, refreshed 2026-11-10",
+      "url": "https://www.fherma.io/kernels/polynomial-multiplication/discussions/6ab3d18ca9590da538b9af26",
+      "read_status": "Read organizer replies and input allocation guidance",
+      "technique": "Pinned staging, chunking and registration are in scope within fherma_run; input allocations are fresh",
+      "application_or_limit": "No harness allocator changes or assumptions about persistent operand addresses. Direct per-call pin/unpin measured too costly on AWS."
+    },
+    {
+      "title": "fhe-ntt kernel card",
+      "url": "https://huggingface.co/kernels/phanerozoic/fhe-ntt",
+      "read_status": "Read method, measurements and exactness sections",
+      "technique": "64-bit Shoup with stage-wise launches over pre-existing RNS inputs",
+      "application_or_limit": "Its n4096/n8192 batch throughput omits wide-integer conversion and PCIe staging; not evidence of a faster complete FHERMA call. No code imported."
     }
   ],
   "evidence_boundary": "All candidate timings in this research record are development measurements. Only a separate official run can establish leaderboard performance. Inaccessible papers are explicitly marked.",
@@ -671,20 +685,1076 @@
     },
     {
       "version": "v137",
-      "change": "Flatten captured output kernel chains into the parent graph",
+      "change": "Flatten captured output graph kernels",
       "exactness": "138 local exact cases after CUDA12/13 graph-edge API compatibility fix",
-      "status": "Awaiting target timing"
+      "evidence": "evidence/aws_replacement_archive/aws_flat_dispatch_ramp_results.json",
+      "measurements": [
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 32768,
+          "median_ms": 0.375255,
+          "passed": 24
+        },
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 65536,
+          "median_ms": 1.0755690000000002,
+          "passed": 24
+        },
+        {
+          "name": "wide-shoup-1-1",
+          "N": 32768,
+          "median_ms": 0.371663,
+          "passed": 24
+        },
+        {
+          "name": "wide-shoup-1-1",
+          "N": 65536,
+          "median_ms": 1.0673335,
+          "passed": 24
+        },
+        {
+          "name": "flat-tail",
+          "N": 32768,
+          "median_ms": 0.37181,
+          "passed": 24
+        },
+        {
+          "name": "flat-tail",
+          "N": 65536,
+          "median_ms": 1.0662014999999998,
+          "passed": 24
+        },
+        {
+          "name": "size-dispatch",
+          "N": 32768,
+          "median_ms": 0.3361525,
+          "passed": 24
+        },
+        {
+          "name": "size-dispatch",
+          "N": 65536,
+          "median_ms": 1.0690665,
+          "passed": 24
+        },
+        {
+          "name": "output-ramp-1-2",
+          "N": 32768,
+          "median_ms": 0.376709,
+          "passed": 24
+        },
+        {
+          "name": "output-ramp-1-2",
+          "N": 65536,
+          "median_ms": 1.0788754999999999,
+          "passed": 24
+        },
+        {
+          "name": "output-ramp-1-4",
+          "N": 32768,
+          "median_ms": 0.373659,
+          "passed": 24
+        },
+        {
+          "name": "output-ramp-1-4",
+          "N": 65536,
+          "median_ms": 1.085033,
+          "passed": 24
+        },
+        {
+          "name": "output-ramp-2-4",
+          "N": 32768,
+          "median_ms": 0.3703375,
+          "passed": 24
+        },
+        {
+          "name": "output-ramp-2-4",
+          "N": 65536,
+          "median_ms": 1.076221,
+          "passed": 24
+        },
+        {
+          "name": "output-ramp-1-8",
+          "N": 32768,
+          "median_ms": 0.3775955,
+          "passed": 24
+        },
+        {
+          "name": "output-ramp-1-8",
+          "N": 65536,
+          "median_ms": 1.1378375,
+          "passed": 24
+        },
+        {
+          "name": "output-ramp-2-8",
+          "N": 32768,
+          "median_ms": 0.3768305,
+          "passed": 24
+        },
+        {
+          "name": "output-ramp-2-8",
+          "N": 65536,
+          "median_ms": 1.087867,
+          "passed": 24
+        },
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 32768,
+          "median_ms": 0.373692,
+          "passed": 24
+        },
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 65536,
+          "median_ms": 1.074183,
+          "passed": 24
+        }
+      ],
+      "decision": "Tiny main improvement; official inner flat1.0296455ms versus ending baseline1.0434245ms. Not a standalone score."
     },
     {
       "version": "v138",
       "change": "Isolate cuPQC LTO in external SDK wrapper and restrict linked kernel roots",
-      "status": "Build running; no performance claim"
+      "status": "Failed: undefined SDK make_twiddle/twiddles_to_mont references and nvlink internal error; no executable validation or benchmark."
     },
     {
       "version": "v139",
       "change": "Use mapped parallel input at N32768 W868; canonical wide Shoup for both sizes",
       "exactness": "138 local exact cases",
-      "status": "Unscored official comparison being prepared"
+      "status": "Unscored official small check3/3; inner0.349880ms versus bracketed baseline0.368231/0.3750705ms. Main same wide arithmetic path; no large main gain."
+    },
+    {
+      "version": "v140",
+      "change": "Ramp up output compute chains behind the first strip",
+      "evidence": "evidence/aws_replacement_archive/aws_flat_dispatch_ramp_results.json",
+      "measurements": [
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 32768,
+          "median_ms": 0.375255,
+          "passed": 24
+        },
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 65536,
+          "median_ms": 1.0755690000000002,
+          "passed": 24
+        },
+        {
+          "name": "wide-shoup-1-1",
+          "N": 32768,
+          "median_ms": 0.371663,
+          "passed": 24
+        },
+        {
+          "name": "wide-shoup-1-1",
+          "N": 65536,
+          "median_ms": 1.0673335,
+          "passed": 24
+        },
+        {
+          "name": "flat-tail",
+          "N": 32768,
+          "median_ms": 0.37181,
+          "passed": 24
+        },
+        {
+          "name": "flat-tail",
+          "N": 65536,
+          "median_ms": 1.0662014999999998,
+          "passed": 24
+        },
+        {
+          "name": "size-dispatch",
+          "N": 32768,
+          "median_ms": 0.3361525,
+          "passed": 24
+        },
+        {
+          "name": "size-dispatch",
+          "N": 65536,
+          "median_ms": 1.0690665,
+          "passed": 24
+        },
+        {
+          "name": "output-ramp-1-2",
+          "N": 32768,
+          "median_ms": 0.376709,
+          "passed": 24
+        },
+        {
+          "name": "output-ramp-1-2",
+          "N": 65536,
+          "median_ms": 1.0788754999999999,
+          "passed": 24
+        },
+        {
+          "name": "output-ramp-1-4",
+          "N": 32768,
+          "median_ms": 0.373659,
+          "passed": 24
+        },
+        {
+          "name": "output-ramp-1-4",
+          "N": 65536,
+          "median_ms": 1.085033,
+          "passed": 24
+        },
+        {
+          "name": "output-ramp-2-4",
+          "N": 32768,
+          "median_ms": 0.3703375,
+          "passed": 24
+        },
+        {
+          "name": "output-ramp-2-4",
+          "N": 65536,
+          "median_ms": 1.076221,
+          "passed": 24
+        },
+        {
+          "name": "output-ramp-1-8",
+          "N": 32768,
+          "median_ms": 0.3775955,
+          "passed": 24
+        },
+        {
+          "name": "output-ramp-1-8",
+          "N": 65536,
+          "median_ms": 1.1378375,
+          "passed": 24
+        },
+        {
+          "name": "output-ramp-2-8",
+          "N": 32768,
+          "median_ms": 0.3768305,
+          "passed": 24
+        },
+        {
+          "name": "output-ramp-2-8",
+          "N": 65536,
+          "median_ms": 1.087867,
+          "passed": 24
+        },
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 32768,
+          "median_ms": 0.373692,
+          "passed": 24
+        },
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 65536,
+          "median_ms": 1.074183,
+          "passed": 24
+        }
+      ],
+      "decision": "No gain over flat-tail; reject."
+    },
+    {
+      "version": "v141",
+      "change": "Prefetch first weight tile and use group-private barriers",
+      "evidence": "evidence/aws_replacement_archive/aws_resident_barriers_results.json",
+      "measurements": [
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 32768,
+          "median_ms": 0.3728,
+          "passed": 24
+        },
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 65536,
+          "median_ms": 1.0784255,
+          "passed": 24
+        },
+        {
+          "name": "parallel-resident-4-16-0",
+          "N": 32768,
+          "median_ms": 0.34626700000000005,
+          "passed": 24
+        },
+        {
+          "name": "parallel-resident-4-16-0",
+          "N": 65536,
+          "median_ms": 1.078145,
+          "passed": 24
+        },
+        {
+          "name": "resident-barriers-4-16-0-1",
+          "N": 32768,
+          "median_ms": 0.34273950000000003,
+          "passed": 24
+        },
+        {
+          "name": "resident-barriers-4-16-0-1",
+          "N": 65536,
+          "median_ms": 1.093662,
+          "passed": 24
+        },
+        {
+          "name": "resident-barriers-4-16-1-0",
+          "N": 32768,
+          "median_ms": 0.3416045,
+          "passed": 24
+        },
+        {
+          "name": "resident-barriers-4-16-1-0",
+          "N": 65536,
+          "median_ms": 1.077585,
+          "passed": 24
+        },
+        {
+          "name": "resident-barriers-4-16-1-1",
+          "N": 32768,
+          "median_ms": 0.338045,
+          "passed": 24
+        },
+        {
+          "name": "resident-barriers-4-16-1-1",
+          "N": 65536,
+          "median_ms": 1.0899115,
+          "passed": 24
+        },
+        {
+          "name": "resident-barriers-4-32-1-1",
+          "N": 32768,
+          "median_ms": 0.3413515,
+          "passed": 24
+        },
+        {
+          "name": "resident-barriers-4-32-1-1",
+          "N": 65536,
+          "median_ms": 1.0824485,
+          "passed": 24
+        },
+        {
+          "name": "resident-barriers-8-16-1-1",
+          "N": 32768,
+          "median_ms": 0.3387725,
+          "passed": 24
+        },
+        {
+          "name": "resident-barriers-8-16-1-1",
+          "N": 65536,
+          "median_ms": 1.0836525,
+          "passed": 24
+        }
+      ],
+      "decision": "Five configurations48exact each; g8r32 failed graph instantiation due launch resources. Official small matched size_dispatch around0.350ms, not an additional gain."
+    },
+    {
+      "version": "v142",
+      "change": "Vectorized and swizzled tensor middle shared-memory traffic",
+      "evidence": "evidence/aws_replacement_archive/aws_tensor_swizzle_results.json",
+      "measurements": [
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 32768,
+          "median_ms": 0.3737375,
+          "passed": 24
+        },
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 65536,
+          "median_ms": 1.0794675,
+          "passed": 24
+        },
+        {
+          "name": "tensor-middle",
+          "N": 32768,
+          "median_ms": 0.3852705,
+          "passed": 24
+        },
+        {
+          "name": "tensor-middle",
+          "N": 65536,
+          "median_ms": 1.136658,
+          "passed": 24
+        },
+        {
+          "name": "tensor-swizzle",
+          "N": 32768,
+          "median_ms": 0.38381250000000006,
+          "passed": 24
+        },
+        {
+          "name": "tensor-swizzle",
+          "N": 65536,
+          "median_ms": 1.120128,
+          "passed": 24
+        },
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 32768,
+          "median_ms": 0.374585,
+          "passed": 24
+        },
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 65536,
+          "median_ms": 1.0816914999999998,
+          "passed": 24
+        }
+      ],
+      "decision": "48exact per configuration. Faster than prior tensor middle, but still slower than scalar baseline; reject."
+    },
+    {
+      "version": "v143",
+      "change": "Increase output CRT load tiles to128/256bytes",
+      "evidence": "evidence/aws_replacement_archive/aws_crt_fusion_results.json",
+      "measurements": [
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 32768,
+          "median_ms": 0.3756255,
+          "passed": 24
+        },
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 65536,
+          "median_ms": 1.083986,
+          "passed": 24
+        },
+        {
+          "name": "flat-tail",
+          "N": 32768,
+          "median_ms": 0.372566,
+          "passed": 24
+        },
+        {
+          "name": "flat-tail",
+          "N": 65536,
+          "median_ms": 1.067716,
+          "passed": 24
+        },
+        {
+          "name": "crt-tiles-64",
+          "N": 32768,
+          "median_ms": 0.36974,
+          "passed": 24
+        },
+        {
+          "name": "crt-tiles-64",
+          "N": 65536,
+          "median_ms": 1.070236,
+          "passed": 24
+        },
+        {
+          "name": "crt-tiles-128",
+          "N": 32768,
+          "median_ms": 0.37161099999999997,
+          "passed": 24
+        },
+        {
+          "name": "crt-tiles-128",
+          "N": 65536,
+          "median_ms": 1.0694375,
+          "passed": 24
+        },
+        {
+          "name": "crt-tiles-256",
+          "N": 32768,
+          "median_ms": 0.37161099999999997,
+          "passed": 24
+        },
+        {
+          "name": "crt-tiles-256",
+          "N": 65536,
+          "median_ms": 1.068705,
+          "passed": 24
+        },
+        {
+          "name": "fused-crt-16-64",
+          "N": 32768,
+          "median_ms": 0.454274,
+          "passed": 24
+        },
+        {
+          "name": "fused-crt-16-64",
+          "N": 65536,
+          "median_ms": 1.1469144999999998,
+          "passed": 24
+        },
+        {
+          "name": "fused-crt-16-128",
+          "N": 32768,
+          "median_ms": 0.45809400000000006,
+          "passed": 24
+        },
+        {
+          "name": "fused-crt-16-128",
+          "N": 65536,
+          "median_ms": 1.159831,
+          "passed": 24
+        },
+        {
+          "name": "fused-crt-32-64",
+          "N": 32768,
+          "median_ms": 0.424943,
+          "passed": 24
+        },
+        {
+          "name": "fused-crt-32-64",
+          "N": 65536,
+          "median_ms": 1.1021735,
+          "passed": 24
+        },
+        {
+          "name": "fused-crt-32-128",
+          "N": 32768,
+          "median_ms": 0.432351,
+          "passed": 24
+        },
+        {
+          "name": "fused-crt-32-128",
+          "N": 65536,
+          "median_ms": 1.1151395,
+          "passed": 24
+        },
+        {
+          "name": "fused-crt-64-64",
+          "N": 32768,
+          "median_ms": 0.42234,
+          "passed": 24
+        },
+        {
+          "name": "fused-crt-64-64",
+          "N": 65536,
+          "median_ms": 1.091159,
+          "passed": 24
+        },
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 32768,
+          "median_ms": 0.37397800000000003,
+          "passed": 24
+        },
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 65536,
+          "median_ms": 1.0801934999999998,
+          "passed": 24
+        }
+      ],
+      "decision": "48exact per configuration; no material complete-call gain."
+    },
+    {
+      "version": "v144",
+      "change": "Fuse tensor CRT and exact final carry/q reduction",
+      "evidence": "evidence/aws_replacement_archive/aws_crt_fusion_results.json",
+      "measurements": [
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 32768,
+          "median_ms": 0.3756255,
+          "passed": 24
+        },
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 65536,
+          "median_ms": 1.083986,
+          "passed": 24
+        },
+        {
+          "name": "flat-tail",
+          "N": 32768,
+          "median_ms": 0.372566,
+          "passed": 24
+        },
+        {
+          "name": "flat-tail",
+          "N": 65536,
+          "median_ms": 1.067716,
+          "passed": 24
+        },
+        {
+          "name": "crt-tiles-64",
+          "N": 32768,
+          "median_ms": 0.36974,
+          "passed": 24
+        },
+        {
+          "name": "crt-tiles-64",
+          "N": 65536,
+          "median_ms": 1.070236,
+          "passed": 24
+        },
+        {
+          "name": "crt-tiles-128",
+          "N": 32768,
+          "median_ms": 0.37161099999999997,
+          "passed": 24
+        },
+        {
+          "name": "crt-tiles-128",
+          "N": 65536,
+          "median_ms": 1.0694375,
+          "passed": 24
+        },
+        {
+          "name": "crt-tiles-256",
+          "N": 32768,
+          "median_ms": 0.37161099999999997,
+          "passed": 24
+        },
+        {
+          "name": "crt-tiles-256",
+          "N": 65536,
+          "median_ms": 1.068705,
+          "passed": 24
+        },
+        {
+          "name": "fused-crt-16-64",
+          "N": 32768,
+          "median_ms": 0.454274,
+          "passed": 24
+        },
+        {
+          "name": "fused-crt-16-64",
+          "N": 65536,
+          "median_ms": 1.1469144999999998,
+          "passed": 24
+        },
+        {
+          "name": "fused-crt-16-128",
+          "N": 32768,
+          "median_ms": 0.45809400000000006,
+          "passed": 24
+        },
+        {
+          "name": "fused-crt-16-128",
+          "N": 65536,
+          "median_ms": 1.159831,
+          "passed": 24
+        },
+        {
+          "name": "fused-crt-32-64",
+          "N": 32768,
+          "median_ms": 0.424943,
+          "passed": 24
+        },
+        {
+          "name": "fused-crt-32-64",
+          "N": 65536,
+          "median_ms": 1.1021735,
+          "passed": 24
+        },
+        {
+          "name": "fused-crt-32-128",
+          "N": 32768,
+          "median_ms": 0.432351,
+          "passed": 24
+        },
+        {
+          "name": "fused-crt-32-128",
+          "N": 65536,
+          "median_ms": 1.1151395,
+          "passed": 24
+        },
+        {
+          "name": "fused-crt-64-64",
+          "N": 32768,
+          "median_ms": 0.42234,
+          "passed": 24
+        },
+        {
+          "name": "fused-crt-64-64",
+          "N": 65536,
+          "median_ms": 1.091159,
+          "passed": 24
+        },
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 32768,
+          "median_ms": 0.37397800000000003,
+          "passed": 24
+        },
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 65536,
+          "median_ms": 1.0801934999999998,
+          "passed": 24
+        }
+      ],
+      "decision": "48exact per configuration; all slower than flat-tail. Reject."
+    },
+    {
+      "version": "v145",
+      "change": "Prefetch independent high-stage roots into registers",
+      "evidence": "evidence/aws_replacement_archive/aws_high_prefetch_results.json",
+      "measurements": [
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 32768,
+          "median_ms": 0.372836,
+          "passed": 24
+        },
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 65536,
+          "median_ms": 1.0829585,
+          "passed": 24
+        },
+        {
+          "name": "flat-tail",
+          "N": 32768,
+          "median_ms": 0.37263149999999995,
+          "passed": 24
+        },
+        {
+          "name": "flat-tail",
+          "N": 65536,
+          "median_ms": 1.0721525,
+          "passed": 24
+        },
+        {
+          "name": "high-prefetch-1-0",
+          "N": 32768,
+          "median_ms": 0.37040749999999995,
+          "passed": 24
+        },
+        {
+          "name": "high-prefetch-1-0",
+          "N": 65536,
+          "median_ms": 1.066535,
+          "passed": 24
+        },
+        {
+          "name": "high-prefetch-0-1",
+          "N": 32768,
+          "median_ms": 0.369257,
+          "passed": 24
+        },
+        {
+          "name": "high-prefetch-0-1",
+          "N": 65536,
+          "median_ms": 1.0730285,
+          "passed": 24
+        },
+        {
+          "name": "high-prefetch-1-1",
+          "N": 32768,
+          "median_ms": 0.3670945,
+          "passed": 24
+        },
+        {
+          "name": "high-prefetch-1-1",
+          "N": 65536,
+          "median_ms": 1.0748864999999999,
+          "passed": 24
+        },
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 32768,
+          "median_ms": 0.3763075,
+          "passed": 24
+        },
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 65536,
+          "median_ms": 1.0771725,
+          "passed": 24
+        }
+      ],
+      "decision": "48exact per configuration. Forward-only slight improvement; inverse prefetch does not help main. Not selected yet."
+    },
+    {
+      "version": "v146",
+      "change": "Two-buffer asynchronous CRT input/weight staging",
+      "evidence": "evidence/aws_replacement_archive/aws_async_crt_results.json",
+      "measurements": [
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 32768,
+          "median_ms": 0.3750255,
+          "passed": 24
+        },
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 65536,
+          "median_ms": 1.076503,
+          "passed": 24
+        },
+        {
+          "name": "flat-tail",
+          "N": 32768,
+          "median_ms": 0.371358,
+          "passed": 24
+        },
+        {
+          "name": "flat-tail",
+          "N": 65536,
+          "median_ms": 1.0727904999999998,
+          "passed": 24
+        },
+        {
+          "name": "async-crt-64",
+          "N": 32768,
+          "median_ms": 0.3672905,
+          "passed": 24
+        },
+        {
+          "name": "async-crt-64",
+          "N": 65536,
+          "median_ms": 1.0701414999999999,
+          "passed": 24
+        },
+        {
+          "name": "async-crt-128",
+          "N": 32768,
+          "median_ms": 0.36669999999999997,
+          "passed": 24
+        },
+        {
+          "name": "async-crt-128",
+          "N": 65536,
+          "median_ms": 1.064614,
+          "passed": 24
+        },
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 32768,
+          "median_ms": 0.3739145,
+          "passed": 24
+        },
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 65536,
+          "median_ms": 1.084667,
+          "passed": 24
+        }
+      ],
+      "decision": "48exact per configuration. Tile128 main1.064614ms vs flat1.0727905ms in that batch; needs repeat and official confirmation."
+    },
+    {
+      "version": "v147",
+      "change": "Serialize matching output phases across strips, overlap different phases",
+      "evidence": "evidence/aws_replacement_archive/aws_stage_pipeline_results.json",
+      "measurements": [
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 32768,
+          "median_ms": 0.374249,
+          "passed": 24
+        },
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 65536,
+          "median_ms": 1.0797275000000002,
+          "passed": 24
+        },
+        {
+          "name": "async-crt-128",
+          "N": 32768,
+          "median_ms": 0.367336,
+          "passed": 24
+        },
+        {
+          "name": "async-crt-128",
+          "N": 65536,
+          "median_ms": 1.0689520000000001,
+          "passed": 24
+        },
+        {
+          "name": "stage-pipeline-0",
+          "N": 32768,
+          "median_ms": 0.36875600000000003,
+          "passed": 24
+        },
+        {
+          "name": "stage-pipeline-0",
+          "N": 65536,
+          "median_ms": 1.0689735000000002,
+          "passed": 24
+        },
+        {
+          "name": "stage-pipeline-1",
+          "N": 32768,
+          "median_ms": 0.36862799999999996,
+          "passed": 24
+        },
+        {
+          "name": "stage-pipeline-1",
+          "N": 65536,
+          "median_ms": 1.0653289999999997,
+          "passed": 24
+        },
+        {
+          "name": "stage-pipeline-5",
+          "N": 32768,
+          "median_ms": 0.37151999999999996,
+          "passed": 24
+        },
+        {
+          "name": "stage-pipeline-5",
+          "N": 65536,
+          "median_ms": 1.0700915000000002,
+          "passed": 24
+        },
+        {
+          "name": "stage-pipeline-15",
+          "N": 32768,
+          "median_ms": 0.372145,
+          "passed": 24
+        },
+        {
+          "name": "stage-pipeline-15",
+          "N": 65536,
+          "median_ms": 1.061892,
+          "passed": 24
+        },
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 32768,
+          "median_ms": 0.3728645,
+          "passed": 24
+        },
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 65536,
+          "median_ms": 1.0870160000000002,
+          "passed": 24
+        }
+      ],
+      "decision": "48exact per configuration. All-phase main1.061892ms vs asynchronous control1.068952ms; small case slightly slower. Needs repeated combined validation."
+    },
+    {
+      "version": "v148",
+      "change": "Mixed mapped input for first/last main strips; combined small mapped input and asynchronous CRT/output stages",
+      "exactness": "48 local and48 AWS per configuration",
+      "measurements": [
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 32768,
+          "median_ms": 0.373853,
+          "passed": 24
+        },
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 65536,
+          "median_ms": 1.0818715,
+          "passed": 24
+        },
+        {
+          "name": "stage-pipeline-15",
+          "N": 32768,
+          "median_ms": 0.37112500000000004,
+          "passed": 24
+        },
+        {
+          "name": "stage-pipeline-15",
+          "N": 65536,
+          "median_ms": 1.0669225,
+          "passed": 24
+        },
+        {
+          "name": "tail-resident-0-0",
+          "N": 32768,
+          "median_ms": 0.333374,
+          "passed": 24
+        },
+        {
+          "name": "tail-resident-0-0",
+          "N": 65536,
+          "median_ms": 1.0662085000000001,
+          "passed": 24
+        },
+        {
+          "name": "tail-resident-1-0",
+          "N": 32768,
+          "median_ms": 0.334965,
+          "passed": 24
+        },
+        {
+          "name": "tail-resident-1-0",
+          "N": 65536,
+          "median_ms": 1.0667444999999998,
+          "passed": 24
+        },
+        {
+          "name": "tail-resident-2-0",
+          "N": 32768,
+          "median_ms": 0.332644,
+          "passed": 24
+        },
+        {
+          "name": "tail-resident-2-0",
+          "N": 65536,
+          "median_ms": 1.069312,
+          "passed": 24
+        },
+        {
+          "name": "tail-resident-4-0",
+          "N": 32768,
+          "median_ms": 0.3333715,
+          "passed": 24
+        },
+        {
+          "name": "tail-resident-4-0",
+          "N": 65536,
+          "median_ms": 1.0664805,
+          "passed": 24
+        },
+        {
+          "name": "tail-resident-8-0",
+          "N": 32768,
+          "median_ms": 0.33179849999999994,
+          "passed": 24
+        },
+        {
+          "name": "tail-resident-8-0",
+          "N": 65536,
+          "median_ms": 1.068155,
+          "passed": 24
+        },
+        {
+          "name": "tail-resident-0-1",
+          "N": 32768,
+          "median_ms": 0.332493,
+          "passed": 24
+        },
+        {
+          "name": "tail-resident-0-1",
+          "N": 65536,
+          "median_ms": 1.0688905,
+          "passed": 24
+        },
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 32768,
+          "median_ms": 0.376321,
+          "passed": 24
+        },
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 65536,
+          "median_ms": 1.0835705,
+          "passed": 24
+        }
+      ],
+      "decision": "No additional main improvement from mapped main strips. Select zero mapped main strips; combined small remains faster. Release artifact separately validated140local/48AWS."
     }
-  ]
+  ],
+  "official_transfer_followup": {
+    "main": "diagnostics/transfer-followup/RESULTS.json",
+    "small": "diagnostics/transfer-followup-small/RESULTS.json",
+    "ranked": false,
+    "finding": "5-7% small inner-call improvement; roughly1% main inner-call improvement. No new ranked submission."
+  },
+  "host_registration_probe": {
+    "official": false,
+    "bytes": 14417920,
+    "pin_median_us": 401.209,
+    "unpin_median_us": 186.885,
+    "decision": "Reject per-call output registration; unpin cost alone is too large."
+  },
+  "prepared_candidate": {
+    "artifact": "candidates/transfer-tuned",
+    "validation": "candidates/transfer-tuned/VALIDATION.json",
+    "ranked": false,
+    "aws_main_ms": 1.0689745,
+    "aws_small_ms": 0.33489550000000007,
+    "status": "Unscored standalone official check being prepared"
+  }
 }
