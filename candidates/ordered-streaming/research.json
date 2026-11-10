@@ -108,14 +108,22 @@
       "read_status": "Read stream memory-write barrier and dependency semantics",
       "technique": "CUDA-visible graph dependencies plus mapped host completion flags",
       "application_or_limit": "v116 preserves D2H-before-flag ordering but is slower than the existing CUDA event approach."
+    },
+    {
+      "title": "NVIDIA Heterogeneous Memory Management",
+      "url": "https://developer.nvidia.com/blog/simplifying-gpu-application-development-with-heterogeneous-memory-management/",
+      "read_status": "Read allocator, accessibility and page-placement sections",
+      "technique": "Direct GPU access to ordinary system allocations when supported",
+      "application_or_limit": "Official target reports pageable_memory_access=0, so this shortcut is unavailable. Local laptop reports 1; that local capability must not be assumed on the runner."
     }
   ],
   "evidence_boundary": "All candidate timings in this research record are development measurements. Only a separate official run can establish leaderboard performance. Inaccessible papers are explicitly marked.",
   "remaining_priorities": [
-    "Reduce gaps in the host-to-GPU-to-host transfer pipeline. More CPU workers, larger chunks, SM input copies, and graph event substitutions did not beat the measured baseline.",
+    "Investigate a different exact transform/data layout that reduces staging and scattering on the critical path; present worker-count, larger-chunk, SM-copy, and event-node variations did not improve the full call.",
     "Profile the complete pipeline on a host matching the official 12 physical CPU cores; AWS has the same GPU but only four physical cores, so transfer-tuning conclusions require target confirmation.",
     "For a larger redesign, study an exact transform layout that preserves contiguous host input/output while overlapping conversion and reconstruction; the first row-block decomposition was correct but slower.",
-    "Keep any alternate-modulus or tensor-core NTT redesign separate until mathematical bounds and full-call speedups are established. Arithmetic-only speedups so far did not yield a reliable whole-call improvement."
+    "Keep any alternate-modulus or tensor-core NTT redesign separate until mathematical bounds and full-call speedups are established. Arithmetic-only speedups so far did not yield a reliable whole-call improvement.",
+    "Do not assume HMM or cross-NUMA placement opportunities: target diagnostics expose one local NUMA node and pageable_memory_access=0."
   ],
   "post_submission_experiments": [
     {
@@ -169,6 +177,10 @@
     {
       "candidate": "official hardware transfer-layout diagnostic",
       "outcome": "Unscored platform run passed 3/3 exact cases. Inner medians: baseline 1.035-1.041 ms, 64 columns 1.057 ms, 128 columns 1.159 ms, SM input copy 1.139 ms. All alternatives slower on target; no ranked submission."
+    },
+    {
+      "candidate": "official transfer-topology probe",
+      "outcome": "Unscored platform run passed 3/3 exact cases. GPU node 0 and allowed CPUs 0-23 share the only visible NUMA node. Input/output physical-node queries were denied with EPERM. Pageable-memory access and native host atomics both report 0. No exposed NUMA-placement fix or HMM direct-input path identified."
     }
   ],
   "official_result": {

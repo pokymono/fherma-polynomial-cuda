@@ -1,0 +1,48 @@
+{
+  "official_leaderboard_result": false,
+  "platform_verified_cases": 3,
+  "run": "6af344bf698e99b16a7b94e9",
+  "source_commit": "558fbf30ba53dc66aae130998bdac17f5086be3a",
+  "gpu_pci": "0000:fe:00.0",
+  "gpu_numa_node": 0,
+  "gpu_local_cpus": "0-23",
+  "visible_numa_nodes": [
+    0
+  ],
+  "allowed_physical_cpus": [
+    0,
+    2,
+    4,
+    6,
+    8,
+    10,
+    12,
+    14,
+    16,
+    18,
+    20,
+    22
+  ],
+  "allowed_sibling_cpus": [
+    1,
+    3,
+    5,
+    7,
+    9,
+    11,
+    13,
+    15,
+    17,
+    19,
+    21,
+    23
+  ],
+  "pinned_buffer_node_query": {
+    "available": false,
+    "errno": 1,
+    "meaning": "EPERM; do not infer measured buffer placement from this failed query"
+  },
+  "pageable_memory_access": false,
+  "host_native_atomics": false,
+  "conclusion": "No visible cross-NUMA mismatch; HMM direct access to ordinary system allocations is unavailable. Keep pinned staging. Precise physical placement of pinned buffers could not be queried."
+}
