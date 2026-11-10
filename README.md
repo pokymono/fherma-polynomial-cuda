@@ -11,10 +11,10 @@ Inputs and output are canonical, coefficient-major arrays of little-endian
 `(N=32768, W=868)`.
 
 The latest fully validated official entry is
-[`candidates/overlapped-output`](candidates/overlapped-output/README.md), at commit
-`38064bfcd72818e6d32bfd52a99bd1041e904a54`. It passed all 40 official cases on
-Blackwell with medians of **1.6966325 ms** and **0.5443065 ms**, respectively.
-[Official run](https://www.fherma.io/kernels/polynomial-multiplication/specifications/negacyclic/runs/6af2eeb1698e99b16a76da13).
+[`candidates/column-streaming`](candidates/column-streaming/README.md), at commit
+`171d76fc955000077126ed120bb8f8ce9e84b6f3`. It passed all 40 official cases on
+Blackwell with medians of **1.3373995 ms** and **0.497236 ms**, respectively.
+[Official run](https://www.fherma.io/kernels/polynomial-multiplication/specifications/negacyclic/runs/6af2f343698e99b16a773bd3).
 Use that directory in the CMake commands below to reproduce this version;
 `src/` preserves the original baseline. Newer experiments have separate
 directories and do not inherit this result.

@@ -35,3 +35,7 @@ Local timing is not an official Blackwell score. The 16-strip version was kept
 over an 8-strip experiment because it was faster on the development GPU.
 
 FHERMA artifact path: `candidates/column-streaming`.
+
+The standalone official run passed **40/40 cases** with medians of
+**1.3373995 ms** at N65536/W1747 and **0.497236 ms** at N32768/W868.
+See [the exact source-to-run record](official-results.json).

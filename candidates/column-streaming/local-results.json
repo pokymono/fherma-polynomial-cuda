@@ -15,7 +15,7 @@
   "strided_copy_stress_jobs": 96,
   "strided_copy_stress_sessions": 48,
   "output_worker_stress_checks": 1003,
-  "standalone_blackwell_status": "not yet measured",
+  "standalone_blackwell_status": "40/40 exact; separate official-results.json",
   "sm120_compile": true,
   "sm120_spill_bytes": 0
 }
