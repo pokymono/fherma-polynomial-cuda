@@ -1,0 +1,85 @@
+{
+  "official_ranked": false,
+  "local_outer_exact_cases": 1,
+  "verified_inner_calls_per_outer": 162,
+  "local_hardware": "SM86; actual shared fusion and exact quotient, TMA fallback only",
+  "local_exact": {
+    "source_sha256": "2d961703991d0fe18a4126dae9287d9d759c63429346fa1d972cb86a9d351287",
+    "source_files_sha256": {
+      "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+      "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+      "implementation.cuh": "3bab24c2c6b479264d2ca7cec69e4a48e1d01349d915f64d36665d211c137abc",
+      "CMakeLists.txt": "223eb06e48e8ef8e9bdb1bce4f924a1bb7601d45e94fdb82e28916ad1fc36f6d",
+      "solve.cu": "2d961703991d0fe18a4126dae9287d9d759c63429346fa1d972cb86a9d351287",
+      "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+      "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+      "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503",
+      "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+      "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb"
+    },
+    "binary_sha256": "51a20c9fe24059450c035713c2030d9dad6529ec962c85464e4a03c07e9fe808",
+    "source": "/home/rishitshivam/work/fherma-polynomial/diagnostics/fused-output-schedule/solve.cu",
+    "binary": "/home/rishitshivam/work/fherma-polynomial/build/fused-output-schedule-diagnostic",
+    "hardware": "RTX 3050 Laptop, SM86",
+    "official": false,
+    "points": [
+      {
+        "N": 65536,
+        "W": 1747,
+        "L": 55,
+        "directory": "input_scheduler_one_n65536_w1747",
+        "passed": 1,
+        "timings": {
+          "init_s": 1.9e-07,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 4.835554645,
+              "status": "ok"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "local_build": {
+    "command": [
+      "/home/rishitshivam/work/muse-spark-open/.build-deps/nvcc/nvidia/cu13/bin/nvcc",
+      "-std=c++17",
+      "-O3",
+      "-arch=sm_86",
+      "-Xcompiler=-pthread",
+      "-Xptxas=-v",
+      "-I/home/rishitshivam/work/muse-spark-open/.build-deps/cccl/nvidia/cu13/include/cccl",
+      "-cudart=shared",
+      "-cudadevrt=none",
+      "-L/home/rishitshivam/work/muse-spark-open/.build-deps/nvcc/nvidia/cu13/lib",
+      "/home/rishitshivam/work/fherma-polynomial/diagnostics/fused-output-schedule/main.cpp",
+      "/home/rishitshivam/work/fherma-polynomial/diagnostics/fused-output-schedule/solve.cu",
+      "-Xlinker",
+      "-rpath",
+      "-Xlinker",
+      "/home/rishitshivam/work/muse-spark-open/.build-deps/nvcc/nvidia/cu13/lib",
+      "-o",
+      "/home/rishitshivam/work/fherma-polynomial/build/fused-output-schedule-diagnostic",
+      "-lcuda"
+    ],
+    "source_files_sha256": {
+      "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+      "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+      "implementation.cuh": "3bab24c2c6b479264d2ca7cec69e4a48e1d01349d915f64d36665d211c137abc",
+      "CMakeLists.txt": "223eb06e48e8ef8e9bdb1bce4f924a1bb7601d45e94fdb82e28916ad1fc36f6d",
+      "solve.cu": "2d961703991d0fe18a4126dae9287d9d759c63429346fa1d972cb86a9d351287",
+      "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+      "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+      "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503",
+      "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+      "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb"
+    },
+    "exit_code": 0,
+    "binary_sha256": "51a20c9fe24059450c035713c2030d9dad6529ec962c85464e4a03c07e9fe808"
+  },
+  "aws_schedule_evidence": "evidence/aws_large_archive/aws_large_output_schedule_results.json",
+  "aws_cases_per_configuration": 48,
+  "notes": "AWS schedule sweep used TMA disabled; official diagnostic will separately log actual TMA execution."
+}
