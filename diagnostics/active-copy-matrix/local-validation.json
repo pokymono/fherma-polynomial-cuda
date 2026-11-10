@@ -1,0 +1,21 @@
+{
+  "official": false,
+  "hardware": "RTX 3050 Laptop, SM86",
+  "source_files_sha256": {
+    "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+    "parallel_copy.h": "048caa8a123ae051e90f961023e79b83026b9dbea82bc61dea4cc70f607c6b6b",
+    "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+    "solve.cu": "194c1adc15d0ab34a6e0734ab100dfd0a20b597885ac41136acf0d2d36ce1861",
+    "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+    "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b"
+  },
+  "binary_sha256": "85f73ec70b27498d3992f651c1d13ecbe991d3bbb8f53f8656d09ed9257b6a0a",
+  "validated_cases": 12,
+  "modes_per_call": 12,
+  "cpu_copy_stress": {
+    "passed_copies": 1080,
+    "joined_sessions": 60,
+    "streaming_stores": true,
+    "thread_sanitizer": "Unavailable: installed compiler cannot find libtsan.so.2.0.0"
+  }
+}
