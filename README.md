@@ -60,6 +60,10 @@ python tools/validate_local.py
 development. Other machines should use CMake. `tools/profile_local.py` creates a
 separate instrumented source under `experiments/`; it is never a submission file.
 
-Local RTX 3050 timings measure development progress only. An official result
-requires a passing FHERMA run on its reference runner. No official result is
-claimed by this repository.
+Local RTX 3050 timings measure development progress only. The production source
+at commit `3f8ebaf697bf7220fed8f119e7d0184f83779f52` passed all 40 official cases
+on the NVIDIA RTX PRO 6000 Blackwell reference runner on November 7, 2026.
+Its median times were 5.639522 ms at `(65536,1747)` and 1.4168585 ms at
+`(32768,868)`; see [the official run](https://www.fherma.io/kernels/polynomial-multiplication/specifications/negacyclic/runs/6aeee932ed7d31391ff332ef).
+Experimental candidates and diagnostics have separate artifact directories and
+must be validated and measured independently before those results apply to them.
