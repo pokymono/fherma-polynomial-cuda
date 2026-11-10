@@ -1,0 +1,37 @@
+{
+  "official": false,
+  "local_gpu": "RTX3050 SM86",
+  "independent_random_oracle_cases": 1,
+  "all_inner_outputs_compared": true,
+  "complete_inner_calls": 162,
+  "source_sha256": {
+    "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+    "cpu_affinity.h": "9408bcc9ab111895d932a0f4870316eb3963174695cbeef7b174282125fb7e68",
+    "implementation.cuh": "877b2f4bf7893934d99a21bac032367096a455246755444d029dca2ed98aadbe",
+    "interleaved_copy.h": "8556ac8654044094f46094258d402e4f9af46e4cbb37be873519a4a93edcc33b",
+    "solve.cu": "42ce5a5392b0693c39c6fea2970188a702a6590f148c14c7d12e0a9334265157",
+    "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+    "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+    "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503",
+    "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+    "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb"
+  },
+  "local_cpu_avx512_executed": false,
+  "local_cpu_note": "Local CPU lacks AVX512F; all inner local calls exercised the scalar packing fallback.",
+  "aws_copy_canary": {
+    "executed_avx512": true,
+    "words_checked": 450560,
+    "source_alignments_u32": 16,
+    "column_groups": 8,
+    "destination_canaries": "intact",
+    "header_sha256": "8556ac8654044094f46094258d402e4f9af46e4cbb37be873519a4a93edcc33b",
+    "evidence": "PASS: AVX512F executed, 450560 words checked, all 16 u32 alignments and 8 column groups, destination canaries intact"
+  },
+  "independent_factorization_model": {
+    "status": "passed",
+    "coefficient_checks": 122880,
+    "prime": 2013265921,
+    "seed": 61931,
+    "transform_length": 512
+  }
+}
