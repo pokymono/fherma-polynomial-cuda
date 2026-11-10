@@ -14,5 +14,5 @@
     "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
     "cpu_copy.h": "8e4202867263ee796d490ce78340666a84da04e491625c919bb712a6e5e2c3a8"
   },
-  "notes": "One random outer case with 567 total complete inner calls (7 modes x 3 rounds x 3 positions x (2 warmups+1 measurement)). Local harness has no warmups; no timing log was expected for outer call zero."
+  "notes": "One random outer case with 189 total complete inner calls (7 modes x 3 rounds x 3 positions x (2 warmups+1 measurement)). Local harness has no warmups; no timing log was expected for outer call zero."
 }
