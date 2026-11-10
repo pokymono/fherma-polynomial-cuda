@@ -1,0 +1,54 @@
+{
+  "official_ranked": false,
+  "purpose": "Controlled idle-time diagnostic, not a ranked candidate",
+  "local_diagnostic": {
+    "source_sha256": "d016029acb91dfdd11302b0b607de81d20c06a9a381e3ff66af92d849afd074b",
+    "source_files_sha256": {
+      "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+      "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+      "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+      "solve.cu": "d016029acb91dfdd11302b0b607de81d20c06a9a381e3ff66af92d849afd074b",
+      "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+      "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+      "baseline.cuh": "2d383303be3f4a585e61608c21fd9b854f483a63b507f35c334e0f5a618c1ba8",
+      "tuned.cuh": "256f0198f23cf5d440c527cf823069e6e0d0f3d051bd885fb0246b961946f9ea",
+      "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503",
+      "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+      "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb"
+    },
+    "binary_sha256": "9c6584aed70c7797c5c13d50b3bfe451b86848c653b341449ecec3f1589ff8a0",
+    "source": "/home/rishitshivam/work/fherma-polynomial/diagnostics/idle-transfer/solve.cu",
+    "binary": "/home/rishitshivam/work/fherma-polynomial/build/idle-transfer",
+    "hardware": "RTX 3050 Laptop, SM86",
+    "official": false,
+    "points": [
+      {
+        "N": 65536,
+        "W": 1747,
+        "L": 55,
+        "directory": "diag_transfer_n65536_w1747",
+        "passed": 1,
+        "timings": {
+          "init_s": 1.793e-06,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 3.704243598,
+              "status": "ok"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "constituents": {
+    "baseline": {
+      "source_sha256": "2d383303be3f4a585e61608c21fd9b854f483a63b507f35c334e0f5a618c1ba8",
+      "prior_evidence": "candidates/ordered-streaming/VALIDATION.json"
+    },
+    "tuned": {
+      "source_sha256": "256f0198f23cf5d440c527cf823069e6e0d0f3d051bd885fb0246b961946f9ea",
+      "prior_evidence": "candidates/transfer-tuned/VALIDATION.json"
+    }
+  }
+}
