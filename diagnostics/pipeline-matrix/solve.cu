@@ -1052,6 +1052,17 @@ fherma::Outputs fherma_run(void* state,const fherma::Inputs& in) {
         if(i==0) first=std::move(output);
         else if(first.c.data!=output.c.data) throw std::runtime_error("pipeline mode mismatch");
     }
+    // Reuse already initialized plans; only the CPU copy implementation differs.
+    for(unsigned i:{3u,5u,6u}) {
+        const auto& mode=diagnostic.modes[i];
+        auto& candidate=*diagnostic.states[i]; candidate.host_copy.set_streaming(true);
+        auto begin=std::chrono::steady_clock::now();
+        auto output=candidate_run(&candidate,in);
+        double ms=std::chrono::duration<double,std::milli>(std::chrono::steady_clock::now()-begin).count();
+        candidate.host_copy.set_streaming(false);
+        std::fprintf(stderr,"pipeline_streaming_ms:chunks=%u streams=%u lanes=%u time=%.6f\n",mode.chunks,mode.streams,mode.lanes,ms);
+        if(first.c.data!=output.c.data) throw std::runtime_error("streaming copy mismatch");
+    }
     return first;
 }
 void fherma_free(void* state) { delete static_cast<DiagnosticState*>(state); }

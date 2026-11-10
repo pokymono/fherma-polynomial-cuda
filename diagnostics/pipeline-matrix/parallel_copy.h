@@ -6,6 +6,44 @@
 #include <mutex>
 #include <thread>
 #include <vector>
+#include <cstdint>
+
+#if defined(__x86_64__) && defined(__GNUC__)
+#include <immintrin.h>
+// Streaming stores avoid reading destination cache lines only to overwrite
+// them. The fence completes every store before CUDA can consume the buffer.
+__attribute__((target("avx2")))
+inline void copy_streaming(void* destination,const void* source,size_t bytes) {
+    auto* out=static_cast<unsigned char*>(destination);
+    auto* in=static_cast<const unsigned char*>(source);
+    size_t prefix=(32-(reinterpret_cast<uintptr_t>(out)&31))&31;
+    prefix=std::min(prefix,bytes); std::memcpy(out,in,prefix);
+    out+=prefix;in+=prefix;bytes-=prefix;
+    size_t i=0;
+    for(;i+128<=bytes;i+=128) {
+        auto a=_mm256_loadu_si256(reinterpret_cast<const __m256i*>(in+i));
+        auto b=_mm256_loadu_si256(reinterpret_cast<const __m256i*>(in+i+32));
+        auto c=_mm256_loadu_si256(reinterpret_cast<const __m256i*>(in+i+64));
+        auto d=_mm256_loadu_si256(reinterpret_cast<const __m256i*>(in+i+96));
+        _mm256_stream_si256(reinterpret_cast<__m256i*>(out+i),a);
+        _mm256_stream_si256(reinterpret_cast<__m256i*>(out+i+32),b);
+        _mm256_stream_si256(reinterpret_cast<__m256i*>(out+i+64),c);
+        _mm256_stream_si256(reinterpret_cast<__m256i*>(out+i+96),d);
+    }
+    for(;i+32<=bytes;i+=32) _mm256_stream_si256(reinterpret_cast<__m256i*>(out+i),_mm256_loadu_si256(reinterpret_cast<const __m256i*>(in+i)));
+    std::memcpy(out+i,in+i,bytes-i);
+    _mm_sfence();
+}
+#endif
+inline void staging_copy(void* destination,const void* source,size_t bytes,bool streaming) {
+#if defined(__x86_64__) && defined(__GNUC__)
+    if(streaming&&bytes>=32768&&__builtin_cpu_supports("avx2")) {
+        copy_streaming(destination,source,bytes);return;
+    }
+#endif
+    std::memcpy(destination,source,bytes);
+}
+
 
 // A bounded worker team for host staging only. Each copy joins before returning;
 // no work involving operands is performed between calls to fherma_run.
@@ -17,6 +55,7 @@ class ParallelCopy {
     std::vector<std::thread> workers;
     std::mutex mutex;
     std::condition_variable ready, done;
+    bool streaming = false;
     bool stopping = false;
     unsigned generation = 0, pending = 0;
     std::array<void*,2> destinations{};
@@ -28,8 +67,8 @@ class ParallelCopy {
         size_t first = bytes * lane / lanes;
         size_t last = bytes * (lane + 1) / lanes;
         for (unsigned i = 0; i < buffers; ++i)
-            std::memcpy(static_cast<char*>(destinations[i]) + first,
-                        static_cast<const char*>(sources[i]) + first, last - first);
+            staging_copy(static_cast<char*>(destinations[i]) + first,
+                         static_cast<const char*>(sources[i]) + first, last - first,streaming);
     }
     void work(unsigned lane) {
         unsigned seen = 0;
@@ -58,10 +97,11 @@ public:
         } catch (...) { stop(); throw; }
     }
     ~ParallelCopy() { stop(); }
+    void set_streaming(bool value) { streaming=value; }
     void copy_pair(void* da, void* db, const void* a, const void* b, size_t size) {
         if (size < 262144) {
-            std::memcpy(da,a,size);
-            if (db) std::memcpy(db,b,size);
+            staging_copy(da,a,size,streaming);
+            if (db) staging_copy(db,b,size,streaming);
             return;
         }
         {
