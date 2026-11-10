@@ -1791,5 +1791,1750 @@
     "result": "diagnostics/worker-idle/RESULTS.json",
     "finding": "3/3 exact, all162 inner samples retained. Operand pipeline ~1.02ms vs1.037ms warm brackets. Polling alone does not fix idle; tuned polling has9delayed samples without>1.2ms but no paired tuned-wait control.",
     "decision": "Do not promote CPU polling as an established fix; preserve early operand overlap as a small measured lead."
+  },
+  "night_blackwell_20261110": {
+    "session": "fherma-20261110-200148",
+    "seed_start": 81001,
+    "evidence_boundary": "Independent exact polynomial oracle, 24 cases at each point per variant; complete calls on AWS, not official scores. Rejected variants are retained only as evidence.",
+    "experiments": [
+      {
+        "description": "Aligned TMA bulk stores directly to mapped host memory",
+        "official": false,
+        "hardware": "AWS g7e.2xlarge RTX PRO6000 Blackwell SM120, 4 physical CPU cores, CUDA12.8",
+        "evidence": "aws_bulk_host_results.json",
+        "builds": [
+          {
+            "name": "bulk-host-r4",
+            "exit_code": 0,
+            "command": [
+              "/usr/local/cuda-12.8/bin/nvcc",
+              "-std=c++17",
+              "-O3",
+              "-arch=sm_120",
+              "-Xcompiler=-pthread",
+              "-Xptxas=-v",
+              "-DHOST_OUTPUT_ROWS=4",
+              "-DOUTPUT_CHAINS=4",
+              "experiments/v152-bulk-host-output/main.cpp",
+              "experiments/v152-bulk-host-output/solve.cu",
+              "-o",
+              "build/bulk-host-r4"
+            ],
+            "source_files_sha256": {
+              "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+              "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+              "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+              "solve.cu": "1c9537e315f159eb120f7855df3f0a33a14303398eab0c0b102c36df67878723",
+              "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+              "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+              "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+              "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+              "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+            },
+            "binary_sha256": "c8f5b4a09ec9dd054e896425053de7de3e9699d7ccf7b7a2a884177f909ab75d"
+          },
+          {
+            "name": "bulk-host-r8",
+            "exit_code": 0,
+            "command": [
+              "/usr/local/cuda-12.8/bin/nvcc",
+              "-std=c++17",
+              "-O3",
+              "-arch=sm_120",
+              "-Xcompiler=-pthread",
+              "-Xptxas=-v",
+              "-DHOST_OUTPUT_ROWS=8",
+              "-DOUTPUT_CHAINS=4",
+              "experiments/v152-bulk-host-output/main.cpp",
+              "experiments/v152-bulk-host-output/solve.cu",
+              "-o",
+              "build/bulk-host-r8"
+            ],
+            "source_files_sha256": {
+              "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+              "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+              "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+              "solve.cu": "1c9537e315f159eb120f7855df3f0a33a14303398eab0c0b102c36df67878723",
+              "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+              "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+              "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+              "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+              "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+            },
+            "binary_sha256": "fba17c31b1fb6313c6dd78ab3eb48c6b79c718730780c6e3bc781e7acfa628e6"
+          },
+          {
+            "name": "bulk-host-r16",
+            "exit_code": 0,
+            "command": [
+              "/usr/local/cuda-12.8/bin/nvcc",
+              "-std=c++17",
+              "-O3",
+              "-arch=sm_120",
+              "-Xcompiler=-pthread",
+              "-Xptxas=-v",
+              "-DHOST_OUTPUT_ROWS=16",
+              "-DOUTPUT_CHAINS=4",
+              "experiments/v152-bulk-host-output/main.cpp",
+              "experiments/v152-bulk-host-output/solve.cu",
+              "-o",
+              "build/bulk-host-r16"
+            ],
+            "source_files_sha256": {
+              "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+              "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+              "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+              "solve.cu": "1c9537e315f159eb120f7855df3f0a33a14303398eab0c0b102c36df67878723",
+              "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+              "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+              "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+              "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+              "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+            },
+            "binary_sha256": "c3a2f5ef0137cf16ec3b3d25201804de345ecc0b2697afb95e73158b8b963e9d"
+          },
+          {
+            "name": "bulk-host-r32",
+            "exit_code": 0,
+            "command": [
+              "/usr/local/cuda-12.8/bin/nvcc",
+              "-std=c++17",
+              "-O3",
+              "-arch=sm_120",
+              "-Xcompiler=-pthread",
+              "-Xptxas=-v",
+              "-DHOST_OUTPUT_ROWS=32",
+              "-DOUTPUT_CHAINS=4",
+              "experiments/v152-bulk-host-output/main.cpp",
+              "experiments/v152-bulk-host-output/solve.cu",
+              "-o",
+              "build/bulk-host-r32"
+            ],
+            "source_files_sha256": {
+              "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+              "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+              "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+              "solve.cu": "1c9537e315f159eb120f7855df3f0a33a14303398eab0c0b102c36df67878723",
+              "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+              "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+              "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+              "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+              "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+            },
+            "binary_sha256": "29daacc35ef1e9d89a2268f0a74d7bc8ec4133e13f86d1ece9c788be5f8269be"
+          },
+          {
+            "name": "bulk-device-r32",
+            "exit_code": 0,
+            "command": [
+              "/usr/local/cuda-12.8/bin/nvcc",
+              "-std=c++17",
+              "-O3",
+              "-arch=sm_120",
+              "-Xcompiler=-pthread",
+              "-Xptxas=-v",
+              "-DHOST_OUTPUT_ROWS=32",
+              "-DOUTPUT_CHAINS=4",
+              "-DDIRECT_HOST_OUTPUT=0",
+              "experiments/v152-bulk-host-output/main.cpp",
+              "experiments/v152-bulk-host-output/solve.cu",
+              "-o",
+              "build/bulk-device-r32"
+            ],
+            "source_files_sha256": {
+              "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+              "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+              "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+              "solve.cu": "1c9537e315f159eb120f7855df3f0a33a14303398eab0c0b102c36df67878723",
+              "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+              "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+              "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+              "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+              "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+            },
+            "binary_sha256": "f571e2c9477cfff2452aa3f3b1ea3cd4fc88549d6eb24600b301a094bdf5785b"
+          }
+        ],
+        "results": [
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 32768,
+            "W": 868,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.369525,
+            "random_median_ms": 0.36868350000000005,
+            "binary_sha256": "8b6481b7ff4347f0838489f193508cd98c3ac2d6cf8e58bfe2ec07e8dfd5aabb"
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 65536,
+            "W": 1747,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0767305,
+            "random_median_ms": 1.0745295,
+            "binary_sha256": "8b6481b7ff4347f0838489f193508cd98c3ac2d6cf8e58bfe2ec07e8dfd5aabb"
+          },
+          {
+            "name": "bulk-host-r4",
+            "N": 32768,
+            "W": 868,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.395536,
+            "random_median_ms": 0.3952945,
+            "binary_sha256": "c8f5b4a09ec9dd054e896425053de7de3e9699d7ccf7b7a2a884177f909ab75d"
+          },
+          {
+            "name": "bulk-host-r4",
+            "N": 65536,
+            "W": 1747,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.2205359999999998,
+            "random_median_ms": 1.2186089999999998,
+            "binary_sha256": "c8f5b4a09ec9dd054e896425053de7de3e9699d7ccf7b7a2a884177f909ab75d"
+          },
+          {
+            "name": "bulk-host-r8",
+            "N": 32768,
+            "W": 868,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.39064,
+            "random_median_ms": 0.39064,
+            "binary_sha256": "fba17c31b1fb6313c6dd78ab3eb48c6b79c718730780c6e3bc781e7acfa628e6"
+          },
+          {
+            "name": "bulk-host-r8",
+            "N": 65536,
+            "W": 1747,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.2171504999999998,
+            "random_median_ms": 1.2171504999999998,
+            "binary_sha256": "fba17c31b1fb6313c6dd78ab3eb48c6b79c718730780c6e3bc781e7acfa628e6"
+          },
+          {
+            "name": "bulk-host-r16",
+            "N": 32768,
+            "W": 868,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.38464149999999997,
+            "random_median_ms": 0.3833525,
+            "binary_sha256": "c3a2f5ef0137cf16ec3b3d25201804de345ecc0b2697afb95e73158b8b963e9d"
+          },
+          {
+            "name": "bulk-host-r16",
+            "N": 65536,
+            "W": 1747,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.221596,
+            "random_median_ms": 1.2213855,
+            "binary_sha256": "c3a2f5ef0137cf16ec3b3d25201804de345ecc0b2697afb95e73158b8b963e9d"
+          },
+          {
+            "name": "bulk-host-r32",
+            "N": 32768,
+            "W": 868,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.387518,
+            "random_median_ms": 0.38666999999999996,
+            "binary_sha256": "29daacc35ef1e9d89a2268f0a74d7bc8ec4133e13f86d1ece9c788be5f8269be"
+          },
+          {
+            "name": "bulk-host-r32",
+            "N": 65536,
+            "W": 1747,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.207887,
+            "random_median_ms": 1.2097245,
+            "binary_sha256": "29daacc35ef1e9d89a2268f0a74d7bc8ec4133e13f86d1ece9c788be5f8269be"
+          },
+          {
+            "name": "bulk-device-r32",
+            "N": 32768,
+            "W": 868,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.370118,
+            "random_median_ms": 0.3700635,
+            "binary_sha256": "f571e2c9477cfff2452aa3f3b1ea3cd4fc88549d6eb24600b301a094bdf5785b"
+          },
+          {
+            "name": "bulk-device-r32",
+            "N": 65536,
+            "W": 1747,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0906399999999998,
+            "random_median_ms": 1.088185,
+            "binary_sha256": "f571e2c9477cfff2452aa3f3b1ea3cd4fc88549d6eb24600b301a094bdf5785b"
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 32768,
+            "W": 868,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.36879049999999997,
+            "random_median_ms": 0.36820099999999995,
+            "binary_sha256": "8b6481b7ff4347f0838489f193508cd98c3ac2d6cf8e58bfe2ec07e8dfd5aabb"
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 65536,
+            "W": 1747,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0767879999999999,
+            "random_median_ms": 1.0760975,
+            "binary_sha256": "8b6481b7ff4347f0838489f193508cd98c3ac2d6cf8e58bfe2ec07e8dfd5aabb"
+          }
+        ]
+      },
+      {
+        "description": "Warp-exchange high transform",
+        "official": false,
+        "hardware": "AWS g7e.2xlarge RTX PRO6000 Blackwell SM120, 4 physical CPU cores, CUDA12.8",
+        "evidence": "aws_warp_high_results.json",
+        "builds": [
+          {
+            "name": "warp-control",
+            "exit_code": 0,
+            "command": [
+              "/usr/local/cuda-12.8/bin/nvcc",
+              "-std=c++17",
+              "-O3",
+              "-arch=sm_120",
+              "-Xcompiler=-pthread",
+              "-Xptxas=-v",
+              "-DWIDE_POINTWISE=1",
+              "-DHIGH_SHUFFLE_FORWARD=0",
+              "-DHIGH_SHUFFLE_INVERSE=0",
+              "experiments/v153-warp-high/main.cpp",
+              "experiments/v153-warp-high/solve.cu",
+              "-o",
+              "build/warp-control"
+            ],
+            "source_files_sha256": {
+              "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+              "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+              "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+              "solve.cu": "682205a548144d470a12b7d3c62bab5557feb42dfb7f0b377553099f504339a3",
+              "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+              "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+              "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+              "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+              "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+            },
+            "binary_sha256": "8fe46e0bf7f69aa210e4da1fec27adc0e9954c90dd23dcebc9f24fef05236d85"
+          },
+          {
+            "name": "warp-high-c2",
+            "exit_code": 0,
+            "command": [
+              "/usr/local/cuda-12.8/bin/nvcc",
+              "-std=c++17",
+              "-O3",
+              "-arch=sm_120",
+              "-Xcompiler=-pthread",
+              "-Xptxas=-v",
+              "-DWIDE_POINTWISE=1",
+              "-DHIGH_WARP_COLUMNS=2",
+              "experiments/v153-warp-high/main.cpp",
+              "experiments/v153-warp-high/solve.cu",
+              "-o",
+              "build/warp-high-c2"
+            ],
+            "source_files_sha256": {
+              "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+              "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+              "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+              "solve.cu": "682205a548144d470a12b7d3c62bab5557feb42dfb7f0b377553099f504339a3",
+              "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+              "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+              "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+              "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+              "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+            },
+            "binary_sha256": "729809915b8719e2ef788e7504239af14e3838a31d9c72622d46e3458b0d7007"
+          },
+          {
+            "name": "warp-high-c4",
+            "exit_code": 0,
+            "command": [
+              "/usr/local/cuda-12.8/bin/nvcc",
+              "-std=c++17",
+              "-O3",
+              "-arch=sm_120",
+              "-Xcompiler=-pthread",
+              "-Xptxas=-v",
+              "-DWIDE_POINTWISE=1",
+              "-DHIGH_WARP_COLUMNS=4",
+              "experiments/v153-warp-high/main.cpp",
+              "experiments/v153-warp-high/solve.cu",
+              "-o",
+              "build/warp-high-c4"
+            ],
+            "source_files_sha256": {
+              "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+              "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+              "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+              "solve.cu": "682205a548144d470a12b7d3c62bab5557feb42dfb7f0b377553099f504339a3",
+              "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+              "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+              "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+              "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+              "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+            },
+            "binary_sha256": "e0e879996ed24afdd19356c805d974aa868a284b20f92aa986b22f9d3c6618fc"
+          },
+          {
+            "name": "warp-high-c8",
+            "exit_code": 0,
+            "command": [
+              "/usr/local/cuda-12.8/bin/nvcc",
+              "-std=c++17",
+              "-O3",
+              "-arch=sm_120",
+              "-Xcompiler=-pthread",
+              "-Xptxas=-v",
+              "-DWIDE_POINTWISE=1",
+              "-DHIGH_WARP_COLUMNS=8",
+              "experiments/v153-warp-high/main.cpp",
+              "experiments/v153-warp-high/solve.cu",
+              "-o",
+              "build/warp-high-c8"
+            ],
+            "source_files_sha256": {
+              "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+              "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+              "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+              "solve.cu": "682205a548144d470a12b7d3c62bab5557feb42dfb7f0b377553099f504339a3",
+              "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+              "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+              "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+              "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+              "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+            },
+            "binary_sha256": "a155c852d3c3ffa706f25f2fecbbfae0c59e35e1072524d2b9dae9cc40373615"
+          },
+          {
+            "name": "warp-high-forward",
+            "exit_code": 0,
+            "command": [
+              "/usr/local/cuda-12.8/bin/nvcc",
+              "-std=c++17",
+              "-O3",
+              "-arch=sm_120",
+              "-Xcompiler=-pthread",
+              "-Xptxas=-v",
+              "-DWIDE_POINTWISE=1",
+              "-DHIGH_WARP_COLUMNS=4",
+              "-DHIGH_SHUFFLE_INVERSE=0",
+              "experiments/v153-warp-high/main.cpp",
+              "experiments/v153-warp-high/solve.cu",
+              "-o",
+              "build/warp-high-forward"
+            ],
+            "source_files_sha256": {
+              "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+              "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+              "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+              "solve.cu": "682205a548144d470a12b7d3c62bab5557feb42dfb7f0b377553099f504339a3",
+              "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+              "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+              "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+              "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+              "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+            },
+            "binary_sha256": "5a3b813c9732214c6db1468931beda88bbc708ef743dddafbcc7a6e1a2e1f5a3"
+          },
+          {
+            "name": "warp-high-inverse",
+            "exit_code": 0,
+            "command": [
+              "/usr/local/cuda-12.8/bin/nvcc",
+              "-std=c++17",
+              "-O3",
+              "-arch=sm_120",
+              "-Xcompiler=-pthread",
+              "-Xptxas=-v",
+              "-DWIDE_POINTWISE=1",
+              "-DHIGH_WARP_COLUMNS=4",
+              "-DHIGH_SHUFFLE_FORWARD=0",
+              "experiments/v153-warp-high/main.cpp",
+              "experiments/v153-warp-high/solve.cu",
+              "-o",
+              "build/warp-high-inverse"
+            ],
+            "source_files_sha256": {
+              "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+              "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+              "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+              "solve.cu": "682205a548144d470a12b7d3c62bab5557feb42dfb7f0b377553099f504339a3",
+              "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+              "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+              "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+              "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+              "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+            },
+            "binary_sha256": "cc93735ecb488ef2bfc8b80474f4b59a0ea9f5389d0dc57afcef1a56e4fb9ace"
+          }
+        ],
+        "results": [
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 32768,
+            "W": 868,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.370084,
+            "random_median_ms": 0.370084,
+            "binary_sha256": "8b6481b7ff4347f0838489f193508cd98c3ac2d6cf8e58bfe2ec07e8dfd5aabb"
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 65536,
+            "W": 1747,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0823809999999998,
+            "random_median_ms": 1.0813975,
+            "binary_sha256": "8b6481b7ff4347f0838489f193508cd98c3ac2d6cf8e58bfe2ec07e8dfd5aabb"
+          },
+          {
+            "name": "warp-control",
+            "N": 32768,
+            "W": 868,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3684985,
+            "random_median_ms": 0.3682855,
+            "binary_sha256": "8fe46e0bf7f69aa210e4da1fec27adc0e9954c90dd23dcebc9f24fef05236d85"
+          },
+          {
+            "name": "warp-control",
+            "N": 65536,
+            "W": 1747,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0703589999999998,
+            "random_median_ms": 1.0701105000000002,
+            "binary_sha256": "8fe46e0bf7f69aa210e4da1fec27adc0e9954c90dd23dcebc9f24fef05236d85"
+          },
+          {
+            "name": "warp-high-c2",
+            "N": 32768,
+            "W": 868,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.36664599999999997,
+            "random_median_ms": 0.366449,
+            "binary_sha256": "729809915b8719e2ef788e7504239af14e3838a31d9c72622d46e3458b0d7007"
+          },
+          {
+            "name": "warp-high-c2",
+            "N": 65536,
+            "W": 1747,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0748325,
+            "random_median_ms": 1.0745725,
+            "binary_sha256": "729809915b8719e2ef788e7504239af14e3838a31d9c72622d46e3458b0d7007"
+          },
+          {
+            "name": "warp-high-c4",
+            "N": 32768,
+            "W": 868,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3648985,
+            "random_median_ms": 0.36417350000000004,
+            "binary_sha256": "e0e879996ed24afdd19356c805d974aa868a284b20f92aa986b22f9d3c6618fc"
+          },
+          {
+            "name": "warp-high-c4",
+            "N": 65536,
+            "W": 1747,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.072944,
+            "random_median_ms": 1.072316,
+            "binary_sha256": "e0e879996ed24afdd19356c805d974aa868a284b20f92aa986b22f9d3c6618fc"
+          },
+          {
+            "name": "warp-high-c8",
+            "N": 32768,
+            "W": 868,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.388097,
+            "random_median_ms": 0.38752299999999995,
+            "binary_sha256": "a155c852d3c3ffa706f25f2fecbbfae0c59e35e1072524d2b9dae9cc40373615"
+          },
+          {
+            "name": "warp-high-c8",
+            "N": 65536,
+            "W": 1747,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0946394999999998,
+            "random_median_ms": 1.0936525000000001,
+            "binary_sha256": "a155c852d3c3ffa706f25f2fecbbfae0c59e35e1072524d2b9dae9cc40373615"
+          },
+          {
+            "name": "warp-high-forward",
+            "N": 32768,
+            "W": 868,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.36615250000000005,
+            "random_median_ms": 0.36589849999999996,
+            "binary_sha256": "5a3b813c9732214c6db1468931beda88bbc708ef743dddafbcc7a6e1a2e1f5a3"
+          },
+          {
+            "name": "warp-high-forward",
+            "N": 65536,
+            "W": 1747,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0702450000000001,
+            "random_median_ms": 1.06841,
+            "binary_sha256": "5a3b813c9732214c6db1468931beda88bbc708ef743dddafbcc7a6e1a2e1f5a3"
+          },
+          {
+            "name": "warp-high-inverse",
+            "N": 32768,
+            "W": 868,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3671215,
+            "random_median_ms": 0.366304,
+            "binary_sha256": "cc93735ecb488ef2bfc8b80474f4b59a0ea9f5389d0dc57afcef1a56e4fb9ace"
+          },
+          {
+            "name": "warp-high-inverse",
+            "N": 65536,
+            "W": 1747,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0690535,
+            "random_median_ms": 1.0683205,
+            "binary_sha256": "cc93735ecb488ef2bfc8b80474f4b59a0ea9f5389d0dc57afcef1a56e4fb9ace"
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 32768,
+            "W": 868,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.37085549999999995,
+            "random_median_ms": 0.36978900000000003,
+            "binary_sha256": "8b6481b7ff4347f0838489f193508cd98c3ac2d6cf8e58bfe2ec07e8dfd5aabb"
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 65536,
+            "W": 1747,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.075014,
+            "random_median_ms": 1.0736744999999999,
+            "binary_sha256": "8b6481b7ff4347f0838489f193508cd98c3ac2d6cf8e58bfe2ec07e8dfd5aabb"
+          }
+        ]
+      },
+      {
+        "description": "Exact compact Shoup root tables",
+        "official": false,
+        "hardware": "AWS g7e.2xlarge RTX PRO6000 Blackwell SM120, 4 physical CPU cores, CUDA12.8",
+        "evidence": "aws_compact_root_results.json",
+        "builds": [
+          {
+            "name": "compact-roots-0",
+            "exit_code": 0,
+            "command": [
+              "/usr/local/cuda-12.8/bin/nvcc",
+              "-std=c++17",
+              "-O3",
+              "-arch=sm_120",
+              "-Xcompiler=-pthread",
+              "-Xptxas=-v",
+              "-DWIDE_POINTWISE=1",
+              "-DCOMPACT_HIGH_ROOTS=0",
+              "experiments/v154-compact-roots/main.cpp",
+              "experiments/v154-compact-roots/solve.cu",
+              "-o",
+              "build/compact-roots-0"
+            ],
+            "source_files_sha256": {
+              "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+              "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+              "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+              "solve.cu": "ceb462fa50e0eb25d05f49be8e4b8329c0ca3f90bc3c8f7249d42de6d37ad472",
+              "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+              "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+              "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+              "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+              "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+            },
+            "binary_sha256": "0d7f70188a86c97f6d20d911a2042ed17a7eb3f10cf64d5385eab79b68637160"
+          },
+          {
+            "name": "compact-roots-1",
+            "exit_code": 0,
+            "command": [
+              "/usr/local/cuda-12.8/bin/nvcc",
+              "-std=c++17",
+              "-O3",
+              "-arch=sm_120",
+              "-Xcompiler=-pthread",
+              "-Xptxas=-v",
+              "-DWIDE_POINTWISE=1",
+              "-DCOMPACT_HIGH_ROOTS=1",
+              "experiments/v154-compact-roots/main.cpp",
+              "experiments/v154-compact-roots/solve.cu",
+              "-o",
+              "build/compact-roots-1"
+            ],
+            "source_files_sha256": {
+              "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+              "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+              "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+              "solve.cu": "ceb462fa50e0eb25d05f49be8e4b8329c0ca3f90bc3c8f7249d42de6d37ad472",
+              "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+              "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+              "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+              "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+              "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+            },
+            "binary_sha256": "c47ce88a9a44696eade36bec486a884cbbfbf56e79dc1b03bd266cb6e3e6d195"
+          }
+        ],
+        "results": [
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 32768,
+            "W": 868,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.369976,
+            "random_median_ms": 0.36952100000000004,
+            "binary_sha256": "8b6481b7ff4347f0838489f193508cd98c3ac2d6cf8e58bfe2ec07e8dfd5aabb"
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 65536,
+            "W": 1747,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0800419999999997,
+            "random_median_ms": 1.0797545,
+            "binary_sha256": "8b6481b7ff4347f0838489f193508cd98c3ac2d6cf8e58bfe2ec07e8dfd5aabb"
+          },
+          {
+            "name": "compact-roots-0",
+            "N": 32768,
+            "W": 868,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.367997,
+            "random_median_ms": 0.367191,
+            "binary_sha256": "0d7f70188a86c97f6d20d911a2042ed17a7eb3f10cf64d5385eab79b68637160"
+          },
+          {
+            "name": "compact-roots-0",
+            "N": 65536,
+            "W": 1747,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0698415,
+            "random_median_ms": 1.068072,
+            "binary_sha256": "0d7f70188a86c97f6d20d911a2042ed17a7eb3f10cf64d5385eab79b68637160"
+          },
+          {
+            "name": "compact-roots-1",
+            "N": 32768,
+            "W": 868,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3672,
+            "random_median_ms": 0.366821,
+            "binary_sha256": "c47ce88a9a44696eade36bec486a884cbbfbf56e79dc1b03bd266cb6e3e6d195"
+          },
+          {
+            "name": "compact-roots-1",
+            "N": 65536,
+            "W": 1747,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0602145,
+            "random_median_ms": 1.0588335,
+            "binary_sha256": "c47ce88a9a44696eade36bec486a884cbbfbf56e79dc1b03bd266cb6e3e6d195"
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 32768,
+            "W": 868,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.368173,
+            "random_median_ms": 0.367763,
+            "binary_sha256": "8b6481b7ff4347f0838489f193508cd98c3ac2d6cf8e58bfe2ec07e8dfd5aabb"
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 65536,
+            "W": 1747,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0837325,
+            "random_median_ms": 1.0831665,
+            "binary_sha256": "8b6481b7ff4347f0838489f193508cd98c3ac2d6cf8e58bfe2ec07e8dfd5aabb"
+          }
+        ]
+      },
+      {
+        "description": "Factorized twist and finish tables",
+        "official": false,
+        "hardware": "AWS g7e.2xlarge RTX PRO6000 Blackwell SM120, 4 physical CPU cores, CUDA12.8",
+        "evidence": "aws_split_factor_results.json",
+        "builds": [
+          {
+            "name": "split-factors-0-0",
+            "exit_code": 0,
+            "command": [
+              "/usr/local/cuda-12.8/bin/nvcc",
+              "-std=c++17",
+              "-O3",
+              "-arch=sm_120",
+              "-Xcompiler=-pthread",
+              "-Xptxas=-v",
+              "-DWIDE_POINTWISE=1",
+              "-DCOMPACT_TWIST=0",
+              "-DCOMPACT_FINISH=0",
+              "experiments/v155-split-factors/main.cpp",
+              "experiments/v155-split-factors/solve.cu",
+              "-o",
+              "build/split-factors-0-0"
+            ],
+            "source_files_sha256": {
+              "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+              "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+              "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+              "solve.cu": "3f54fdb9922bd117445be31839031aad2867d0ea8b16652c5e82cafe751ae241",
+              "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+              "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+              "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+              "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+              "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+            },
+            "binary_sha256": "1ced526bd8183d49d06b79f183dc78d4727aa41f669aeb9eb9dc2f3b8170dabf"
+          },
+          {
+            "name": "split-factors-1-0",
+            "exit_code": 0,
+            "command": [
+              "/usr/local/cuda-12.8/bin/nvcc",
+              "-std=c++17",
+              "-O3",
+              "-arch=sm_120",
+              "-Xcompiler=-pthread",
+              "-Xptxas=-v",
+              "-DWIDE_POINTWISE=1",
+              "-DCOMPACT_TWIST=1",
+              "-DCOMPACT_FINISH=0",
+              "experiments/v155-split-factors/main.cpp",
+              "experiments/v155-split-factors/solve.cu",
+              "-o",
+              "build/split-factors-1-0"
+            ],
+            "source_files_sha256": {
+              "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+              "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+              "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+              "solve.cu": "3f54fdb9922bd117445be31839031aad2867d0ea8b16652c5e82cafe751ae241",
+              "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+              "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+              "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+              "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+              "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+            },
+            "binary_sha256": "cb7b811f50ab8892c1821235b15b5c1413cbe0710ea14764e9e5cac4ec768966"
+          },
+          {
+            "name": "split-factors-0-1",
+            "exit_code": 0,
+            "command": [
+              "/usr/local/cuda-12.8/bin/nvcc",
+              "-std=c++17",
+              "-O3",
+              "-arch=sm_120",
+              "-Xcompiler=-pthread",
+              "-Xptxas=-v",
+              "-DWIDE_POINTWISE=1",
+              "-DCOMPACT_TWIST=0",
+              "-DCOMPACT_FINISH=1",
+              "experiments/v155-split-factors/main.cpp",
+              "experiments/v155-split-factors/solve.cu",
+              "-o",
+              "build/split-factors-0-1"
+            ],
+            "source_files_sha256": {
+              "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+              "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+              "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+              "solve.cu": "3f54fdb9922bd117445be31839031aad2867d0ea8b16652c5e82cafe751ae241",
+              "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+              "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+              "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+              "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+              "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+            },
+            "binary_sha256": "8b81d130e0b6e3134c15b946751eca58424b4c8d00ea18e4e64a3ecb85c683bb"
+          },
+          {
+            "name": "split-factors-1-1",
+            "exit_code": 0,
+            "command": [
+              "/usr/local/cuda-12.8/bin/nvcc",
+              "-std=c++17",
+              "-O3",
+              "-arch=sm_120",
+              "-Xcompiler=-pthread",
+              "-Xptxas=-v",
+              "-DWIDE_POINTWISE=1",
+              "-DCOMPACT_TWIST=1",
+              "-DCOMPACT_FINISH=1",
+              "experiments/v155-split-factors/main.cpp",
+              "experiments/v155-split-factors/solve.cu",
+              "-o",
+              "build/split-factors-1-1"
+            ],
+            "source_files_sha256": {
+              "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+              "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+              "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+              "solve.cu": "3f54fdb9922bd117445be31839031aad2867d0ea8b16652c5e82cafe751ae241",
+              "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+              "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+              "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+              "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+              "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+            },
+            "binary_sha256": "88afddb9546c71b6805a7aea76cba4cc5d4af7d7b1958cbdb0742e9706ddb0e2"
+          }
+        ],
+        "results": [
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 32768,
+            "W": 868,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.370577,
+            "random_median_ms": 0.3701995,
+            "binary_sha256": "8b6481b7ff4347f0838489f193508cd98c3ac2d6cf8e58bfe2ec07e8dfd5aabb"
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 65536,
+            "W": 1747,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.07522,
+            "random_median_ms": 1.0742485,
+            "binary_sha256": "8b6481b7ff4347f0838489f193508cd98c3ac2d6cf8e58bfe2ec07e8dfd5aabb"
+          },
+          {
+            "name": "split-factors-0-0",
+            "N": 32768,
+            "W": 868,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3677525,
+            "random_median_ms": 0.3677525,
+            "binary_sha256": "1ced526bd8183d49d06b79f183dc78d4727aa41f669aeb9eb9dc2f3b8170dabf"
+          },
+          {
+            "name": "split-factors-0-0",
+            "N": 65536,
+            "W": 1747,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0684625,
+            "random_median_ms": 1.0677860000000001,
+            "binary_sha256": "1ced526bd8183d49d06b79f183dc78d4727aa41f669aeb9eb9dc2f3b8170dabf"
+          },
+          {
+            "name": "split-factors-1-0",
+            "N": 32768,
+            "W": 868,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.366801,
+            "random_median_ms": 0.36630050000000003,
+            "binary_sha256": "cb7b811f50ab8892c1821235b15b5c1413cbe0710ea14764e9e5cac4ec768966"
+          },
+          {
+            "name": "split-factors-1-0",
+            "N": 65536,
+            "W": 1747,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0656724999999998,
+            "random_median_ms": 1.0643745,
+            "binary_sha256": "cb7b811f50ab8892c1821235b15b5c1413cbe0710ea14764e9e5cac4ec768966"
+          },
+          {
+            "name": "split-factors-0-1",
+            "N": 32768,
+            "W": 868,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.371516,
+            "random_median_ms": 0.371516,
+            "binary_sha256": "8b81d130e0b6e3134c15b946751eca58424b4c8d00ea18e4e64a3ecb85c683bb"
+          },
+          {
+            "name": "split-factors-0-1",
+            "N": 65536,
+            "W": 1747,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0682159999999998,
+            "random_median_ms": 1.066842,
+            "binary_sha256": "8b81d130e0b6e3134c15b946751eca58424b4c8d00ea18e4e64a3ecb85c683bb"
+          },
+          {
+            "name": "split-factors-1-1",
+            "N": 32768,
+            "W": 868,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.373766,
+            "random_median_ms": 0.37258050000000004,
+            "binary_sha256": "88afddb9546c71b6805a7aea76cba4cc5d4af7d7b1958cbdb0742e9706ddb0e2"
+          },
+          {
+            "name": "split-factors-1-1",
+            "N": 65536,
+            "W": 1747,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0690880000000003,
+            "random_median_ms": 1.0666125,
+            "binary_sha256": "88afddb9546c71b6805a7aea76cba4cc5d4af7d7b1958cbdb0742e9706ddb0e2"
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 32768,
+            "W": 868,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3706445,
+            "random_median_ms": 0.369973,
+            "binary_sha256": "8b6481b7ff4347f0838489f193508cd98c3ac2d6cf8e58bfe2ec07e8dfd5aabb"
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 65536,
+            "W": 1747,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.079605,
+            "random_median_ms": 1.0797354999999997,
+            "binary_sha256": "8b6481b7ff4347f0838489f193508cd98c3ac2d6cf8e58bfe2ec07e8dfd5aabb"
+          }
+        ]
+      },
+      {
+        "description": "Compact roots with tuned pipeline",
+        "official": false,
+        "hardware": "AWS g7e.2xlarge RTX PRO6000 Blackwell SM120, 4 physical CPU cores, CUDA12.8",
+        "evidence": "aws_compact_tuned_results.json",
+        "builds": [
+          {
+            "name": "compact-tuned-0",
+            "exit_code": 0,
+            "command": [
+              "/usr/local/cuda-12.8/bin/nvcc",
+              "-std=c++17",
+              "-O3",
+              "-arch=sm_120",
+              "-Xcompiler=-pthread",
+              "-Xptxas=-v",
+              "-DCOMPACT_HIGH_ROOTS=0",
+              "experiments/v156-compact-tuned/main.cpp",
+              "experiments/v156-compact-tuned/solve.cu",
+              "-o",
+              "build/compact-tuned-0"
+            ],
+            "source_files_sha256": {
+              "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+              "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+              "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+              "solve.cu": "10683adc8dbf005ec4bd70bf5e8d0ba355ab8391fa1fc5a656d6b4dec909224a",
+              "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+              "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+              "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+              "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+              "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+            },
+            "binary_sha256": "50f7c708903e4eedfaa8bb3f060b44038291cd509f0cc4d8efe576738611fb1b"
+          },
+          {
+            "name": "compact-tuned-1",
+            "exit_code": 0,
+            "command": [
+              "/usr/local/cuda-12.8/bin/nvcc",
+              "-std=c++17",
+              "-O3",
+              "-arch=sm_120",
+              "-Xcompiler=-pthread",
+              "-Xptxas=-v",
+              "-DCOMPACT_HIGH_ROOTS=1",
+              "experiments/v156-compact-tuned/main.cpp",
+              "experiments/v156-compact-tuned/solve.cu",
+              "-o",
+              "build/compact-tuned-1"
+            ],
+            "source_files_sha256": {
+              "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+              "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+              "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+              "solve.cu": "10683adc8dbf005ec4bd70bf5e8d0ba355ab8391fa1fc5a656d6b4dec909224a",
+              "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+              "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+              "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+              "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+              "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+            },
+            "binary_sha256": "a6f6162128d3142074e4b3d0c2a233203f592e50e4fe36fed092ba928301a201"
+          }
+        ],
+        "results": [
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 32768,
+            "W": 868,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.370942,
+            "random_median_ms": 0.370233,
+            "binary_sha256": "8b6481b7ff4347f0838489f193508cd98c3ac2d6cf8e58bfe2ec07e8dfd5aabb"
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 65536,
+            "W": 1747,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.079197,
+            "random_median_ms": 1.0783644999999997,
+            "binary_sha256": "8b6481b7ff4347f0838489f193508cd98c3ac2d6cf8e58bfe2ec07e8dfd5aabb"
+          },
+          {
+            "name": "compact-tuned-0",
+            "N": 32768,
+            "W": 868,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.329205,
+            "random_median_ms": 0.328994,
+            "binary_sha256": "50f7c708903e4eedfaa8bb3f060b44038291cd509f0cc4d8efe576738611fb1b"
+          },
+          {
+            "name": "compact-tuned-0",
+            "N": 65536,
+            "W": 1747,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0670760000000001,
+            "random_median_ms": 1.0644175,
+            "binary_sha256": "50f7c708903e4eedfaa8bb3f060b44038291cd509f0cc4d8efe576738611fb1b"
+          },
+          {
+            "name": "compact-tuned-1",
+            "N": 32768,
+            "W": 868,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3303665,
+            "random_median_ms": 0.3286585,
+            "binary_sha256": "a6f6162128d3142074e4b3d0c2a233203f592e50e4fe36fed092ba928301a201"
+          },
+          {
+            "name": "compact-tuned-1",
+            "N": 65536,
+            "W": 1747,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0560299999999998,
+            "random_median_ms": 1.0535904999999999,
+            "binary_sha256": "a6f6162128d3142074e4b3d0c2a233203f592e50e4fe36fed092ba928301a201"
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 32768,
+            "W": 868,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.36910350000000003,
+            "random_median_ms": 0.36884100000000003,
+            "binary_sha256": "8b6481b7ff4347f0838489f193508cd98c3ac2d6cf8e58bfe2ec07e8dfd5aabb"
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 65536,
+            "W": 1747,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0776549999999998,
+            "random_median_ms": 1.077096,
+            "binary_sha256": "8b6481b7ff4347f0838489f193508cd98c3ac2d6cf8e58bfe2ec07e8dfd5aabb"
+          }
+        ]
+      },
+      {
+        "description": "Boundary-preserving grouped DMA",
+        "official": false,
+        "hardware": "AWS g7e.2xlarge RTX PRO6000 Blackwell SM120, 4 physical CPU cores, CUDA12.8",
+        "evidence": "aws_hybrid_transfer_results.json",
+        "builds": [
+          {
+            "name": "hybrid-i1-o1-b1",
+            "exit_code": 0,
+            "command": [
+              "/usr/local/cuda-12.8/bin/nvcc",
+              "-std=c++17",
+              "-O3",
+              "-arch=sm_120",
+              "-Xcompiler=-pthread",
+              "-Xptxas=-v",
+              "-DINTERIOR_INPUT_GROUP=1",
+              "-DINTERIOR_OUTPUT_GROUP=1",
+              "-DBOUNDARY_STRIPS=1",
+              "experiments/v157-hybrid-transfers/main.cpp",
+              "experiments/v157-hybrid-transfers/solve.cu",
+              "-o",
+              "build/hybrid-i1-o1-b1"
+            ],
+            "source_files_sha256": {
+              "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+              "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+              "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+              "solve.cu": "60c78f27a1d8bfc5d99941fcd2eabf709b614f55e2b5fd5f05dceded88de4d30",
+              "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+              "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+              "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+              "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+              "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+            },
+            "binary_sha256": "1ffee668b95c3c697bc5b5ebc7c128820f502be0a903d68fba5c43b6a0ec40d1"
+          },
+          {
+            "name": "hybrid-i2-o1-b1",
+            "exit_code": 0,
+            "command": [
+              "/usr/local/cuda-12.8/bin/nvcc",
+              "-std=c++17",
+              "-O3",
+              "-arch=sm_120",
+              "-Xcompiler=-pthread",
+              "-Xptxas=-v",
+              "-DINTERIOR_INPUT_GROUP=2",
+              "-DINTERIOR_OUTPUT_GROUP=1",
+              "-DBOUNDARY_STRIPS=1",
+              "experiments/v157-hybrid-transfers/main.cpp",
+              "experiments/v157-hybrid-transfers/solve.cu",
+              "-o",
+              "build/hybrid-i2-o1-b1"
+            ],
+            "source_files_sha256": {
+              "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+              "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+              "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+              "solve.cu": "60c78f27a1d8bfc5d99941fcd2eabf709b614f55e2b5fd5f05dceded88de4d30",
+              "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+              "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+              "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+              "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+              "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+            },
+            "binary_sha256": "6f0c90f261c593dcfac8ec6a50a15df99aa3ccb6b0cc554c54eb78ef2aad79c2"
+          },
+          {
+            "name": "hybrid-i4-o1-b1",
+            "exit_code": 0,
+            "command": [
+              "/usr/local/cuda-12.8/bin/nvcc",
+              "-std=c++17",
+              "-O3",
+              "-arch=sm_120",
+              "-Xcompiler=-pthread",
+              "-Xptxas=-v",
+              "-DINTERIOR_INPUT_GROUP=4",
+              "-DINTERIOR_OUTPUT_GROUP=1",
+              "-DBOUNDARY_STRIPS=1",
+              "experiments/v157-hybrid-transfers/main.cpp",
+              "experiments/v157-hybrid-transfers/solve.cu",
+              "-o",
+              "build/hybrid-i4-o1-b1"
+            ],
+            "source_files_sha256": {
+              "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+              "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+              "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+              "solve.cu": "60c78f27a1d8bfc5d99941fcd2eabf709b614f55e2b5fd5f05dceded88de4d30",
+              "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+              "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+              "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+              "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+              "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+            },
+            "binary_sha256": "05222b2bf8c93bdd52ec5621c8e07d3d5cc00d586b1e82ab038d15337545cc15"
+          },
+          {
+            "name": "hybrid-i1-o2-b1",
+            "exit_code": 0,
+            "command": [
+              "/usr/local/cuda-12.8/bin/nvcc",
+              "-std=c++17",
+              "-O3",
+              "-arch=sm_120",
+              "-Xcompiler=-pthread",
+              "-Xptxas=-v",
+              "-DINTERIOR_INPUT_GROUP=1",
+              "-DINTERIOR_OUTPUT_GROUP=2",
+              "-DBOUNDARY_STRIPS=1",
+              "experiments/v157-hybrid-transfers/main.cpp",
+              "experiments/v157-hybrid-transfers/solve.cu",
+              "-o",
+              "build/hybrid-i1-o2-b1"
+            ],
+            "source_files_sha256": {
+              "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+              "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+              "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+              "solve.cu": "60c78f27a1d8bfc5d99941fcd2eabf709b614f55e2b5fd5f05dceded88de4d30",
+              "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+              "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+              "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+              "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+              "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+            },
+            "binary_sha256": "16dc6a6077f0bc99caf4180489c35f39f766180c1a0cd33ba5e32a48796a22d7"
+          },
+          {
+            "name": "hybrid-i1-o4-b1",
+            "exit_code": 0,
+            "command": [
+              "/usr/local/cuda-12.8/bin/nvcc",
+              "-std=c++17",
+              "-O3",
+              "-arch=sm_120",
+              "-Xcompiler=-pthread",
+              "-Xptxas=-v",
+              "-DINTERIOR_INPUT_GROUP=1",
+              "-DINTERIOR_OUTPUT_GROUP=4",
+              "-DBOUNDARY_STRIPS=1",
+              "experiments/v157-hybrid-transfers/main.cpp",
+              "experiments/v157-hybrid-transfers/solve.cu",
+              "-o",
+              "build/hybrid-i1-o4-b1"
+            ],
+            "source_files_sha256": {
+              "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+              "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+              "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+              "solve.cu": "60c78f27a1d8bfc5d99941fcd2eabf709b614f55e2b5fd5f05dceded88de4d30",
+              "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+              "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+              "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+              "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+              "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+            },
+            "binary_sha256": "73b98eaced937419e71c52a2d856be38abca472836426100fda12c4b759db8da"
+          },
+          {
+            "name": "hybrid-i2-o2-b1",
+            "exit_code": 0,
+            "command": [
+              "/usr/local/cuda-12.8/bin/nvcc",
+              "-std=c++17",
+              "-O3",
+              "-arch=sm_120",
+              "-Xcompiler=-pthread",
+              "-Xptxas=-v",
+              "-DINTERIOR_INPUT_GROUP=2",
+              "-DINTERIOR_OUTPUT_GROUP=2",
+              "-DBOUNDARY_STRIPS=1",
+              "experiments/v157-hybrid-transfers/main.cpp",
+              "experiments/v157-hybrid-transfers/solve.cu",
+              "-o",
+              "build/hybrid-i2-o2-b1"
+            ],
+            "source_files_sha256": {
+              "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+              "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+              "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+              "solve.cu": "60c78f27a1d8bfc5d99941fcd2eabf709b614f55e2b5fd5f05dceded88de4d30",
+              "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+              "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+              "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+              "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+              "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+            },
+            "binary_sha256": "6fed60e8f3c58059478d64a56918aa4c1fb7cde9a58069745ad57c0438a413fa"
+          },
+          {
+            "name": "hybrid-i4-o1-b2",
+            "exit_code": 0,
+            "command": [
+              "/usr/local/cuda-12.8/bin/nvcc",
+              "-std=c++17",
+              "-O3",
+              "-arch=sm_120",
+              "-Xcompiler=-pthread",
+              "-Xptxas=-v",
+              "-DINTERIOR_INPUT_GROUP=4",
+              "-DINTERIOR_OUTPUT_GROUP=1",
+              "-DBOUNDARY_STRIPS=2",
+              "experiments/v157-hybrid-transfers/main.cpp",
+              "experiments/v157-hybrid-transfers/solve.cu",
+              "-o",
+              "build/hybrid-i4-o1-b2"
+            ],
+            "source_files_sha256": {
+              "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+              "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+              "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+              "solve.cu": "60c78f27a1d8bfc5d99941fcd2eabf709b614f55e2b5fd5f05dceded88de4d30",
+              "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+              "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+              "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+              "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+              "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+            },
+            "binary_sha256": "644615a99eba5720753194a40fb3c10f1681a65509342c387519906ab3558fe1"
+          }
+        ],
+        "results": [
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 32768,
+            "W": 868,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.36958949999999996,
+            "random_median_ms": 0.36872200000000005,
+            "binary_sha256": "8b6481b7ff4347f0838489f193508cd98c3ac2d6cf8e58bfe2ec07e8dfd5aabb"
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 65536,
+            "W": 1747,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.076271,
+            "random_median_ms": 1.0746894999999999,
+            "binary_sha256": "8b6481b7ff4347f0838489f193508cd98c3ac2d6cf8e58bfe2ec07e8dfd5aabb"
+          },
+          {
+            "name": "hybrid-i1-o1-b1",
+            "N": 32768,
+            "W": 868,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3314145,
+            "random_median_ms": 0.330125,
+            "binary_sha256": "1ffee668b95c3c697bc5b5ebc7c128820f502be0a903d68fba5c43b6a0ec40d1"
+          },
+          {
+            "name": "hybrid-i1-o1-b1",
+            "N": 65536,
+            "W": 1747,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0600984999999998,
+            "random_median_ms": 1.0578900000000002,
+            "binary_sha256": "1ffee668b95c3c697bc5b5ebc7c128820f502be0a903d68fba5c43b6a0ec40d1"
+          },
+          {
+            "name": "hybrid-i2-o1-b1",
+            "N": 32768,
+            "W": 868,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3296815,
+            "random_median_ms": 0.3290155,
+            "binary_sha256": "6f0c90f261c593dcfac8ec6a50a15df99aa3ccb6b0cc554c54eb78ef2aad79c2"
+          },
+          {
+            "name": "hybrid-i2-o1-b1",
+            "N": 65536,
+            "W": 1747,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.09553,
+            "random_median_ms": 1.0927085,
+            "binary_sha256": "6f0c90f261c593dcfac8ec6a50a15df99aa3ccb6b0cc554c54eb78ef2aad79c2"
+          },
+          {
+            "name": "hybrid-i4-o1-b1",
+            "N": 32768,
+            "W": 868,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.329685,
+            "random_median_ms": 0.328296,
+            "binary_sha256": "05222b2bf8c93bdd52ec5621c8e07d3d5cc00d586b1e82ab038d15337545cc15"
+          },
+          {
+            "name": "hybrid-i4-o1-b1",
+            "N": 65536,
+            "W": 1747,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.1623985,
+            "random_median_ms": 1.1620405,
+            "binary_sha256": "05222b2bf8c93bdd52ec5621c8e07d3d5cc00d586b1e82ab038d15337545cc15"
+          },
+          {
+            "name": "hybrid-i1-o2-b1",
+            "N": 32768,
+            "W": 868,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.333825,
+            "random_median_ms": 0.332758,
+            "binary_sha256": "16dc6a6077f0bc99caf4180489c35f39f766180c1a0cd33ba5e32a48796a22d7"
+          },
+          {
+            "name": "hybrid-i1-o2-b1",
+            "N": 65536,
+            "W": 1747,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0702735,
+            "random_median_ms": 1.0696685,
+            "binary_sha256": "16dc6a6077f0bc99caf4180489c35f39f766180c1a0cd33ba5e32a48796a22d7"
+          },
+          {
+            "name": "hybrid-i1-o4-b1",
+            "N": 32768,
+            "W": 868,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.328553,
+            "random_median_ms": 0.3284825,
+            "binary_sha256": "73b98eaced937419e71c52a2d856be38abca472836426100fda12c4b759db8da"
+          },
+          {
+            "name": "hybrid-i1-o4-b1",
+            "N": 65536,
+            "W": 1747,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.1237650000000001,
+            "random_median_ms": 1.1211799999999998,
+            "binary_sha256": "73b98eaced937419e71c52a2d856be38abca472836426100fda12c4b759db8da"
+          },
+          {
+            "name": "hybrid-i2-o2-b1",
+            "N": 32768,
+            "W": 868,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.330128,
+            "random_median_ms": 0.32977650000000003,
+            "binary_sha256": "6fed60e8f3c58059478d64a56918aa4c1fb7cde9a58069745ad57c0438a413fa"
+          },
+          {
+            "name": "hybrid-i2-o2-b1",
+            "N": 65536,
+            "W": 1747,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.118665,
+            "random_median_ms": 1.1153175,
+            "binary_sha256": "6fed60e8f3c58059478d64a56918aa4c1fb7cde9a58069745ad57c0438a413fa"
+          },
+          {
+            "name": "hybrid-i4-o1-b2",
+            "N": 32768,
+            "W": 868,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.32874200000000003,
+            "random_median_ms": 0.328395,
+            "binary_sha256": "644615a99eba5720753194a40fb3c10f1681a65509342c387519906ab3558fe1"
+          },
+          {
+            "name": "hybrid-i4-o1-b2",
+            "N": 65536,
+            "W": 1747,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.167946,
+            "random_median_ms": 1.165941,
+            "binary_sha256": "644615a99eba5720753194a40fb3c10f1681a65509342c387519906ab3558fe1"
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 32768,
+            "W": 868,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.3709575,
+            "random_median_ms": 0.370563,
+            "binary_sha256": "8b6481b7ff4347f0838489f193508cd98c3ac2d6cf8e58bfe2ec07e8dfd5aabb"
+          },
+          {
+            "name": "ordered-streaming-cmake/solution",
+            "N": 65536,
+            "W": 1747,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0818705000000002,
+            "random_median_ms": 1.081401,
+            "binary_sha256": "8b6481b7ff4347f0838489f193508cd98c3ac2d6cf8e58bfe2ec07e8dfd5aabb"
+          }
+        ]
+      },
+      {
+        "description": "Compact tuned pipeline with early operand A transform",
+        "official": false,
+        "hardware": "AWS g7e.2xlarge RTX PRO6000 Blackwell SM120, 4 physical CPU cores, CUDA12.8",
+        "evidence": "aws_compact_operand_results.json",
+        "builds": [
+          {
+            "name": "compact-operand",
+            "exit_code": 0,
+            "command": [
+              "/usr/local/cuda-12.8/bin/nvcc",
+              "-std=c++17",
+              "-O3",
+              "-arch=sm_120",
+              "-Xcompiler=-pthread",
+              "-Xptxas=-v",
+              "experiments/v158-compact-operand/main.cpp",
+              "experiments/v158-compact-operand/solve.cu",
+              "-o",
+              "build/compact-operand"
+            ],
+            "source_files_sha256": {
+              "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+              "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+              "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+              "solve.cu": "d17241e94f1caa6bcf37aa8d7c53bc39199c71e5070405dcada7b8bd50a8225c",
+              "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+              "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+              "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+              "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+              "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+            },
+            "binary_sha256": "17b52783e0094ae3765add1251577964a22c833d7808ef26470f5e3399786c0a"
+          }
+        ],
+        "results": [
+          {
+            "name": "compact-tuned-1",
+            "N": 32768,
+            "W": 868,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.328459,
+            "random_median_ms": 0.327972,
+            "binary_sha256": "a6f6162128d3142074e4b3d0c2a233203f592e50e4fe36fed092ba928301a201"
+          },
+          {
+            "name": "compact-tuned-1",
+            "N": 65536,
+            "W": 1747,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0613095000000001,
+            "random_median_ms": 1.0603685,
+            "binary_sha256": "a6f6162128d3142074e4b3d0c2a233203f592e50e4fe36fed092ba928301a201"
+          },
+          {
+            "name": "compact-operand",
+            "N": 32768,
+            "W": 868,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.33057699999999995,
+            "random_median_ms": 0.33057699999999995,
+            "binary_sha256": "17b52783e0094ae3765add1251577964a22c833d7808ef26470f5e3399786c0a"
+          },
+          {
+            "name": "compact-operand",
+            "N": 65536,
+            "W": 1747,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0536795,
+            "random_median_ms": 1.050862,
+            "binary_sha256": "17b52783e0094ae3765add1251577964a22c833d7808ef26470f5e3399786c0a"
+          },
+          {
+            "name": "compact-tuned-1",
+            "N": 32768,
+            "W": 868,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 0.330214,
+            "random_median_ms": 0.3297215,
+            "binary_sha256": "a6f6162128d3142074e4b3d0c2a233203f592e50e4fe36fed092ba928301a201"
+          },
+          {
+            "name": "compact-tuned-1",
+            "N": 65536,
+            "W": 1747,
+            "exit_code": 0,
+            "passed": 24,
+            "median_ms": 1.0570754999999998,
+            "random_median_ms": 1.0569609999999998,
+            "binary_sha256": "a6f6162128d3142074e4b3d0c2a233203f592e50e4fe36fed092ba928301a201"
+          }
+        ]
+      }
+    ],
+    "decisions": [
+      "Mapped host TMA output remained slower than DMA.",
+      "Warp shuffles and split twist/finish did not give a material complete-call gain.",
+      "Compact tables give about1% against matched controls; compose and measure officially before promotion.",
+      "Hybrid grouping was slower despite retaining narrow boundaries; reject.",
+      "Early A transform combined with compact/tuned path remains only a modest AWS gain."
+    ],
+    "profile": {
+      "root": "evidence/aws_night_archive/profiles/compact_roots_{0,1}_20261110",
+      "middle_l2_hit_pct": [
+        83.1675787,
+        92.021066
+      ],
+      "inverse_strip_l2_hit_pct": [
+        43.1454333,
+        53.218604
+      ],
+      "middle_us": [
+        54.816,
+        53.504
+      ],
+      "inverse_strip_us": [
+        15.744,
+        14.592
+      ],
+      "caveat": "Full application-replay NCU; tiny inverse grid underfills GPU, PM samples sparse; no overall speedup inferred from rule percentages."
+    }
   }
 }
