@@ -19,7 +19,8 @@ The exact tensor conversion is explained in [TENSOR_CONVERSION.md](TENSOR_CONVER
 CRT reconstruction follows [the existing proof](../pipelined-direct-crt/EXACTNESS.md).
 This source passed 138 independent local cases and 11,021 independent integer
 conversion checks. SM120 compilation passed without spills. Local main-case
-runtime was about 8.76 ms; a separate official run is required for a leaderboard
-performance claim.
+runtime was about 8.76 ms. The official run passed all 40 cases, but its main
+median of **1.482465 ms** regressed versus the 1.3373995 ms incumbent. Its small
+median was 0.4687825 ms. This version is not promoted. See [official results](official-results.json).
 
 FHERMA artifact path: `candidates/gpu-refined-columns`.

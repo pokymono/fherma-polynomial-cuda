@@ -1,0 +1,284 @@
+{
+  "source_sha256": "2b34cbcd2a5c86a1e20ea8e2d02b5220762bbdb0cee22e882a1f816eecd03d4e",
+  "source_files_sha256": {
+    "host_copy.h": "2507d5ca21195afc76600f1650fe78f616c3e9fd532983b4cfd04dfb3877cd12",
+    "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+    "parallel_copy.h": "c0b1db7f880a08c5e6397460083b80b5b05132a2b0b94219513f4ea97649a083",
+    "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+    "solve.cu": "2b34cbcd2a5c86a1e20ea8e2d02b5220762bbdb0cee22e882a1f816eecd03d4e",
+    "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+    "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+    "output_worker.h": "06280091de8bf4cd41ff0bc4c83ca6ad71edb919f6a25cab3b68216ed76dd9dc"
+  },
+  "binary_sha256": "3e713733aea2d232b237b010ad72bff119ed448445273e5f8398faee816610ab",
+  "source": "/home/rishitshivam/work/fherma-polynomial/experiments/v072-host-memory-matrix/solve.cu",
+  "binary": "/home/rishitshivam/work/fherma-polynomial/build/v072-host-memory-matrix",
+  "hardware": "RTX 3050 Laptop, SM86",
+  "official": false,
+  "points": [
+    {
+      "N": 32768,
+      "W": 868,
+      "L": 28,
+      "directory": "fresh_n32768_w868",
+      "passed": 24,
+      "timings": {
+        "init_s": 1.874860307,
+        "cases": [
+          {
+            "i": 0,
+            "seconds": 0.632629553,
+            "status": "ok"
+          },
+          {
+            "i": 1,
+            "seconds": 0.632934406,
+            "status": "ok"
+          },
+          {
+            "i": 2,
+            "seconds": 0.63255877,
+            "status": "ok"
+          },
+          {
+            "i": 3,
+            "seconds": 0.63419407,
+            "status": "ok"
+          },
+          {
+            "i": 4,
+            "seconds": 0.633580087,
+            "status": "ok"
+          },
+          {
+            "i": 5,
+            "seconds": 0.634136792,
+            "status": "ok"
+          },
+          {
+            "i": 6,
+            "seconds": 0.632541137,
+            "status": "ok"
+          },
+          {
+            "i": 7,
+            "seconds": 0.632308671,
+            "status": "ok"
+          },
+          {
+            "i": 8,
+            "seconds": 0.634636952,
+            "status": "ok"
+          },
+          {
+            "i": 9,
+            "seconds": 0.63204201,
+            "status": "ok"
+          },
+          {
+            "i": 10,
+            "seconds": 0.631830703,
+            "status": "ok"
+          },
+          {
+            "i": 11,
+            "seconds": 0.632232358,
+            "status": "ok"
+          },
+          {
+            "i": 12,
+            "seconds": 0.632540666,
+            "status": "ok"
+          },
+          {
+            "i": 13,
+            "seconds": 0.632109717,
+            "status": "ok"
+          },
+          {
+            "i": 14,
+            "seconds": 0.63201526,
+            "status": "ok"
+          },
+          {
+            "i": 15,
+            "seconds": 0.632315033,
+            "status": "ok"
+          },
+          {
+            "i": 16,
+            "seconds": 0.631681142,
+            "status": "ok"
+          },
+          {
+            "i": 17,
+            "seconds": 0.632614104,
+            "status": "ok"
+          },
+          {
+            "i": 18,
+            "seconds": 0.632189607,
+            "status": "ok"
+          },
+          {
+            "i": 19,
+            "seconds": 0.632149442,
+            "status": "ok"
+          },
+          {
+            "i": 20,
+            "seconds": 0.63288372,
+            "status": "ok"
+          },
+          {
+            "i": 21,
+            "seconds": 0.631741095,
+            "status": "ok"
+          },
+          {
+            "i": 22,
+            "seconds": 0.632428205,
+            "status": "ok"
+          },
+          {
+            "i": 23,
+            "seconds": 0.632216116,
+            "status": "ok"
+          }
+        ]
+      }
+    },
+    {
+      "N": 65536,
+      "W": 1747,
+      "L": 55,
+      "directory": "fresh_n65536_w1747",
+      "passed": 24,
+      "timings": {
+        "init_s": 0.302559333,
+        "cases": [
+          {
+            "i": 0,
+            "seconds": 0.725155685,
+            "status": "ok"
+          },
+          {
+            "i": 1,
+            "seconds": 0.724366203,
+            "status": "ok"
+          },
+          {
+            "i": 2,
+            "seconds": 0.724404675,
+            "status": "ok"
+          },
+          {
+            "i": 3,
+            "seconds": 0.725093468,
+            "status": "ok"
+          },
+          {
+            "i": 4,
+            "seconds": 0.724978823,
+            "status": "ok"
+          },
+          {
+            "i": 5,
+            "seconds": 0.723694562,
+            "status": "ok"
+          },
+          {
+            "i": 6,
+            "seconds": 0.724803323,
+            "status": "ok"
+          },
+          {
+            "i": 7,
+            "seconds": 0.724866942,
+            "status": "ok"
+          },
+          {
+            "i": 8,
+            "seconds": 0.724024641,
+            "status": "ok"
+          },
+          {
+            "i": 9,
+            "seconds": 0.723122208,
+            "status": "ok"
+          },
+          {
+            "i": 10,
+            "seconds": 0.724294117,
+            "status": "ok"
+          },
+          {
+            "i": 11,
+            "seconds": 0.724487491,
+            "status": "ok"
+          },
+          {
+            "i": 12,
+            "seconds": 0.72383229,
+            "status": "ok"
+          },
+          {
+            "i": 13,
+            "seconds": 0.725395395,
+            "status": "ok"
+          },
+          {
+            "i": 14,
+            "seconds": 0.724234986,
+            "status": "ok"
+          },
+          {
+            "i": 15,
+            "seconds": 0.723638075,
+            "status": "ok"
+          },
+          {
+            "i": 16,
+            "seconds": 0.724709547,
+            "status": "ok"
+          },
+          {
+            "i": 17,
+            "seconds": 0.724486538,
+            "status": "ok"
+          },
+          {
+            "i": 18,
+            "seconds": 0.732824722,
+            "status": "ok"
+          },
+          {
+            "i": 19,
+            "seconds": 0.724712032,
+            "status": "ok"
+          },
+          {
+            "i": 20,
+            "seconds": 0.724011086,
+            "status": "ok"
+          },
+          {
+            "i": 21,
+            "seconds": 0.725439899,
+            "status": "ok"
+          },
+          {
+            "i": 22,
+            "seconds": 0.724368096,
+            "status": "ok"
+          },
+          {
+            "i": 23,
+            "seconds": 0.724532204,
+            "status": "ok"
+          }
+        ]
+      }
+    }
+  ]
+}
