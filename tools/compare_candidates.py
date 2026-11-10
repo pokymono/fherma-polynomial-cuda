@@ -8,7 +8,7 @@ import subprocess
 root=Path(__file__).resolve().parents[1]
 candidates={
     'baseline':(root/'build/solution',root/'src/solve.cu'),
-    'register_ntt':(root/'build/v022-register-ntt',root/'experiments/v022-register-ntt/solve.cu'),
+    'register_ntt':(root/'build/v022-register-ntt',root/'candidates/register-ntt/solve.cu'),
 }
 report={'official':False,'hardware':'RTX 3050 Laptop SM86','candidates':{},'runs':[]}
 for name,(binary,source) in candidates.items():
