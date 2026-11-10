@@ -22,25 +22,27 @@ directories and do not inherit this result.
 ## Algorithm
 
 Parameter-only initialization chooses independent 31-bit NTT primes with product
-`P > 2*N*(q-1)^2`. Each call performs the complete input transfer, coefficient
+`P > 4*N*(q-1)^2`. Each call performs all host packing, transfers, coefficient
 conversion, negacyclic transforms, exact CRT reconstruction, canonical reduction,
-and output transfer.
+and output scattering.
 
-Unsigned integer tensor cores evaluate byte dot products for both coefficient
+Unsigned integer tensor cores evaluate byte dot products for coefficient
 conversion and the wide CRT sum. Each dot product stays within signed 32-bit
-range. Carries and modular reduction are explicit integer arithmetic. A floating
-point estimate is used only to propose the CRT quotient; integer comparisons and
-corrections establish the exact representative before reduction modulo `q`.
+range. The current fast path uses a proven fixed-point integer CRT quotient
+and reconstruction modulo `q`, halving the main reconstruction width. Carries
+and modular reduction use exact integer arithmetic. See the
+[exactness proof](candidates/pipelined-direct-crt/EXACTNESS.md).
 
-The fused transforms keep groups of butterfly stages in shared memory. Generic
-fallbacks handle small transforms and configurations beyond the tensor tiling
-limits. No operand-dependent computation happens in initialization.
+Transform-aligned column strips allow forward stages to overlap input transfers
+and inverse stages to overlap output transfers. Generic fallbacks handle small
+transforms and configurations beyond the optimized tiling limits. No
+operand-dependent computation happens in initialization.
 
 ## Build and platform settings
 
 ```
-cmake -S src -B build -DCMAKE_BUILD_TYPE=Release
-cmake --build build -j
+cmake -S candidates/column-streaming -B build/reproduce -DCMAKE_BUILD_TYPE=Release
+cmake --build build/reproduce -j
 ```
 
 Requires a C++17 compiler and a CUDA toolkit with support for the target GPU.
@@ -49,7 +51,7 @@ to the build host's native CUDA architecture; it can be overridden with
 `-DCMAKE_CUDA_ARCHITECTURES=120` for Blackwell.
 
 For FHERMA, select the **cpp** harness, the **cupqc** image, this repository at an
-exact commit, and artifact path **src**. The generated `main.cpp` and `fherma.h`
+exact commit, and artifact path **candidates/column-streaming**. The generated `main.cpp` and `fherma.h`
 are unmodified. FHERMA replaces them with its official harness when benchmarking.
 
 ## Local verification
