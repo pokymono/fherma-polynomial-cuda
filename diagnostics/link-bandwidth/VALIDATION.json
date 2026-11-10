@@ -296,6 +296,14 @@
     "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
     "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb"
   },
-  "official_runs": [],
+  "official_runs": [
+    {
+      "ranked": false,
+      "run": "6af35907698e99b16a7befb5",
+      "passed": 3,
+      "cases": 3,
+      "commit": "f4b4502dc7184418df77384ea2a95955ced2c559"
+    }
+  ],
   "timing_note": "All reported outer harness times include repeated diagnostic transfers and are not multiplication performance."
 }

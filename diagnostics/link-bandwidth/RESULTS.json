@@ -1,0 +1,485 @@
+{
+  "official_ranked": false,
+  "run": "6af35907698e99b16a7befb5",
+  "url": "https://www.fherma.io/kernels/polynomial-multiplication/specifications/negacyclic/runs/6af35907698e99b16a7befb5",
+  "commit": "f4b4502dc7184418df77384ea2a95955ced2c559",
+  "passed": 3,
+  "cases": 3,
+  "finished_at": "2026-11-10T17:49:28.098Z",
+  "hardware": {
+    "arch": "x86_64",
+    "cores": 24,
+    "memory_gb": 214,
+    "memory_cap_gb": 200,
+    "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition \u00b7 97887 MiB",
+    "gpu_memory_gb": 95.6,
+    "cpu": "Intel(R) Xeon(R) 6776P",
+    "kernel": "6.11.0-1016-nvidia",
+    "os": "linux"
+  },
+  "measurements": [
+    {
+      "N": 65536,
+      "kind": "H2D_write_combined",
+      "bytes": 901120,
+      "copies": 16,
+      "median_ms": 0.28192,
+      "GBps": 51.1419
+    },
+    {
+      "N": 65536,
+      "kind": "H2D_cached",
+      "bytes": 901120,
+      "copies": 16,
+      "median_ms": 0.28,
+      "GBps": 51.4926
+    },
+    {
+      "N": 65536,
+      "kind": "D2H_cached",
+      "bytes": 901120,
+      "copies": 16,
+      "median_ms": 0.259264,
+      "GBps": 55.611
+    },
+    {
+      "N": 65536,
+      "kind": "H2D_write_combined",
+      "bytes": 1802240,
+      "copies": 16,
+      "median_ms": 0.536416,
+      "GBps": 53.7565
+    },
+    {
+      "N": 65536,
+      "kind": "H2D_cached",
+      "bytes": 1802240,
+      "copies": 16,
+      "median_ms": 0.529056,
+      "GBps": 54.5043
+    },
+    {
+      "N": 65536,
+      "kind": "D2H_cached",
+      "bytes": 1802240,
+      "copies": 16,
+      "median_ms": 0.515904,
+      "GBps": 55.8938
+    },
+    {
+      "N": 65536,
+      "kind": "H2D_write_combined",
+      "bytes": 14417920,
+      "copies": 16,
+      "median_ms": 4.1096,
+      "GBps": 56.1336
+    },
+    {
+      "N": 65536,
+      "kind": "H2D_cached",
+      "bytes": 14417920,
+      "copies": 16,
+      "median_ms": 4.678304,
+      "GBps": 49.3099
+    },
+    {
+      "N": 65536,
+      "kind": "D2H_cached",
+      "bytes": 14417920,
+      "copies": 16,
+      "median_ms": 4.04192,
+      "GBps": 57.0735
+    },
+    {
+      "N": 65536,
+      "kind": "H2D_write_combined",
+      "bytes": 28835840,
+      "copies": 16,
+      "median_ms": 8.19344,
+      "GBps": 56.3101
+    },
+    {
+      "N": 65536,
+      "kind": "H2D_write_combined",
+      "bytes": 901120,
+      "copies": 16,
+      "median_ms": 0.281408,
+      "GBps": 51.2349
+    },
+    {
+      "N": 65536,
+      "kind": "H2D_cached",
+      "bytes": 901120,
+      "copies": 16,
+      "median_ms": 0.277728,
+      "GBps": 51.9138
+    },
+    {
+      "N": 65536,
+      "kind": "D2H_cached",
+      "bytes": 901120,
+      "copies": 16,
+      "median_ms": 0.258272,
+      "GBps": 55.8246
+    },
+    {
+      "N": 65536,
+      "kind": "H2D_write_combined",
+      "bytes": 1802240,
+      "copies": 16,
+      "median_ms": 0.536128,
+      "GBps": 53.7854
+    },
+    {
+      "N": 65536,
+      "kind": "H2D_cached",
+      "bytes": 1802240,
+      "copies": 16,
+      "median_ms": 0.529536,
+      "GBps": 54.4549
+    },
+    {
+      "N": 65536,
+      "kind": "D2H_cached",
+      "bytes": 1802240,
+      "copies": 16,
+      "median_ms": 0.51536,
+      "GBps": 55.9528
+    },
+    {
+      "N": 65536,
+      "kind": "H2D_write_combined",
+      "bytes": 14417920,
+      "copies": 16,
+      "median_ms": 4.107744,
+      "GBps": 56.159
+    },
+    {
+      "N": 65536,
+      "kind": "H2D_cached",
+      "bytes": 14417920,
+      "copies": 16,
+      "median_ms": 4.525024,
+      "GBps": 50.9802
+    },
+    {
+      "N": 65536,
+      "kind": "D2H_cached",
+      "bytes": 14417920,
+      "copies": 16,
+      "median_ms": 4.041472,
+      "GBps": 57.0799
+    },
+    {
+      "N": 65536,
+      "kind": "H2D_write_combined",
+      "bytes": 28835840,
+      "copies": 16,
+      "median_ms": 8.186976,
+      "GBps": 56.3546
+    },
+    {
+      "N": 65536,
+      "kind": "H2D_write_combined",
+      "bytes": 901120,
+      "copies": 16,
+      "median_ms": 0.284704,
+      "GBps": 50.6418
+    },
+    {
+      "N": 65536,
+      "kind": "H2D_cached",
+      "bytes": 901120,
+      "copies": 16,
+      "median_ms": 0.279424,
+      "GBps": 51.5987
+    },
+    {
+      "N": 65536,
+      "kind": "D2H_cached",
+      "bytes": 901120,
+      "copies": 16,
+      "median_ms": 0.258592,
+      "GBps": 55.7555
+    },
+    {
+      "N": 65536,
+      "kind": "H2D_write_combined",
+      "bytes": 1802240,
+      "copies": 16,
+      "median_ms": 0.536288,
+      "GBps": 53.7693
+    },
+    {
+      "N": 65536,
+      "kind": "H2D_cached",
+      "bytes": 1802240,
+      "copies": 16,
+      "median_ms": 0.528864,
+      "GBps": 54.5241
+    },
+    {
+      "N": 65536,
+      "kind": "D2H_cached",
+      "bytes": 1802240,
+      "copies": 16,
+      "median_ms": 0.515136,
+      "GBps": 55.9771
+    },
+    {
+      "N": 65536,
+      "kind": "H2D_write_combined",
+      "bytes": 14417920,
+      "copies": 16,
+      "median_ms": 4.107456,
+      "GBps": 56.1629
+    },
+    {
+      "N": 65536,
+      "kind": "H2D_cached",
+      "bytes": 14417920,
+      "copies": 16,
+      "median_ms": 4.716544,
+      "GBps": 48.9101
+    },
+    {
+      "N": 65536,
+      "kind": "D2H_cached",
+      "bytes": 14417920,
+      "copies": 16,
+      "median_ms": 4.041568,
+      "GBps": 57.0785
+    },
+    {
+      "N": 65536,
+      "kind": "H2D_write_combined",
+      "bytes": 28835840,
+      "copies": 16,
+      "median_ms": 8.191264,
+      "GBps": 56.3251
+    },
+    {
+      "N": 65536,
+      "kind": "H2D_write_combined",
+      "bytes": 901120,
+      "copies": 16,
+      "median_ms": 0.28208,
+      "GBps": 51.1129
+    },
+    {
+      "N": 65536,
+      "kind": "H2D_cached",
+      "bytes": 901120,
+      "copies": 16,
+      "median_ms": 0.278272,
+      "GBps": 51.8123
+    },
+    {
+      "N": 65536,
+      "kind": "D2H_cached",
+      "bytes": 901120,
+      "copies": 16,
+      "median_ms": 0.259136,
+      "GBps": 55.6384
+    },
+    {
+      "N": 65536,
+      "kind": "H2D_write_combined",
+      "bytes": 1802240,
+      "copies": 16,
+      "median_ms": 0.536704,
+      "GBps": 53.7276
+    },
+    {
+      "N": 65536,
+      "kind": "H2D_cached",
+      "bytes": 1802240,
+      "copies": 16,
+      "median_ms": 0.52896,
+      "GBps": 54.5142
+    },
+    {
+      "N": 65536,
+      "kind": "D2H_cached",
+      "bytes": 1802240,
+      "copies": 16,
+      "median_ms": 0.51776,
+      "GBps": 55.6935
+    },
+    {
+      "N": 65536,
+      "kind": "H2D_write_combined",
+      "bytes": 14417920,
+      "copies": 16,
+      "median_ms": 4.107648,
+      "GBps": 56.1603
+    },
+    {
+      "N": 65536,
+      "kind": "H2D_cached",
+      "bytes": 14417920,
+      "copies": 16,
+      "median_ms": 4.656736,
+      "GBps": 49.5383
+    },
+    {
+      "N": 65536,
+      "kind": "D2H_cached",
+      "bytes": 14417920,
+      "copies": 16,
+      "median_ms": 4.042304,
+      "GBps": 57.0681
+    },
+    {
+      "N": 65536,
+      "kind": "H2D_write_combined",
+      "bytes": 28835840,
+      "copies": 16,
+      "median_ms": 8.193824,
+      "GBps": 56.3075
+    },
+    {
+      "N": 65536,
+      "kind": "H2D_write_combined",
+      "bytes": 901120,
+      "copies": 16,
+      "median_ms": 0.282688,
+      "GBps": 51.0029
+    },
+    {
+      "N": 65536,
+      "kind": "H2D_cached",
+      "bytes": 901120,
+      "copies": 16,
+      "median_ms": 0.276672,
+      "GBps": 52.112
+    },
+    {
+      "N": 65536,
+      "kind": "D2H_cached",
+      "bytes": 901120,
+      "copies": 16,
+      "median_ms": 0.258048,
+      "GBps": 55.873
+    },
+    {
+      "N": 65536,
+      "kind": "H2D_write_combined",
+      "bytes": 1802240,
+      "copies": 16,
+      "median_ms": 0.536288,
+      "GBps": 53.7693
+    },
+    {
+      "N": 65536,
+      "kind": "H2D_cached",
+      "bytes": 1802240,
+      "copies": 16,
+      "median_ms": 0.530336,
+      "GBps": 54.3728
+    },
+    {
+      "N": 65536,
+      "kind": "D2H_cached",
+      "bytes": 1802240,
+      "copies": 16,
+      "median_ms": 0.51568,
+      "GBps": 55.9181
+    },
+    {
+      "N": 65536,
+      "kind": "H2D_write_combined",
+      "bytes": 14417920,
+      "copies": 16,
+      "median_ms": 4.10784,
+      "GBps": 56.1577
+    },
+    {
+      "N": 65536,
+      "kind": "H2D_cached",
+      "bytes": 14417920,
+      "copies": 16,
+      "median_ms": 4.63488,
+      "GBps": 49.7719
+    },
+    {
+      "N": 65536,
+      "kind": "D2H_cached",
+      "bytes": 14417920,
+      "copies": 16,
+      "median_ms": 4.041696,
+      "GBps": 57.0767
+    },
+    {
+      "N": 65536,
+      "kind": "H2D_write_combined",
+      "bytes": 28835840,
+      "copies": 16,
+      "median_ms": 8.188736,
+      "GBps": 56.3424
+    }
+  ],
+  "verified_case_summary": [
+    {
+      "kind": "H2D_write_combined",
+      "bytes": 901120,
+      "verified_case_median_GBps": 51.0029,
+      "observations": 3
+    },
+    {
+      "kind": "H2D_cached",
+      "bytes": 901120,
+      "verified_case_median_GBps": 51.8123,
+      "observations": 3
+    },
+    {
+      "kind": "D2H_cached",
+      "bytes": 901120,
+      "verified_case_median_GBps": 55.7555,
+      "observations": 3
+    },
+    {
+      "kind": "H2D_write_combined",
+      "bytes": 1802240,
+      "verified_case_median_GBps": 53.7693,
+      "observations": 3
+    },
+    {
+      "kind": "H2D_cached",
+      "bytes": 1802240,
+      "verified_case_median_GBps": 54.5142,
+      "observations": 3
+    },
+    {
+      "kind": "D2H_cached",
+      "bytes": 1802240,
+      "verified_case_median_GBps": 55.9181,
+      "observations": 3
+    },
+    {
+      "kind": "H2D_write_combined",
+      "bytes": 14417920,
+      "verified_case_median_GBps": 56.1603,
+      "observations": 3
+    },
+    {
+      "kind": "H2D_cached",
+      "bytes": 14417920,
+      "verified_case_median_GBps": 49.5383,
+      "observations": 3
+    },
+    {
+      "kind": "D2H_cached",
+      "bytes": 14417920,
+      "verified_case_median_GBps": 57.0767,
+      "observations": 3
+    },
+    {
+      "kind": "H2D_write_combined",
+      "bytes": 28835840,
+      "verified_case_median_GBps": 56.3251,
+      "observations": 3
+    }
+  ],
+  "interpretation": "Graph-based copy microbenchmarks; not multiplication or leaderboard scores. Direct pinned writes still cross PCIe. Large-buffer bandwidth closely matches AWS."
+}

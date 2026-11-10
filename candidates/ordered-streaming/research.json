@@ -115,6 +115,63 @@
       "read_status": "Read allocator, accessibility and page-placement sections",
       "technique": "Direct GPU access to ordinary system allocations when supported",
       "application_or_limit": "Official target reports pageable_memory_access=0, so this shortcut is unavailable. Local laptop reports 1; that local capability must not be assumed on the runner."
+    },
+    {
+      "title": "WarpDrive (HPCA 2025)",
+      "url": "https://zhengfangyu.github.io/assets/papers/HPCA2025.pdf",
+      "doi": "10.1109/HPCA61900.2025.00091",
+      "read_status": "Read introduction and design sections IV-A through IV-C, including warp-level decomposition, register layouts, and concurrent CUDA/Tensor work",
+      "technique": "Small transform decomposition, byte-exact tensor products, and complementary execution pipelines",
+      "application_or_limit": "v125 implements an independently derived exact 16-by-32 middle transform. A direct modular DFT cross-check and 48 local plus 48 AWS oracle cases pass. Its isolated middle kernel is 108.480 us versus 63.616 us for the prior scalar kernel, and whole-call latency regresses. v126 tests disjoint concurrent CUDA/Tensor row ranges; no paper speedup is assumed transferable."
+    },
+    {
+      "title": "NVIDIA CUDA graph scheduling and repeat-launch improvements",
+      "url": "https://developer.nvidia.com/blog/constant-time-launch-for-straight-line-cuda-graphs-and-other-performance-enhancements/",
+      "read_status": "Read definitions, measured launch behavior, and scheduling based on node creation order",
+      "technique": "Node creation order influences scheduling; straight-line kernel results do not imply constant cost for mixed memcpy/memop graphs",
+      "application_or_limit": "v120 ordered native-memory-wait input graph is correct but substantially slower. v126 creates the tensor branch before the independent CUDA branch. Dependencies remain explicit."
+    },
+    {
+      "title": "Exact-workload discussion on NVIDIA forums",
+      "url": "https://forums.developer.nvidia.com/t/diagnosing-4-6-ms-cuda-rns-ntt-latency-on-rtx-pro-6000-blackwell/388106",
+      "read_status": "Read both author posts; no expert replies were present",
+      "technique": "Author measurements of pinned staging, parallel packing, registration, and output allocation on the same workload",
+      "application_or_limit": "Registration overhead supports avoiding per-call host registration. These are participant observations, not NVIDIA validation or a newly discovered optimization."
+    },
+    {
+      "title": "NVIDIA nvbandwidth",
+      "url": "https://github.com/NVIDIA/nvbandwidth",
+      "read_status": "Read build and usage documentation; inspected CMake; built commit 82fc4e8c6afa0babb8687793678f615b3b8d793e",
+      "technique": "Separate copy-engine and SM measurements at multiple transfer sizes",
+      "application_or_limit": "AWS tests at 1, 2, 14, 28 and 64 MiB verify data and show CE faster than SM copies. Official unscored graph-copy diagnostic confirms roughly 56 GB/s H2D and 57 GB/s D2H. These are bandwidth measurements, not ranked multiplication scores."
+    },
+    {
+      "title": "Ozaki 2.5 (September 2026)",
+      "url": "https://arxiv.org/html/2609.09095v1",
+      "read_status": "Read conversion cost discussion, software reuse modes O1/O2 and the boundary between models and measured implementations",
+      "technique": "Keep byte/traffic accounting separate from arithmetic; fused conversion can repeat reads unless reuse is explicit",
+      "application_or_limit": "The target is FP64-emulated GEMM on different hardware, and several numbers are modeled projections. No projected speedup is used here. v127 explicitly loads raw coefficients once per block before processing every RNS field."
+    },
+    {
+      "title": "cuPQC NTT 0.6 usage and SDK examples",
+      "url": "https://docs.nvidia.com/cuda/cupqc/libraries/cupqc_ntt/cupqc_ntt_usage.html",
+      "read_status": "Read runtime modulus support, descriptor setup, standard and staged execution, and the SDK standard NTT example",
+      "technique": "Composable NTT device routines with Montgomery representation and precomputed twiddles",
+      "application_or_limit": "Downloaded the SDK on the authorized AWS instance for inspection; no cuPQC-NTT integration or measured speedup is claimed."
+    },
+    {
+      "title": "Faster arithmetic for number-theoretic transforms, David Harvey",
+      "url": "https://arxiv.org/pdf/1205.2926",
+      "read_status": "Read sections2-4, including bounds and modified butterflies",
+      "technique": "Skip reduction of difference before Shoup when a+p-b<2^32",
+      "application_or_limit": "Implemented in v131 with independent bounds and polynomial checks; broader30bit lazy representation had already failed full-call selection."
+    },
+    {
+      "title": "On Modular Algorithms and Butterfly Operations in Number Theoretic Transform",
+      "url": "https://arxiv.org/html/2402.00675v1",
+      "read_status": "Read sections2.2 and2.3 on signed Montgomery, Plantard, and butterfly bounds",
+      "technique": "Review exact operand bounds before adopting modular shortcuts",
+      "application_or_limit": "No Plantard implementation copied; use independent integer oracle for widened operands."
     }
   ],
   "evidence_boundary": "All candidate timings in this research record are development measurements. Only a separate official run can establish leaderboard performance. Inaccessible papers are explicitly marked.",
@@ -189,5 +246,445 @@
     "small_ms": 0.3752785,
     "passed": 40,
     "rank_observed": 13
-  }
+  },
+  "replacement_session": {
+    "instance_type": "g7e.2xlarge",
+    "gpu": "RTX PRO 6000 Blackwell Server Edition",
+    "cuda": "12.8",
+    "start_utc": "2026-11-10T17:12:30Z",
+    "hard_deadline_utc": "2026-11-10T21:12:30Z",
+    "results_directory": "evidence/aws_replacement_archive",
+    "evidence_note": "This session is separate from the earlier terminated AWS session. Unprofiled complete-call results determine selection; instrumented kernel timings only diagnose."
+  },
+  "link_budget": {
+    "main_input_bytes": 28835840,
+    "main_output_bytes": 14417920,
+    "target_h2d_GBps": 56.3251,
+    "target_d2h_GBps": 57.0767,
+    "sequential_large_buffer_seconds": 0.0007645596952214502,
+    "status": "Measured unscored on target; calculation is a copy-only estimate, not a proven universal lower bound or submission score",
+    "run": "6af35907698e99b16a7befb5",
+    "passed": 3,
+    "details": "diagnostics/link-bandwidth/RESULTS.json"
+  },
+  "replacement_experiments": [
+    {
+      "version": "v120",
+      "change": "Single ordered DMA graph with native host readiness waits",
+      "exactness": "48 AWS cases passed",
+      "main_ms": 1.535062,
+      "decision": "reject; bracketed baseline 1.074-1.079 ms"
+    },
+    {
+      "version": "v121",
+      "change": "Fused input conversion and high transform, columns 1/2/4",
+      "exactness": "48 AWS cases per variant",
+      "main_ms": [
+        1.1006035,
+        1.086397,
+        1.0943405
+      ],
+      "decision": "reject as release; columns2 profiled to diagnose inefficient accesses"
+    },
+    {
+      "version": "v122",
+      "change": "Final reconstruction writes directly to mapped pinned output; chains 2/4/8",
+      "exactness": "48 AWS cases per variant",
+      "main_ms": [
+        1.328727,
+        1.267208,
+        1.28012
+      ],
+      "decision": "reject; direct host stores do not remove PCIe traffic"
+    },
+    {
+      "version": "v123",
+      "change": "Transform split 128/256/512/1024 with constant sixteen transfer strips",
+      "exactness": "128/256/512/1024 pass 48 AWS cases each; corrected 256 version passes 138 local cases",
+      "main_ms": [
+        1.370071,
+        1.175485,
+        1.079861,
+        1.082688
+      ],
+      "decision": "retain original 512 split; no material gain"
+    },
+    {
+      "version": "v124",
+      "change": "Wider fused input accesses, two fields per block, columns8/16",
+      "exactness": "48 AWS cases each; columns8 also48 local",
+      "main_ms": [
+        1.1346095,
+        1.3322655
+      ],
+      "decision": "reject; improving coalescing alone does not guarantee lower latency"
+    },
+    {
+      "version": "v125",
+      "change": "Exact INT8 tensor 16-point DFT plus CUDA warp 32-point transform",
+      "exactness": "Three CPU direct-DFT checks, 48 local and48 AWS polynomial oracle cases",
+      "main_ms": 1.127823,
+      "decision": "reject pure-tensor middle; investigate complementary concurrent execution"
+    },
+    {
+      "version": "v126",
+      "change": "Concurrent CUDA and Tensor middle branches with disjoint row ranges",
+      "exactness": "48 AWS cases each at 0/12/25/50 percent tensor rows",
+      "main_ms": [
+        1.08395,
+        1.0868595,
+        1.095486,
+        1.11006
+      ],
+      "decision": "reject; no full-call gain"
+    },
+    {
+      "version": "v127",
+      "change": "Read each host coefficient once and reuse it across all RNS fields",
+      "exactness": "48 AWS cases each at 16/32/64 resident rows",
+      "main_ms": [
+        3.89,
+        3.86,
+        3.2
+      ],
+      "decision": "reject scalar host loads; vectorized successor v129 measures separately"
+    },
+    {
+      "version": "v128",
+      "change": "Group output DMA while retaining sixteen compute strips",
+      "exactness": "48 AWS cases per configuration",
+      "main_ms": [
+        1.0862315,
+        1.0905225,
+        1.1222115,
+        1.1554315,
+        1.205156
+      ],
+      "decision": "reject; larger copies start later, no main gain"
+    },
+    {
+      "version": "v129",
+      "change": "Aligned independent uint4 loads for resident mapped-host encoder",
+      "exactness": "48 AWS cases per configuration; 48 local for rows32",
+      "main_ms": [
+        1.1552055,
+        1.141879,
+        1.1698645
+      ],
+      "decision": "much faster than scalar mapped reads, but main still loses; device-input control1.1142395ms"
+    },
+    {
+      "version": "v130",
+      "change": "Unsigned minimum for canonical modular correction",
+      "exactness": "138 local plus48 AWS; 1600400 independent arithmetic checks",
+      "main_ms": 1.075252,
+      "decision": "small preliminary gain, not a ranked release"
+    },
+    {
+      "version": "v131",
+      "change": "Shoup accepts unreduced a+p-b; optional one widened Montgomery pointwise operand",
+      "exactness": "138 local combined variant;48 AWS per variant;1802250 independent arithmetic checks",
+      "main_ms": {
+        "wide_shoup_only": 1.0716975,
+        "both": 1.070567,
+        "neither": 1.084551,
+        "pointwise_only": 1.0831175
+      },
+      "decision": "about1percent preliminary gain versus1.080-1.086ms bracket; repeat before claiming"
+    },
+    {
+      "version": "v132",
+      "change": "Batch H2D DMA into1/2/4/8strips; parallel child transforms preserve original strip shape",
+      "exactness": "48 local group2;48 AWS per variant",
+      "main_ms": [
+        1.075842,
+        1.120393,
+        1.236068,
+        1.4398595
+      ],
+      "decision": "reject grouping for main; group2 smallpoint0.356986ms worth retesting separately"
+    },
+    {
+      "version": "v133",
+      "change": "Aligned vector stores from final reconstruction to pinned host memory",
+      "exactness": "48 local and48 AWS per configuration",
+      "decision": "reject; faster than scalar direct stores, still slower than copy-engine pipeline",
+      "aws_main_results": [
+        {
+          "variant": "ordered-streaming-cmake/solution",
+          "median_ms": 1.084956
+        },
+        {
+          "variant": "vector-output-2-16-1",
+          "median_ms": 1.2788265
+        },
+        {
+          "variant": "vector-output-4-16-1",
+          "median_ms": 1.228593
+        },
+        {
+          "variant": "vector-output-8-16-1",
+          "median_ms": 1.247903
+        },
+        {
+          "variant": "vector-output-4-8-1",
+          "median_ms": 1.2311595
+        },
+        {
+          "variant": "vector-output-4-4-1",
+          "median_ms": 1.2367605000000002
+        },
+        {
+          "variant": "vector-output-2-16-0",
+          "median_ms": 1.0844155
+        },
+        {
+          "variant": "ordered-streaming-cmake/solution",
+          "median_ms": 1.0800265
+        }
+      ]
+    },
+    {
+      "version": "v134",
+      "change": "Fused middle transform using cuPQC0.6 public device NTT API",
+      "status": "CUDA12.8 full LTO linker crashed with SIGSEGV after compiling library functions; no executable or correctness result"
+    },
+    {
+      "version": "v135",
+      "change": "Parallel field groups share a single vectorized mapped-host load",
+      "exactness": "48 local exact cases at4groups32rows",
+      "aws_results": [
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 32768,
+          "median_ms": 0.3749835,
+          "passed": 24
+        },
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 65536,
+          "median_ms": 1.0785115,
+          "passed": 24
+        },
+        {
+          "name": "parallel-resident-2-32-0",
+          "N": 32768,
+          "median_ms": 0.352027,
+          "passed": 24
+        },
+        {
+          "name": "parallel-resident-2-32-0",
+          "N": 65536,
+          "median_ms": 1.0967099999999999,
+          "passed": 24
+        },
+        {
+          "name": "parallel-resident-4-32-0",
+          "N": 32768,
+          "median_ms": 0.3495295,
+          "passed": 24
+        },
+        {
+          "name": "parallel-resident-4-32-0",
+          "N": 65536,
+          "median_ms": 1.0825235,
+          "passed": 24
+        },
+        {
+          "name": "parallel-resident-8-16-0",
+          "N": 32768,
+          "median_ms": 0.342024,
+          "passed": 24
+        },
+        {
+          "name": "parallel-resident-8-16-0",
+          "N": 65536,
+          "median_ms": 1.1027185000000002,
+          "passed": 24
+        },
+        {
+          "name": "parallel-resident-8-32-0",
+          "N": 32768,
+          "median_ms": 0.342923,
+          "passed": 24
+        },
+        {
+          "name": "parallel-resident-8-32-0",
+          "N": 65536,
+          "median_ms": 1.0827045,
+          "passed": 24
+        },
+        {
+          "name": "parallel-resident-4-16-0",
+          "N": 32768,
+          "median_ms": 0.3469915,
+          "passed": 24
+        },
+        {
+          "name": "parallel-resident-4-16-0",
+          "N": 65536,
+          "median_ms": 1.08163,
+          "passed": 24
+        },
+        {
+          "name": "parallel-resident-4-64-0",
+          "N": 32768,
+          "median_ms": 0.3506555,
+          "passed": 24
+        },
+        {
+          "name": "parallel-resident-4-64-0",
+          "N": 65536,
+          "median_ms": 1.0959889999999999,
+          "passed": 24
+        },
+        {
+          "name": "parallel-resident-4-32-1",
+          "N": 32768,
+          "median_ms": 0.373219,
+          "passed": 24
+        },
+        {
+          "name": "parallel-resident-4-32-1",
+          "N": 65536,
+          "median_ms": 1.0831505,
+          "passed": 24
+        },
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 32768,
+          "median_ms": 0.37352,
+          "passed": 24
+        },
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 65536,
+          "median_ms": 1.0803325,
+          "passed": 24
+        }
+      ],
+      "decision": "Main neutral; small improves to0.342024ms at8groups16rows versus0.3749835/0.37352ms brackets. Test size-specific dispatch on official runner."
+    },
+    {
+      "version": "v136",
+      "change": "Subwarp inverse transform and swizzled CRT transpose fusion",
+      "aws_results": [
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 32768,
+          "median_ms": 0.3723125,
+          "passed": 24
+        },
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 65536,
+          "median_ms": 1.0749119999999999,
+          "passed": 24
+        },
+        {
+          "name": "wide-shoup-1-1",
+          "N": 32768,
+          "median_ms": 0.369622,
+          "passed": 24
+        },
+        {
+          "name": "wide-shoup-1-1",
+          "N": 65536,
+          "median_ms": 1.0645354999999999,
+          "passed": 24
+        },
+        {
+          "name": "inverse-crt-4-4",
+          "N": 32768,
+          "median_ms": 0.36536399999999997,
+          "passed": 24
+        },
+        {
+          "name": "inverse-crt-4-4",
+          "N": 65536,
+          "median_ms": 1.06949,
+          "passed": 24
+        },
+        {
+          "name": "inverse-crt-8-2",
+          "N": 32768,
+          "median_ms": 0.367501,
+          "passed": 24
+        },
+        {
+          "name": "inverse-crt-8-2",
+          "N": 65536,
+          "median_ms": 1.1286619999999998,
+          "passed": 24
+        },
+        {
+          "name": "inverse-crt-8-4",
+          "N": 32768,
+          "median_ms": 0.365891,
+          "passed": 24
+        },
+        {
+          "name": "inverse-crt-8-4",
+          "N": 65536,
+          "median_ms": 1.0956590000000002,
+          "passed": 24
+        },
+        {
+          "name": "inverse-crt-16-2",
+          "N": 32768,
+          "median_ms": 0.3710585,
+          "passed": 24
+        },
+        {
+          "name": "inverse-crt-16-2",
+          "N": 65536,
+          "median_ms": 1.1433864999999999,
+          "passed": 24
+        },
+        {
+          "name": "inverse-crt-16-1",
+          "N": 32768,
+          "median_ms": 0.4029005,
+          "passed": 24
+        },
+        {
+          "name": "inverse-crt-16-1",
+          "N": 65536,
+          "median_ms": 1.189946,
+          "passed": 24
+        },
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 32768,
+          "median_ms": 0.375416,
+          "passed": 24
+        },
+        {
+          "name": "ordered-streaming-cmake/solution",
+          "N": 65536,
+          "median_ms": 1.084121,
+          "passed": 24
+        }
+      ],
+      "exactness": "138 local default;48 AWS per configuration",
+      "decision": "No gain beyond arithmetic-only variant. Best fused main1.06949ms versus wide-only1.0645355ms; retain separate inverse and transpose."
+    },
+    {
+      "version": "v137",
+      "change": "Flatten captured output kernel chains into the parent graph",
+      "exactness": "138 local exact cases after CUDA12/13 graph-edge API compatibility fix",
+      "status": "Awaiting target timing"
+    },
+    {
+      "version": "v138",
+      "change": "Isolate cuPQC LTO in external SDK wrapper and restrict linked kernel roots",
+      "status": "Build running; no performance claim"
+    },
+    {
+      "version": "v139",
+      "change": "Use mapped parallel input at N32768 W868; canonical wide Shoup for both sizes",
+      "exactness": "138 local exact cases",
+      "status": "Unscored official comparison being prepared"
+    }
+  ]
 }

@@ -1,0 +1,82 @@
+{
+  "purpose": "Unscored official-runner comparison; not a ranked candidate",
+  "local_diagnostic": {
+    "source_sha256": "0d0eb5dde86e76cf8a4acb1986c87bbe918cd2b962563e8a85424af32c4fda13",
+    "source_files_sha256": {
+      "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+      "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+      "size_dispatch.cuh": "1db90ee030c2bd3cc1a26ce51c71e942db2fd56bbeb56a6e51c6d42afbb04f92",
+      "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+      "solve.cu": "0d0eb5dde86e76cf8a4acb1986c87bbe918cd2b962563e8a85424af32c4fda13",
+      "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+      "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+      "baseline.cuh": "2d383303be3f4a585e61608c21fd9b854f483a63b507f35c334e0f5a618c1ba8",
+      "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503",
+      "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+      "flat.cuh": "04504fd5a79ea9a6399c91e54330e042a3e6bba6f47a67e545629f860f7c22cc",
+      "wide.cuh": "d71051ee9434d820ee5219298f3bdc16bf8d31432bb82f8d1b9fe9b0b0c3e53a",
+      "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb"
+    },
+    "binary_sha256": "4f44b1c1141e9d627de6dc9ac1806c571187ab2e27699faadac443cc18202cbe",
+    "source": "/home/rishitshivam/work/fherma-polynomial/diagnostics/transfer-followup/solve.cu",
+    "binary": "/home/rishitshivam/work/fherma-polynomial/build/transfer-followup",
+    "hardware": "RTX 3050 Laptop, SM86",
+    "official": false,
+    "points": [
+      {
+        "N": 32768,
+        "W": 868,
+        "L": 28,
+        "directory": "diag_transfer_n32768_w868",
+        "passed": 1,
+        "timings": {
+          "init_s": 2.154e-06,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 2.216500673,
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      {
+        "N": 65536,
+        "W": 1747,
+        "L": 55,
+        "directory": "diag_transfer_n65536_w1747",
+        "passed": 1,
+        "timings": {
+          "init_s": 2.004e-06,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 1.567571769,
+              "status": "ok"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "candidate_exact_checks": {
+    "wide": {
+      "source_sha256": "d71051ee9434d820ee5219298f3bdc16bf8d31432bb82f8d1b9fe9b0b0c3e53a",
+      "passed": 138,
+      "hardware": "RTX 3050 Laptop, SM86",
+      "official": false
+    },
+    "size_dispatch": {
+      "source_sha256": "1db90ee030c2bd3cc1a26ce51c71e942db2fd56bbeb56a6e51c6d42afbb04f92",
+      "passed": 138,
+      "hardware": "RTX 3050 Laptop, SM86",
+      "official": false
+    },
+    "flat": {
+      "source_sha256": "04504fd5a79ea9a6399c91e54330e042a3e6bba6f47a67e545629f860f7c22cc",
+      "passed": 138,
+      "hardware": "RTX 3050 Laptop, SM86",
+      "official": false
+    }
+  }
+}
