@@ -10,7 +10,7 @@ Inputs and output are canonical, coefficient-major arrays of little-endian
 32-bit limbs. The two competition points are `(N=65536, W=1747)` and
 `(N=32768, W=868)`.
 
-The latest fully validated official entry is
+The fastest validated official entry at the main competition point is
 [`candidates/column-streaming`](candidates/column-streaming/README.md), at commit
 `171d76fc955000077126ed120bb8f8ce9e84b6f3`. It passed all 40 official cases on
 Blackwell with medians of **1.3373995 ms** and **0.497236 ms**, respectively.

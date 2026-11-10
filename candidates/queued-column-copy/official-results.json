@@ -1,0 +1,44 @@
+{
+  "passed": 40,
+  "cases": 40,
+  "finished_at": "2026-11-10T11:11:59.093Z",
+  "run": "6af2fb99698e99b16a778698",
+  "url": "https://www.fherma.io/kernels/polynomial-multiplication/specifications/negacyclic/runs/6af2fb99698e99b16a778698",
+  "commit": "ce547232ce56a78daa63af642b071f2a3a466461",
+  "artifact": "candidates/queued-column-copy",
+  "hardware": {
+    "arch": "x86_64",
+    "cores": 24,
+    "memory_gb": 214,
+    "memory_cap_gb": 200,
+    "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition \u00b7 97887 MiB",
+    "gpu_memory_gb": 95.6,
+    "cpu": "Intel(R) Xeon(R) 6776P",
+    "kernel": "6.11.0-1016-nvidia",
+    "os": "linux"
+  },
+  "points": [
+    {
+      "point": "N65536-W1747",
+      "passed": 20,
+      "seeds": 20,
+      "seconds": {
+        "min": 0.001254339,
+        "median": 0.0014335295,
+        "mean": 0.0014264963,
+        "max": 0.001544229
+      }
+    },
+    {
+      "point": "N32768-W868",
+      "passed": 20,
+      "seeds": 20,
+      "seconds": {
+        "min": 0.000422561,
+        "median": 0.0004361335,
+        "mean": 0.00043814764999999996,
+        "max": 0.000458255
+      }
+    }
+  ]
+}

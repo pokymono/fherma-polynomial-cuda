@@ -22,8 +22,9 @@ Blackwell SM120 compilation passed with zero spills. Address/undefined
 sanitizer linking was unavailable because the local system ASan library is
 missing; this is not reported as a sanitizer pass.
 
-This version needs a standalone official evaluation. The previous
-[column-streaming version](../column-streaming/official-results.json) measured
-1.3373995 ms; that score does not apply to this candidate.
+The standalone official run passed 40/40 cases. Its main-point median was
+**1.4335295 ms**, slower than the prior 1.3373995 ms column implementation.
+The secondary point improved to **0.4361335 ms**. This version is not promoted
+as the main-point incumbent. See [the exact run record](official-results.json).
 
 FHERMA artifact path: `candidates/queued-column-copy`.

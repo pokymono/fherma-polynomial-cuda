@@ -24,5 +24,5 @@
     16
   ],
   "sm120_compile": true,
-  "standalone_blackwell_status": "not yet measured"
+  "standalone_blackwell_status": "40/40 exact; main point regressed; separate official-results.json"
 }
