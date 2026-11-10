@@ -1,0 +1,113 @@
+{
+  "checked_utc": "2026-11-10T09:23:01.339269+00:00",
+  "official": false,
+  "hardware": "RTX 3050 Laptop, SM86",
+  "source_files_sha256": {
+    "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+    "parallel_copy.h": "27c02d82140b5b90f89df3264c91d62119f2d140cbd374f17f69df23d63d9783",
+    "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+    "solve.cu": "1ba5c0f4954162a98205c1e703be888ab7529b4b6989f2d49ca3484bf9d784a0",
+    "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+    "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b"
+  },
+  "validated_binary_sha256": "92d0d85057f1bfcac742c54e40034afc5ede8dbeb40a5ff2990c94edf1f05a9f",
+  "validated_cases": 138,
+  "exact_points": [
+    {
+      "N": 1,
+      "W": 2,
+      "passed": 6
+    },
+    {
+      "N": 2,
+      "W": 5,
+      "passed": 6
+    },
+    {
+      "N": 8,
+      "W": 16,
+      "passed": 6
+    },
+    {
+      "N": 64,
+      "W": 32,
+      "passed": 8
+    },
+    {
+      "N": 64,
+      "W": 33,
+      "passed": 6
+    },
+    {
+      "N": 64,
+      "W": 31,
+      "passed": 6
+    },
+    {
+      "N": 128,
+      "W": 4096,
+      "passed": 8
+    },
+    {
+      "N": 128,
+      "W": 128,
+      "passed": 6
+    },
+    {
+      "N": 256,
+      "W": 256,
+      "passed": 6
+    },
+    {
+      "N": 1024,
+      "W": 512,
+      "passed": 6
+    },
+    {
+      "N": 8192,
+      "W": 256,
+      "passed": 6
+    },
+    {
+      "N": 32768,
+      "W": 868,
+      "passed": 24
+    },
+    {
+      "N": 32768,
+      "W": 868,
+      "passed": 6
+    },
+    {
+      "N": 65536,
+      "W": 1747,
+      "passed": 6
+    },
+    {
+      "N": 65536,
+      "W": 1747,
+      "passed": 24
+    },
+    {
+      "N": 131072,
+      "W": 128,
+      "passed": 8
+    }
+  ],
+  "independent_algebra_checks": 4044,
+  "sm120_compile": true,
+  "sm120_register_spills": 0,
+  "timings_ms": {
+    "fresh_n32768_w868": {
+      "baseline": 3.730098,
+      "pipelined_direct_crt": 2.655412,
+      "speedup": 1.404715351139484
+    },
+    "fresh_n65536_w1747": {
+      "baseline": 16.0643445,
+      "pipelined_direct_crt": 10.6396765,
+      "speedup": 1.5098527196762044
+    }
+  },
+  "timing_method": "Two runs per candidate, in forward then reverse order, with 24 cases at each competition point. Medians pool the 23 calls after the first local call in each run. All GPU timings are sequential; no simultaneous GPU benchmarks. These are local development timings, not the official scoring method."
+}

@@ -20,6 +20,9 @@ args = parser.parse_args()
 binary = args.binary.resolve()
 source = args.source.resolve()
 report = {'source_sha256': hashlib.sha256(source.read_bytes()).hexdigest(),
+          'source_files_sha256': {p.name: hashlib.sha256(p.read_bytes()).hexdigest()
+                                  for p in source.parent.iterdir()
+                                  if p.suffix in {'.cu', '.cpp', '.h', '.hpp', '.cuh'} or p.name == 'CMakeLists.txt'},
           'binary_sha256': hashlib.sha256(binary.read_bytes()).hexdigest(),
           'source': str(source), 'binary': str(binary),
           'hardware': 'RTX 3050 Laptop, SM86', 'official': False, 'points': []}

@@ -67,3 +67,11 @@ Its median times were 5.639522 ms at `(65536,1747)` and 1.4168585 ms at
 `(32768,868)`; see [the official run](https://www.fherma.io/kernels/polynomial-multiplication/specifications/negacyclic/runs/6aeee932ed7d31391ff332ef).
 Experimental candidates and diagnostics have separate artifact directories and
 must be validated and measured independently before those results apply to them.
+
+The [pipelined direct-CRT candidate](candidates/pipelined-direct-crt/README.md)
+uses a proven integer quotient to halve the main reconstruction width and
+overlaps host staging, GPU conversion, and output transfers. It passed 138 local
+exact cases and 4044 independent algebraic checks. Sequential alternating local
+measurements showed 16.06 ms to 10.64 ms at the main point (1.51x); this is not an
+official Blackwell result. Its artifact directory includes the mathematical
+proof, source hashes, and detailed local results.
