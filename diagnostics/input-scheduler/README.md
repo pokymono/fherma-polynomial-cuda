@@ -22,3 +22,7 @@ standalone or ranked scores. Logs are emitted only after all measurements.
 
 Memory ordering reference:
 https://docs.nvidia.com/cuda/archive/12.8.0/parallel-thread-execution/index.html
+
+## Measured result
+
+Official unscored run passed all 3 outer oracle checks. Warm medians were 1.014-1.018ms for the control, AVX2, direct stores, GPU gates and complete graph. Caller-assisted packing regressed to 1.126ms. Idle results varied substantially; no mode eliminated the slowdown. No ranked candidate selected. See [all 189 measured inner samples](RESULTS.json).
