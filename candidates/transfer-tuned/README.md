@@ -1,8 +1,8 @@
 # Transfer-tuned exact polynomial multiplication
 
-This experimental candidate passed140local independent exact checks,48AWS
-checks and6/6official unscored checks. The official standalone median was
-0.349913ms at N32768 W868 and1.155817ms at N65536 W1747. The small-case gain
+This experimental candidate passed 140 local independent exact checks, 48 AWS
+checks and 6/6 official unscored checks. The official standalone median was
+0.349913 ms at N32768 W868 and 1.155817 ms at N65536 W1747. The small-case gain
 reproduced; the main-case proxy/warmed diagnostic gain did not. This candidate
 has not been promoted to the ranked implementation.
 
