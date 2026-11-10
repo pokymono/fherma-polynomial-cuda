@@ -17,3 +17,7 @@ Each mode measures three warm/20ms-idle/warm rounds after two verified warm call
 Mode order rotates across outer calls. Every answer is compared; the returned
 answer is checked by the unchanged official harness. Inner times use repeated
 current inputs and exclude setup, so they are not standalone or ranked scores.
+
+## Measured result
+
+All modes passed 3/3 outer oracle checks and all inner comparisons. Eight workers gave warm medians 1.010-1.013ms; four workers regressed to 1.208ms and six to 1.024ms. PAUSE polling did not improve the eight-worker warm median or the idle median. The AWS preference for four workers does not transfer to the official host; retain eight on the target. See [all samples](RESULTS.json). These are unscored inner-call diagnostics, not standalone or ranked results.

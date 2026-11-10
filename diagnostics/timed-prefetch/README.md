@@ -17,3 +17,7 @@ or ranked scores. All logs are emitted after measurement to preserve the idle ga
 
 The cache hint follows NVIDIA's PTX prefetch.global.L2 instruction contract:
 https://docs.nvidia.com/cuda/archive/12.8.0/parallel-thread-execution/index.html
+
+## Measured result
+
+All six modes passed 3/3 outer oracle checks and all inner comparisons. No prefetch size removed the 20ms idle slowdown: all 9 idle samples per mode exceeded 1.2ms. Warm medians increased from 1.006ms without prefetch to 1.015-1.019ms. Reject this as an idle-latency fix. See [all samples](RESULTS.json). These are unscored inner-call diagnostics, not standalone or ranked results.
