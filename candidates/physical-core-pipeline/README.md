@@ -26,3 +26,7 @@ its binding helper was exercised independently. SM120 compilation passed with
 zero spills. Local main-case runtime was about 9.08 ms, not an official score.
 
 FHERMA artifact path: `candidates/physical-core-pipeline`.
+
+The official run passed 40/40 cases but regressed to **1.7784765 ms**
+at the main point and **0.494988 ms** at the secondary point. This configuration
+is rejected as an improvement. See [the run record](official-results.json).

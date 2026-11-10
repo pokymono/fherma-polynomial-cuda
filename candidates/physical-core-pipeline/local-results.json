@@ -18,5 +18,5 @@
   "affinity_helper_test": "passed; caller affinity unchanged",
   "full_local_candidate_affinity": "fallback on eight physical cores",
   "sm120_compile": true,
-  "standalone_blackwell_status": "not yet measured"
+  "standalone_blackwell_status": "40/40 exact; performance regressed; separate official-results.json"
 }
