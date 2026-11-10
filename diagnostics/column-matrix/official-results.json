@@ -1,0 +1,103 @@
+{
+  "run": "6af2f6e9698e99b16a775ce0",
+  "official_score": false,
+  "configuration_medians_last_3": {
+    "chunks=16 streams=4 lanes=8 cache=1": {
+      "total": 1.707024,
+      "input": 1.08,
+      "core": 0.149504,
+      "output": 0.341056,
+      "cpu_staging": 0.869235,
+      "cpu_total": 1.653905
+    },
+    "chunks=16 streams=4 lanes=8 cache=0": {
+      "total": 1.552176,
+      "input": 0.950432,
+      "core": 0.1536,
+      "output": 0.33936,
+      "cpu_staging": 0.709545,
+      "cpu_total": 1.500137
+    },
+    "chunks=8 streams=4 lanes=8 cache=0": {
+      "total": 1.554907,
+      "input": 0.944352,
+      "core": 0.155616,
+      "output": 0.350816,
+      "cpu_staging": 0.720971,
+      "cpu_total": 1.50466
+    },
+    "chunks=8 streams=4 lanes=8 cache=1": {
+      "total": 1.458837,
+      "input": 0.890688,
+      "core": 0.151552,
+      "output": 0.346688,
+      "cpu_staging": 0.616919,
+      "cpu_total": 1.423961
+    },
+    "chunks=4 streams=4 lanes=8 cache=0": {
+      "total": 1.654646,
+      "input": 0.916416,
+      "core": 0.1536,
+      "output": 0.39072,
+      "cpu_staging": 0.619671,
+      "cpu_total": 1.627108
+    },
+    "chunks=4 streams=4 lanes=8 cache=1": {
+      "total": 1.569337,
+      "input": 0.8656,
+      "core": 0.149536,
+      "output": 0.389824,
+      "cpu_staging": 0.540757,
+      "cpu_total": 1.542599
+    },
+    "chunks=16 streams=2 lanes=4 cache=0": {
+      "total": 2.217025,
+      "input": 1.43936,
+      "core": 0.155616,
+      "output": 0.509408,
+      "cpu_staging": 1.35455,
+      "cpu_total": 2.163711
+    },
+    "chunks=16 streams=4 lanes=4 cache=0": {
+      "total": 1.524945,
+      "input": 0.839328,
+      "core": 0.155648,
+      "output": 0.338816,
+      "cpu_staging": 0.686012,
+      "cpu_total": 1.472531
+    },
+    "chunks=16 streams=2 lanes=16 cache=0": {
+      "total": 1.544103,
+      "input": 0.839904,
+      "core": 0.1536,
+      "output": 0.465664,
+      "cpu_staging": 0.573682,
+      "cpu_total": 1.49241
+    },
+    "chunks=16 streams=4 lanes=16 cache=0": {
+      "total": 1.365903,
+      "input": 0.792192,
+      "core": 0.1536,
+      "output": 0.340864,
+      "cpu_staging": 0.419096,
+      "cpu_total": 1.313725
+    }
+  },
+  "commit": "30f3fe378572cc679abd1bc10933ea3deb81c83b",
+  "artifact": "diagnostics/column-matrix",
+  "passed": 3,
+  "cases": 3,
+  "hardware": {
+    "arch": "x86_64",
+    "cores": 24,
+    "memory_gb": 214,
+    "memory_cap_gb": 200,
+    "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition \u00b7 97887 MiB",
+    "gpu_memory_gb": 95.6,
+    "cpu": "Intel(R) Xeon(R) 6776P",
+    "kernel": "6.11.0-1016-nvidia",
+    "os": "linux"
+  },
+  "finished_at": "2026-11-10T10:50:52.289Z",
+  "note": "All ten mode outputs agreed on every judged case. The outer harness timing is not production latency. One 16-lane polling team is shared across modes; compare these leads in standalone runs."
+}
