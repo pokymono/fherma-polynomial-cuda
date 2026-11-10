@@ -1,0 +1,21 @@
+{
+  "official": false,
+  "hardware": "RTX 3050 Laptop, SM86",
+  "source_files_sha256": {
+    "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+    "parallel_copy.h": "c0b1db7f880a08c5e6397460083b80b5b05132a2b0b94219513f4ea97649a083",
+    "CMakeLists.txt": "a42e94f17489f629658ed68de3d949ea23fb7627554c7559796522f8ec70b3b7",
+    "solve.cu": "5c06d40606b0da0c94ecc4c83fe9bae80c56a0adee65b2ffa0098fea87dc4681",
+    "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+    "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+    "output_worker.h": "06280091de8bf4cd41ff0bc4c83ca6ad71edb919f6a25cab3b68216ed76dd9dc"
+  },
+  "binary_sha256": "326e7d6c4e0f95986e804d1c3818a601b121d0d7dac86297f66901ea7c5fc598",
+  "validated_cases": 138,
+  "strided_copy_stress_jobs": 96,
+  "strided_copy_stress_sessions": 48,
+  "output_worker_stress_checks": 1003,
+  "standalone_blackwell_status": "not yet measured",
+  "sm120_compile": true,
+  "sm120_spill_bytes": 0
+}

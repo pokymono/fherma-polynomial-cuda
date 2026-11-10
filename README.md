@@ -10,6 +10,15 @@ Inputs and output are canonical, coefficient-major arrays of little-endian
 32-bit limbs. The two competition points are `(N=65536, W=1747)` and
 `(N=32768, W=868)`.
 
+The latest fully validated official entry is
+[`candidates/overlapped-output`](candidates/overlapped-output/README.md), at commit
+`38064bfcd72818e6d32bfd52a99bd1041e904a54`. It passed all 40 official cases on
+Blackwell with medians of **1.6966325 ms** and **0.5443065 ms**, respectively.
+[Official run](https://www.fherma.io/kernels/polynomial-multiplication/specifications/negacyclic/runs/6af2eeb1698e99b16a76da13).
+Use that directory in the CMake commands below to reproduce this version;
+`src/` preserves the original baseline. Newer experiments have separate
+directories and do not inherit this result.
+
 ## Algorithm
 
 Parameter-only initialization chooses independent 31-bit NTT primes with product
