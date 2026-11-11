@@ -1,0 +1,71 @@
+{
+  "candidate": "diagnostics/host-input-prefetch",
+  "source_commit": "aa17b5f063d3d1c43fa024ad540e462851984d01",
+  "run": "6af3df40698e99b16a822787",
+  "official": true,
+  "ranked": false,
+  "passed": 20,
+  "finished_at": "2026-11-11T03:22:58.028Z",
+  "warmup_lines_dropped": 2,
+  "summary": [
+    {
+      "mode": 0,
+      "samples": 5,
+      "median_us": 1289.154,
+      "min_us": 1186.083,
+      "max_us": 1331.965,
+      "values_us": [
+        1186.083,
+        1331.965,
+        1318.097,
+        1289.154,
+        1280.452
+      ]
+    },
+    {
+      "mode": 1,
+      "samples": 5,
+      "median_us": 1301.168,
+      "min_us": 1243.923,
+      "max_us": 1508.866,
+      "values_us": [
+        1365.163,
+        1301.168,
+        1243.923,
+        1508.866,
+        1256.383
+      ]
+    },
+    {
+      "mode": 2,
+      "samples": 5,
+      "median_us": 1451.075,
+      "min_us": 1235.798,
+      "max_us": 1516.556,
+      "values_us": [
+        1506.124,
+        1235.798,
+        1243.51,
+        1516.556,
+        1451.075
+      ]
+    },
+    {
+      "mode": 3,
+      "samples": 5,
+      "median_us": 1425.68,
+      "min_us": 1313.652,
+      "max_us": 1504.844,
+      "values_us": [
+        1353.723,
+        1504.844,
+        1462.755,
+        1425.68,
+        1313.652
+      ]
+    }
+  ],
+  "outer_mixed_mode_median_ms": 1.3323935,
+  "evidence_limit": "Five fresh inputs per mode; pre-log inner duration, not standalone ranked timings.",
+  "decision": "No read-ahead mode selected. All target-host cases passed, but none had a convincing fresh-call latency advantage. Control variability motivates an untouched standalone recheck."
+}

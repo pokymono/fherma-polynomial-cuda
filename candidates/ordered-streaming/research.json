@@ -269,6 +269,13 @@
       "read_status": "Read store operator definitions, including write-through to system memory.",
       "technique": "Compare default, write-through and streaming vector stores for mapped host output.",
       "application_or_limit": "v245; compare full-call timing and exact results, not assumed cache semantics as a performance guarantee."
+    },
+    {
+      "title": "Hermes hybrid NTT dataflow (2026)",
+      "url": "https://arxiv.org/html/2603.01556v1",
+      "read_status": "Read architecture and experimental setup sections",
+      "technique": "Scratchpad reuse, conflict-free fragmentation, pipelined butterfly hardware",
+      "application_or_limit": "Xilinx U280 FPGA design, not a CUDA drop-in. Its advertised speedup does not predict this SM120 end-to-end host-transfer workload."
     }
   ],
   "evidence_boundary": "All candidate timings in this research record are development measurements. Only a separate official run can establish leaderboard performance. Inaccessible papers are explicitly marked.",
@@ -14663,5 +14670,28 @@
     },
     "current_selected": "candidates/caller-fused-strips; official1.0024405ms main and0.3176965ms small. No ranked submission in this series.",
     "v245_store_policy": "48 exact cases per config. Main default-store1.0362945ms, write-through1.0377505ms, streaming1.035227ms. No useful improvement and all slower than DMA output."
+  },
+  "fresh_host_diagnostics_20261111": {
+    "allocation_schedule": {
+      "run": "6af3da53698e99b16a81c053",
+      "commit": "f8cfed6fdcde26e76c65224a42322da21927f5f8",
+      "passed": 20,
+      "ranked": false,
+      "decision": "Delay did not speed input packing; late output construction regressed. Immediate allocation retained."
+    },
+    "prefetch": {
+      "submission": "6af3dd0d698e99b16a821c7e",
+      "commit": "aa17b5f063d3d1c43fa024ad540e462851984d01",
+      "status": "finished",
+      "local": "48 exact through non-AVX512 fallback; target-specific prefetch paths require official validation.",
+      "run": "6af3df40698e99b16a822787",
+      "passed": 20,
+      "decision": "Rejected: no convincing gain; baseline control varied1.186\u20131.332ms inside wrapper. Recheck unchanged standalone source."
+    },
+    "prepared": [
+      "diagnostics/copy-core-placement",
+      "diagnostics/fresh-worker-counts"
+    ],
+    "aws": "No resources running; six-hour session cleanup verified."
   }
 }

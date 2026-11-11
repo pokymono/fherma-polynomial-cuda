@@ -11,3 +11,5 @@ Every CPU worker and GPU operation finishes before return. No input is touched
 outside its measured call, and no work persists between calls. One compact log records the mode and pre-log total time; official outer timings
 include logging. There are no CPU phase timestamps or extra GPU events.
 This rotated diagnostic is not a standalone or ranked candidate score.
+
+Official run `6af3df40698e99b16a822787` passed20/20, exercising the AVX-512 paths. No prefetch mode was selected; see RESULTS.json.
