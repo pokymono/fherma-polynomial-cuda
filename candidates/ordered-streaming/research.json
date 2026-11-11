@@ -220,6 +220,13 @@
       "read_status": "Read Method, Measured, Correctness and Requirements sections. Source implementation not read.",
       "technique": "59bit Shoup butterflies and stage-by-stage batched NTT.",
       "application_or_limit": "Measured sizes4096/8192 and per-stage launches do not match the65536 large-integer transfer-bound target. Not integrated."
+    },
+    {
+      "title": "CUDA graph scheduling and node trace overhead",
+      "url": "https://developer.nvidia.com/blog/constant-time-launch-for-straight-line-cuda-graphs-and-other-performance-enhancements/",
+      "read_status": "Read full technical article including node creation order and non-kernel caveats; separately read Nsight Systems graph-trace documentation",
+      "technique": "Node creation order affects scheduling; non-kernel nodes have distinct overhead, and node-level tracing can substantially perturb timing",
+      "application_or_limit": "v206 simpler output dependency graph won the official warm comparison; v207 ordinary DMA dispatch only saved a few microseconds on AWS. Full graph-node traces used for causality, not scoring. https://docs.nvidia.com/nsight-systems/UserGuide/index.html"
     }
   ],
   "evidence_boundary": "All candidate timings in this research record are development measurements. Only a separate official run can establish leaderboard performance. Inaccessible papers are explicitly marked.",
@@ -14541,5 +14548,12 @@
       "output_schedule": "Local48 exact at mask5/phase lanes2. AWS sweep in progress; no performance claim yet."
     },
     "evidence_boundary": "Development full-call timings and official unscored inner diagnostics remain separate. No ranked submission in this series."
+  },
+  "latest_followup_utc": "2026-11-11T00:08:00Z",
+  "followup_206_209": {
+    "v206": "Official unscored warm serial arithmetic 0.976912ms versus control0.991442ms; 3/3 outer cases, 162 measured inner samples. Idle timings variable.",
+    "v207": "Direct runtime copies saved ~3\u20136us on AWS; all48 cases per config passed.",
+    "v208": "Independent forward/inverse root formats all correct; full inverse table regressed ~18us or more.",
+    "v209": "Exact tensor quotient allowed revisiting async CRT/carry fusion; first serial configs passed but were slower. Phase graph initially rejected two-node plans at initialization; corrected explicit accepted stage count and reran full exact main cases. No selected gain."
   }
 }

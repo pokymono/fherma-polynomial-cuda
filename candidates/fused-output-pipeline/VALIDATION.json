@@ -1,0 +1,1318 @@
+{
+  "official_ranked": false,
+  "source_files_sha256": {
+    "CMakeLists.txt": "223eb06e48e8ef8e9bdb1bce4f924a1bb7601d45e94fdb82e28916ad1fc36f6d",
+    "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+    "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+    "solve.cu": "715217d0d4e43289fed4f6a40347263f553db04efa60508d7cc8b9324c823092",
+    "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+    "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+    "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+    "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+    "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+  },
+  "local": {
+    "cases": 141,
+    "hardware": "RTX3050 SM86",
+    "report": {
+      "source_sha256": "715217d0d4e43289fed4f6a40347263f553db04efa60508d7cc8b9324c823092",
+      "source_files_sha256": {
+        "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+        "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+        "CMakeLists.txt": "223eb06e48e8ef8e9bdb1bce4f924a1bb7601d45e94fdb82e28916ad1fc36f6d",
+        "solve.cu": "715217d0d4e43289fed4f6a40347263f553db04efa60508d7cc8b9324c823092",
+        "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+        "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+        "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503",
+        "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+        "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb"
+      },
+      "binary_sha256": "57bf10b1b6d38df78f2d8b18f6aa4efafea96849e0af6198a97a7deef191b03b",
+      "source": "/home/rishitshivam/work/fherma-polynomial/candidates/fused-output-pipeline/solve.cu",
+      "binary": "/home/rishitshivam/work/fherma-polynomial/build/fused-output-pipeline-local",
+      "hardware": "RTX 3050 Laptop, SM86",
+      "official": false,
+      "points": [
+        {
+          "N": 1,
+          "W": 2,
+          "L": 1,
+          "directory": "n1_w2",
+          "passed": 6,
+          "timings": {
+            "init_s": 1.822407977,
+            "cases": [
+              {
+                "i": 0,
+                "seconds": 0.001436494,
+                "status": "ok"
+              },
+              {
+                "i": 1,
+                "seconds": 2.7582e-05,
+                "status": "ok"
+              },
+              {
+                "i": 2,
+                "seconds": 2.5598e-05,
+                "status": "ok"
+              },
+              {
+                "i": 3,
+                "seconds": 2.5278e-05,
+                "status": "ok"
+              },
+              {
+                "i": 4,
+                "seconds": 2.5067e-05,
+                "status": "ok"
+              },
+              {
+                "i": 5,
+                "seconds": 2.9205e-05,
+                "status": "ok"
+              }
+            ]
+          }
+        },
+        {
+          "N": 2,
+          "W": 5,
+          "L": 1,
+          "directory": "n2_w5",
+          "passed": 6,
+          "timings": {
+            "init_s": 0.134315264,
+            "cases": [
+              {
+                "i": 0,
+                "seconds": 0.001114601,
+                "status": "ok"
+              },
+              {
+                "i": 1,
+                "seconds": 3.6849e-05,
+                "status": "ok"
+              },
+              {
+                "i": 2,
+                "seconds": 3.5036e-05,
+                "status": "ok"
+              },
+              {
+                "i": 3,
+                "seconds": 2.7251e-05,
+                "status": "ok"
+              },
+              {
+                "i": 4,
+                "seconds": 3.5016e-05,
+                "status": "ok"
+              },
+              {
+                "i": 5,
+                "seconds": 3.5166e-05,
+                "status": "ok"
+              }
+            ]
+          }
+        },
+        {
+          "N": 8,
+          "W": 16,
+          "L": 1,
+          "directory": "n8_w16",
+          "passed": 6,
+          "timings": {
+            "init_s": 0.132886584,
+            "cases": [
+              {
+                "i": 0,
+                "seconds": 0.000937338,
+                "status": "ok"
+              },
+              {
+                "i": 1,
+                "seconds": 3.8923e-05,
+                "status": "ok"
+              },
+              {
+                "i": 2,
+                "seconds": 3.3192e-05,
+                "status": "ok"
+              },
+              {
+                "i": 3,
+                "seconds": 3.2841e-05,
+                "status": "ok"
+              },
+              {
+                "i": 4,
+                "seconds": 3.1409e-05,
+                "status": "ok"
+              },
+              {
+                "i": 5,
+                "seconds": 3.3353e-05,
+                "status": "ok"
+              }
+            ]
+          }
+        },
+        {
+          "N": 64,
+          "W": 32,
+          "L": 1,
+          "directory": "small",
+          "passed": 8,
+          "timings": {
+            "init_s": 0.130566341,
+            "cases": [
+              {
+                "i": 0,
+                "seconds": 0.001025363,
+                "status": "ok"
+              },
+              {
+                "i": 1,
+                "seconds": 3.8172e-05,
+                "status": "ok"
+              },
+              {
+                "i": 2,
+                "seconds": 3.4475e-05,
+                "status": "ok"
+              },
+              {
+                "i": 3,
+                "seconds": 3.3613e-05,
+                "status": "ok"
+              },
+              {
+                "i": 4,
+                "seconds": 3.2831e-05,
+                "status": "ok"
+              },
+              {
+                "i": 5,
+                "seconds": 3.2731e-05,
+                "status": "ok"
+              },
+              {
+                "i": 6,
+                "seconds": 3.219e-05,
+                "status": "ok"
+              },
+              {
+                "i": 7,
+                "seconds": 3.233e-05,
+                "status": "ok"
+              }
+            ]
+          }
+        },
+        {
+          "N": 64,
+          "W": 33,
+          "L": 2,
+          "directory": "n64_w33",
+          "passed": 6,
+          "timings": {
+            "init_s": 0.129506374,
+            "cases": [
+              {
+                "i": 0,
+                "seconds": 0.001052013,
+                "status": "ok"
+              },
+              {
+                "i": 1,
+                "seconds": 4.5205e-05,
+                "status": "ok"
+              },
+              {
+                "i": 2,
+                "seconds": 5.0525e-05,
+                "status": "ok"
+              },
+              {
+                "i": 3,
+                "seconds": 3.5156e-05,
+                "status": "ok"
+              },
+              {
+                "i": 4,
+                "seconds": 3.2291e-05,
+                "status": "ok"
+              },
+              {
+                "i": 5,
+                "seconds": 3.2962e-05,
+                "status": "ok"
+              }
+            ]
+          }
+        },
+        {
+          "N": 64,
+          "W": 31,
+          "L": 1,
+          "directory": "n64_w31",
+          "passed": 6,
+          "timings": {
+            "init_s": 0.134918626,
+            "cases": [
+              {
+                "i": 0,
+                "seconds": 0.000888697,
+                "status": "ok"
+              },
+              {
+                "i": 1,
+                "seconds": 3.8021e-05,
+                "status": "ok"
+              },
+              {
+                "i": 2,
+                "seconds": 3.5968e-05,
+                "status": "ok"
+              },
+              {
+                "i": 3,
+                "seconds": 3.5537e-05,
+                "status": "ok"
+              },
+              {
+                "i": 4,
+                "seconds": 4.1127e-05,
+                "status": "ok"
+              },
+              {
+                "i": 5,
+                "seconds": 3.5267e-05,
+                "status": "ok"
+              }
+            ]
+          }
+        },
+        {
+          "N": 128,
+          "W": 4096,
+          "L": 128,
+          "directory": "fresh_n128_w4096",
+          "passed": 8,
+          "timings": {
+            "init_s": 0.137993564,
+            "cases": [
+              {
+                "i": 0,
+                "seconds": 0.001097839,
+                "status": "ok"
+              },
+              {
+                "i": 1,
+                "seconds": 0.000339938,
+                "status": "ok"
+              },
+              {
+                "i": 2,
+                "seconds": 0.000337894,
+                "status": "ok"
+              },
+              {
+                "i": 3,
+                "seconds": 0.000336691,
+                "status": "ok"
+              },
+              {
+                "i": 4,
+                "seconds": 0.000344066,
+                "status": "ok"
+              },
+              {
+                "i": 5,
+                "seconds": 0.000352441,
+                "status": "ok"
+              },
+              {
+                "i": 6,
+                "seconds": 0.00035162,
+                "status": "ok"
+              },
+              {
+                "i": 7,
+                "seconds": 0.000344045,
+                "status": "ok"
+              }
+            ]
+          }
+        },
+        {
+          "N": 128,
+          "W": 128,
+          "L": 4,
+          "directory": "n128_w128",
+          "passed": 6,
+          "timings": {
+            "init_s": 0.135425025,
+            "cases": [
+              {
+                "i": 0,
+                "seconds": 0.001008652,
+                "status": "ok"
+              },
+              {
+                "i": 1,
+                "seconds": 4.7359e-05,
+                "status": "ok"
+              },
+              {
+                "i": 2,
+                "seconds": 5.365e-05,
+                "status": "ok"
+              },
+              {
+                "i": 3,
+                "seconds": 4.9122e-05,
+                "status": "ok"
+              },
+              {
+                "i": 4,
+                "seconds": 4.5535e-05,
+                "status": "ok"
+              },
+              {
+                "i": 5,
+                "seconds": 4.787e-05,
+                "status": "ok"
+              }
+            ]
+          }
+        },
+        {
+          "N": 256,
+          "W": 256,
+          "L": 8,
+          "directory": "n256_w256",
+          "passed": 6,
+          "timings": {
+            "init_s": 0.132323648,
+            "cases": [
+              {
+                "i": 0,
+                "seconds": 0.001272688,
+                "status": "ok"
+              },
+              {
+                "i": 1,
+                "seconds": 5.2398e-05,
+                "status": "ok"
+              },
+              {
+                "i": 2,
+                "seconds": 5.0345e-05,
+                "status": "ok"
+              },
+              {
+                "i": 3,
+                "seconds": 4.9783e-05,
+                "status": "ok"
+              },
+              {
+                "i": 4,
+                "seconds": 5.1216e-05,
+                "status": "ok"
+              },
+              {
+                "i": 5,
+                "seconds": 5.7078e-05,
+                "status": "ok"
+              }
+            ]
+          }
+        },
+        {
+          "N": 1024,
+          "W": 512,
+          "L": 16,
+          "directory": "n1024_w512",
+          "passed": 6,
+          "timings": {
+            "init_s": 0.135272259,
+            "cases": [
+              {
+                "i": 0,
+                "seconds": 0.000934993,
+                "status": "ok"
+              },
+              {
+                "i": 1,
+                "seconds": 0.000111019,
+                "status": "ok"
+              },
+              {
+                "i": 2,
+                "seconds": 0.000108834,
+                "status": "ok"
+              },
+              {
+                "i": 3,
+                "seconds": 0.000107322,
+                "status": "ok"
+              },
+              {
+                "i": 4,
+                "seconds": 0.000108614,
+                "status": "ok"
+              },
+              {
+                "i": 5,
+                "seconds": 0.000108223,
+                "status": "ok"
+              }
+            ]
+          }
+        },
+        {
+          "N": 8192,
+          "W": 256,
+          "L": 8,
+          "directory": "n8192_w256",
+          "passed": 6,
+          "timings": {
+            "init_s": 0.137727034,
+            "cases": [
+              {
+                "i": 0,
+                "seconds": 0.000929454,
+                "status": "ok"
+              },
+              {
+                "i": 1,
+                "seconds": 0.000309531,
+                "status": "ok"
+              },
+              {
+                "i": 2,
+                "seconds": 0.000302207,
+                "status": "ok"
+              },
+              {
+                "i": 3,
+                "seconds": 0.000311885,
+                "status": "ok"
+              },
+              {
+                "i": 4,
+                "seconds": 0.000297317,
+                "status": "ok"
+              },
+              {
+                "i": 5,
+                "seconds": 0.000300053,
+                "status": "ok"
+              }
+            ]
+          }
+        },
+        {
+          "N": 32768,
+          "W": 868,
+          "L": 28,
+          "directory": "fresh_n32768_w868",
+          "passed": 24,
+          "timings": {
+            "init_s": 0.190610686,
+            "cases": [
+              {
+                "i": 0,
+                "seconds": 0.002719561,
+                "status": "ok"
+              },
+              {
+                "i": 1,
+                "seconds": 0.002719601,
+                "status": "ok"
+              },
+              {
+                "i": 2,
+                "seconds": 0.002700756,
+                "status": "ok"
+              },
+              {
+                "i": 3,
+                "seconds": 0.002710335,
+                "status": "ok"
+              },
+              {
+                "i": 4,
+                "seconds": 0.002751852,
+                "status": "ok"
+              },
+              {
+                "i": 5,
+                "seconds": 0.00269757,
+                "status": "ok"
+              },
+              {
+                "i": 6,
+                "seconds": 0.002643168,
+                "status": "ok"
+              },
+              {
+                "i": 7,
+                "seconds": 0.002634942,
+                "status": "ok"
+              },
+              {
+                "i": 8,
+                "seconds": 0.002668025,
+                "status": "ok"
+              },
+              {
+                "i": 9,
+                "seconds": 0.002691509,
+                "status": "ok"
+              },
+              {
+                "i": 10,
+                "seconds": 0.002629162,
+                "status": "ok"
+              },
+              {
+                "i": 11,
+                "seconds": 0.002634392,
+                "status": "ok"
+              },
+              {
+                "i": 12,
+                "seconds": 0.002625716,
+                "status": "ok"
+              },
+              {
+                "i": 13,
+                "seconds": 0.002706347,
+                "status": "ok"
+              },
+              {
+                "i": 14,
+                "seconds": 0.002639722,
+                "status": "ok"
+              },
+              {
+                "i": 15,
+                "seconds": 0.002688613,
+                "status": "ok"
+              },
+              {
+                "i": 16,
+                "seconds": 0.002684977,
+                "status": "ok"
+              },
+              {
+                "i": 17,
+                "seconds": 0.002697641,
+                "status": "ok"
+              },
+              {
+                "i": 18,
+                "seconds": 0.002774244,
+                "status": "ok"
+              },
+              {
+                "i": 19,
+                "seconds": 0.002738637,
+                "status": "ok"
+              },
+              {
+                "i": 20,
+                "seconds": 0.00261213,
+                "status": "ok"
+              },
+              {
+                "i": 21,
+                "seconds": 0.002628511,
+                "status": "ok"
+              },
+              {
+                "i": 22,
+                "seconds": 0.002667484,
+                "status": "ok"
+              },
+              {
+                "i": 23,
+                "seconds": 0.002623942,
+                "status": "ok"
+              }
+            ]
+          }
+        },
+        {
+          "N": 32768,
+          "W": 868,
+          "L": 28,
+          "directory": "diag_transfer_n32768_w868",
+          "passed": 1,
+          "timings": {
+            "init_s": 0.190062426,
+            "cases": [
+              {
+                "i": 0,
+                "seconds": 0.002797929,
+                "status": "ok"
+              }
+            ]
+          }
+        },
+        {
+          "N": 32768,
+          "W": 868,
+          "L": 28,
+          "directory": "n32768_w868",
+          "passed": 6,
+          "timings": {
+            "init_s": 0.192510509,
+            "cases": [
+              {
+                "i": 0,
+                "seconds": 0.00282022,
+                "status": "ok"
+              },
+              {
+                "i": 1,
+                "seconds": 0.002666371,
+                "status": "ok"
+              },
+              {
+                "i": 2,
+                "seconds": 0.002671582,
+                "status": "ok"
+              },
+              {
+                "i": 3,
+                "seconds": 0.002643589,
+                "status": "ok"
+              },
+              {
+                "i": 4,
+                "seconds": 0.002707919,
+                "status": "ok"
+              },
+              {
+                "i": 5,
+                "seconds": 0.002671181,
+                "status": "ok"
+              }
+            ]
+          }
+        },
+        {
+          "N": 65536,
+          "W": 1747,
+          "L": 55,
+          "directory": "n65536_w1747",
+          "passed": 6,
+          "timings": {
+            "init_s": 0.342963044,
+            "cases": [
+              {
+                "i": 0,
+                "seconds": 0.008635519,
+                "status": "ok"
+              },
+              {
+                "i": 1,
+                "seconds": 0.008040773,
+                "status": "ok"
+              },
+              {
+                "i": 2,
+                "seconds": 0.008051023,
+                "status": "ok"
+              },
+              {
+                "i": 3,
+                "seconds": 0.007935366,
+                "status": "ok"
+              },
+              {
+                "i": 4,
+                "seconds": 0.008057665,
+                "status": "ok"
+              },
+              {
+                "i": 5,
+                "seconds": 0.008013713,
+                "status": "ok"
+              }
+            ]
+          }
+        },
+        {
+          "N": 65536,
+          "W": 1747,
+          "L": 55,
+          "directory": "fresh_n65536_w1747",
+          "passed": 24,
+          "timings": {
+            "init_s": 0.348586873,
+            "cases": [
+              {
+                "i": 0,
+                "seconds": 0.009202402,
+                "status": "ok"
+              },
+              {
+                "i": 1,
+                "seconds": 0.007978476,
+                "status": "ok"
+              },
+              {
+                "i": 2,
+                "seconds": 0.007936748,
+                "status": "ok"
+              },
+              {
+                "i": 3,
+                "seconds": 0.008004966,
+                "status": "ok"
+              },
+              {
+                "i": 4,
+                "seconds": 0.007970572,
+                "status": "ok"
+              },
+              {
+                "i": 5,
+                "seconds": 0.007943922,
+                "status": "ok"
+              },
+              {
+                "i": 6,
+                "seconds": 0.008001409,
+                "status": "ok"
+              },
+              {
+                "i": 7,
+                "seconds": 0.00796446,
+                "status": "ok"
+              },
+              {
+                "i": 8,
+                "seconds": 0.007951956,
+                "status": "ok"
+              },
+              {
+                "i": 9,
+                "seconds": 0.007990529,
+                "status": "ok"
+              },
+              {
+                "i": 10,
+                "seconds": 0.007981833,
+                "status": "ok"
+              },
+              {
+                "i": 11,
+                "seconds": 0.007974349,
+                "status": "ok"
+              },
+              {
+                "i": 12,
+                "seconds": 0.008090597,
+                "status": "ok"
+              },
+              {
+                "i": 13,
+                "seconds": 0.007981452,
+                "status": "ok"
+              },
+              {
+                "i": 14,
+                "seconds": 0.007970201,
+                "status": "ok"
+              },
+              {
+                "i": 15,
+                "seconds": 0.007952808,
+                "status": "ok"
+              },
+              {
+                "i": 16,
+                "seconds": 0.007993956,
+                "status": "ok"
+              },
+              {
+                "i": 17,
+                "seconds": 0.007951726,
+                "status": "ok"
+              },
+              {
+                "i": 18,
+                "seconds": 0.007973076,
+                "status": "ok"
+              },
+              {
+                "i": 19,
+                "seconds": 0.007982945,
+                "status": "ok"
+              },
+              {
+                "i": 20,
+                "seconds": 0.007880042,
+                "status": "ok"
+              },
+              {
+                "i": 21,
+                "seconds": 0.008002712,
+                "status": "ok"
+              },
+              {
+                "i": 22,
+                "seconds": 0.007967105,
+                "status": "ok"
+              },
+              {
+                "i": 23,
+                "seconds": 0.007973487,
+                "status": "ok"
+              }
+            ]
+          }
+        },
+        {
+          "N": 65536,
+          "W": 1747,
+          "L": 55,
+          "directory": "diag_transfer_n65536_w1747",
+          "passed": 1,
+          "timings": {
+            "init_s": 0.342734015,
+            "cases": [
+              {
+                "i": 0,
+                "seconds": 0.008848098,
+                "status": "ok"
+              }
+            ]
+          }
+        },
+        {
+          "N": 65536,
+          "W": 1747,
+          "L": 55,
+          "directory": "input_scheduler_one_n65536_w1747",
+          "passed": 1,
+          "timings": {
+            "init_s": 0.340270964,
+            "cases": [
+              {
+                "i": 0,
+                "seconds": 0.008287265,
+                "status": "ok"
+              }
+            ]
+          }
+        },
+        {
+          "N": 131072,
+          "W": 128,
+          "L": 4,
+          "directory": "fresh_n131072_w128",
+          "passed": 8,
+          "timings": {
+            "init_s": 0.148957791,
+            "cases": [
+              {
+                "i": 0,
+                "seconds": 0.005332914,
+                "status": "ok"
+              },
+              {
+                "i": 1,
+                "seconds": 0.004896835,
+                "status": "ok"
+              },
+              {
+                "i": 2,
+                "seconds": 0.004932823,
+                "status": "ok"
+              },
+              {
+                "i": 3,
+                "seconds": 0.004880956,
+                "status": "ok"
+              },
+              {
+                "i": 4,
+                "seconds": 0.004799412,
+                "status": "ok"
+              },
+              {
+                "i": 5,
+                "seconds": 0.005002595,
+                "status": "ok"
+              },
+              {
+                "i": 6,
+                "seconds": 0.004918867,
+                "status": "ok"
+              },
+              {
+                "i": 7,
+                "seconds": 0.004897657,
+                "status": "ok"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "build": {
+      "command": [
+        "/home/rishitshivam/work/muse-spark-open/.build-deps/nvcc/nvidia/cu13/bin/nvcc",
+        "-std=c++17",
+        "-O3",
+        "-arch=sm_86",
+        "-Xcompiler=-pthread",
+        "-Xptxas=-v",
+        "-I/home/rishitshivam/work/muse-spark-open/.build-deps/cccl/nvidia/cu13/include/cccl",
+        "-cudart=shared",
+        "-cudadevrt=none",
+        "-L/home/rishitshivam/work/muse-spark-open/.build-deps/nvcc/nvidia/cu13/lib",
+        "/home/rishitshivam/work/fherma-polynomial/candidates/fused-output-pipeline/main.cpp",
+        "/home/rishitshivam/work/fherma-polynomial/candidates/fused-output-pipeline/solve.cu",
+        "-Xlinker",
+        "-rpath",
+        "-Xlinker",
+        "/home/rishitshivam/work/muse-spark-open/.build-deps/nvcc/nvidia/cu13/lib",
+        "-o",
+        "/home/rishitshivam/work/fherma-polynomial/build/fused-output-pipeline-local",
+        "-lcuda"
+      ],
+      "source_files_sha256": {
+        "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+        "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+        "CMakeLists.txt": "223eb06e48e8ef8e9bdb1bce4f924a1bb7601d45e94fdb82e28916ad1fc36f6d",
+        "solve.cu": "715217d0d4e43289fed4f6a40347263f553db04efa60508d7cc8b9324c823092",
+        "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+        "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+        "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503",
+        "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+        "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb"
+      },
+      "exit_code": 0,
+      "binary_sha256": "57bf10b1b6d38df78f2d8b18f6aa4efafea96849e0af6198a97a7deef191b03b"
+    }
+  },
+  "aws": {
+    "cases": 48,
+    "hardware": "AWS g7e.4xlarge SM120 8 physical CPU cores CUDA12.8",
+    "session": "fherma-20261110-204339",
+    "seed_start": 81001,
+    "build": {
+      "name": "fused-output-pipeline-release",
+      "exit_code": 0,
+      "command": [
+        "/usr/local/cuda-12.8/bin/nvcc",
+        "-std=c++17",
+        "-O3",
+        "-arch=sm_120",
+        "-Xcompiler=-pthread",
+        "-Xptxas=-v",
+        "experiments/../candidates/fused-output-pipeline/main.cpp",
+        "experiments/../candidates/fused-output-pipeline/solve.cu",
+        "-lcuda",
+        "-o",
+        "build/fused-output-pipeline-release"
+      ],
+      "source_files_sha256": {
+        "CMakeLists.txt": "223eb06e48e8ef8e9bdb1bce4f924a1bb7601d45e94fdb82e28916ad1fc36f6d",
+        "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+        "output_worker.h": "cca8a6c12985330524493c2ab83a04119c4b875c4bd5e43ae781db125c31e8d7",
+        "solve.cu": "715217d0d4e43289fed4f6a40347263f553db04efa60508d7cc8b9324c823092",
+        "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+        "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+        "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+        "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+        "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+      },
+      "binary_sha256": "d01f87586fa9b6a36ac2ceb78945b625b678d5d048ad1c8f77ed3da6eb034f50"
+    },
+    "runs": [
+      {
+        "name": "fused-output-pipeline-release",
+        "mask": 0,
+        "N": 32768,
+        "W": 868,
+        "exit_code": 0,
+        "passed": 24,
+        "median_ms": 0.3489195,
+        "random_median_ms": 0.34806699999999996,
+        "timings": {
+          "init_s": 0.193595675,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.00175012,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 0.000354815,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 0.000349422,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 0.000351157,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 0.000342432,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 0.000350814,
+              "status": "ok"
+            },
+            {
+              "i": 6,
+              "seconds": 0.000351412,
+              "status": "ok"
+            },
+            {
+              "i": 7,
+              "seconds": 0.000345949,
+              "status": "ok"
+            },
+            {
+              "i": 8,
+              "seconds": 0.000346856,
+              "status": "ok"
+            },
+            {
+              "i": 9,
+              "seconds": 0.000345477,
+              "status": "ok"
+            },
+            {
+              "i": 10,
+              "seconds": 0.000345285,
+              "status": "ok"
+            },
+            {
+              "i": 11,
+              "seconds": 0.000353537,
+              "status": "ok"
+            },
+            {
+              "i": 12,
+              "seconds": 0.00036242,
+              "status": "ok"
+            },
+            {
+              "i": 13,
+              "seconds": 0.000341027,
+              "status": "ok"
+            },
+            {
+              "i": 14,
+              "seconds": 0.000344734,
+              "status": "ok"
+            },
+            {
+              "i": 15,
+              "seconds": 0.00034817,
+              "status": "ok"
+            },
+            {
+              "i": 16,
+              "seconds": 0.0003501,
+              "status": "ok"
+            },
+            {
+              "i": 17,
+              "seconds": 0.000346833,
+              "status": "ok"
+            },
+            {
+              "i": 18,
+              "seconds": 0.000349765,
+              "status": "ok"
+            },
+            {
+              "i": 19,
+              "seconds": 0.000348417,
+              "status": "ok"
+            },
+            {
+              "i": 20,
+              "seconds": 0.000353764,
+              "status": "ok"
+            },
+            {
+              "i": 21,
+              "seconds": 0.000347275,
+              "status": "ok"
+            },
+            {
+              "i": 22,
+              "seconds": 0.000359352,
+              "status": "ok"
+            },
+            {
+              "i": 23,
+              "seconds": 0.000347964,
+              "status": "ok"
+            }
+          ]
+        },
+        "binary_sha256": "d01f87586fa9b6a36ac2ceb78945b625b678d5d048ad1c8f77ed3da6eb034f50"
+      },
+      {
+        "name": "fused-output-pipeline-release",
+        "mask": 0,
+        "N": 65536,
+        "W": 1747,
+        "exit_code": 0,
+        "passed": 24,
+        "median_ms": 1.0666715000000002,
+        "random_median_ms": 1.0661375,
+        "timings": {
+          "init_s": 0.371577057,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.00670399,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 0.001077867,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 0.001067223,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 0.001066533,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 0.001065852,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 0.001069266,
+              "status": "ok"
+            },
+            {
+              "i": 6,
+              "seconds": 0.00106485,
+              "status": "ok"
+            },
+            {
+              "i": 7,
+              "seconds": 0.001066423,
+              "status": "ok"
+            },
+            {
+              "i": 8,
+              "seconds": 0.001065303,
+              "status": "ok"
+            },
+            {
+              "i": 9,
+              "seconds": 0.001072801,
+              "status": "ok"
+            },
+            {
+              "i": 10,
+              "seconds": 0.001068479,
+              "status": "ok"
+            },
+            {
+              "i": 11,
+              "seconds": 0.001068498,
+              "status": "ok"
+            },
+            {
+              "i": 12,
+              "seconds": 0.00106681,
+              "status": "ok"
+            },
+            {
+              "i": 13,
+              "seconds": 0.001065151,
+              "status": "ok"
+            },
+            {
+              "i": 14,
+              "seconds": 0.001067447,
+              "status": "ok"
+            },
+            {
+              "i": 15,
+              "seconds": 0.001065201,
+              "status": "ok"
+            },
+            {
+              "i": 16,
+              "seconds": 0.001065031,
+              "status": "ok"
+            },
+            {
+              "i": 17,
+              "seconds": 0.001072326,
+              "status": "ok"
+            },
+            {
+              "i": 18,
+              "seconds": 0.001076947,
+              "status": "ok"
+            },
+            {
+              "i": 19,
+              "seconds": 0.001064017,
+              "status": "ok"
+            },
+            {
+              "i": 20,
+              "seconds": 0.001062617,
+              "status": "ok"
+            },
+            {
+              "i": 21,
+              "seconds": 0.001069957,
+              "status": "ok"
+            },
+            {
+              "i": 22,
+              "seconds": 0.001065648,
+              "status": "ok"
+            },
+            {
+              "i": 23,
+              "seconds": 0.001063555,
+              "status": "ok"
+            }
+          ]
+        },
+        "binary_sha256": "d01f87586fa9b6a36ac2ceb78945b625b678d5d048ad1c8f77ed3da6eb034f50"
+      }
+    ]
+  },
+  "official": "pending standalone unscored fresh-call check"
+}
