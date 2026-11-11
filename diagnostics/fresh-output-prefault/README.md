@@ -13,3 +13,5 @@ are counted and ordinary resize remains the correctness fallback. Every
 output goes to the independent harness verifier; there are no inner repeats,
 extra warmups, sleeps or retained outputs. This is an unscored diagnostic;
 CPU phase observations and outer times including logging are not candidate scores.
+
+Official run `6af3bd01698e99b16a801f9c` passed20/20 fresh cases. Ten measured cases per mode. Ordinary construction median 1.2911505 ms; parallel population 1.6462915 ms, before logging. Allocation medians 1.0063689999999998 and 1.3516845 ms respectively.

@@ -2300,7 +2300,7 @@ fherma::Outputs pipeline_run(const State& s,const fherma::Inputs& in) {
         cudaStreamSynchronize(s.compute_stream);throw;
     }
     const double complete=elapsed();
-    std::fprintf(stderr,"fresh_phases:N=%u site=%u peer=%u total=%.6f first_ready=%.6f first_dispatched=%.6f a_dispatched=%.6f all_dispatched=%.6f allocation_ms=%.6f wake_ms=%.6f alloc_wait_start=%.6f alloc_done=%.6f first_output=%.6f last_output=%.6f user_ms=%.6f system_ms=%.6f minor_faults=%ld\n",s.n,configured_output_site,configured_output_peer,complete,first_ready,first_dispatched,a_dispatched,all_dispatched,s.output_worker.last_allocation_ms(),s.output_worker.last_wake_ms(),alloc_wait_start,alloc_done,first_output,last_output,s.output_worker.last_user_ms(),s.output_worker.last_system_ms(),s.output_worker.last_minor_faults());
+    std::fprintf(stderr,"fresh_phases:N=%u site=%u peer=%u total=%.6f allocation_ms=%.6f minor_faults=%ld alloc_done=%.6f all_dispatched=%.6f first_output=%.6f last_output=%.6f wake_ms=%.6f user_ms=%.6f system_ms=%.6f\n",s.n,configured_output_site,configured_output_peer,complete,s.output_worker.last_allocation_ms(),s.output_worker.last_minor_faults(),alloc_done,all_dispatched,first_output,last_output,s.output_worker.last_wake_ms(),s.output_worker.last_user_ms(),s.output_worker.last_system_ms());
     return out;
 }
 
