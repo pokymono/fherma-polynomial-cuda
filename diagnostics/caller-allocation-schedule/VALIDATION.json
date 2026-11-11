@@ -1,0 +1,289 @@
+{
+  "official": false,
+  "local": {
+    "source_sha256": "29408038d5ade1f74810be5ddf3bf91a9caa4a5073dcac266ffe32cc287b5121",
+    "source_files_sha256": {
+      "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+      "cpu_affinity.h": "04e71b7849de991ff1420f50ff264c42ef047587eb2c2c59117288fb13b91879",
+      "CMakeLists.txt": "223eb06e48e8ef8e9bdb1bce4f924a1bb7601d45e94fdb82e28916ad1fc36f6d",
+      "solve.cu": "29408038d5ade1f74810be5ddf3bf91a9caa4a5073dcac266ffe32cc287b5121",
+      "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+      "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+      "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503",
+      "output_worker.h": "25c24d15cc8f7f33d08cde3e1debd433fdfc3d032ea009870472cab22380bfbf",
+      "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb"
+    },
+    "binary_sha256": "698d7a4b44ff1bbfc6762afed25ee72e1a538c34268578ed8193dc2b7e9a930c",
+    "source": "/home/rishitshivam/work/fherma-polynomial/diagnostics/caller-allocation-schedule/solve.cu",
+    "binary": "/home/rishitshivam/work/fherma-polynomial/build/caller-allocation-schedule-local",
+    "hardware": "RTX 3050 Laptop, SM86",
+    "official": false,
+    "points": [
+      {
+        "N": 32768,
+        "W": 868,
+        "L": 28,
+        "directory": "fresh_n32768_w868",
+        "passed": 24,
+        "timings": {
+          "init_s": 1.882855692,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.003005501,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 0.002774046,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 0.002651286,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 0.002656656,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 0.002760931,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 0.002716137,
+              "status": "ok"
+            },
+            {
+              "i": 6,
+              "seconds": 0.002705407,
+              "status": "ok"
+            },
+            {
+              "i": 7,
+              "seconds": 0.002759399,
+              "status": "ok"
+            },
+            {
+              "i": 8,
+              "seconds": 0.002681582,
+              "status": "ok"
+            },
+            {
+              "i": 9,
+              "seconds": 0.002706069,
+              "status": "ok"
+            },
+            {
+              "i": 10,
+              "seconds": 0.002672576,
+              "status": "ok"
+            },
+            {
+              "i": 11,
+              "seconds": 0.002726507,
+              "status": "ok"
+            },
+            {
+              "i": 12,
+              "seconds": 0.002685099,
+              "status": "ok"
+            },
+            {
+              "i": 13,
+              "seconds": 0.002682384,
+              "status": "ok"
+            },
+            {
+              "i": 14,
+              "seconds": 0.00268591,
+              "status": "ok"
+            },
+            {
+              "i": 15,
+              "seconds": 0.002726787,
+              "status": "ok"
+            },
+            {
+              "i": 16,
+              "seconds": 0.002659962,
+              "status": "ok"
+            },
+            {
+              "i": 17,
+              "seconds": 0.00273348,
+              "status": "ok"
+            },
+            {
+              "i": 18,
+              "seconds": 0.002749259,
+              "status": "ok"
+            },
+            {
+              "i": 19,
+              "seconds": 0.002671444,
+              "status": "ok"
+            },
+            {
+              "i": 20,
+              "seconds": 0.002652328,
+              "status": "ok"
+            },
+            {
+              "i": 21,
+              "seconds": 0.002656436,
+              "status": "ok"
+            },
+            {
+              "i": 22,
+              "seconds": 0.00271757,
+              "status": "ok"
+            },
+            {
+              "i": 23,
+              "seconds": 0.002720807,
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      {
+        "N": 65536,
+        "W": 1747,
+        "L": 55,
+        "directory": "fresh_n65536_w1747",
+        "passed": 24,
+        "timings": {
+          "init_s": 0.343322474,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.00822711,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 0.007995595,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 0.008068493,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 0.008319413,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 0.008002308,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 0.007991377,
+              "status": "ok"
+            },
+            {
+              "i": 6,
+              "seconds": 0.007991497,
+              "status": "ok"
+            },
+            {
+              "i": 7,
+              "seconds": 0.007947154,
+              "status": "ok"
+            },
+            {
+              "i": 8,
+              "seconds": 0.008015512,
+              "status": "ok"
+            },
+            {
+              "i": 9,
+              "seconds": 0.00794993,
+              "status": "ok"
+            },
+            {
+              "i": 10,
+              "seconds": 0.007953225,
+              "status": "ok"
+            },
+            {
+              "i": 11,
+              "seconds": 0.007946112,
+              "status": "ok"
+            },
+            {
+              "i": 12,
+              "seconds": 0.007972382,
+              "status": "ok"
+            },
+            {
+              "i": 13,
+              "seconds": 0.007930303,
+              "status": "ok"
+            },
+            {
+              "i": 14,
+              "seconds": 0.007936044,
+              "status": "ok"
+            },
+            {
+              "i": 15,
+              "seconds": 0.00791829,
+              "status": "ok"
+            },
+            {
+              "i": 16,
+              "seconds": 0.007999312,
+              "status": "ok"
+            },
+            {
+              "i": 17,
+              "seconds": 0.007906788,
+              "status": "ok"
+            },
+            {
+              "i": 18,
+              "seconds": 0.007924091,
+              "status": "ok"
+            },
+            {
+              "i": 19,
+              "seconds": 0.007985807,
+              "status": "ok"
+            },
+            {
+              "i": 20,
+              "seconds": 0.007892311,
+              "status": "ok"
+            },
+            {
+              "i": 21,
+              "seconds": 0.00788072,
+              "status": "ok"
+            },
+            {
+              "i": 22,
+              "seconds": 0.007963324,
+              "status": "ok"
+            },
+            {
+              "i": 23,
+              "seconds": 0.00794994,
+              "status": "ok"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "max_log_line_chars": 183
+}
