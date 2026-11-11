@@ -1,0 +1,2823 @@
+{
+  "ranked": false,
+  "local": {
+    "source_sha256": "7c67999c05844db16a04ce4a3b8057249e6f30e224a793ab598229a69267cc80",
+    "source_files_sha256": {
+      "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+      "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+      "CMakeLists.txt": "223eb06e48e8ef8e9bdb1bce4f924a1bb7601d45e94fdb82e28916ad1fc36f6d",
+      "solve.cu": "7c67999c05844db16a04ce4a3b8057249e6f30e224a793ab598229a69267cc80",
+      "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+      "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+      "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503",
+      "output_worker.h": "ec9f8ed756bf2f4919a4e071617276dc2480d536581e462c43dbbcfe05cab78e",
+      "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb"
+    },
+    "binary_sha256": "10439e96666a48e8907b81ae0109b0ed7441a69dd270c05e0b517ba0a7c553a9",
+    "source": "/home/rishitshivam/work/fherma-polynomial/diagnostics/fresh-output-prefault/solve.cu",
+    "binary": "/home/rishitshivam/work/fherma-polynomial/build/fresh-output-prefault-local",
+    "hardware": "RTX 3050 Laptop, SM86",
+    "official": false,
+    "points": [
+      {
+        "N": 32768,
+        "W": 868,
+        "L": 28,
+        "directory": "fresh_n32768_w868",
+        "passed": 24,
+        "timings": {
+          "init_s": 1.875593912,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.002737637,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 0.002709866,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 0.002682253,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 0.002773284,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 0.002721377,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 0.002670922,
+              "status": "ok"
+            },
+            {
+              "i": 6,
+              "seconds": 0.002718983,
+              "status": "ok"
+            },
+            {
+              "i": 7,
+              "seconds": 0.002760892,
+              "status": "ok"
+            },
+            {
+              "i": 8,
+              "seconds": 0.002653359,
+              "status": "ok"
+            },
+            {
+              "i": 9,
+              "seconds": 0.002689597,
+              "status": "ok"
+            },
+            {
+              "i": 10,
+              "seconds": 0.002756373,
+              "status": "ok"
+            },
+            {
+              "i": 11,
+              "seconds": 0.002684888,
+              "status": "ok"
+            },
+            {
+              "i": 12,
+              "seconds": 0.002663368,
+              "status": "ok"
+            },
+            {
+              "i": 13,
+              "seconds": 0.002767404,
+              "status": "ok"
+            },
+            {
+              "i": 14,
+              "seconds": 0.002867682,
+              "status": "ok"
+            },
+            {
+              "i": 15,
+              "seconds": 0.002687213,
+              "status": "ok"
+            },
+            {
+              "i": 16,
+              "seconds": 0.002665632,
+              "status": "ok"
+            },
+            {
+              "i": 17,
+              "seconds": 0.002688215,
+              "status": "ok"
+            },
+            {
+              "i": 18,
+              "seconds": 0.002777912,
+              "status": "ok"
+            },
+            {
+              "i": 19,
+              "seconds": 0.002661985,
+              "status": "ok"
+            },
+            {
+              "i": 20,
+              "seconds": 0.002648981,
+              "status": "ok"
+            },
+            {
+              "i": 21,
+              "seconds": 0.002686932,
+              "status": "ok"
+            },
+            {
+              "i": 22,
+              "seconds": 0.002719533,
+              "status": "ok"
+            },
+            {
+              "i": 23,
+              "seconds": 0.002791167,
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      {
+        "N": 65536,
+        "W": 1747,
+        "L": 55,
+        "directory": "fresh_n65536_w1747",
+        "passed": 24,
+        "timings": {
+          "init_s": 0.350910233,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.009240671,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 0.00802535,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 0.007990265,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 0.008040679,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 0.008009942,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 0.008051209,
+              "status": "ok"
+            },
+            {
+              "i": 6,
+              "seconds": 0.008243549,
+              "status": "ok"
+            },
+            {
+              "i": 7,
+              "seconds": 0.00808907,
+              "status": "ok"
+            },
+            {
+              "i": 8,
+              "seconds": 0.008035779,
+              "status": "ok"
+            },
+            {
+              "i": 9,
+              "seconds": 0.008019629,
+              "status": "ok"
+            },
+            {
+              "i": 10,
+              "seconds": 0.008103086,
+              "status": "ok"
+            },
+            {
+              "i": 11,
+              "seconds": 0.008034868,
+              "status": "ok"
+            },
+            {
+              "i": 12,
+              "seconds": 0.00831845,
+              "status": "ok"
+            },
+            {
+              "i": 13,
+              "seconds": 0.008025641,
+              "status": "ok"
+            },
+            {
+              "i": 14,
+              "seconds": 0.007986487,
+              "status": "ok"
+            },
+            {
+              "i": 15,
+              "seconds": 0.008007978,
+              "status": "ok"
+            },
+            {
+              "i": 16,
+              "seconds": 0.007997428,
+              "status": "ok"
+            },
+            {
+              "i": 17,
+              "seconds": 0.008077758,
+              "status": "ok"
+            },
+            {
+              "i": 18,
+              "seconds": 0.008121671,
+              "status": "ok"
+            },
+            {
+              "i": 19,
+              "seconds": 0.008085934,
+              "status": "ok"
+            },
+            {
+              "i": 20,
+              "seconds": 0.007904113,
+              "status": "ok"
+            },
+            {
+              "i": 21,
+              "seconds": 0.00806248,
+              "status": "ok"
+            },
+            {
+              "i": 22,
+              "seconds": 0.007992088,
+              "status": "ok"
+            },
+            {
+              "i": 23,
+              "seconds": 0.008022856,
+              "status": "ok"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "local_build": {
+    "command": [
+      "/home/rishitshivam/work/muse-spark-open/.build-deps/nvcc/nvidia/cu13/bin/nvcc",
+      "-std=c++17",
+      "-O3",
+      "-arch=sm_86",
+      "-Xcompiler=-pthread",
+      "-Xptxas=-v",
+      "-I/home/rishitshivam/work/muse-spark-open/.build-deps/cccl/nvidia/cu13/include/cccl",
+      "-cudart=shared",
+      "-cudadevrt=none",
+      "-L/home/rishitshivam/work/muse-spark-open/.build-deps/nvcc/nvidia/cu13/lib",
+      "/home/rishitshivam/work/fherma-polynomial/diagnostics/fresh-output-prefault/main.cpp",
+      "/home/rishitshivam/work/fherma-polynomial/diagnostics/fresh-output-prefault/solve.cu",
+      "-Xlinker",
+      "-rpath",
+      "-Xlinker",
+      "/home/rishitshivam/work/muse-spark-open/.build-deps/nvcc/nvidia/cu13/lib",
+      "-o",
+      "/home/rishitshivam/work/fherma-polynomial/build/fresh-output-prefault-local",
+      "-lcuda"
+    ],
+    "source_files_sha256": {
+      "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+      "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+      "CMakeLists.txt": "223eb06e48e8ef8e9bdb1bce4f924a1bb7601d45e94fdb82e28916ad1fc36f6d",
+      "solve.cu": "7c67999c05844db16a04ce4a3b8057249e6f30e224a793ab598229a69267cc80",
+      "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+      "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+      "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503",
+      "output_worker.h": "ec9f8ed756bf2f4919a4e071617276dc2480d536581e462c43dbbcfe05cab78e",
+      "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb"
+    },
+    "exit_code": 0,
+    "binary_sha256": "10439e96666a48e8907b81ae0109b0ed7441a69dd270c05e0b517ba0a7c553a9"
+  },
+  "aws": {
+    "official": false,
+    "session": "fherma-20261110-204339",
+    "hardware": "AWS g7e.4xlarge SM120 CUDA12.8, 8 physical CPU cores",
+    "builds": [
+      {
+        "name": "fresh-output-prefault-cpu4",
+        "command": [
+          "/usr/local/cuda-12.8/bin/nvcc",
+          "-std=c++17",
+          "-O3",
+          "-arch=sm_120",
+          "-Xcompiler=-pthread",
+          "-DHOST_COPY_LANES=4",
+          "diagnostics/fresh-output-prefault/main.cpp",
+          "diagnostics/fresh-output-prefault/solve.cu",
+          "-lcuda",
+          "-o",
+          "build/fresh-output-prefault-cpu4"
+        ],
+        "exit_code": 0,
+        "source_files_sha256": {
+          "CMakeLists.txt": "223eb06e48e8ef8e9bdb1bce4f924a1bb7601d45e94fdb82e28916ad1fc36f6d",
+          "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+          "output_worker.h": "ec9f8ed756bf2f4919a4e071617276dc2480d536581e462c43dbbcfe05cab78e",
+          "solve.cu": "7c67999c05844db16a04ce4a3b8057249e6f30e224a793ab598229a69267cc80",
+          "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+          "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+          "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+          "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+          "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+        },
+        "binary_sha256": "240b5e20ae9f8c6d1ad7021575a4bd0041206f61aebcbf00193fabc0ba474246"
+      },
+      {
+        "name": "fresh-output-prefault-cpu7",
+        "command": [
+          "/usr/local/cuda-12.8/bin/nvcc",
+          "-std=c++17",
+          "-O3",
+          "-arch=sm_120",
+          "-Xcompiler=-pthread",
+          "-DHOST_COPY_LANES=7",
+          "diagnostics/fresh-output-prefault/main.cpp",
+          "diagnostics/fresh-output-prefault/solve.cu",
+          "-lcuda",
+          "-o",
+          "build/fresh-output-prefault-cpu7"
+        ],
+        "exit_code": 0,
+        "source_files_sha256": {
+          "CMakeLists.txt": "223eb06e48e8ef8e9bdb1bce4f924a1bb7601d45e94fdb82e28916ad1fc36f6d",
+          "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+          "output_worker.h": "ec9f8ed756bf2f4919a4e071617276dc2480d536581e462c43dbbcfe05cab78e",
+          "solve.cu": "7c67999c05844db16a04ce4a3b8057249e6f30e224a793ab598229a69267cc80",
+          "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+          "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+          "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+          "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+          "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+        },
+        "binary_sha256": "1629ad285a72e50822cb93824cddc908ff5e2cd67b57a6352b2ebab9884da488"
+      }
+    ],
+    "runs": [
+      {
+        "name": "fresh-output-prefault-cpu4",
+        "N": 32768,
+        "W": 868,
+        "passed": 24,
+        "phases": [
+          {
+            "N": 32768.0,
+            "mode": 0.0,
+            "total": 1.759978,
+            "first_ready": 0.059946,
+            "first_dispatched": 0.069663,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.509167,
+            "allocation_ms": 1.499533,
+            "wake_ms": 0.001504,
+            "alloc_wait_start": 0.555156,
+            "alloc_done": 1.651262,
+            "first_output": 1.657542,
+            "last_output": 1.752843,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 1.499338,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 2.0,
+            "total": 0.332543,
+            "first_ready": 0.029247,
+            "first_dispatched": 0.035742,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.122539,
+            "allocation_ms": 0.135148,
+            "wake_ms": 0.000506,
+            "alloc_wait_start": 0.168031,
+            "alloc_done": 0.181219,
+            "first_output": 0.229665,
+            "last_output": 0.325742,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.134438,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 3.0,
+            "total": 0.328593,
+            "first_ready": 0.017715,
+            "first_dispatched": 0.024452,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.11963,
+            "allocation_ms": 0.13462,
+            "wake_ms": 0.000764,
+            "alloc_wait_start": 0.16187,
+            "alloc_done": 0.173602,
+            "first_output": 0.220273,
+            "last_output": 0.321138,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.134224,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 0.0,
+            "total": 0.331196,
+            "first_ready": 0.015225,
+            "first_dispatched": 0.020963,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.113756,
+            "allocation_ms": 0.128641,
+            "wake_ms": 0.000524,
+            "alloc_wait_start": 0.153358,
+            "alloc_done": 0.164211,
+            "first_output": 0.22023,
+            "last_output": 0.323769,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.128127,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 2.0,
+            "total": 0.330804,
+            "first_ready": 0.015606,
+            "first_dispatched": 0.021319,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.117409,
+            "allocation_ms": 0.128692,
+            "wake_ms": 0.00043,
+            "alloc_wait_start": 0.158932,
+            "alloc_done": 0.16702,
+            "first_output": 0.217338,
+            "last_output": 0.323201,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.128149,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 3.0,
+            "total": 0.329222,
+            "first_ready": 0.016122,
+            "first_dispatched": 0.021272,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.117655,
+            "allocation_ms": 0.130488,
+            "wake_ms": 0.000751,
+            "alloc_wait_start": 0.160442,
+            "alloc_done": 0.169405,
+            "first_output": 0.2155,
+            "last_output": 0.32148,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.129966,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 0.0,
+            "total": 0.331091,
+            "first_ready": 0.014706,
+            "first_dispatched": 0.020272,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.114162,
+            "allocation_ms": 0.139818,
+            "wake_ms": 0.000553,
+            "alloc_wait_start": 0.166725,
+            "alloc_done": 0.176109,
+            "first_output": 0.216266,
+            "last_output": 0.323341,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.139691,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 2.0,
+            "total": 0.33598,
+            "first_ready": 0.0257,
+            "first_dispatched": 0.03122,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.121095,
+            "allocation_ms": 0.130685,
+            "wake_ms": 0.000428,
+            "alloc_wait_start": 0.161127,
+            "alloc_done": 0.173368,
+            "first_output": 0.227617,
+            "last_output": 0.328693,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.130257,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 3.0,
+            "total": 0.331322,
+            "first_ready": 0.014506,
+            "first_dispatched": 0.019642,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.113497,
+            "allocation_ms": 0.127773,
+            "wake_ms": 0.000698,
+            "alloc_wait_start": 0.153043,
+            "alloc_done": 0.163649,
+            "first_output": 0.216744,
+            "last_output": 0.32359,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.127358,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 0.0,
+            "total": 0.334181,
+            "first_ready": 0.016555,
+            "first_dispatched": 0.02258,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.117522,
+            "allocation_ms": 0.129903,
+            "wake_ms": 0.000519,
+            "alloc_wait_start": 0.161476,
+            "alloc_done": 0.167343,
+            "first_output": 0.218871,
+            "last_output": 0.326726,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.129489,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 2.0,
+            "total": 0.34554,
+            "first_ready": 0.015795,
+            "first_dispatched": 0.021256,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.129346,
+            "allocation_ms": 0.135884,
+            "wake_ms": 0.005476,
+            "alloc_wait_start": 0.171669,
+            "alloc_done": 0.17913,
+            "first_output": 0.220732,
+            "last_output": 0.337667,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.135416,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 3.0,
+            "total": 0.331733,
+            "first_ready": 0.015957,
+            "first_dispatched": 0.021452,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.120761,
+            "allocation_ms": 0.130123,
+            "wake_ms": 0.000536,
+            "alloc_wait_start": 0.162236,
+            "alloc_done": 0.168779,
+            "first_output": 0.216146,
+            "last_output": 0.32371,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.129748,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 0.0,
+            "total": 0.343527,
+            "first_ready": 0.028194,
+            "first_dispatched": 0.033494,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.130558,
+            "allocation_ms": 0.130404,
+            "wake_ms": 0.00056,
+            "alloc_wait_start": 0.170316,
+            "alloc_done": 0.180629,
+            "first_output": 0.228527,
+            "last_output": 0.335809,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.129826,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 2.0,
+            "total": 0.330437,
+            "first_ready": 0.013548,
+            "first_dispatched": 0.018918,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.122995,
+            "allocation_ms": 0.136681,
+            "wake_ms": 0.000565,
+            "alloc_wait_start": 0.161546,
+            "alloc_done": 0.171363,
+            "first_output": 0.21748,
+            "last_output": 0.323053,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.136271,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 3.0,
+            "total": 0.333771,
+            "first_ready": 0.015852,
+            "first_dispatched": 0.020893,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.1187,
+            "allocation_ms": 0.125667,
+            "wake_ms": 0.00053,
+            "alloc_wait_start": 0.158471,
+            "alloc_done": 0.16497,
+            "first_output": 0.217291,
+            "last_output": 0.326505,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.125452,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 0.0,
+            "total": 0.32239,
+            "first_ready": 0.013644,
+            "first_dispatched": 0.018774,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.112956,
+            "allocation_ms": 0.127597,
+            "wake_ms": 0.000549,
+            "alloc_wait_start": 0.152617,
+            "alloc_done": 0.164527,
+            "first_output": 0.214247,
+            "last_output": 0.315291,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.127159,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 2.0,
+            "total": 0.32368,
+            "first_ready": 0.01413,
+            "first_dispatched": 0.01914,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.115819,
+            "allocation_ms": 0.126107,
+            "wake_ms": 0.000494,
+            "alloc_wait_start": 0.154147,
+            "alloc_done": 0.162204,
+            "first_output": 0.213035,
+            "last_output": 0.317191,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.125663,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 3.0,
+            "total": 0.332773,
+            "first_ready": 0.014753,
+            "first_dispatched": 0.020504,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.116371,
+            "allocation_ms": 0.142094,
+            "wake_ms": 0.000671,
+            "alloc_wait_start": 0.16805,
+            "alloc_done": 0.179015,
+            "first_output": 0.216106,
+            "last_output": 0.325103,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.14196,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 0.0,
+            "total": 0.328825,
+            "first_ready": 0.015576,
+            "first_dispatched": 0.020677,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.117326,
+            "allocation_ms": 0.14024,
+            "wake_ms": 0.00029,
+            "alloc_wait_start": 0.171058,
+            "alloc_done": 0.177412,
+            "first_output": 0.214384,
+            "last_output": 0.321533,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.139997,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 2.0,
+            "total": 0.333497,
+            "first_ready": 0.015498,
+            "first_dispatched": 0.021053,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.125887,
+            "allocation_ms": 0.138232,
+            "wake_ms": 0.000459,
+            "alloc_wait_start": 0.167219,
+            "alloc_done": 0.176504,
+            "first_output": 0.216666,
+            "last_output": 0.326013,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.138057,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 3.0,
+            "total": 0.327416,
+            "first_ready": 0.014002,
+            "first_dispatched": 0.019584,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.11415,
+            "allocation_ms": 0.125851,
+            "wake_ms": 0.000418,
+            "alloc_wait_start": 0.155272,
+            "alloc_done": 0.160975,
+            "first_output": 0.215689,
+            "last_output": 0.32024,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.12569,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 0.0,
+            "total": 0.329814,
+            "first_ready": 0.015715,
+            "first_dispatched": 0.021494,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.117391,
+            "allocation_ms": 0.136525,
+            "wake_ms": 0.000517,
+            "alloc_wait_start": 0.157708,
+            "alloc_done": 0.174406,
+            "first_output": 0.21823,
+            "last_output": 0.322336,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.135909,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 2.0,
+            "total": 0.337278,
+            "first_ready": 0.013849,
+            "first_dispatched": 0.019101,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.115707,
+            "allocation_ms": 0.128516,
+            "wake_ms": 0.000563,
+            "alloc_wait_start": 0.154908,
+            "alloc_done": 0.164869,
+            "first_output": 0.21434,
+            "last_output": 0.329804,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.127849,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 3.0,
+            "total": 0.326291,
+            "first_ready": 0.014873,
+            "first_dispatched": 0.020284,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.118292,
+            "allocation_ms": 0.127767,
+            "wake_ms": 0.00053,
+            "alloc_wait_start": 0.158634,
+            "alloc_done": 0.165593,
+            "first_output": 0.216446,
+            "last_output": 0.318557,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.127318,
+            "population_errors": 0.0
+          }
+        ],
+        "summary": {
+          "N": 32768.0,
+          "mode": 2.0,
+          "total": 0.3312065,
+          "first_ready": 0.015536999999999999,
+          "first_dispatched": 0.020784999999999998,
+          "a_dispatched": 0.0,
+          "all_dispatched": 0.1174655,
+          "allocation_ms": 0.13026349999999998,
+          "wake_ms": 0.000533,
+          "alloc_wait_start": 0.1607845,
+          "alloc_done": 0.16909200000000002,
+          "first_output": 0.216556,
+          "last_output": 0.32346549999999996,
+          "reserve_ms": 0.0,
+          "populate_ms": 0.0,
+          "resize_ms": 0.12978699999999999,
+          "population_errors": 0.0
+        },
+        "harness": {
+          "init_s": 0.302733352,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.001780963,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 0.000345959,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 0.000341142,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 0.000342696,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 0.000342647,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 0.000340852,
+              "status": "ok"
+            },
+            {
+              "i": 6,
+              "seconds": 0.000342907,
+              "status": "ok"
+            },
+            {
+              "i": 7,
+              "seconds": 0.000347233,
+              "status": "ok"
+            },
+            {
+              "i": 8,
+              "seconds": 0.000342421,
+              "status": "ok"
+            },
+            {
+              "i": 9,
+              "seconds": 0.000346072,
+              "status": "ok"
+            },
+            {
+              "i": 10,
+              "seconds": 0.000358118,
+              "status": "ok"
+            },
+            {
+              "i": 11,
+              "seconds": 0.000352032,
+              "status": "ok"
+            },
+            {
+              "i": 12,
+              "seconds": 0.000354527,
+              "status": "ok"
+            },
+            {
+              "i": 13,
+              "seconds": 0.000341312,
+              "status": "ok"
+            },
+            {
+              "i": 14,
+              "seconds": 0.000344359,
+              "status": "ok"
+            },
+            {
+              "i": 15,
+              "seconds": 0.000333285,
+              "status": "ok"
+            },
+            {
+              "i": 16,
+              "seconds": 0.000334622,
+              "status": "ok"
+            },
+            {
+              "i": 17,
+              "seconds": 0.000344467,
+              "status": "ok"
+            },
+            {
+              "i": 18,
+              "seconds": 0.000340122,
+              "status": "ok"
+            },
+            {
+              "i": 19,
+              "seconds": 0.000343928,
+              "status": "ok"
+            },
+            {
+              "i": 20,
+              "seconds": 0.000338832,
+              "status": "ok"
+            },
+            {
+              "i": 21,
+              "seconds": 0.000341309,
+              "status": "ok"
+            },
+            {
+              "i": 22,
+              "seconds": 0.000348592,
+              "status": "ok"
+            },
+            {
+              "i": 23,
+              "seconds": 0.000340759,
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      {
+        "name": "fresh-output-prefault-cpu4",
+        "N": 65536,
+        "W": 1747,
+        "passed": 24,
+        "phases": [
+          {
+            "N": 65536.0,
+            "mode": 0.0,
+            "total": 6.37441,
+            "first_ready": 0.085253,
+            "first_dispatched": 0.104933,
+            "a_dispatched": 1.000087,
+            "all_dispatched": 1.946976,
+            "allocation_ms": 5.579359,
+            "wake_ms": 0.001132,
+            "alloc_wait_start": 1.986283,
+            "alloc_done": 6.02705,
+            "first_output": 6.032049,
+            "last_output": 6.327448,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 5.579139,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 2.0,
+            "total": 1.416857,
+            "first_ready": 0.020725,
+            "first_dispatched": 0.033904,
+            "a_dispatched": 0.214179,
+            "all_dispatched": 0.412067,
+            "allocation_ms": 1.004305,
+            "wake_ms": 0.000313,
+            "alloc_wait_start": 0.452512,
+            "alloc_done": 1.099048,
+            "first_output": 1.103326,
+            "last_output": 1.397085,
+            "reserve_ms": 0.000927,
+            "populate_ms": 0.393289,
+            "resize_ms": 0.609894,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 3.0,
+            "total": 1.321772,
+            "first_ready": 0.021968,
+            "first_dispatched": 0.035921,
+            "a_dispatched": 0.220067,
+            "all_dispatched": 0.430315,
+            "allocation_ms": 0.938103,
+            "wake_ms": 0.000618,
+            "alloc_wait_start": 0.472282,
+            "alloc_done": 1.036161,
+            "first_output": 1.041177,
+            "last_output": 1.29848,
+            "reserve_ms": 0.000891,
+            "populate_ms": 0.385352,
+            "resize_ms": 0.551485,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 0.0,
+            "total": 1.008935,
+            "first_ready": 0.020981,
+            "first_dispatched": 0.03471,
+            "a_dispatched": 0.219479,
+            "all_dispatched": 0.419365,
+            "allocation_ms": 0.538541,
+            "wake_ms": 0.000688,
+            "alloc_wait_start": 0.4598,
+            "alloc_done": 0.640269,
+            "first_output": 0.71365,
+            "last_output": 0.9894,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.538289,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 2.0,
+            "total": 1.219002,
+            "first_ready": 0.021059,
+            "first_dispatched": 0.033097,
+            "a_dispatched": 0.212241,
+            "all_dispatched": 0.410716,
+            "allocation_ms": 0.85152,
+            "wake_ms": 0.000599,
+            "alloc_wait_start": 0.45198,
+            "alloc_done": 0.946748,
+            "first_output": 0.951652,
+            "last_output": 1.201136,
+            "reserve_ms": 0.000488,
+            "populate_ms": 0.349084,
+            "resize_ms": 0.501856,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 3.0,
+            "total": 1.193215,
+            "first_ready": 0.021019,
+            "first_dispatched": 0.034446,
+            "a_dispatched": 0.214634,
+            "all_dispatched": 0.415501,
+            "allocation_ms": 0.814192,
+            "wake_ms": 0.00038,
+            "alloc_wait_start": 0.454868,
+            "alloc_done": 0.911015,
+            "first_output": 0.9153,
+            "last_output": 1.174786,
+            "reserve_ms": 0.000375,
+            "populate_ms": 0.348748,
+            "resize_ms": 0.46467,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 0.0,
+            "total": 0.996243,
+            "first_ready": 0.020273,
+            "first_dispatched": 0.031547,
+            "a_dispatched": 0.214638,
+            "all_dispatched": 0.403979,
+            "allocation_ms": 0.495634,
+            "wake_ms": 0.00045,
+            "alloc_wait_start": 0.444041,
+            "alloc_done": 0.592022,
+            "first_output": 0.702007,
+            "last_output": 0.97853,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.495205,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 2.0,
+            "total": 1.190539,
+            "first_ready": 0.019579,
+            "first_dispatched": 0.030075,
+            "a_dispatched": 0.223337,
+            "all_dispatched": 0.410417,
+            "allocation_ms": 0.811808,
+            "wake_ms": 0.00046,
+            "alloc_wait_start": 0.450697,
+            "alloc_done": 0.918349,
+            "first_output": 0.922872,
+            "last_output": 1.17169,
+            "reserve_ms": 0.000355,
+            "populate_ms": 0.333987,
+            "resize_ms": 0.477375,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 3.0,
+            "total": 1.192356,
+            "first_ready": 0.019393,
+            "first_dispatched": 0.030484,
+            "a_dispatched": 0.214298,
+            "all_dispatched": 0.403839,
+            "allocation_ms": 0.809866,
+            "wake_ms": 0.0005,
+            "alloc_wait_start": 0.443012,
+            "alloc_done": 0.905441,
+            "first_output": 0.90985,
+            "last_output": 1.173909,
+            "reserve_ms": 0.000369,
+            "populate_ms": 0.33259,
+            "resize_ms": 0.47669,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 0.0,
+            "total": 0.998101,
+            "first_ready": 0.027902,
+            "first_dispatched": 0.038268,
+            "a_dispatched": 0.222226,
+            "all_dispatched": 0.411234,
+            "allocation_ms": 0.507027,
+            "wake_ms": 0.000512,
+            "alloc_wait_start": 0.450384,
+            "alloc_done": 0.610382,
+            "first_output": 0.704933,
+            "last_output": 0.979414,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.506622,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 2.0,
+            "total": 1.227772,
+            "first_ready": 0.019623,
+            "first_dispatched": 0.030403,
+            "a_dispatched": 0.209779,
+            "all_dispatched": 0.408317,
+            "allocation_ms": 0.853035,
+            "wake_ms": 0.00053,
+            "alloc_wait_start": 0.447525,
+            "alloc_done": 0.946517,
+            "first_output": 0.951073,
+            "last_output": 1.208685,
+            "reserve_ms": 0.000461,
+            "populate_ms": 0.338606,
+            "resize_ms": 0.513867,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 3.0,
+            "total": 1.186088,
+            "first_ready": 0.019161,
+            "first_dispatched": 0.028588,
+            "a_dispatched": 0.208445,
+            "all_dispatched": 0.396941,
+            "allocation_ms": 0.807616,
+            "wake_ms": 0.000288,
+            "alloc_wait_start": 0.436108,
+            "alloc_done": 0.89996,
+            "first_output": 0.904462,
+            "last_output": 1.168308,
+            "reserve_ms": 0.000539,
+            "populate_ms": 0.326931,
+            "resize_ms": 0.479745,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 0.0,
+            "total": 0.99552,
+            "first_ready": 0.020419,
+            "first_dispatched": 0.030928,
+            "a_dispatched": 0.229051,
+            "all_dispatched": 0.424286,
+            "allocation_ms": 0.504684,
+            "wake_ms": 0.000515,
+            "alloc_wait_start": 0.463762,
+            "alloc_done": 0.614565,
+            "first_output": 0.700448,
+            "last_output": 0.977275,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.504275,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 2.0,
+            "total": 1.151351,
+            "first_ready": 0.019066,
+            "first_dispatched": 0.031004,
+            "a_dispatched": 0.20919,
+            "all_dispatched": 0.408841,
+            "allocation_ms": 0.787856,
+            "wake_ms": 0.000478,
+            "alloc_wait_start": 0.446532,
+            "alloc_done": 0.88132,
+            "first_output": 0.88574,
+            "last_output": 1.131293,
+            "reserve_ms": 0.000417,
+            "populate_ms": 0.33745,
+            "resize_ms": 0.449554,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 3.0,
+            "total": 1.191861,
+            "first_ready": 0.020442,
+            "first_dispatched": 0.032275,
+            "a_dispatched": 0.212093,
+            "all_dispatched": 0.410866,
+            "allocation_ms": 0.814818,
+            "wake_ms": 0.000416,
+            "alloc_wait_start": 0.449477,
+            "alloc_done": 0.910422,
+            "first_output": 0.914838,
+            "last_output": 1.172119,
+            "reserve_ms": 0.0004,
+            "populate_ms": 0.337805,
+            "resize_ms": 0.476243,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 0.0,
+            "total": 0.994511,
+            "first_ready": 0.019801,
+            "first_dispatched": 0.031527,
+            "a_dispatched": 0.208597,
+            "all_dispatched": 0.398003,
+            "allocation_ms": 0.496158,
+            "wake_ms": 0.000396,
+            "alloc_wait_start": 0.436567,
+            "alloc_done": 0.589282,
+            "first_output": 0.700235,
+            "last_output": 0.97614,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.495648,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 2.0,
+            "total": 1.1956,
+            "first_ready": 0.018827,
+            "first_dispatched": 0.029735,
+            "a_dispatched": 0.220288,
+            "all_dispatched": 0.409113,
+            "allocation_ms": 0.826545,
+            "wake_ms": 0.00052,
+            "alloc_wait_start": 0.445015,
+            "alloc_done": 0.91952,
+            "first_output": 0.923652,
+            "last_output": 1.175268,
+            "reserve_ms": 0.00033,
+            "populate_ms": 0.339362,
+            "resize_ms": 0.486766,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 3.0,
+            "total": 1.184492,
+            "first_ready": 0.019042,
+            "first_dispatched": 0.030258,
+            "a_dispatched": 0.208172,
+            "all_dispatched": 0.396149,
+            "allocation_ms": 0.815441,
+            "wake_ms": 0.00037,
+            "alloc_wait_start": 0.45085,
+            "alloc_done": 0.908202,
+            "first_output": 0.913235,
+            "last_output": 1.16505,
+            "reserve_ms": 0.000405,
+            "populate_ms": 0.326021,
+            "resize_ms": 0.488923,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 0.0,
+            "total": 0.990173,
+            "first_ready": 0.019445,
+            "first_dispatched": 0.029831,
+            "a_dispatched": 0.20965,
+            "all_dispatched": 0.400862,
+            "allocation_ms": 0.490877,
+            "wake_ms": 0.000468,
+            "alloc_wait_start": 0.440211,
+            "alloc_done": 0.585177,
+            "first_output": 0.694794,
+            "last_output": 0.971641,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.490672,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 2.0,
+            "total": 1.174791,
+            "first_ready": 0.018993,
+            "first_dispatched": 0.030321,
+            "a_dispatched": 0.208123,
+            "all_dispatched": 0.398794,
+            "allocation_ms": 0.808048,
+            "wake_ms": 0.000437,
+            "alloc_wait_start": 0.440098,
+            "alloc_done": 0.900382,
+            "first_output": 0.904879,
+            "last_output": 1.156221,
+            "reserve_ms": 0.000348,
+            "populate_ms": 0.330142,
+            "resize_ms": 0.477472,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 3.0,
+            "total": 1.206719,
+            "first_ready": 0.020425,
+            "first_dispatched": 0.031595,
+            "a_dispatched": 0.212718,
+            "all_dispatched": 0.402149,
+            "allocation_ms": 0.835212,
+            "wake_ms": 0.000655,
+            "alloc_wait_start": 0.441108,
+            "alloc_done": 0.929712,
+            "first_output": 0.933804,
+            "last_output": 1.188395,
+            "reserve_ms": 0.000589,
+            "populate_ms": 0.331254,
+            "resize_ms": 0.503274,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 0.0,
+            "total": 0.991678,
+            "first_ready": 0.021467,
+            "first_dispatched": 0.034465,
+            "a_dispatched": 0.220501,
+            "all_dispatched": 0.408772,
+            "allocation_ms": 0.487988,
+            "wake_ms": 0.000417,
+            "alloc_wait_start": 0.448641,
+            "alloc_done": 0.587538,
+            "first_output": 0.699309,
+            "last_output": 0.973491,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.487593,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 2.0,
+            "total": 1.187485,
+            "first_ready": 0.021227,
+            "first_dispatched": 0.033065,
+            "a_dispatched": 0.215033,
+            "all_dispatched": 0.406733,
+            "allocation_ms": 0.81426,
+            "wake_ms": 0.000473,
+            "alloc_wait_start": 0.446127,
+            "alloc_done": 0.913161,
+            "first_output": 0.917472,
+            "last_output": 1.16871,
+            "reserve_ms": 0.000363,
+            "populate_ms": 0.331664,
+            "resize_ms": 0.482138,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 3.0,
+            "total": 1.168872,
+            "first_ready": 0.0201,
+            "first_dispatched": 0.03239,
+            "a_dispatched": 0.212063,
+            "all_dispatched": 0.411126,
+            "allocation_ms": 0.804713,
+            "wake_ms": 0.00036,
+            "alloc_wait_start": 0.452351,
+            "alloc_done": 0.899598,
+            "first_output": 0.903747,
+            "last_output": 1.150455,
+            "reserve_ms": 0.000455,
+            "populate_ms": 0.338665,
+            "resize_ms": 0.465516,
+            "population_errors": 0.0
+          }
+        ],
+        "summary": {
+          "N": 65536.0,
+          "mode": 2.0,
+          "total": 1.1852900000000002,
+          "first_ready": 0.0199505,
+          "first_dispatched": 0.0312655,
+          "a_dispatched": 0.2124795,
+          "all_dispatched": 0.4085445,
+          "allocation_ms": 0.8089569999999999,
+          "wake_ms": 0.000464,
+          "alloc_wait_start": 0.4470285,
+          "alloc_done": 0.9029115000000001,
+          "first_output": 0.9073645,
+          "last_output": 1.1666789999999998,
+          "reserve_ms": 0.000366,
+          "populate_ms": 0.331459,
+          "resize_ms": 0.4871795,
+          "population_errors": 0.0
+        },
+        "harness": {
+          "init_s": 0.375657293,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.006394485,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 0.001432433,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 0.001337451,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 0.001024388,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 0.001233423,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 0.001209029,
+              "status": "ok"
+            },
+            {
+              "i": 6,
+              "seconds": 0.001010342,
+              "status": "ok"
+            },
+            {
+              "i": 7,
+              "seconds": 0.001204692,
+              "status": "ok"
+            },
+            {
+              "i": 8,
+              "seconds": 0.001205893,
+              "status": "ok"
+            },
+            {
+              "i": 9,
+              "seconds": 0.00101238,
+              "status": "ok"
+            },
+            {
+              "i": 10,
+              "seconds": 0.001242229,
+              "status": "ok"
+            },
+            {
+              "i": 11,
+              "seconds": 0.001209586,
+              "status": "ok"
+            },
+            {
+              "i": 12,
+              "seconds": 0.001008016,
+              "status": "ok"
+            },
+            {
+              "i": 13,
+              "seconds": 0.001164671,
+              "status": "ok"
+            },
+            {
+              "i": 14,
+              "seconds": 0.001207067,
+              "status": "ok"
+            },
+            {
+              "i": 15,
+              "seconds": 0.001008365,
+              "status": "ok"
+            },
+            {
+              "i": 16,
+              "seconds": 0.00120911,
+              "status": "ok"
+            },
+            {
+              "i": 17,
+              "seconds": 0.001199903,
+              "status": "ok"
+            },
+            {
+              "i": 18,
+              "seconds": 0.001005073,
+              "status": "ok"
+            },
+            {
+              "i": 19,
+              "seconds": 0.00118886,
+              "status": "ok"
+            },
+            {
+              "i": 20,
+              "seconds": 0.001221814,
+              "status": "ok"
+            },
+            {
+              "i": 21,
+              "seconds": 0.00100682,
+              "status": "ok"
+            },
+            {
+              "i": 22,
+              "seconds": 0.001202129,
+              "status": "ok"
+            },
+            {
+              "i": 23,
+              "seconds": 0.001187718,
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      {
+        "name": "fresh-output-prefault-cpu7",
+        "N": 32768,
+        "W": 868,
+        "passed": 24,
+        "phases": [
+          {
+            "N": 32768.0,
+            "mode": 0.0,
+            "total": 1.760761,
+            "first_ready": 0.056184,
+            "first_dispatched": 0.067727,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.363321,
+            "allocation_ms": 1.56745,
+            "wake_ms": 0.000651,
+            "alloc_wait_start": 0.424716,
+            "alloc_done": 1.691331,
+            "first_output": 1.699778,
+            "last_output": 1.755349,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 1.567209,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 2.0,
+            "total": 0.346439,
+            "first_ready": 0.020203,
+            "first_dispatched": 0.029699,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.099128,
+            "allocation_ms": 0.148523,
+            "wake_ms": 0.000556,
+            "alloc_wait_start": 0.187749,
+            "alloc_done": 0.194092,
+            "first_output": 0.233572,
+            "last_output": 0.340294,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.148289,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 3.0,
+            "total": 0.3479,
+            "first_ready": 0.021008,
+            "first_dispatched": 0.029309,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.094079,
+            "allocation_ms": 0.158496,
+            "wake_ms": 0.000538,
+            "alloc_wait_start": 0.177478,
+            "alloc_done": 0.202195,
+            "first_output": 0.234715,
+            "last_output": 0.341234,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.158253,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 0.0,
+            "total": 0.344594,
+            "first_ready": 0.018248,
+            "first_dispatched": 0.025013,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.087406,
+            "allocation_ms": 0.17218,
+            "wake_ms": 0.000553,
+            "alloc_wait_start": 0.179768,
+            "alloc_done": 0.20893,
+            "first_output": 0.231046,
+            "last_output": 0.338407,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.172032,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 2.0,
+            "total": 0.343443,
+            "first_ready": 0.017295,
+            "first_dispatched": 0.024226,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.087221,
+            "allocation_ms": 0.158268,
+            "wake_ms": 0.000641,
+            "alloc_wait_start": 0.168872,
+            "alloc_done": 0.194316,
+            "first_output": 0.229624,
+            "last_output": 0.337005,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.158163,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 3.0,
+            "total": 0.345532,
+            "first_ready": 0.018051,
+            "first_dispatched": 0.024582,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.084338,
+            "allocation_ms": 0.166911,
+            "wake_ms": 0.000531,
+            "alloc_wait_start": 0.166262,
+            "alloc_done": 0.202404,
+            "first_output": 0.233569,
+            "last_output": 0.340106,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.166723,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 0.0,
+            "total": 0.347305,
+            "first_ready": 0.016436,
+            "first_dispatched": 0.023279,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.080863,
+            "allocation_ms": 0.14774,
+            "wake_ms": 0.000561,
+            "alloc_wait_start": 0.155878,
+            "alloc_done": 0.182114,
+            "first_output": 0.235394,
+            "last_output": 0.341405,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.147637,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 2.0,
+            "total": 0.346429,
+            "first_ready": 0.017645,
+            "first_dispatched": 0.024613,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.080117,
+            "allocation_ms": 0.176395,
+            "wake_ms": 0.000562,
+            "alloc_wait_start": 0.17454,
+            "alloc_done": 0.212474,
+            "first_output": 0.234624,
+            "last_output": 0.340088,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.176253,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 3.0,
+            "total": 0.345241,
+            "first_ready": 0.018568,
+            "first_dispatched": 0.025083,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.087586,
+            "allocation_ms": 0.16089,
+            "wake_ms": 0.000503,
+            "alloc_wait_start": 0.162743,
+            "alloc_done": 0.198976,
+            "first_output": 0.229825,
+            "last_output": 0.339277,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.160676,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 0.0,
+            "total": 0.347315,
+            "first_ready": 0.017124,
+            "first_dispatched": 0.025044,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.086719,
+            "allocation_ms": 0.161835,
+            "wake_ms": 0.000597,
+            "alloc_wait_start": 0.169403,
+            "alloc_done": 0.200612,
+            "first_output": 0.233656,
+            "last_output": 0.341244,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.161648,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 2.0,
+            "total": 0.340581,
+            "first_ready": 0.016355,
+            "first_dispatched": 0.022265,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.084368,
+            "allocation_ms": 0.1551,
+            "wake_ms": 0.000502,
+            "alloc_wait_start": 0.160897,
+            "alloc_done": 0.188873,
+            "first_output": 0.227248,
+            "last_output": 0.334847,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.154972,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 3.0,
+            "total": 0.342995,
+            "first_ready": 0.017309,
+            "first_dispatched": 0.023996,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.08754,
+            "allocation_ms": 0.155803,
+            "wake_ms": 0.000522,
+            "alloc_wait_start": 0.167961,
+            "alloc_done": 0.191709,
+            "first_output": 0.22914,
+            "last_output": 0.336777,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.155662,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 0.0,
+            "total": 0.342438,
+            "first_ready": 0.017527,
+            "first_dispatched": 0.025038,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.088164,
+            "allocation_ms": 0.162532,
+            "wake_ms": 0.000492,
+            "alloc_wait_start": 0.170227,
+            "alloc_done": 0.198977,
+            "first_output": 0.228748,
+            "last_output": 0.336244,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.162385,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 2.0,
+            "total": 0.347402,
+            "first_ready": 0.017377,
+            "first_dispatched": 0.023989,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.083749,
+            "allocation_ms": 0.156556,
+            "wake_ms": 0.000445,
+            "alloc_wait_start": 0.163542,
+            "alloc_done": 0.191449,
+            "first_output": 0.234549,
+            "last_output": 0.341956,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.156392,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 3.0,
+            "total": 0.348512,
+            "first_ready": 0.016753,
+            "first_dispatched": 0.022706,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.081472,
+            "allocation_ms": 0.1625,
+            "wake_ms": 0.000523,
+            "alloc_wait_start": 0.154944,
+            "alloc_done": 0.195431,
+            "first_output": 0.234896,
+            "last_output": 0.342307,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.162381,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 0.0,
+            "total": 0.342587,
+            "first_ready": 0.016389,
+            "first_dispatched": 0.023682,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.086107,
+            "allocation_ms": 0.154581,
+            "wake_ms": 0.000553,
+            "alloc_wait_start": 0.16781,
+            "alloc_done": 0.191184,
+            "first_output": 0.229568,
+            "last_output": 0.336478,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.154441,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 2.0,
+            "total": 0.34723,
+            "first_ready": 0.017587,
+            "first_dispatched": 0.023986,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.084983,
+            "allocation_ms": 0.154316,
+            "wake_ms": 0.000569,
+            "alloc_wait_start": 0.16153,
+            "alloc_done": 0.190171,
+            "first_output": 0.233619,
+            "last_output": 0.34093,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.154163,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 3.0,
+            "total": 0.348455,
+            "first_ready": 0.016848,
+            "first_dispatched": 0.023085,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.083659,
+            "allocation_ms": 0.155928,
+            "wake_ms": 0.0006,
+            "alloc_wait_start": 0.164402,
+            "alloc_done": 0.190017,
+            "first_output": 0.234859,
+            "last_output": 0.342215,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.155736,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 0.0,
+            "total": 0.341626,
+            "first_ready": 0.017658,
+            "first_dispatched": 0.024106,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.085078,
+            "allocation_ms": 0.158026,
+            "wake_ms": 0.000545,
+            "alloc_wait_start": 0.167113,
+            "alloc_done": 0.193273,
+            "first_output": 0.227704,
+            "last_output": 0.33549,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.157841,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 2.0,
+            "total": 0.340518,
+            "first_ready": 0.015185,
+            "first_dispatched": 0.021326,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.07871,
+            "allocation_ms": 0.161034,
+            "wake_ms": 0.000509,
+            "alloc_wait_start": 0.156335,
+            "alloc_done": 0.194807,
+            "first_output": 0.226984,
+            "last_output": 0.334529,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.160921,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 3.0,
+            "total": 0.350204,
+            "first_ready": 0.017998,
+            "first_dispatched": 0.024208,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.082086,
+            "allocation_ms": 0.14874,
+            "wake_ms": 0.000585,
+            "alloc_wait_start": 0.158098,
+            "alloc_done": 0.184558,
+            "first_output": 0.236749,
+            "last_output": 0.344205,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.1486,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 0.0,
+            "total": 0.342545,
+            "first_ready": 0.017314,
+            "first_dispatched": 0.023968,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.087964,
+            "allocation_ms": 0.155219,
+            "wake_ms": 0.000604,
+            "alloc_wait_start": 0.166121,
+            "alloc_done": 0.191701,
+            "first_output": 0.229045,
+            "last_output": 0.336591,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.155091,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 2.0,
+            "total": 0.336701,
+            "first_ready": 0.015688,
+            "first_dispatched": 0.021325,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.082792,
+            "allocation_ms": 0.160821,
+            "wake_ms": 0.000528,
+            "alloc_wait_start": 0.170273,
+            "alloc_done": 0.193613,
+            "first_output": 0.225133,
+            "last_output": 0.33154,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.160701,
+            "population_errors": 0.0
+          },
+          {
+            "N": 32768.0,
+            "mode": 3.0,
+            "total": 0.348756,
+            "first_ready": 0.015555,
+            "first_dispatched": 0.021928,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.081766,
+            "allocation_ms": 0.153995,
+            "wake_ms": 0.000601,
+            "alloc_wait_start": 0.160655,
+            "alloc_done": 0.187736,
+            "first_output": 0.236021,
+            "last_output": 0.342604,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.153839,
+            "population_errors": 0.0
+          }
+        ],
+        "summary": {
+          "N": 32768.0,
+          "mode": 2.0,
+          "total": 0.34538650000000004,
+          "first_ready": 0.017302,
+          "first_dispatched": 0.023987500000000002,
+          "a_dispatched": 0.0,
+          "all_dispatched": 0.084353,
+          "allocation_ms": 0.15729100000000001,
+          "wake_ms": 0.000549,
+          "alloc_wait_start": 0.1652615,
+          "alloc_done": 0.192491,
+          "first_output": 0.231697,
+          "last_output": 0.3396825,
+          "reserve_ms": 0.0,
+          "populate_ms": 0.0,
+          "resize_ms": 0.1571165,
+          "population_errors": 0.0
+        },
+        "harness": {
+          "init_s": 0.210316523,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.001786257,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 0.000362952,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 0.000364639,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 0.000358894,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 0.000358371,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 0.000360622,
+              "status": "ok"
+            },
+            {
+              "i": 6,
+              "seconds": 0.000362304,
+              "status": "ok"
+            },
+            {
+              "i": 7,
+              "seconds": 0.000361076,
+              "status": "ok"
+            },
+            {
+              "i": 8,
+              "seconds": 0.000359769,
+              "status": "ok"
+            },
+            {
+              "i": 9,
+              "seconds": 0.000362671,
+              "status": "ok"
+            },
+            {
+              "i": 10,
+              "seconds": 0.000355324,
+              "status": "ok"
+            },
+            {
+              "i": 11,
+              "seconds": 0.000363903,
+              "status": "ok"
+            },
+            {
+              "i": 12,
+              "seconds": 0.000359891,
+              "status": "ok"
+            },
+            {
+              "i": 13,
+              "seconds": 0.000362375,
+              "status": "ok"
+            },
+            {
+              "i": 14,
+              "seconds": 0.000363381,
+              "status": "ok"
+            },
+            {
+              "i": 15,
+              "seconds": 0.00035807,
+              "status": "ok"
+            },
+            {
+              "i": 16,
+              "seconds": 0.000361563,
+              "status": "ok"
+            },
+            {
+              "i": 17,
+              "seconds": 0.000363411,
+              "status": "ok"
+            },
+            {
+              "i": 18,
+              "seconds": 0.000356741,
+              "status": "ok"
+            },
+            {
+              "i": 19,
+              "seconds": 0.000356273,
+              "status": "ok"
+            },
+            {
+              "i": 20,
+              "seconds": 0.000365164,
+              "status": "ok"
+            },
+            {
+              "i": 21,
+              "seconds": 0.000357035,
+              "status": "ok"
+            },
+            {
+              "i": 22,
+              "seconds": 0.00035119,
+              "status": "ok"
+            },
+            {
+              "i": 23,
+              "seconds": 0.000367931,
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      {
+        "name": "fresh-output-prefault-cpu7",
+        "N": 65536,
+        "W": 1747,
+        "passed": 24,
+        "phases": [
+          {
+            "N": 65536.0,
+            "mode": 0.0,
+            "total": 6.741479,
+            "first_ready": 0.076767,
+            "first_dispatched": 0.100502,
+            "a_dispatched": 0.673086,
+            "all_dispatched": 1.228582,
+            "allocation_ms": 6.140288,
+            "wake_ms": 0.000755,
+            "alloc_wait_start": 1.303863,
+            "alloc_done": 6.452223,
+            "first_output": 6.461251,
+            "last_output": 6.721489,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 6.140036,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 2.0,
+            "total": 1.183313,
+            "first_ready": 0.023166,
+            "first_dispatched": 0.051407,
+            "a_dispatched": 0.199456,
+            "all_dispatched": 0.283769,
+            "allocation_ms": 0.88742,
+            "wake_ms": 0.000357,
+            "alloc_wait_start": 0.359378,
+            "alloc_done": 0.995236,
+            "first_output": 1.002713,
+            "last_output": 1.169832,
+            "reserve_ms": 0.001683,
+            "populate_ms": 0.216726,
+            "resize_ms": 0.668823,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 3.0,
+            "total": 1.077961,
+            "first_ready": 0.022066,
+            "first_dispatched": 0.054165,
+            "a_dispatched": 0.184382,
+            "all_dispatched": 0.267755,
+            "allocation_ms": 0.763849,
+            "wake_ms": 0.000427,
+            "alloc_wait_start": 0.333891,
+            "alloc_done": 0.865778,
+            "first_output": 0.872433,
+            "last_output": 1.065501,
+            "reserve_ms": 0.000588,
+            "populate_ms": 0.207702,
+            "resize_ms": 0.55528,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 0.0,
+            "total": 1.066426,
+            "first_ready": 0.018893,
+            "first_dispatched": 0.040034,
+            "a_dispatched": 0.18774,
+            "all_dispatched": 0.289997,
+            "allocation_ms": 0.635032,
+            "wake_ms": 0.000581,
+            "alloc_wait_start": 0.372378,
+            "alloc_done": 0.718869,
+            "first_output": 0.777354,
+            "last_output": 1.05228,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.634841,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 2.0,
+            "total": 1.061159,
+            "first_ready": 0.018675,
+            "first_dispatched": 0.033259,
+            "a_dispatched": 0.166653,
+            "all_dispatched": 0.267213,
+            "allocation_ms": 0.749578,
+            "wake_ms": 0.00044,
+            "alloc_wait_start": 0.331858,
+            "alloc_done": 0.814615,
+            "first_output": 0.820632,
+            "last_output": 1.047977,
+            "reserve_ms": 0.00066,
+            "populate_ms": 0.232809,
+            "resize_ms": 0.515923,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 3.0,
+            "total": 1.064064,
+            "first_ready": 0.019739,
+            "first_dispatched": 0.034563,
+            "a_dispatched": 0.140098,
+            "all_dispatched": 0.261962,
+            "allocation_ms": 0.767822,
+            "wake_ms": 0.00043,
+            "alloc_wait_start": 0.322421,
+            "alloc_done": 0.829102,
+            "first_output": 0.83523,
+            "last_output": 1.050517,
+            "reserve_ms": 0.000661,
+            "populate_ms": 0.244537,
+            "resize_ms": 0.522398,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 0.0,
+            "total": 1.063562,
+            "first_ready": 0.019225,
+            "first_dispatched": 0.033975,
+            "a_dispatched": 0.159401,
+            "all_dispatched": 0.260967,
+            "allocation_ms": 0.614799,
+            "wake_ms": 0.000481,
+            "alloc_wait_start": 0.351725,
+            "alloc_done": 0.677932,
+            "first_output": 0.773271,
+            "last_output": 1.05047,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.614606,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 2.0,
+            "total": 1.06277,
+            "first_ready": 0.020063,
+            "first_dispatched": 0.03443,
+            "a_dispatched": 0.150654,
+            "all_dispatched": 0.25807,
+            "allocation_ms": 0.738634,
+            "wake_ms": 0.000462,
+            "alloc_wait_start": 0.317631,
+            "alloc_done": 0.802848,
+            "first_output": 0.808665,
+            "last_output": 1.049103,
+            "reserve_ms": 0.000616,
+            "populate_ms": 0.230403,
+            "resize_ms": 0.50742,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 3.0,
+            "total": 1.073941,
+            "first_ready": 0.033067,
+            "first_dispatched": 0.047149,
+            "a_dispatched": 0.154114,
+            "all_dispatched": 0.259431,
+            "allocation_ms": 0.728414,
+            "wake_ms": 0.000614,
+            "alloc_wait_start": 0.315606,
+            "alloc_done": 0.80667,
+            "first_output": 0.812731,
+            "last_output": 1.06043,
+            "reserve_ms": 0.000575,
+            "populate_ms": 0.218674,
+            "resize_ms": 0.508943,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 0.0,
+            "total": 1.06906,
+            "first_ready": 0.019165,
+            "first_dispatched": 0.033076,
+            "a_dispatched": 0.157263,
+            "all_dispatched": 0.261055,
+            "allocation_ms": 0.623913,
+            "wake_ms": 0.000492,
+            "alloc_wait_start": 0.341989,
+            "alloc_done": 0.687144,
+            "first_output": 0.778534,
+            "last_output": 1.054339,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.623685,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 2.0,
+            "total": 1.07252,
+            "first_ready": 0.019585,
+            "first_dispatched": 0.045187,
+            "a_dispatched": 0.143401,
+            "all_dispatched": 0.253959,
+            "allocation_ms": 0.727859,
+            "wake_ms": 0.000548,
+            "alloc_wait_start": 0.31523,
+            "alloc_done": 0.798192,
+            "first_output": 0.804265,
+            "last_output": 1.058985,
+            "reserve_ms": 0.000592,
+            "populate_ms": 0.212805,
+            "resize_ms": 0.514266,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 3.0,
+            "total": 1.069202,
+            "first_ready": 0.019513,
+            "first_dispatched": 0.034164,
+            "a_dispatched": 0.144754,
+            "all_dispatched": 0.252951,
+            "allocation_ms": 0.743842,
+            "wake_ms": 0.000486,
+            "alloc_wait_start": 0.308952,
+            "alloc_done": 0.805946,
+            "first_output": 0.812022,
+            "last_output": 1.054796,
+            "reserve_ms": 0.000585,
+            "populate_ms": 0.220262,
+            "resize_ms": 0.522803,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 0.0,
+            "total": 1.070655,
+            "first_ready": 0.028126,
+            "first_dispatched": 0.042403,
+            "a_dispatched": 0.170393,
+            "all_dispatched": 0.283548,
+            "allocation_ms": 0.624561,
+            "wake_ms": 0.0004,
+            "alloc_wait_start": 0.362064,
+            "alloc_done": 0.698124,
+            "first_output": 0.780814,
+            "last_output": 1.057594,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.624298,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 2.0,
+            "total": 1.069198,
+            "first_ready": 0.019714,
+            "first_dispatched": 0.034006,
+            "a_dispatched": 0.148784,
+            "all_dispatched": 0.263129,
+            "allocation_ms": 0.728726,
+            "wake_ms": 0.00307,
+            "alloc_wait_start": 0.317188,
+            "alloc_done": 0.803487,
+            "first_output": 0.809687,
+            "last_output": 1.054949,
+            "reserve_ms": 0.002975,
+            "populate_ms": 0.217084,
+            "resize_ms": 0.50846,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 3.0,
+            "total": 1.058367,
+            "first_ready": 0.021501,
+            "first_dispatched": 0.03538,
+            "a_dispatched": 0.142833,
+            "all_dispatched": 0.261925,
+            "allocation_ms": 0.742281,
+            "wake_ms": 0.000522,
+            "alloc_wait_start": 0.320817,
+            "alloc_done": 0.807929,
+            "first_output": 0.813785,
+            "last_output": 1.045252,
+            "reserve_ms": 0.00061,
+            "populate_ms": 0.229837,
+            "resize_ms": 0.511644,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 0.0,
+            "total": 1.077888,
+            "first_ready": 0.028361,
+            "first_dispatched": 0.044552,
+            "a_dispatched": 0.183641,
+            "all_dispatched": 0.292024,
+            "allocation_ms": 0.637656,
+            "wake_ms": 0.000449,
+            "alloc_wait_start": 0.376763,
+            "alloc_done": 0.707197,
+            "first_output": 0.78574,
+            "last_output": 1.064355,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.637451,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 2.0,
+            "total": 1.061252,
+            "first_ready": 0.019113,
+            "first_dispatched": 0.032463,
+            "a_dispatched": 0.133566,
+            "all_dispatched": 0.252666,
+            "allocation_ms": 0.744596,
+            "wake_ms": 0.000495,
+            "alloc_wait_start": 0.313023,
+            "alloc_done": 0.807677,
+            "first_output": 0.814277,
+            "last_output": 1.047675,
+            "reserve_ms": 0.000548,
+            "populate_ms": 0.225901,
+            "resize_ms": 0.517959,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 3.0,
+            "total": 1.062835,
+            "first_ready": 0.019931,
+            "first_dispatched": 0.035215,
+            "a_dispatched": 0.13333,
+            "all_dispatched": 0.253662,
+            "allocation_ms": 0.730749,
+            "wake_ms": 0.000406,
+            "alloc_wait_start": 0.30873,
+            "alloc_done": 0.793302,
+            "first_output": 0.799238,
+            "last_output": 1.049205,
+            "reserve_ms": 0.000572,
+            "populate_ms": 0.223678,
+            "resize_ms": 0.506249,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 0.0,
+            "total": 1.065033,
+            "first_ready": 0.018357,
+            "first_dispatched": 0.033137,
+            "a_dispatched": 0.143613,
+            "all_dispatched": 0.243675,
+            "allocation_ms": 0.593325,
+            "wake_ms": 0.00055,
+            "alloc_wait_start": 0.341354,
+            "alloc_done": 0.654762,
+            "first_output": 0.773029,
+            "last_output": 1.051895,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.593138,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 2.0,
+            "total": 1.062537,
+            "first_ready": 0.019096,
+            "first_dispatched": 0.033195,
+            "a_dispatched": 0.13231,
+            "all_dispatched": 0.252785,
+            "allocation_ms": 0.723802,
+            "wake_ms": 0.000427,
+            "alloc_wait_start": 0.308032,
+            "alloc_done": 0.786343,
+            "first_output": 0.792198,
+            "last_output": 1.049152,
+            "reserve_ms": 0.000611,
+            "populate_ms": 0.21798,
+            "resize_ms": 0.505002,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 3.0,
+            "total": 1.065119,
+            "first_ready": 0.020096,
+            "first_dispatched": 0.034487,
+            "a_dispatched": 0.135788,
+            "all_dispatched": 0.244861,
+            "allocation_ms": 0.766449,
+            "wake_ms": 0.00048,
+            "alloc_wait_start": 0.302115,
+            "alloc_done": 0.830751,
+            "first_output": 0.837759,
+            "last_output": 1.05131,
+            "reserve_ms": 0.000612,
+            "populate_ms": 0.213336,
+            "resize_ms": 0.552283,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 0.0,
+            "total": 1.064195,
+            "first_ready": 0.019563,
+            "first_dispatched": 0.034097,
+            "a_dispatched": 0.162258,
+            "all_dispatched": 0.268009,
+            "allocation_ms": 0.638564,
+            "wake_ms": 0.000399,
+            "alloc_wait_start": 0.361721,
+            "alloc_done": 0.700766,
+            "first_output": 0.775615,
+            "last_output": 1.050439,
+            "reserve_ms": 0.0,
+            "populate_ms": 0.0,
+            "resize_ms": 0.638371,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 2.0,
+            "total": 1.058275,
+            "first_ready": 0.018751,
+            "first_dispatched": 0.033599,
+            "a_dispatched": 0.134899,
+            "all_dispatched": 0.248243,
+            "allocation_ms": 0.757769,
+            "wake_ms": 0.000541,
+            "alloc_wait_start": 0.315602,
+            "alloc_done": 0.81947,
+            "first_output": 0.826184,
+            "last_output": 1.04387,
+            "reserve_ms": 0.000564,
+            "populate_ms": 0.22118,
+            "resize_ms": 0.535808,
+            "population_errors": 0.0
+          },
+          {
+            "N": 65536.0,
+            "mode": 3.0,
+            "total": 1.064062,
+            "first_ready": 0.019786,
+            "first_dispatched": 0.038134,
+            "a_dispatched": 0.134735,
+            "all_dispatched": 0.245129,
+            "allocation_ms": 0.721381,
+            "wake_ms": 0.000615,
+            "alloc_wait_start": 0.303456,
+            "alloc_done": 0.783508,
+            "first_output": 0.789793,
+            "last_output": 1.050495,
+            "reserve_ms": 0.000564,
+            "populate_ms": 0.209601,
+            "resize_ms": 0.511008,
+            "population_errors": 0.0
+          }
+        ],
+        "summary": {
+          "N": 65536.0,
+          "mode": 2.0,
+          "total": 1.0641295,
+          "first_ready": 0.0196495,
+          "first_dispatched": 0.034297,
+          "a_dispatched": 0.1441835,
+          "all_dispatched": 0.2587505,
+          "allocation_ms": 0.7285699999999999,
+          "wake_ms": 0.0004835,
+          "alloc_wait_start": 0.3174095,
+          "alloc_done": 0.80052,
+          "first_output": 0.806465,
+          "last_output": 1.050506,
+          "reserve_ms": 0.0005735,
+          "populate_ms": 0.217532,
+          "resize_ms": 0.5201785,
+          "population_errors": 0.0
+        },
+        "harness": {
+          "init_s": 0.392958848,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.00676469,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 0.001201331,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 0.00109432,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 0.001083269,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 0.001087267,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 0.001081383,
+              "status": "ok"
+            },
+            {
+              "i": 6,
+              "seconds": 0.001079912,
+              "status": "ok"
+            },
+            {
+              "i": 7,
+              "seconds": 0.00107879,
+              "status": "ok"
+            },
+            {
+              "i": 8,
+              "seconds": 0.001089571,
+              "status": "ok"
+            },
+            {
+              "i": 9,
+              "seconds": 0.001084971,
+              "status": "ok"
+            },
+            {
+              "i": 10,
+              "seconds": 0.001087719,
+              "status": "ok"
+            },
+            {
+              "i": 11,
+              "seconds": 0.001098543,
+              "status": "ok"
+            },
+            {
+              "i": 12,
+              "seconds": 0.001088325,
+              "status": "ok"
+            },
+            {
+              "i": 13,
+              "seconds": 0.001085514,
+              "status": "ok"
+            },
+            {
+              "i": 14,
+              "seconds": 0.001075526,
+              "status": "ok"
+            },
+            {
+              "i": 15,
+              "seconds": 0.00109575,
+              "status": "ok"
+            },
+            {
+              "i": 16,
+              "seconds": 0.001078008,
+              "status": "ok"
+            },
+            {
+              "i": 17,
+              "seconds": 0.001080794,
+              "status": "ok"
+            },
+            {
+              "i": 18,
+              "seconds": 0.001081397,
+              "status": "ok"
+            },
+            {
+              "i": 19,
+              "seconds": 0.00107943,
+              "status": "ok"
+            },
+            {
+              "i": 20,
+              "seconds": 0.001083542,
+              "status": "ok"
+            },
+            {
+              "i": 21,
+              "seconds": 0.001080429,
+              "status": "ok"
+            },
+            {
+              "i": 22,
+              "seconds": 0.001075123,
+              "status": "ok"
+            },
+            {
+              "i": 23,
+              "seconds": 0.001089895,
+              "status": "ok"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
