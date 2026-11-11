@@ -2,8 +2,7 @@
 
 Each harness call executes exactly one ordinary multiplication on its fresh
 inputs. Modes rotate across calls: ordinary output resize (0), parallel
-MADV_POPULATE_WRITE on reserved output capacity (2), and the same operation
-with a huge-page hint (3). All reservation, page population, initialization
+MADV_POPULATE_WRITE on reserved output capacity (2). All reservation, page population, initialization
 and copies occur inside the measured call. Existing input-copy workers help
 populate disjoint page ranges after finishing their input copies.
 

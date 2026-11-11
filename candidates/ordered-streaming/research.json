@@ -227,6 +227,20 @@
       "read_status": "Read full technical article including node creation order and non-kernel caveats; separately read Nsight Systems graph-trace documentation",
       "technique": "Node creation order affects scheduling; non-kernel nodes have distinct overhead, and node-level tracing can substantially perturb timing",
       "application_or_limit": "v206 simpler output dependency graph won the official warm comparison; v207 ordinary DMA dispatch only saved a few microseconds on AWS. Full graph-node traces used for causality, not scoring. https://docs.nvidia.com/nsight-systems/UserGuide/index.html"
+    },
+    {
+      "title": "NVIDIA CUDA Math DPX API and architecture feature table",
+      "url": "https://docs.nvidia.com/cuda/cuda-math-api/cuda_math_api/group__CUDA__MATH__INTRINSIC__SIMD.html",
+      "read_status": "Read unsigned add-min semantics and current compute-capability feature table. The table distinguishes native support from multiple-instruction implementations.",
+      "technique": "Express exact modular correction as unsigned min of a wrapped sum and the original residue.",
+      "application_or_limit": "v214 tested Shoup, Montgomery, add/sub masks on SM120 with independent exact oracles. No meaningful improvement. No SASS instruction-fusion claim; cuobjdump was absent on the instance. https://docs.nvidia.com/cuda/cuda-programming-guide/05-appendices/compute-capabilities.html"
+    },
+    {
+      "title": "Linux madvise page population semantics",
+      "url": "https://man7.org/linux/man-pages/man2/madvise.2.html",
+      "read_status": "Read MADV_POPULATE_WRITE, MADV_HUGEPAGE and error semantics.",
+      "technique": "Populate writable pages of an existing owned allocation without a C++ store through a pointer outside vector size. Divide fully interior pages among existing workers, then use ordinary vector resize.",
+      "application_or_limit": "v216 and fresh-output-prefault diagnostic. All work is inside each call. AWS did not show a total latency gain; official fresh-call validation is still pending. Failure of advice falls back to normal resize and is reported."
     }
   ],
   "evidence_boundary": "All candidate timings in this research record are development measurements. Only a separate official run can establish leaderboard performance. Inaccessible papers are explicitly marked.",

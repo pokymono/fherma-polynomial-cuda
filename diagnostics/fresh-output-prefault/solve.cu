@@ -2336,7 +2336,7 @@ void fherma_free(void* state) { delete static_cast<State*>(state); }
 
 fherma::Outputs fherma_run(void* state,const fherma::Inputs& input){
     auto& s=*static_cast<State*>(state);
-    constexpr unsigned modes[]={0,2,3};
-    configured_output_prefault=modes[s.prefault_calls++%3];
+    constexpr unsigned modes[]={0,2};
+    configured_output_prefault=modes[s.prefault_calls++%2];
     return inner_fherma_run(state,input);
 }
