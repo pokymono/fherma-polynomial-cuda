@@ -1,0 +1,2823 @@
+{
+  "ranked": false,
+  "local": {
+    "source_sha256": "416785ffbe0649813d2b30d2178d11bfc16ad0304bd84b9c113e0836e8057f3b",
+    "source_files_sha256": {
+      "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+      "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+      "CMakeLists.txt": "223eb06e48e8ef8e9bdb1bce4f924a1bb7601d45e94fdb82e28916ad1fc36f6d",
+      "solve.cu": "416785ffbe0649813d2b30d2178d11bfc16ad0304bd84b9c113e0836e8057f3b",
+      "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+      "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+      "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503",
+      "output_worker.h": "6285db05c409adc2a7d78eec7bc98d138db125434cd15ee524965df67609c858",
+      "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb"
+    },
+    "binary_sha256": "17b52b2ba75d681e7b80f5cc442fdd482e2c45454ba620a003fa46007694e8c5",
+    "source": "/home/rishitshivam/work/fherma-polynomial/diagnostics/fresh-output-site/solve.cu",
+    "binary": "/home/rishitshivam/work/fherma-polynomial/build/fresh-output-site-local",
+    "hardware": "RTX 3050 Laptop, SM86",
+    "official": false,
+    "points": [
+      {
+        "N": 32768,
+        "W": 868,
+        "L": 28,
+        "directory": "fresh_n32768_w868",
+        "passed": 24,
+        "timings": {
+          "init_s": 1.883818216,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.002745933,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 0.002802539,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 0.002753728,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 0.002786399,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 0.002689186,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 0.002721577,
+              "status": "ok"
+            },
+            {
+              "i": 6,
+              "seconds": 0.002688105,
+              "status": "ok"
+            },
+            {
+              "i": 7,
+              "seconds": 0.00266974,
+              "status": "ok"
+            },
+            {
+              "i": 8,
+              "seconds": 0.002650955,
+              "status": "ok"
+            },
+            {
+              "i": 9,
+              "seconds": 0.002668778,
+              "status": "ok"
+            },
+            {
+              "i": 10,
+              "seconds": 0.0027708,
+              "status": "ok"
+            },
+            {
+              "i": 11,
+              "seconds": 0.002716107,
+              "status": "ok"
+            },
+            {
+              "i": 12,
+              "seconds": 0.002715295,
+              "status": "ok"
+            },
+            {
+              "i": 13,
+              "seconds": 0.002752616,
+              "status": "ok"
+            },
+            {
+              "i": 14,
+              "seconds": 0.002757805,
+              "status": "ok"
+            },
+            {
+              "i": 15,
+              "seconds": 0.002703113,
+              "status": "ok"
+            },
+            {
+              "i": 16,
+              "seconds": 0.002638512,
+              "status": "ok"
+            },
+            {
+              "i": 17,
+              "seconds": 0.002659,
+              "status": "ok"
+            },
+            {
+              "i": 18,
+              "seconds": 0.002708573,
+              "status": "ok"
+            },
+            {
+              "i": 19,
+              "seconds": 0.002673397,
+              "status": "ok"
+            },
+            {
+              "i": 20,
+              "seconds": 0.002633742,
+              "status": "ok"
+            },
+            {
+              "i": 21,
+              "seconds": 0.002666514,
+              "status": "ok"
+            },
+            {
+              "i": 22,
+              "seconds": 0.002679608,
+              "status": "ok"
+            },
+            {
+              "i": 23,
+              "seconds": 0.00273335,
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      {
+        "N": 65536,
+        "W": 1747,
+        "L": 55,
+        "directory": "fresh_n65536_w1747",
+        "passed": 24,
+        "timings": {
+          "init_s": 0.352358925,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.008635685,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 0.008058402,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 0.009169728,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 0.008051871,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 0.008042703,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 0.007995875,
+              "status": "ok"
+            },
+            {
+              "i": 6,
+              "seconds": 0.008204306,
+              "status": "ok"
+            },
+            {
+              "i": 7,
+              "seconds": 0.008011014,
+              "status": "ok"
+            },
+            {
+              "i": 8,
+              "seconds": 0.008023958,
+              "status": "ok"
+            },
+            {
+              "i": 9,
+              "seconds": 0.008003941,
+              "status": "ok"
+            },
+            {
+              "i": 10,
+              "seconds": 0.008024018,
+              "status": "ok"
+            },
+            {
+              "i": 11,
+              "seconds": 0.007999071,
+              "status": "ok"
+            },
+            {
+              "i": 12,
+              "seconds": 0.008090653,
+              "status": "ok"
+            },
+            {
+              "i": 13,
+              "seconds": 0.00802531,
+              "status": "ok"
+            },
+            {
+              "i": 14,
+              "seconds": 0.008041962,
+              "status": "ok"
+            },
+            {
+              "i": 15,
+              "seconds": 0.007977241,
+              "status": "ok"
+            },
+            {
+              "i": 16,
+              "seconds": 0.007964817,
+              "status": "ok"
+            },
+            {
+              "i": 17,
+              "seconds": 0.008022345,
+              "status": "ok"
+            },
+            {
+              "i": 18,
+              "seconds": 0.00799264,
+              "status": "ok"
+            },
+            {
+              "i": 19,
+              "seconds": 0.008011835,
+              "status": "ok"
+            },
+            {
+              "i": 20,
+              "seconds": 0.008028337,
+              "status": "ok"
+            },
+            {
+              "i": 21,
+              "seconds": 0.00802467,
+              "status": "ok"
+            },
+            {
+              "i": 22,
+              "seconds": 0.008028166,
+              "status": "ok"
+            },
+            {
+              "i": 23,
+              "seconds": 0.008040609,
+              "status": "ok"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "local_build": {
+    "command": [
+      "/home/rishitshivam/work/muse-spark-open/.build-deps/nvcc/nvidia/cu13/bin/nvcc",
+      "-std=c++17",
+      "-O3",
+      "-arch=sm_86",
+      "-Xcompiler=-pthread",
+      "-Xptxas=-v",
+      "-I/home/rishitshivam/work/muse-spark-open/.build-deps/cccl/nvidia/cu13/include/cccl",
+      "-cudart=shared",
+      "-cudadevrt=none",
+      "-L/home/rishitshivam/work/muse-spark-open/.build-deps/nvcc/nvidia/cu13/lib",
+      "/home/rishitshivam/work/fherma-polynomial/diagnostics/fresh-output-site/main.cpp",
+      "/home/rishitshivam/work/fherma-polynomial/diagnostics/fresh-output-site/solve.cu",
+      "-Xlinker",
+      "-rpath",
+      "-Xlinker",
+      "/home/rishitshivam/work/muse-spark-open/.build-deps/nvcc/nvidia/cu13/lib",
+      "-o",
+      "/home/rishitshivam/work/fherma-polynomial/build/fresh-output-site-local",
+      "-lcuda"
+    ],
+    "source_files_sha256": {
+      "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+      "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+      "CMakeLists.txt": "223eb06e48e8ef8e9bdb1bce4f924a1bb7601d45e94fdb82e28916ad1fc36f6d",
+      "solve.cu": "416785ffbe0649813d2b30d2178d11bfc16ad0304bd84b9c113e0836e8057f3b",
+      "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+      "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+      "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503",
+      "output_worker.h": "6285db05c409adc2a7d78eec7bc98d138db125434cd15ee524965df67609c858",
+      "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb"
+    },
+    "exit_code": 0,
+    "binary_sha256": "17b52b2ba75d681e7b80f5cc442fdd482e2c45454ba620a003fa46007694e8c5"
+  },
+  "aws": {
+    "official": false,
+    "session": "fherma-20261110-204339",
+    "hardware": "AWS g7e.4xlarge SM120 CUDA12.8, 8 physical CPU cores",
+    "builds": [
+      {
+        "name": "fresh-output-site-cpu4",
+        "command": [
+          "/usr/local/cuda-12.8/bin/nvcc",
+          "-std=c++17",
+          "-O3",
+          "-arch=sm_120",
+          "-Xcompiler=-pthread",
+          "-DHOST_COPY_LANES=4",
+          "diagnostics/fresh-output-site/main.cpp",
+          "diagnostics/fresh-output-site/solve.cu",
+          "-lcuda",
+          "-o",
+          "build/fresh-output-site-cpu4"
+        ],
+        "exit_code": 0,
+        "source_files_sha256": {
+          "CMakeLists.txt": "223eb06e48e8ef8e9bdb1bce4f924a1bb7601d45e94fdb82e28916ad1fc36f6d",
+          "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+          "output_worker.h": "6285db05c409adc2a7d78eec7bc98d138db125434cd15ee524965df67609c858",
+          "solve.cu": "416785ffbe0649813d2b30d2178d11bfc16ad0304bd84b9c113e0836e8057f3b",
+          "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+          "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+          "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+          "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+          "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+        },
+        "binary_sha256": "3c0e3d6e0d6481a75b5eb750945efa4d8ac2b59f97a5cde6fe659b3592dc90ee"
+      },
+      {
+        "name": "fresh-output-site-cpu7",
+        "command": [
+          "/usr/local/cuda-12.8/bin/nvcc",
+          "-std=c++17",
+          "-O3",
+          "-arch=sm_120",
+          "-Xcompiler=-pthread",
+          "-DHOST_COPY_LANES=7",
+          "diagnostics/fresh-output-site/main.cpp",
+          "diagnostics/fresh-output-site/solve.cu",
+          "-lcuda",
+          "-o",
+          "build/fresh-output-site-cpu7"
+        ],
+        "exit_code": 0,
+        "source_files_sha256": {
+          "CMakeLists.txt": "223eb06e48e8ef8e9bdb1bce4f924a1bb7601d45e94fdb82e28916ad1fc36f6d",
+          "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+          "output_worker.h": "6285db05c409adc2a7d78eec7bc98d138db125434cd15ee524965df67609c858",
+          "solve.cu": "416785ffbe0649813d2b30d2178d11bfc16ad0304bd84b9c113e0836e8057f3b",
+          "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+          "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+          "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+          "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+          "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+        },
+        "binary_sha256": "210a393c3efc49fb946e288e92e23334eafbdf4339af7bcaf1c34d4e21476d5f"
+      }
+    ],
+    "runs": [
+      {
+        "name": "fresh-output-site-cpu4",
+        "N": 32768,
+        "W": 868,
+        "passed": 24,
+        "phases": [
+          {
+            "N": 32768.0,
+            "site": 0.0,
+            "peer": 0.0,
+            "total": 1.733833,
+            "first_ready": 0.061015,
+            "first_dispatched": 0.07004,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.494484,
+            "allocation_ms": 1.469919,
+            "wake_ms": 0.001287,
+            "alloc_wait_start": 0.542017,
+            "alloc_done": 1.620432,
+            "first_output": 1.626661,
+            "last_output": 1.72678,
+            "user_ms": 0.006,
+            "system_ms": 1.996,
+            "minor_faults": 894.0
+          },
+          {
+            "N": 32768.0,
+            "site": 1.0,
+            "peer": 0.0,
+            "total": 0.333975,
+            "first_ready": 0.01857,
+            "first_dispatched": 0.025413,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.115976,
+            "allocation_ms": 0.143709,
+            "wake_ms": 0.000656,
+            "alloc_wait_start": 0.159485,
+            "alloc_done": 0.183462,
+            "first_output": 0.221725,
+            "last_output": 0.326059,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 2.0,
+            "peer": 0.0,
+            "total": 0.339686,
+            "first_ready": 0.015933,
+            "first_dispatched": 0.022394,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.113234,
+            "allocation_ms": 0.15191,
+            "wake_ms": 0.000672,
+            "alloc_wait_start": 0.153041,
+            "alloc_done": 0.190135,
+            "first_output": 0.231722,
+            "last_output": 0.332097,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 0.0,
+            "peer": 2.0,
+            "total": 0.371977,
+            "first_ready": 0.014807,
+            "first_dispatched": 0.020481,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.156389,
+            "allocation_ms": 0.191554,
+            "wake_ms": 0.02882,
+            "alloc_wait_start": 0.195079,
+            "alloc_done": 0.256791,
+            "first_output": 0.260452,
+            "last_output": 0.367107,
+            "user_ms": 0.0,
+            "system_ms": 0.026,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 0.0,
+            "peer": 0.0,
+            "total": 0.342088,
+            "first_ready": 0.016735,
+            "first_dispatched": 0.02252,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.129395,
+            "allocation_ms": 0.147288,
+            "wake_ms": 0.038616,
+            "alloc_wait_start": 0.169972,
+            "alloc_done": 0.22596,
+            "first_output": 0.229683,
+            "last_output": 0.334616,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 1.0,
+            "peer": 0.0,
+            "total": 0.327268,
+            "first_ready": 0.013545,
+            "first_dispatched": 0.019075,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.11173,
+            "allocation_ms": 0.148427,
+            "wake_ms": 0.000659,
+            "alloc_wait_start": 0.150206,
+            "alloc_done": 0.184743,
+            "first_output": 0.214743,
+            "last_output": 0.320101,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 2.0,
+            "peer": 0.0,
+            "total": 0.324875,
+            "first_ready": 0.013528,
+            "first_dispatched": 0.019009,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.11549,
+            "allocation_ms": 0.149437,
+            "wake_ms": 0.000684,
+            "alloc_wait_start": 0.152626,
+            "alloc_done": 0.186872,
+            "first_output": 0.213663,
+            "last_output": 0.317676,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 0.0,
+            "peer": 2.0,
+            "total": 0.374458,
+            "first_ready": 0.01455,
+            "first_dispatched": 0.020245,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.16823,
+            "allocation_ms": 0.19832,
+            "wake_ms": 0.02364,
+            "alloc_wait_start": 0.21174,
+            "alloc_done": 0.259488,
+            "first_output": 0.263694,
+            "last_output": 0.369533,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 0.0,
+            "peer": 0.0,
+            "total": 0.329322,
+            "first_ready": 0.016556,
+            "first_dispatched": 0.022511,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.117178,
+            "allocation_ms": 0.142882,
+            "wake_ms": 0.019598,
+            "alloc_wait_start": 0.159822,
+            "alloc_done": 0.200993,
+            "first_output": 0.218211,
+            "last_output": 0.321752,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 1.0,
+            "peer": 0.0,
+            "total": 0.327401,
+            "first_ready": 0.014262,
+            "first_dispatched": 0.019663,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.11293,
+            "allocation_ms": 0.147421,
+            "wake_ms": 0.000633,
+            "alloc_wait_start": 0.151841,
+            "alloc_done": 0.184664,
+            "first_output": 0.21483,
+            "last_output": 0.320379,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 2.0,
+            "peer": 0.0,
+            "total": 0.329963,
+            "first_ready": 0.014888,
+            "first_dispatched": 0.020338,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.116744,
+            "allocation_ms": 0.146256,
+            "wake_ms": 0.000491,
+            "alloc_wait_start": 0.15564,
+            "alloc_done": 0.184798,
+            "first_output": 0.215306,
+            "last_output": 0.322662,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 0.0,
+            "peer": 2.0,
+            "total": 0.355366,
+            "first_ready": 0.013766,
+            "first_dispatched": 0.018916,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.159221,
+            "allocation_ms": 0.18854,
+            "wake_ms": 0.02016,
+            "alloc_wait_start": 0.197064,
+            "alloc_done": 0.24493,
+            "first_output": 0.24886,
+            "last_output": 0.35048,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 0.0,
+            "peer": 0.0,
+            "total": 0.336113,
+            "first_ready": 0.02656,
+            "first_dispatched": 0.031653,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.12877,
+            "allocation_ms": 0.147621,
+            "wake_ms": 0.017405,
+            "alloc_wait_start": 0.166616,
+            "alloc_done": 0.214346,
+            "first_output": 0.226854,
+            "last_output": 0.328672,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 1.0,
+            "peer": 0.0,
+            "total": 0.329508,
+            "first_ready": 0.014428,
+            "first_dispatched": 0.020018,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.125141,
+            "allocation_ms": 0.160179,
+            "wake_ms": 0.000505,
+            "alloc_wait_start": 0.167151,
+            "alloc_done": 0.19803,
+            "first_output": 0.215919,
+            "last_output": 0.32232,
+            "user_ms": 1.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 2.0,
+            "peer": 0.0,
+            "total": 0.31066,
+            "first_ready": 0.012533,
+            "first_dispatched": 0.017652,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.110631,
+            "allocation_ms": 0.148114,
+            "wake_ms": 0.000365,
+            "alloc_wait_start": 0.147952,
+            "alloc_done": 0.182778,
+            "first_output": 0.212697,
+            "last_output": 0.304089,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 0.0,
+            "peer": 2.0,
+            "total": 0.368911,
+            "first_ready": 0.013181,
+            "first_dispatched": 0.01841,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.160297,
+            "allocation_ms": 0.195476,
+            "wake_ms": 0.018574,
+            "alloc_wait_start": 0.201229,
+            "alloc_done": 0.250096,
+            "first_output": 0.254114,
+            "last_output": 0.364136,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 0.0,
+            "peer": 0.0,
+            "total": 0.333022,
+            "first_ready": 0.01522,
+            "first_dispatched": 0.020558,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.116239,
+            "allocation_ms": 0.145338,
+            "wake_ms": 0.01659,
+            "alloc_wait_start": 0.1574,
+            "alloc_done": 0.199426,
+            "first_output": 0.217312,
+            "last_output": 0.325614,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 1.0,
+            "peer": 0.0,
+            "total": 0.333538,
+            "first_ready": 0.014561,
+            "first_dispatched": 0.020117,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.116925,
+            "allocation_ms": 0.150537,
+            "wake_ms": 0.00047,
+            "alloc_wait_start": 0.156745,
+            "alloc_done": 0.19004,
+            "first_output": 0.214754,
+            "last_output": 0.325924,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 2.0,
+            "peer": 0.0,
+            "total": 0.331006,
+            "first_ready": 0.014988,
+            "first_dispatched": 0.020328,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.11662,
+            "allocation_ms": 0.149628,
+            "wake_ms": 0.000674,
+            "alloc_wait_start": 0.154753,
+            "alloc_done": 0.189503,
+            "first_output": 0.216462,
+            "last_output": 0.323299,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 0.0,
+            "peer": 2.0,
+            "total": 0.35753,
+            "first_ready": 0.012931,
+            "first_dispatched": 0.017685,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.155673,
+            "allocation_ms": 0.188569,
+            "wake_ms": 0.018596,
+            "alloc_wait_start": 0.193609,
+            "alloc_done": 0.242699,
+            "first_output": 0.246415,
+            "last_output": 0.352732,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 0.0,
+            "peer": 0.0,
+            "total": 0.319362,
+            "first_ready": 0.014136,
+            "first_dispatched": 0.019331,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.115577,
+            "allocation_ms": 0.146884,
+            "wake_ms": 0.017538,
+            "alloc_wait_start": 0.154957,
+            "alloc_done": 0.201592,
+            "first_output": 0.21298,
+            "last_output": 0.312928,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 1.0,
+            "peer": 0.0,
+            "total": 0.328487,
+            "first_ready": 0.012958,
+            "first_dispatched": 0.017705,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.112388,
+            "allocation_ms": 0.152856,
+            "wake_ms": 0.000837,
+            "alloc_wait_start": 0.150111,
+            "alloc_done": 0.188387,
+            "first_output": 0.213667,
+            "last_output": 0.321058,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 2.0,
+            "peer": 0.0,
+            "total": 0.326598,
+            "first_ready": 0.013755,
+            "first_dispatched": 0.018536,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.111501,
+            "allocation_ms": 0.14938,
+            "wake_ms": 0.000682,
+            "alloc_wait_start": 0.150423,
+            "alloc_done": 0.185154,
+            "first_output": 0.214133,
+            "last_output": 0.319399,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 0.0,
+            "peer": 2.0,
+            "total": 0.362712,
+            "first_ready": 0.013662,
+            "first_dispatched": 0.019218,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.162761,
+            "allocation_ms": 0.194702,
+            "wake_ms": 0.018352,
+            "alloc_wait_start": 0.20439,
+            "alloc_done": 0.24951,
+            "first_output": 0.253646,
+            "last_output": 0.357718,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          }
+        ],
+        "summary": {
+          "N": 32768.0,
+          "site": 0.5,
+          "peer": 0.0,
+          "total": 0.3304845,
+          "first_ready": 0.014199,
+          "first_dispatched": 0.019497,
+          "a_dispatched": 0.0,
+          "all_dispatched": 0.11683450000000001,
+          "allocation_ms": 0.1494085,
+          "wake_ms": 0.0087135,
+          "alloc_wait_start": 0.1570725,
+          "alloc_done": 0.19872800000000002,
+          "first_output": 0.2161905,
+          "last_output": 0.3229805,
+          "user_ms": 0.0,
+          "system_ms": 0.0,
+          "minor_faults": 0.0
+        },
+        "harness": {
+          "init_s": 0.298383249,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.001755671,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 0.000346642,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 0.000351344,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 0.000383899,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 0.00035318,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 0.000337284,
+              "status": "ok"
+            },
+            {
+              "i": 6,
+              "seconds": 0.000334597,
+              "status": "ok"
+            },
+            {
+              "i": 7,
+              "seconds": 0.000385493,
+              "status": "ok"
+            },
+            {
+              "i": 8,
+              "seconds": 0.000340836,
+              "status": "ok"
+            },
+            {
+              "i": 9,
+              "seconds": 0.000337836,
+              "status": "ok"
+            },
+            {
+              "i": 10,
+              "seconds": 0.00034062,
+              "status": "ok"
+            },
+            {
+              "i": 11,
+              "seconds": 0.000365649,
+              "status": "ok"
+            },
+            {
+              "i": 12,
+              "seconds": 0.000351009,
+              "status": "ok"
+            },
+            {
+              "i": 13,
+              "seconds": 0.000339894,
+              "status": "ok"
+            },
+            {
+              "i": 14,
+              "seconds": 0.000320336,
+              "status": "ok"
+            },
+            {
+              "i": 15,
+              "seconds": 0.000379637,
+              "status": "ok"
+            },
+            {
+              "i": 16,
+              "seconds": 0.000344067,
+              "status": "ok"
+            },
+            {
+              "i": 17,
+              "seconds": 0.000344492,
+              "status": "ok"
+            },
+            {
+              "i": 18,
+              "seconds": 0.000341302,
+              "status": "ok"
+            },
+            {
+              "i": 19,
+              "seconds": 0.000368032,
+              "status": "ok"
+            },
+            {
+              "i": 20,
+              "seconds": 0.000330034,
+              "status": "ok"
+            },
+            {
+              "i": 21,
+              "seconds": 0.000338402,
+              "status": "ok"
+            },
+            {
+              "i": 22,
+              "seconds": 0.000336512,
+              "status": "ok"
+            },
+            {
+              "i": 23,
+              "seconds": 0.000373632,
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      {
+        "name": "fresh-output-site-cpu4",
+        "N": 65536,
+        "W": 1747,
+        "passed": 24,
+        "phases": [
+          {
+            "N": 65536.0,
+            "site": 0.0,
+            "peer": 0.0,
+            "total": 6.477582,
+            "first_ready": 0.093049,
+            "first_dispatched": 0.115558,
+            "a_dispatched": 0.92091,
+            "all_dispatched": 1.804974,
+            "allocation_ms": 5.698506,
+            "wake_ms": 0.001087,
+            "alloc_wait_start": 1.846078,
+            "alloc_done": 6.121796,
+            "first_output": 6.128177,
+            "last_output": 6.435697,
+            "user_ms": 0.013,
+            "system_ms": 4.989,
+            "minor_faults": 3518.0
+          },
+          {
+            "N": 65536.0,
+            "site": 1.0,
+            "peer": 0.0,
+            "total": 1.140736,
+            "first_ready": 0.021613,
+            "first_dispatched": 0.035559,
+            "a_dispatched": 0.213097,
+            "all_dispatched": 0.411395,
+            "allocation_ms": 0.455299,
+            "wake_ms": 0.001087,
+            "alloc_wait_start": 0.45493,
+            "alloc_done": 0.912358,
+            "first_output": 0.919778,
+            "last_output": 1.124716,
+            "user_ms": 0.691,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 2.0,
+            "peer": 0.0,
+            "total": 6.13431,
+            "first_ready": 0.021343,
+            "first_dispatched": 0.034182,
+            "a_dispatched": 0.224064,
+            "all_dispatched": 0.412495,
+            "allocation_ms": 5.369803,
+            "wake_ms": 0.001087,
+            "alloc_wait_start": 0.450983,
+            "alloc_done": 5.781347,
+            "first_output": 5.786773,
+            "last_output": 6.071792,
+            "user_ms": 2.013,
+            "system_ms": 2.986,
+            "minor_faults": 3521.0
+          },
+          {
+            "N": 65536.0,
+            "site": 0.0,
+            "peer": 2.0,
+            "total": 1.636129,
+            "first_ready": 0.01937,
+            "first_dispatched": 0.03301,
+            "a_dispatched": 0.370302,
+            "all_dispatched": 0.933371,
+            "allocation_ms": 1.162299,
+            "wake_ms": 0.026848,
+            "alloc_wait_start": 0.973053,
+            "alloc_done": 1.280937,
+            "first_output": 1.285547,
+            "last_output": 1.578625,
+            "user_ms": 0.421,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 0.0,
+            "peer": 0.0,
+            "total": 1.05605,
+            "first_ready": 0.019718,
+            "first_dispatched": 0.030769,
+            "a_dispatched": 0.211598,
+            "all_dispatched": 0.40031,
+            "allocation_ms": 0.661833,
+            "wake_ms": 0.023394,
+            "alloc_wait_start": 0.439919,
+            "alloc_done": 0.779329,
+            "first_output": 0.783795,
+            "last_output": 1.03791,
+            "user_ms": 0.442,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 1.0,
+            "peer": 0.0,
+            "total": 1.099831,
+            "first_ready": 0.019043,
+            "first_dispatched": 0.030005,
+            "a_dispatched": 0.215246,
+            "all_dispatched": 0.40594,
+            "allocation_ms": 0.404113,
+            "wake_ms": 0.023394,
+            "alloc_wait_start": 0.443693,
+            "alloc_done": 0.849365,
+            "first_output": 0.854514,
+            "last_output": 1.084147,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 2.0,
+            "peer": 0.0,
+            "total": 1.537089,
+            "first_ready": 0.020642,
+            "first_dispatched": 0.043835,
+            "a_dispatched": 0.221634,
+            "all_dispatched": 0.419549,
+            "allocation_ms": 0.832095,
+            "wake_ms": 0.023394,
+            "alloc_wait_start": 0.458026,
+            "alloc_done": 1.250531,
+            "first_output": 1.254586,
+            "last_output": 1.491934,
+            "user_ms": 1.004,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 0.0,
+            "peer": 2.0,
+            "total": 1.343914,
+            "first_ready": 0.020142,
+            "first_dispatched": 0.030534,
+            "a_dispatched": 0.318416,
+            "all_dispatched": 0.784519,
+            "allocation_ms": 0.929287,
+            "wake_ms": 0.025151,
+            "alloc_wait_start": 0.825674,
+            "alloc_done": 1.045462,
+            "first_output": 1.049343,
+            "last_output": 1.308212,
+            "user_ms": 0.623,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 0.0,
+            "peer": 0.0,
+            "total": 0.992654,
+            "first_ready": 0.02031,
+            "first_dispatched": 0.030862,
+            "a_dispatched": 0.21159,
+            "all_dispatched": 0.416906,
+            "allocation_ms": 0.58973,
+            "wake_ms": 0.019325,
+            "alloc_wait_start": 0.455937,
+            "alloc_done": 0.703702,
+            "first_output": 0.707978,
+            "last_output": 0.974502,
+            "user_ms": 0.218,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 1.0,
+            "peer": 0.0,
+            "total": 1.081983,
+            "first_ready": 0.019974,
+            "first_dispatched": 0.030412,
+            "a_dispatched": 0.212768,
+            "all_dispatched": 0.399514,
+            "allocation_ms": 0.413999,
+            "wake_ms": 0.019325,
+            "alloc_wait_start": 0.43796,
+            "alloc_done": 0.853558,
+            "first_output": 0.858395,
+            "last_output": 1.067047,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 2.0,
+            "peer": 0.0,
+            "total": 1.403129,
+            "first_ready": 0.020483,
+            "first_dispatched": 0.030832,
+            "a_dispatched": 0.213916,
+            "all_dispatched": 0.401705,
+            "allocation_ms": 0.731957,
+            "wake_ms": 0.019325,
+            "alloc_wait_start": 0.440566,
+            "alloc_done": 1.132377,
+            "first_output": 1.136513,
+            "last_output": 1.368459,
+            "user_ms": 1.005,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 0.0,
+            "peer": 2.0,
+            "total": 1.320318,
+            "first_ready": 0.018699,
+            "first_dispatched": 0.028373,
+            "a_dispatched": 0.318606,
+            "all_dispatched": 0.76161,
+            "allocation_ms": 0.906896,
+            "wake_ms": 0.02306,
+            "alloc_wait_start": 0.799117,
+            "alloc_done": 1.020257,
+            "first_output": 1.024506,
+            "last_output": 1.276694,
+            "user_ms": 0.401,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 0.0,
+            "peer": 0.0,
+            "total": 1.003748,
+            "first_ready": 0.019577,
+            "first_dispatched": 0.0298,
+            "a_dispatched": 0.237631,
+            "all_dispatched": 0.425247,
+            "allocation_ms": 0.579276,
+            "wake_ms": 0.020622,
+            "alloc_wait_start": 0.463331,
+            "alloc_done": 0.693426,
+            "first_output": 0.698968,
+            "last_output": 0.975894,
+            "user_ms": 0.056,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 1.0,
+            "peer": 0.0,
+            "total": 1.071621,
+            "first_ready": 0.02045,
+            "first_dispatched": 0.031149,
+            "a_dispatched": 0.21169,
+            "all_dispatched": 0.399702,
+            "allocation_ms": 0.415386,
+            "wake_ms": 0.020622,
+            "alloc_wait_start": 0.437185,
+            "alloc_done": 0.854247,
+            "first_output": 0.860209,
+            "last_output": 1.056671,
+            "user_ms": 0.561,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 2.0,
+            "peer": 0.0,
+            "total": 1.431393,
+            "first_ready": 0.018434,
+            "first_dispatched": 0.029538,
+            "a_dispatched": 0.208436,
+            "all_dispatched": 0.398849,
+            "allocation_ms": 0.761704,
+            "wake_ms": 0.020622,
+            "alloc_wait_start": 0.43825,
+            "alloc_done": 1.158502,
+            "first_output": 1.162627,
+            "last_output": 1.387245,
+            "user_ms": 1.005,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 0.0,
+            "peer": 2.0,
+            "total": 1.473662,
+            "first_ready": 0.021033,
+            "first_dispatched": 0.033469,
+            "a_dispatched": 0.358907,
+            "all_dispatched": 0.847564,
+            "allocation_ms": 1.044159,
+            "wake_ms": 0.026564,
+            "alloc_wait_start": 0.889747,
+            "alloc_done": 1.165771,
+            "first_output": 1.170616,
+            "last_output": 1.427905,
+            "user_ms": 0.068,
+            "system_ms": 0.989,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 0.0,
+            "peer": 0.0,
+            "total": 1.030935,
+            "first_ready": 0.021482,
+            "first_dispatched": 0.0339,
+            "a_dispatched": 0.225777,
+            "all_dispatched": 0.416278,
+            "allocation_ms": 0.62227,
+            "wake_ms": 0.022371,
+            "alloc_wait_start": 0.457905,
+            "alloc_done": 0.752652,
+            "first_output": 0.757011,
+            "last_output": 1.011069,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 1.0,
+            "peer": 0.0,
+            "total": 1.113743,
+            "first_ready": 0.021032,
+            "first_dispatched": 0.032258,
+            "a_dispatched": 0.224574,
+            "all_dispatched": 0.417802,
+            "allocation_ms": 0.429792,
+            "wake_ms": 0.022371,
+            "alloc_wait_start": 0.458154,
+            "alloc_done": 0.88954,
+            "first_output": 0.89553,
+            "last_output": 1.098584,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 2.0,
+            "peer": 0.0,
+            "total": 1.70319,
+            "first_ready": 0.020354,
+            "first_dispatched": 0.033137,
+            "a_dispatched": 0.213411,
+            "all_dispatched": 0.399671,
+            "allocation_ms": 0.998749,
+            "wake_ms": 0.022371,
+            "alloc_wait_start": 0.449345,
+            "alloc_done": 1.396876,
+            "first_output": 1.401695,
+            "last_output": 1.653674,
+            "user_ms": 1.005,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 0.0,
+            "peer": 2.0,
+            "total": 1.554789,
+            "first_ready": 0.029882,
+            "first_dispatched": 0.042805,
+            "a_dispatched": 0.380295,
+            "all_dispatched": 0.898742,
+            "allocation_ms": 1.10302,
+            "wake_ms": 0.027521,
+            "alloc_wait_start": 0.939255,
+            "alloc_done": 1.233528,
+            "first_output": 1.238039,
+            "last_output": 1.508197,
+            "user_ms": 1.074,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 0.0,
+            "peer": 0.0,
+            "total": 1.084904,
+            "first_ready": 0.020103,
+            "first_dispatched": 0.032437,
+            "a_dispatched": 0.222561,
+            "all_dispatched": 0.428153,
+            "allocation_ms": 0.681091,
+            "wake_ms": 0.029717,
+            "alloc_wait_start": 0.471843,
+            "alloc_done": 0.805012,
+            "first_output": 0.809614,
+            "last_output": 1.065649,
+            "user_ms": 0.178,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 1.0,
+            "peer": 0.0,
+            "total": 1.054863,
+            "first_ready": 0.018822,
+            "first_dispatched": 0.03064,
+            "a_dispatched": 0.214366,
+            "all_dispatched": 0.402807,
+            "allocation_ms": 0.404288,
+            "wake_ms": 0.029717,
+            "alloc_wait_start": 0.441969,
+            "alloc_done": 0.847974,
+            "first_output": 0.853564,
+            "last_output": 1.041678,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 2.0,
+            "peer": 0.0,
+            "total": 1.721763,
+            "first_ready": 0.020531,
+            "first_dispatched": 0.0333,
+            "a_dispatched": 0.223062,
+            "all_dispatched": 0.409349,
+            "allocation_ms": 1.005618,
+            "wake_ms": 0.029717,
+            "alloc_wait_start": 0.451008,
+            "alloc_done": 1.41339,
+            "first_output": 1.417647,
+            "last_output": 1.669072,
+            "user_ms": 1.001,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 0.0,
+            "peer": 2.0,
+            "total": 1.606319,
+            "first_ready": 0.020051,
+            "first_dispatched": 0.031888,
+            "a_dispatched": 0.368212,
+            "all_dispatched": 0.781735,
+            "allocation_ms": 1.151749,
+            "wake_ms": 0.026795,
+            "alloc_wait_start": 0.826354,
+            "alloc_done": 1.269442,
+            "first_output": 1.273749,
+            "last_output": 1.542318,
+            "user_ms": 0.45,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          }
+        ],
+        "summary": {
+          "N": 65536.0,
+          "site": 0.5,
+          "peer": 0.0,
+          "total": 1.2170305,
+          "first_ready": 0.020226,
+          "first_dispatched": 0.0310055,
+          "a_dispatched": 0.2220975,
+          "all_dispatched": 0.41659199999999996,
+          "allocation_ms": 0.7065239999999999,
+          "wake_ms": 0.023227,
+          "alloc_wait_start": 0.456921,
+          "alloc_done": 0.9548985,
+          "first_output": 0.960018,
+          "last_output": 1.187639,
+          "user_ms": 0.4215,
+          "system_ms": 0.0,
+          "minor_faults": 0.0
+        },
+        "harness": {
+          "init_s": 0.372650091,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.006501397,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 0.001157752,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 0.006151084,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 0.001651609,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 0.001070165,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 0.001113618,
+              "status": "ok"
+            },
+            {
+              "i": 6,
+              "seconds": 0.001552191,
+              "status": "ok"
+            },
+            {
+              "i": 7,
+              "seconds": 0.001358004,
+              "status": "ok"
+            },
+            {
+              "i": 8,
+              "seconds": 0.001006889,
+              "status": "ok"
+            },
+            {
+              "i": 9,
+              "seconds": 0.00109583,
+              "status": "ok"
+            },
+            {
+              "i": 10,
+              "seconds": 0.001418119,
+              "status": "ok"
+            },
+            {
+              "i": 11,
+              "seconds": 0.001335327,
+              "status": "ok"
+            },
+            {
+              "i": 12,
+              "seconds": 0.001030221,
+              "status": "ok"
+            },
+            {
+              "i": 13,
+              "seconds": 0.001086255,
+              "status": "ok"
+            },
+            {
+              "i": 14,
+              "seconds": 0.00144543,
+              "status": "ok"
+            },
+            {
+              "i": 15,
+              "seconds": 0.001489022,
+              "status": "ok"
+            },
+            {
+              "i": 16,
+              "seconds": 0.00104679,
+              "status": "ok"
+            },
+            {
+              "i": 17,
+              "seconds": 0.001129534,
+              "status": "ok"
+            },
+            {
+              "i": 18,
+              "seconds": 0.001717852,
+              "status": "ok"
+            },
+            {
+              "i": 19,
+              "seconds": 0.001568941,
+              "status": "ok"
+            },
+            {
+              "i": 20,
+              "seconds": 0.001099157,
+              "status": "ok"
+            },
+            {
+              "i": 21,
+              "seconds": 0.001068189,
+              "status": "ok"
+            },
+            {
+              "i": 22,
+              "seconds": 0.00173635,
+              "status": "ok"
+            },
+            {
+              "i": 23,
+              "seconds": 0.001619792,
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      {
+        "name": "fresh-output-site-cpu7",
+        "N": 32768,
+        "W": 868,
+        "passed": 24,
+        "phases": [
+          {
+            "N": 32768.0,
+            "site": 0.0,
+            "peer": 0.0,
+            "total": 1.811981,
+            "first_ready": 0.052819,
+            "first_dispatched": 0.063807,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.359304,
+            "allocation_ms": 1.62112,
+            "wake_ms": 0.00094,
+            "alloc_wait_start": 0.41905,
+            "alloc_done": 1.741422,
+            "first_output": 1.750287,
+            "last_output": 1.806173,
+            "user_ms": 0.007,
+            "system_ms": 1.996,
+            "minor_faults": 894.0
+          },
+          {
+            "N": 32768.0,
+            "site": 1.0,
+            "peer": 0.0,
+            "total": 0.344436,
+            "first_ready": 0.021489,
+            "first_dispatched": 0.029624,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.102996,
+            "allocation_ms": 0.167132,
+            "wake_ms": 0.000529,
+            "alloc_wait_start": 0.188286,
+            "alloc_done": 0.212181,
+            "first_output": 0.234353,
+            "last_output": 0.337818,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 2.0,
+            "peer": 0.0,
+            "total": 0.340676,
+            "first_ready": 0.019311,
+            "first_dispatched": 0.026888,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.095441,
+            "allocation_ms": 0.183536,
+            "wake_ms": 0.000463,
+            "alloc_wait_start": 0.17283,
+            "alloc_done": 0.223842,
+            "first_output": 0.230259,
+            "last_output": 0.333975,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 0.0,
+            "peer": 2.0,
+            "total": 0.352008,
+            "first_ready": 0.017544,
+            "first_dispatched": 0.024359,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.076563,
+            "allocation_ms": 0.149678,
+            "wake_ms": 0.029359,
+            "alloc_wait_start": 0.119989,
+            "alloc_done": 0.21511,
+            "first_output": 0.237269,
+            "last_output": 0.345378,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 0.0,
+            "peer": 0.0,
+            "total": 0.349761,
+            "first_ready": 0.017178,
+            "first_dispatched": 0.023467,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.088142,
+            "allocation_ms": 0.167711,
+            "wake_ms": 0.028585,
+            "alloc_wait_start": 0.167378,
+            "alloc_done": 0.229253,
+            "first_output": 0.235222,
+            "last_output": 0.343213,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 1.0,
+            "peer": 0.0,
+            "total": 0.343926,
+            "first_ready": 0.01719,
+            "first_dispatched": 0.023679,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.0909,
+            "allocation_ms": 0.178965,
+            "wake_ms": 0.000594,
+            "alloc_wait_start": 0.169118,
+            "alloc_done": 0.21537,
+            "first_output": 0.228185,
+            "last_output": 0.337703,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 2.0,
+            "peer": 0.0,
+            "total": 0.350701,
+            "first_ready": 0.017516,
+            "first_dispatched": 0.024253,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.084878,
+            "allocation_ms": 0.175283,
+            "wake_ms": 0.000476,
+            "alloc_wait_start": 0.164215,
+            "alloc_done": 0.209612,
+            "first_output": 0.234829,
+            "last_output": 0.344471,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 0.0,
+            "peer": 2.0,
+            "total": 0.349585,
+            "first_ready": 0.016405,
+            "first_dispatched": 0.022498,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.078582,
+            "allocation_ms": 0.153355,
+            "wake_ms": 0.035045,
+            "alloc_wait_start": 0.121923,
+            "alloc_done": 0.222523,
+            "first_output": 0.233507,
+            "last_output": 0.34345,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 0.0,
+            "peer": 0.0,
+            "total": 0.34905,
+            "first_ready": 0.016665,
+            "first_dispatched": 0.022346,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.083751,
+            "allocation_ms": 0.162403,
+            "wake_ms": 0.025696,
+            "alloc_wait_start": 0.164742,
+            "alloc_done": 0.220077,
+            "first_output": 0.23658,
+            "last_output": 0.342652,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 1.0,
+            "peer": 0.0,
+            "total": 0.343262,
+            "first_ready": 0.018206,
+            "first_dispatched": 0.024431,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.088919,
+            "allocation_ms": 0.190403,
+            "wake_ms": 0.000778,
+            "alloc_wait_start": 0.167774,
+            "alloc_done": 0.226661,
+            "first_output": 0.231632,
+            "last_output": 0.336347,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 2.0,
+            "peer": 0.0,
+            "total": 0.344051,
+            "first_ready": 0.016672,
+            "first_dispatched": 0.02308,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.09171,
+            "allocation_ms": 0.17487,
+            "wake_ms": 0.000444,
+            "alloc_wait_start": 0.167847,
+            "alloc_done": 0.210463,
+            "first_output": 0.229541,
+            "last_output": 0.337132,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 0.0,
+            "peer": 2.0,
+            "total": 0.348188,
+            "first_ready": 0.016147,
+            "first_dispatched": 0.022457,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.074637,
+            "allocation_ms": 0.158018,
+            "wake_ms": 0.023117,
+            "alloc_wait_start": 0.117685,
+            "alloc_done": 0.215864,
+            "first_output": 0.234435,
+            "last_output": 0.341852,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 0.0,
+            "peer": 0.0,
+            "total": 0.345748,
+            "first_ready": 0.014645,
+            "first_dispatched": 0.021152,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.075355,
+            "allocation_ms": 0.166141,
+            "wake_ms": 0.022935,
+            "alloc_wait_start": 0.154706,
+            "alloc_done": 0.219898,
+            "first_output": 0.233198,
+            "last_output": 0.339472,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 1.0,
+            "peer": 0.0,
+            "total": 0.348649,
+            "first_ready": 0.019498,
+            "first_dispatched": 0.026269,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.092732,
+            "allocation_ms": 0.205756,
+            "wake_ms": 0.000557,
+            "alloc_wait_start": 0.189925,
+            "alloc_done": 0.244194,
+            "first_output": 0.249559,
+            "last_output": 0.342099,
+            "user_ms": 1.001,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 2.0,
+            "peer": 0.0,
+            "total": 0.34018,
+            "first_ready": 0.017701,
+            "first_dispatched": 0.024114,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.092919,
+            "allocation_ms": 0.191065,
+            "wake_ms": 0.000748,
+            "alloc_wait_start": 0.175557,
+            "alloc_done": 0.226492,
+            "first_output": 0.232006,
+            "last_output": 0.333708,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 0.0,
+            "peer": 2.0,
+            "total": 0.348571,
+            "first_ready": 0.017514,
+            "first_dispatched": 0.024094,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.08563,
+            "allocation_ms": 0.16303,
+            "wake_ms": 0.023917,
+            "alloc_wait_start": 0.128839,
+            "alloc_done": 0.222607,
+            "first_output": 0.232361,
+            "last_output": 0.341841,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 0.0,
+            "peer": 0.0,
+            "total": 0.351317,
+            "first_ready": 0.015358,
+            "first_dispatched": 0.021717,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.081876,
+            "allocation_ms": 0.183589,
+            "wake_ms": 0.025425,
+            "alloc_wait_start": 0.163615,
+            "alloc_done": 0.241162,
+            "first_output": 0.24722,
+            "last_output": 0.344978,
+            "user_ms": 0.143,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 1.0,
+            "peer": 0.0,
+            "total": 0.337802,
+            "first_ready": 0.016402,
+            "first_dispatched": 0.022948,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.090452,
+            "allocation_ms": 0.184422,
+            "wake_ms": 0.000547,
+            "alloc_wait_start": 0.168285,
+            "alloc_done": 0.220091,
+            "first_output": 0.227832,
+            "last_output": 0.331556,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 2.0,
+            "peer": 0.0,
+            "total": 0.345936,
+            "first_ready": 0.01727,
+            "first_dispatched": 0.024275,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.098452,
+            "allocation_ms": 0.189138,
+            "wake_ms": 0.000488,
+            "alloc_wait_start": 0.183585,
+            "alloc_done": 0.226209,
+            "first_output": 0.231713,
+            "last_output": 0.33943,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 0.0,
+            "peer": 2.0,
+            "total": 0.351707,
+            "first_ready": 0.017202,
+            "first_dispatched": 0.024119,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.075425,
+            "allocation_ms": 0.173403,
+            "wake_ms": 0.025418,
+            "alloc_wait_start": 0.11635,
+            "alloc_done": 0.235515,
+            "first_output": 0.24061,
+            "last_output": 0.345628,
+            "user_ms": 0.153,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 0.0,
+            "peer": 0.0,
+            "total": 0.604129,
+            "first_ready": 0.273048,
+            "first_dispatched": 0.279433,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.334825,
+            "allocation_ms": 0.16699,
+            "wake_ms": 0.023689,
+            "alloc_wait_start": 0.415629,
+            "alloc_done": 0.478673,
+            "first_output": 0.490475,
+            "last_output": 0.597739,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 1.0,
+            "peer": 0.0,
+            "total": 0.344436,
+            "first_ready": 0.018364,
+            "first_dispatched": 0.02516,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.094846,
+            "allocation_ms": 0.179521,
+            "wake_ms": 0.000664,
+            "alloc_wait_start": 0.177472,
+            "alloc_done": 0.217221,
+            "first_output": 0.230121,
+            "last_output": 0.337951,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 2.0,
+            "peer": 0.0,
+            "total": 0.343966,
+            "first_ready": 0.01768,
+            "first_dispatched": 0.02367,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.087263,
+            "allocation_ms": 0.180587,
+            "wake_ms": 0.000439,
+            "alloc_wait_start": 0.165677,
+            "alloc_done": 0.214751,
+            "first_output": 0.22974,
+            "last_output": 0.338329,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 32768.0,
+            "site": 0.0,
+            "peer": 2.0,
+            "total": 0.347545,
+            "first_ready": 0.018951,
+            "first_dispatched": 0.025446,
+            "a_dispatched": 0.0,
+            "all_dispatched": 0.080763,
+            "allocation_ms": 0.161852,
+            "wake_ms": 0.024385,
+            "alloc_wait_start": 0.125664,
+            "alloc_done": 0.223152,
+            "first_output": 0.233651,
+            "last_output": 0.341292,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          }
+        ],
+        "summary": {
+          "N": 32768.0,
+          "site": 0.5,
+          "peer": 0.0,
+          "total": 0.34786649999999997,
+          "first_ready": 0.017236,
+          "first_dispatched": 0.023886499999999998,
+          "a_dispatched": 0.0,
+          "all_dispatched": 0.08770249999999999,
+          "allocation_ms": 0.1750765,
+          "wake_ms": 0.0118565,
+          "alloc_wait_start": 0.1665275,
+          "alloc_done": 0.222565,
+          "first_output": 0.2333525,
+          "last_output": 0.3415665,
+          "user_ms": 0.0,
+          "system_ms": 0.0,
+          "minor_faults": 0.0
+        },
+        "harness": {
+          "init_s": 0.191700721,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.001836909,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 0.000362416,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 0.000357277,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 0.000364128,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 0.000365143,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 0.000358944,
+              "status": "ok"
+            },
+            {
+              "i": 6,
+              "seconds": 0.000365828,
+              "status": "ok"
+            },
+            {
+              "i": 7,
+              "seconds": 0.000361485,
+              "status": "ok"
+            },
+            {
+              "i": 8,
+              "seconds": 0.000363086,
+              "status": "ok"
+            },
+            {
+              "i": 9,
+              "seconds": 0.000358109,
+              "status": "ok"
+            },
+            {
+              "i": 10,
+              "seconds": 0.000358224,
+              "status": "ok"
+            },
+            {
+              "i": 11,
+              "seconds": 0.000359952,
+              "status": "ok"
+            },
+            {
+              "i": 12,
+              "seconds": 0.000365203,
+              "status": "ok"
+            },
+            {
+              "i": 13,
+              "seconds": 0.000363373,
+              "status": "ok"
+            },
+            {
+              "i": 14,
+              "seconds": 0.000355557,
+              "status": "ok"
+            },
+            {
+              "i": 15,
+              "seconds": 0.000361485,
+              "status": "ok"
+            },
+            {
+              "i": 16,
+              "seconds": 0.000367354,
+              "status": "ok"
+            },
+            {
+              "i": 17,
+              "seconds": 0.000352604,
+              "status": "ok"
+            },
+            {
+              "i": 18,
+              "seconds": 0.000360176,
+              "status": "ok"
+            },
+            {
+              "i": 19,
+              "seconds": 0.00036292,
+              "status": "ok"
+            },
+            {
+              "i": 20,
+              "seconds": 0.000620156,
+              "status": "ok"
+            },
+            {
+              "i": 21,
+              "seconds": 0.000359566,
+              "status": "ok"
+            },
+            {
+              "i": 22,
+              "seconds": 0.000357571,
+              "status": "ok"
+            },
+            {
+              "i": 23,
+              "seconds": 0.000359248,
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      {
+        "name": "fresh-output-site-cpu7",
+        "N": 65536,
+        "W": 1747,
+        "passed": 24,
+        "phases": [
+          {
+            "N": 65536.0,
+            "site": 0.0,
+            "peer": 0.0,
+            "total": 7.005759,
+            "first_ready": 0.067572,
+            "first_dispatched": 0.092264,
+            "a_dispatched": 0.641836,
+            "all_dispatched": 1.190627,
+            "allocation_ms": 6.454,
+            "wake_ms": 0.000928,
+            "alloc_wait_start": 1.251313,
+            "alloc_done": 6.747605,
+            "first_output": 6.758361,
+            "last_output": 6.986251,
+            "user_ms": 1.005,
+            "system_ms": 5.997,
+            "minor_faults": 3518.0
+          },
+          {
+            "N": 65536.0,
+            "site": 1.0,
+            "peer": 0.0,
+            "total": 1.072255,
+            "first_ready": 0.035781,
+            "first_dispatched": 0.073496,
+            "a_dispatched": 0.179878,
+            "all_dispatched": 0.277425,
+            "allocation_ms": 0.448273,
+            "wake_ms": 0.000928,
+            "alloc_wait_start": 0.336165,
+            "alloc_done": 0.786514,
+            "first_output": 0.794635,
+            "last_output": 1.061035,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 2.0,
+            "peer": 0.0,
+            "total": 6.0848,
+            "first_ready": 0.022134,
+            "first_dispatched": 0.041094,
+            "a_dispatched": 0.141291,
+            "all_dispatched": 0.244621,
+            "allocation_ms": 5.631303,
+            "wake_ms": 0.000928,
+            "alloc_wait_start": 0.302395,
+            "alloc_done": 5.860066,
+            "first_output": 5.86595,
+            "last_output": 6.052258,
+            "user_ms": 1.037,
+            "system_ms": 4.964,
+            "minor_faults": 3521.0
+          },
+          {
+            "N": 65536.0,
+            "site": 0.0,
+            "peer": 2.0,
+            "total": 1.375129,
+            "first_ready": 0.021831,
+            "first_dispatched": 0.041282,
+            "a_dispatched": 0.143669,
+            "all_dispatched": 0.49526,
+            "allocation_ms": 1.059568,
+            "wake_ms": 0.039998,
+            "alloc_wait_start": 0.544642,
+            "alloc_done": 1.170534,
+            "first_output": 1.174644,
+            "last_output": 1.338701,
+            "user_ms": 0.488,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 0.0,
+            "peer": 0.0,
+            "total": 1.048831,
+            "first_ready": 0.018206,
+            "first_dispatched": 0.034513,
+            "a_dispatched": 0.162669,
+            "all_dispatched": 0.280676,
+            "allocation_ms": 0.711488,
+            "wake_ms": 0.031975,
+            "alloc_wait_start": 0.367161,
+            "alloc_done": 0.805914,
+            "first_output": 0.813024,
+            "last_output": 1.034559,
+            "user_ms": 0.125,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 1.0,
+            "peer": 0.0,
+            "total": 1.047028,
+            "first_ready": 0.018625,
+            "first_dispatched": 0.033588,
+            "a_dispatched": 0.135253,
+            "all_dispatched": 0.244895,
+            "allocation_ms": 0.45865,
+            "wake_ms": 0.031975,
+            "alloc_wait_start": 0.297601,
+            "alloc_done": 0.758082,
+            "first_output": 0.764473,
+            "last_output": 1.035158,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 2.0,
+            "peer": 0.0,
+            "total": 1.301518,
+            "first_ready": 0.019315,
+            "first_dispatched": 0.032374,
+            "a_dispatched": 0.139466,
+            "all_dispatched": 0.247463,
+            "allocation_ms": 0.879136,
+            "wake_ms": 0.031975,
+            "alloc_wait_start": 0.30072,
+            "alloc_done": 1.105646,
+            "first_output": 1.110318,
+            "last_output": 1.280869,
+            "user_ms": 1.005,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 0.0,
+            "peer": 2.0,
+            "total": 1.135201,
+            "first_ready": 0.020703,
+            "first_dispatched": 0.035307,
+            "a_dispatched": 0.169669,
+            "all_dispatched": 0.460986,
+            "allocation_ms": 0.844255,
+            "wake_ms": 0.031916,
+            "alloc_wait_start": 0.504179,
+            "alloc_done": 0.940188,
+            "first_output": 0.944606,
+            "last_output": 1.106189,
+            "user_ms": 0.765,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 0.0,
+            "peer": 0.0,
+            "total": 1.050366,
+            "first_ready": 0.020386,
+            "first_dispatched": 0.032917,
+            "a_dispatched": 0.148183,
+            "all_dispatched": 0.262172,
+            "allocation_ms": 0.714045,
+            "wake_ms": 0.026663,
+            "alloc_wait_start": 0.341009,
+            "alloc_done": 0.80175,
+            "first_output": 0.808337,
+            "last_output": 1.03631,
+            "user_ms": 0.13,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 1.0,
+            "peer": 0.0,
+            "total": 1.052451,
+            "first_ready": 0.020011,
+            "first_dispatched": 0.036483,
+            "a_dispatched": 0.130376,
+            "all_dispatched": 0.23615,
+            "allocation_ms": 0.462109,
+            "wake_ms": 0.026663,
+            "alloc_wait_start": 0.289244,
+            "alloc_done": 0.753101,
+            "first_output": 0.763549,
+            "last_output": 1.040407,
+            "user_ms": 0.603,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 2.0,
+            "peer": 0.0,
+            "total": 1.404348,
+            "first_ready": 0.021506,
+            "first_dispatched": 0.037166,
+            "a_dispatched": 0.131891,
+            "all_dispatched": 0.238722,
+            "allocation_ms": 0.979239,
+            "wake_ms": 0.026663,
+            "alloc_wait_start": 0.290779,
+            "alloc_done": 1.202949,
+            "first_output": 1.207705,
+            "last_output": 1.382951,
+            "user_ms": 1.005,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 0.0,
+            "peer": 2.0,
+            "total": 1.412912,
+            "first_ready": 0.022336,
+            "first_dispatched": 0.038198,
+            "a_dispatched": 0.155695,
+            "all_dispatched": 0.506679,
+            "allocation_ms": 1.101948,
+            "wake_ms": 0.036166,
+            "alloc_wait_start": 0.561437,
+            "alloc_done": 1.202587,
+            "first_output": 1.20697,
+            "last_output": 1.379224,
+            "user_ms": 0.46,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 0.0,
+            "peer": 0.0,
+            "total": 1.055123,
+            "first_ready": 0.019888,
+            "first_dispatched": 0.03411,
+            "a_dispatched": 0.156938,
+            "all_dispatched": 0.264187,
+            "allocation_ms": 0.777908,
+            "wake_ms": 0.039883,
+            "alloc_wait_start": 0.360453,
+            "alloc_done": 0.880705,
+            "first_output": 0.887282,
+            "last_output": 1.041192,
+            "user_ms": 0.206,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 1.0,
+            "peer": 0.0,
+            "total": 1.045793,
+            "first_ready": 0.019855,
+            "first_dispatched": 0.03853,
+            "a_dispatched": 0.131186,
+            "all_dispatched": 0.239875,
+            "allocation_ms": 0.447659,
+            "wake_ms": 0.039883,
+            "alloc_wait_start": 0.289497,
+            "alloc_done": 0.738791,
+            "first_output": 0.758174,
+            "last_output": 1.035318,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 2.0,
+            "peer": 0.0,
+            "total": 1.447599,
+            "first_ready": 0.021072,
+            "first_dispatched": 0.039937,
+            "a_dispatched": 0.132498,
+            "all_dispatched": 0.23572,
+            "allocation_ms": 1.020457,
+            "wake_ms": 0.039883,
+            "alloc_wait_start": 0.285968,
+            "alloc_done": 1.240473,
+            "first_output": 1.245367,
+            "last_output": 1.423432,
+            "user_ms": 1.005,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 0.0,
+            "peer": 2.0,
+            "total": 1.402862,
+            "first_ready": 0.021217,
+            "first_dispatched": 0.038776,
+            "a_dispatched": 0.157133,
+            "all_dispatched": 0.496956,
+            "allocation_ms": 1.08266,
+            "wake_ms": 0.040175,
+            "alloc_wait_start": 0.540892,
+            "alloc_done": 1.187619,
+            "first_output": 1.192285,
+            "last_output": 1.366632,
+            "user_ms": 0.774,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 0.0,
+            "peer": 0.0,
+            "total": 1.116764,
+            "first_ready": 0.020075,
+            "first_dispatched": 0.038862,
+            "a_dispatched": 0.16316,
+            "all_dispatched": 0.270596,
+            "allocation_ms": 0.839052,
+            "wake_ms": 0.04059,
+            "alloc_wait_start": 0.350785,
+            "alloc_done": 0.941235,
+            "first_output": 0.948912,
+            "last_output": 1.10192,
+            "user_ms": 0.347,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 1.0,
+            "peer": 0.0,
+            "total": 1.050078,
+            "first_ready": 0.021626,
+            "first_dispatched": 0.041755,
+            "a_dispatched": 0.136411,
+            "all_dispatched": 0.24265,
+            "allocation_ms": 0.467728,
+            "wake_ms": 0.04059,
+            "alloc_wait_start": 0.296969,
+            "alloc_done": 0.766539,
+            "first_output": 0.773671,
+            "last_output": 1.038005,
+            "user_ms": 0.0,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 2.0,
+            "peer": 0.0,
+            "total": 1.531434,
+            "first_ready": 0.021605,
+            "first_dispatched": 0.040061,
+            "a_dispatched": 0.135268,
+            "all_dispatched": 0.239735,
+            "allocation_ms": 1.100431,
+            "wake_ms": 0.04059,
+            "alloc_wait_start": 0.304881,
+            "alloc_done": 1.323079,
+            "first_output": 1.327703,
+            "last_output": 1.502219,
+            "user_ms": 1.005,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 0.0,
+            "peer": 2.0,
+            "total": 1.514311,
+            "first_ready": 0.022939,
+            "first_dispatched": 0.057421,
+            "a_dispatched": 0.143966,
+            "all_dispatched": 0.510876,
+            "allocation_ms": 1.165072,
+            "wake_ms": 0.045368,
+            "alloc_wait_start": 0.556649,
+            "alloc_done": 1.294917,
+            "first_output": 1.299712,
+            "last_output": 1.482853,
+            "user_ms": 0.563,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 0.0,
+            "peer": 0.0,
+            "total": 1.171326,
+            "first_ready": 0.02092,
+            "first_dispatched": 0.05255,
+            "a_dispatched": 0.180996,
+            "all_dispatched": 0.29498,
+            "allocation_ms": 0.86954,
+            "wake_ms": 0.041922,
+            "alloc_wait_start": 0.404828,
+            "alloc_done": 0.98788,
+            "first_output": 0.995418,
+            "last_output": 1.156759,
+            "user_ms": 0.238,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 1.0,
+            "peer": 0.0,
+            "total": 1.053794,
+            "first_ready": 0.023499,
+            "first_dispatched": 0.047789,
+            "a_dispatched": 0.136567,
+            "all_dispatched": 0.238186,
+            "allocation_ms": 0.457324,
+            "wake_ms": 0.041922,
+            "alloc_wait_start": 0.292319,
+            "alloc_done": 0.751341,
+            "first_output": 0.767513,
+            "last_output": 1.042081,
+            "user_ms": 0.693,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 2.0,
+            "peer": 0.0,
+            "total": 1.537296,
+            "first_ready": 0.025526,
+            "first_dispatched": 0.046337,
+            "a_dispatched": 0.137578,
+            "all_dispatched": 0.241644,
+            "allocation_ms": 1.109131,
+            "wake_ms": 0.041922,
+            "alloc_wait_start": 0.297557,
+            "alloc_done": 1.330499,
+            "first_output": 1.335097,
+            "last_output": 1.50912,
+            "user_ms": 1.005,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          },
+          {
+            "N": 65536.0,
+            "site": 0.0,
+            "peer": 2.0,
+            "total": 1.513843,
+            "first_ready": 0.024418,
+            "first_dispatched": 0.045101,
+            "a_dispatched": 0.133516,
+            "all_dispatched": 0.494736,
+            "allocation_ms": 1.173421,
+            "wake_ms": 0.043937,
+            "alloc_wait_start": 0.541357,
+            "alloc_done": 1.290704,
+            "first_output": 1.295594,
+            "last_output": 1.48119,
+            "user_ms": 0.839,
+            "system_ms": 0.0,
+            "minor_faults": 0.0
+          }
+        ],
+        "summary": {
+          "N": 65536.0,
+          "site": 0.5,
+          "peer": 0.0,
+          "total": 1.1532635,
+          "first_ready": 0.020996,
+          "first_dispatched": 0.038653,
+          "a_dispatched": 0.138522,
+          "all_dispatched": 0.25481750000000003,
+          "allocation_ms": 0.8568975,
+          "wake_ms": 0.039883,
+          "alloc_wait_start": 0.32294500000000004,
+          "alloc_done": 0.9645575,
+          "first_output": 0.972165,
+          "last_output": 1.131474,
+          "user_ms": 0.583,
+          "system_ms": 0.0,
+          "minor_faults": 0.0
+        },
+        "harness": {
+          "init_s": 0.377673502,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.007033116,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 0.001089639,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 0.006102494,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 0.001391181,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 0.0010668,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 0.001062572,
+              "status": "ok"
+            },
+            {
+              "i": 6,
+              "seconds": 0.001317798,
+              "status": "ok"
+            },
+            {
+              "i": 7,
+              "seconds": 0.001149685,
+              "status": "ok"
+            },
+            {
+              "i": 8,
+              "seconds": 0.001067668,
+              "status": "ok"
+            },
+            {
+              "i": 9,
+              "seconds": 0.001069456,
+              "status": "ok"
+            },
+            {
+              "i": 10,
+              "seconds": 0.001421574,
+              "status": "ok"
+            },
+            {
+              "i": 11,
+              "seconds": 0.001428457,
+              "status": "ok"
+            },
+            {
+              "i": 12,
+              "seconds": 0.001077489,
+              "status": "ok"
+            },
+            {
+              "i": 13,
+              "seconds": 0.00106149,
+              "status": "ok"
+            },
+            {
+              "i": 14,
+              "seconds": 0.001464583,
+              "status": "ok"
+            },
+            {
+              "i": 15,
+              "seconds": 0.001417079,
+              "status": "ok"
+            },
+            {
+              "i": 16,
+              "seconds": 0.001134537,
+              "status": "ok"
+            },
+            {
+              "i": 17,
+              "seconds": 0.001065961,
+              "status": "ok"
+            },
+            {
+              "i": 18,
+              "seconds": 0.001548773,
+              "status": "ok"
+            },
+            {
+              "i": 19,
+              "seconds": 0.001530587,
+              "status": "ok"
+            },
+            {
+              "i": 20,
+              "seconds": 0.001188539,
+              "status": "ok"
+            },
+            {
+              "i": 21,
+              "seconds": 0.001070333,
+              "status": "ok"
+            },
+            {
+              "i": 22,
+              "seconds": 0.001554436,
+              "status": "ok"
+            },
+            {
+              "i": 23,
+              "seconds": 0.001529685,
+              "status": "ok"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
