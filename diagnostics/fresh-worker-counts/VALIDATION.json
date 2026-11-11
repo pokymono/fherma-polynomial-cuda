@@ -1,0 +1,289 @@
+{
+  "official": false,
+  "local": {
+    "source_sha256": "28e0af85e422a0361d2c8cab56a0b0dfccdfd7896c2089c7ae369a5a6bcd1b98",
+    "source_files_sha256": {
+      "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+      "cpu_affinity.h": "162b9fe55ae3418d6df4b024ba57b2e68f3f95b8004da3cd3efa60f1a3f3df1c",
+      "CMakeLists.txt": "223eb06e48e8ef8e9bdb1bce4f924a1bb7601d45e94fdb82e28916ad1fc36f6d",
+      "solve.cu": "28e0af85e422a0361d2c8cab56a0b0dfccdfd7896c2089c7ae369a5a6bcd1b98",
+      "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+      "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+      "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503",
+      "output_worker.h": "25c24d15cc8f7f33d08cde3e1debd433fdfc3d032ea009870472cab22380bfbf",
+      "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb"
+    },
+    "binary_sha256": "ca8550cc4b2ccc8921ae9d4c0b216c17f9a2f6e9ece089e094106866cb916d8c",
+    "source": "/home/rishitshivam/work/fherma-polynomial/diagnostics/fresh-worker-counts/solve.cu",
+    "binary": "/home/rishitshivam/work/fherma-polynomial/build/fresh-worker-counts-local",
+    "hardware": "RTX 3050 Laptop, SM86",
+    "official": false,
+    "points": [
+      {
+        "N": 32768,
+        "W": 868,
+        "L": 28,
+        "directory": "fresh_n32768_w868",
+        "passed": 24,
+        "timings": {
+          "init_s": 1.882936115,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.002848255,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 0.002810665,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 0.002768706,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 0.002883862,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 0.0027602,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 0.002820603,
+              "status": "ok"
+            },
+            {
+              "i": 6,
+              "seconds": 0.002873924,
+              "status": "ok"
+            },
+            {
+              "i": 7,
+              "seconds": 0.002793111,
+              "status": "ok"
+            },
+            {
+              "i": 8,
+              "seconds": 0.002736967,
+              "status": "ok"
+            },
+            {
+              "i": 9,
+              "seconds": 0.002784897,
+              "status": "ok"
+            },
+            {
+              "i": 10,
+              "seconds": 0.002954676,
+              "status": "ok"
+            },
+            {
+              "i": 11,
+              "seconds": 0.002767945,
+              "status": "ok"
+            },
+            {
+              "i": 12,
+              "seconds": 0.002731076,
+              "status": "ok"
+            },
+            {
+              "i": 13,
+              "seconds": 0.002772083,
+              "status": "ok"
+            },
+            {
+              "i": 14,
+              "seconds": 0.002845089,
+              "status": "ok"
+            },
+            {
+              "i": 15,
+              "seconds": 0.002862031,
+              "status": "ok"
+            },
+            {
+              "i": 16,
+              "seconds": 0.002764628,
+              "status": "ok"
+            },
+            {
+              "i": 17,
+              "seconds": 0.002829931,
+              "status": "ok"
+            },
+            {
+              "i": 18,
+              "seconds": 0.002942552,
+              "status": "ok"
+            },
+            {
+              "i": 19,
+              "seconds": 0.002833988,
+              "status": "ok"
+            },
+            {
+              "i": 20,
+              "seconds": 0.002735063,
+              "status": "ok"
+            },
+            {
+              "i": 21,
+              "seconds": 0.002757274,
+              "status": "ok"
+            },
+            {
+              "i": 22,
+              "seconds": 0.002779787,
+              "status": "ok"
+            },
+            {
+              "i": 23,
+              "seconds": 0.002857814,
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      {
+        "N": 65536,
+        "W": 1747,
+        "L": 55,
+        "directory": "fresh_n65536_w1747",
+        "passed": 24,
+        "timings": {
+          "init_s": 0.349241366,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.008072349,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 0.008000915,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 0.008082028,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 0.008069474,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 0.008015723,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 0.008078891,
+              "status": "ok"
+            },
+            {
+              "i": 6,
+              "seconds": 0.008076857,
+              "status": "ok"
+            },
+            {
+              "i": 7,
+              "seconds": 0.008054666,
+              "status": "ok"
+            },
+            {
+              "i": 8,
+              "seconds": 0.008021534,
+              "status": "ok"
+            },
+            {
+              "i": 9,
+              "seconds": 0.008054356,
+              "status": "ok"
+            },
+            {
+              "i": 10,
+              "seconds": 0.008101334,
+              "status": "ok"
+            },
+            {
+              "i": 11,
+              "seconds": 0.008210278,
+              "status": "ok"
+            },
+            {
+              "i": 12,
+              "seconds": 0.008006025,
+              "status": "ok"
+            },
+            {
+              "i": 13,
+              "seconds": 0.008079272,
+              "status": "ok"
+            },
+            {
+              "i": 14,
+              "seconds": 0.008079202,
+              "status": "ok"
+            },
+            {
+              "i": 15,
+              "seconds": 0.008125088,
+              "status": "ok"
+            },
+            {
+              "i": 16,
+              "seconds": 0.008021183,
+              "status": "ok"
+            },
+            {
+              "i": 17,
+              "seconds": 0.008063182,
+              "status": "ok"
+            },
+            {
+              "i": 18,
+              "seconds": 0.008109489,
+              "status": "ok"
+            },
+            {
+              "i": 19,
+              "seconds": 0.008106403,
+              "status": "ok"
+            },
+            {
+              "i": 20,
+              "seconds": 0.007941223,
+              "status": "ok"
+            },
+            {
+              "i": 21,
+              "seconds": 0.008065547,
+              "status": "ok"
+            },
+            {
+              "i": 22,
+              "seconds": 0.008077178,
+              "status": "ok"
+            },
+            {
+              "i": 23,
+              "seconds": 0.008107064,
+              "status": "ok"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "limit": "Local host caps the 8/10-worker modes to7. Official runner validation is still required."
+}
