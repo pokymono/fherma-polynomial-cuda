@@ -1,0 +1,18 @@
+cmake_minimum_required(VERSION 3.24)
+if(NOT DEFINED CMAKE_CUDA_ARCHITECTURES)
+  set(CMAKE_CUDA_ARCHITECTURES native CACHE STRING "CUDA architectures")
+endif()
+project(fherma_solution LANGUAGES CXX CUDA)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CUDA_STANDARD 17)
+if(NOT CMAKE_BUILD_TYPE)
+  set(CMAKE_BUILD_TYPE Release)
+endif()
+add_executable(solution main.cpp solve.cu)
+target_compile_options(solution PRIVATE $<$<COMPILE_LANGUAGE:CUDA>:-O3>)
+
+find_package(Threads REQUIRED)
+target_link_libraries(solution PRIVATE Threads::Threads)
+
+find_package(CUDAToolkit REQUIRED)
+target_link_libraries(solution PRIVATE CUDA::cuda_driver)
