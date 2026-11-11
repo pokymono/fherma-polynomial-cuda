@@ -241,6 +241,20 @@
       "read_status": "Read MADV_POPULATE_WRITE, MADV_HUGEPAGE and error semantics.",
       "technique": "Populate writable pages of an existing owned allocation without a C++ store through a pointer outside vector size. Divide fully interior pages among existing workers, then use ordinary vector resize.",
       "application_or_limit": "v216 and fresh-output-prefault diagnostic. All work is inside each call. AWS did not show a total latency gain; official fresh-call validation is still pending. Failure of advice falls back to normal resize and is reported."
+    },
+    {
+      "title": "CUDA environment variables and work-queue aliasing",
+      "url": "https://docs.nvidia.com/cuda/cuda-programming-guide/05-appendices/environment-variables.html",
+      "read_status": "Read execution-variable sections for connection counts and queue sizes",
+      "technique": "Independent streams can acquire false dependencies if mapped to a shared work queue",
+      "application_or_limit": "v232 and external process-environment probes1/4/8/16/32/128; no substantial main gain. Within-process settings may take effect too late, so external process settings were separately tested."
+    },
+    {
+      "title": "CUDA stream memory operations",
+      "url": "https://docs.nvidia.com/cuda/cuda-driver-api/cuda_driver_api/group__CUDA__MEMOP.html",
+      "read_status": "Read32-bit write and batch-operation semantics and associated flags",
+      "technique": "Default stream write supplies a system-scope fence before publishing a completion value",
+      "application_or_limit": "v228 native output-publication graph nodes were exact but slower than existing event path. Additional-copy and release-store variants were also tested."
     }
   ],
   "evidence_boundary": "All candidate timings in this research record are development measurements. Only a separate official run can establish leaderboard performance. Inaccessible papers are explicitly marked.",
@@ -14563,11 +14577,34 @@
     },
     "evidence_boundary": "Development full-call timings and official unscored inner diagnostics remain separate. No ranked submission in this series."
   },
-  "latest_followup_utc": "2026-11-11T00:08:00Z",
+  "latest_followup_utc": "2026-11-11T01:50:00Z",
   "followup_206_209": {
     "v206": "Official unscored warm serial arithmetic 0.976912ms versus control0.991442ms; 3/3 outer cases, 162 measured inner samples. Idle timings variable.",
     "v207": "Direct runtime copies saved ~3\u20136us on AWS; all48 cases per config passed.",
     "v208": "Independent forward/inverse root formats all correct; full inverse table regressed ~18us or more.",
     "v209": "Exact tensor quotient allowed revisiting async CRT/carry fusion; first serial configs passed but were slower. Phase graph initially rejected two-node plans at initialization; corrected explicit accepted stage count and reran full exact main cases. No selected gain."
+  },
+  "followup_214_234": {
+    "evidence_boundary": "Every listed run is a source-paired local/AWS proxy unless explicitly identified as official. No ranked submission in this series.",
+    "official_fresh_allocation": "fresh-call-phases20/20 showed output-worker construction median0.8738645ms. Parallel page population then regressed total1.2911505 to1.6462915ms (10cases per mode).",
+    "official_placement": "fresh-output-site20/20: five caller-construction cases median1.058058ms; mixed worker placements slower. Standalone confirmation required and subsequently obtained.",
+    "official_standalone": "worker-dispatch-pipeline commitf5f73924a6d470a82abb75b79585c66373ebe191 run6af3c396698e99b16a808bff40/40, main1.009217ms andsmall0.353618ms. Ordinary vector construction on caller; existing GPU dispatch on joined worker. No repeated inner work.",
+    "official_gpu_milestones": "dispatch-gpu-phases20/20. Instrumented medianH2D0.709248ms, middle completes0.799472ms, lastoutput1.114992ms fromGPUstartup event. Its outer median1.183077ms is slower than the standalone candidate; do not mistake instrumentation for an unperturbed profile.",
+    "rejected": [
+      "DPX modular correction did not improve full-call time.",
+      "Natural ordered inputs lost to column-packed pipeline.",
+      "Alternate output constructors and non-temporal output stores regressed.",
+      "Persistent mapped tensor encoder had no spills but stalled on host loads and barriers; main2.3-4.1ms.",
+      "Complete gated graphs and grouped DMA waits regressed.",
+      "Software input copies achieved51GB/s in a large-buffer microprobe but2.4ms or worse in the first pipeline; one acquire gate reduced this to1.15-1.22ms, still slower.",
+      "Direct output publication via native memory operation, extra DMA or kernel gave no material gain.",
+      "Packed middle-lane layouts2/4 and direct read-only root loads gave no material gain.",
+      "CUDA queue count, stream creation order and stream count changes did not yield a substantial main-point gain."
+    ],
+    "small_gains": "Fused output widthB32I64 saved about7us with4copyworkers and14us with7 onAWS; not yet selected for a standalone official check.",
+    "in_progress": [
+      "Small-point inverse transpose fusion and output-width sweep.",
+      "Per-copy-worker progress publication in place of contended strip counters."
+    ]
   }
 }
