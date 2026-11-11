@@ -255,6 +255,20 @@
       "read_status": "Read32-bit write and batch-operation semantics and associated flags",
       "technique": "Default stream write supplies a system-scope fence before publishing a completion value",
       "application_or_limit": "v228 native output-publication graph nodes were exact but slower than existing event path. Additional-copy and release-store variants were also tested."
+    },
+    {
+      "title": "NVIDIA memory synchronization domains",
+      "url": "https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/memory-sync-domains.html",
+      "read_status": "Read the complete domain and cumulative-fence sections.",
+      "technique": "Separate remote writes from local arithmetic fences using explicit graph-node memory-domain attributes.",
+      "application_or_limit": "v242/v243 tested on a4-domain SM120 GPU. No useful full-call gain; CPU runtime/graph dependencies remain intact."
+    },
+    {
+      "title": "NVIDIA PTX store cache operators",
+      "url": "https://docs.nvidia.com/cuda/parallel-thread-execution/index.html#cache-operators",
+      "read_status": "Read store operator definitions, including write-through to system memory.",
+      "technique": "Compare default, write-through and streaming vector stores for mapped host output.",
+      "application_or_limit": "v245; compare full-call timing and exact results, not assumed cache semantics as a performance guarantee."
     }
   ],
   "evidence_boundary": "All candidate timings in this research record are development measurements. Only a separate official run can establish leaderboard performance. Inaccessible papers are explicitly marked.",
@@ -14577,7 +14591,7 @@
     },
     "evidence_boundary": "Development full-call timings and official unscored inner diagnostics remain separate. No ranked submission in this series."
   },
-  "latest_followup_utc": "2026-11-11T02:20:17.264265+00:00",
+  "latest_followup_utc": "2026-11-11T02:35:00.511094+00:00",
   "followup_206_209": {
     "v206": "Official unscored warm serial arithmetic 0.976912ms versus control0.991442ms; 3/3 outer cases, 162 measured inner samples. Idle timings variable.",
     "v207": "Direct runtime copies saved ~3\u20136us on AWS; all48 cases per config passed.",
@@ -14622,5 +14636,32 @@
       "v240_tail_node_order": "48 local exact and48 per AWS configuration. Same graph edges, different creation order: CPU4 control0.985601ms, kernels-first0.985079ms, copies-first0.9849885ms; CPU7 variants slightly slower. No selected change."
     },
     "next": "A full-call official check will compare the combined candidate with eight requested copy workers. The official host has12 physical cores, versus8 on AWS. A separate instrumented timeline is diagnostic only."
+  },
+  "followup_241_245": {
+    "evidence_boundary": "Full-call AWS development measurements and raw bandwidth probes are not official scores. Every completed sweep configuration passed48 exact polynomial cases; local modified paths passed48 each.",
+    "v241_inverse_geometry": "After serial output scheduling, the existing C16/F4 remains best:0.984037ms versus0.988652-0.998670ms for narrower blocks. No change selected.",
+    "v242_arithmetic_domain": "SM120 reports4 memory synchronization domains. Relocating all arithmetic to domain1 had no reliable gain. CPU7 order1,0,0,1 medians1.061891,1.061129,1.061788,1.060157ms with24 exact cases each.",
+    "v243_remote_output": "Direct mapped-host output uses aligned128-bit writes from shared repacking; only that communication kernel is placed in domain1. Explicit graph dependencies and CPU event waits are retained. With phase overlap and32 rows/CTA it reaches1.035760ms, still slower than DMA control0.986715ms. Serial mapped output1.146940ms. Memory domains alone did not fix the gap.",
+    "v244_output_width": "Widening interior strips to224 columns with32-column boundaries regressed: DMA1.074490ms versus0.989306ms control; direct output1.129059ms versus1.035788ms at64 interior columns.64/128 mapped output1.058279ms.",
+    "raw_output_bandwidth": {
+      "bytes": 14417920,
+      "DMA_GB_s": 56.635,
+      "best_SM_GB_s": 52.106,
+      "DMA_ms": 0.254576,
+      "best_SM_ms": 0.276704,
+      "verified_all_output_bytes": true,
+      "measurement": "CUDA-event transfer-only interval; cold device cache, warmed link;10 retained samples after4 warmups. Not a multiplication score."
+    },
+    "official_worker_count": {
+      "candidate": "candidates/caller-eight-workers",
+      "commit": "7c207701cdd138726de3a5f7eb95718d6c8f320a",
+      "run": "6af3d25a698e99b16a813b33",
+      "passed": 40,
+      "main_ms": 1.2838375,
+      "small_ms": 0.344469,
+      "decision": "Regressed; keep four workers."
+    },
+    "current_selected": "candidates/caller-fused-strips; official1.0024405ms main and0.3176965ms small. No ranked submission in this series.",
+    "v245_store_policy": "48 exact cases per config. Main default-store1.0362945ms, write-through1.0377505ms, streaming1.035227ms. No useful improvement and all slower than DMA output."
   }
 }

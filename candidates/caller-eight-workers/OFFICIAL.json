@@ -1,0 +1,962 @@
+{
+  "submission": {
+    "id": "6af3d13b698e99b16a813021",
+    "status": "received",
+    "commit": "7c207701cdd138726de3a5f7eb95718d6c8f320a",
+    "repo": "https://github.com/pokymono/fherma-polynomial-cuda",
+    "image": "fherma/cupqc@sha256:17b7ae721d6effe968f4c2ccf3876cde7a3a77df1eb3f28a1f41ea643a6fa802",
+    "language": "cpp",
+    "requires": [
+      {
+        "name": "gpu"
+      },
+      {
+        "name": "cuda",
+        "min": "12.8"
+      }
+    ],
+    "class": "gpu"
+  },
+  "jobs": [
+    {
+      "id": "6af3d13c698e99b16a81303a",
+      "status": "done",
+      "reason": "first",
+      "fanout": 1,
+      "points": 2,
+      "runners": [
+        "6aa6690fd4413d278e91947e"
+      ],
+      "challenge": null,
+      "created_at": "2026-11-11T02:21:48.136Z"
+    }
+  ],
+  "runs": [
+    {
+      "id": "6af3d25a698e99b16a813b33",
+      "job_id": "6af3d13c698e99b16a81303a",
+      "accept": null,
+      "status": "finished",
+      "runner": {
+        "id": "6aa6690fd4413d278e91947e",
+        "name": "fherma-gpu-rtx6000",
+        "reference": false,
+        "machine": {
+          "arch": "x86_64",
+          "cores": 24,
+          "memory_gb": 214,
+          "memory_cap_gb": 200,
+          "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition \u00b7 97887 MiB",
+          "gpu_memory_gb": 95.6,
+          "cpu": "Intel(R) Xeon(R) 6776P",
+          "kernel": "6.11.0-1016-nvidia",
+          "os": "linux"
+        }
+      },
+      "progress": "point 2 of 2 \u00b7 N65536-W1747 \u00b7 generating 20 case(s) \u00b7 2 warm-up first, never scored \u00b7 every result already known",
+      "cases": 40,
+      "passed": 40,
+      "unjudged": 0,
+      "verify": true,
+      "debug": false,
+      "points": [
+        {
+          "point": "N32768-W868",
+          "seeds": 20,
+          "passed": 20,
+          "unjudged": 0,
+          "lost": 0,
+          "seconds": {
+            "min": 0.00033665,
+            "median": 0.000344469,
+            "mean": 0.00034447795000000004,
+            "max": 0.000349968
+          },
+          "memory_mb": {
+            "min": 137.3,
+            "median": 137.3,
+            "max": 137.3
+          },
+          "metrics": {
+            "gpu_mem_mb": {
+              "min": 757,
+              "max": 757
+            },
+            "gpu_power_w": {
+              "min": 55.5,
+              "max": 55.5
+            },
+            "gpu_util_pct": {
+              "min": 3,
+              "max": 3
+            },
+            "gpu_mem_util_pct": {
+              "min": 0,
+              "max": 0
+            }
+          },
+          "stages": null,
+          "cases": [
+            {
+              "seed": 1,
+              "status": "ok",
+              "seconds": 0.000342928,
+              "memory_mb": 137.3,
+              "passed": true,
+              "encoding_s": null,
+              "encrypt_s": null,
+              "decrypt_s": null,
+              "decoding_s": null,
+              "result_level": null,
+              "ciphertexts_in": null,
+              "ciphertexts_out": null,
+              "note": null,
+              "output_sha": "8621a716baa0d514f80b62f537a58ff57cab38e739a3017263693d1861647539"
+            },
+            {
+              "seed": 9,
+              "status": "ok",
+              "seconds": 0.000342217,
+              "memory_mb": 137.3,
+              "passed": true,
+              "encoding_s": null,
+              "encrypt_s": null,
+              "decrypt_s": null,
+              "decoding_s": null,
+              "result_level": null,
+              "ciphertexts_in": null,
+              "ciphertexts_out": null,
+              "note": null,
+              "output_sha": "c43889defe8efdd9e0873e41100f1a9024c7f48a1cc72c4979bb762cd494846b"
+            },
+            {
+              "seed": 10,
+              "status": "ok",
+              "seconds": 0.000338453,
+              "memory_mb": 137.3,
+              "passed": true,
+              "encoding_s": null,
+              "encrypt_s": null,
+              "decrypt_s": null,
+              "decoding_s": null,
+              "result_level": null,
+              "ciphertexts_in": null,
+              "ciphertexts_out": null,
+              "note": null,
+              "output_sha": "db7dd98eae68ffb75431335154d1aad9c61590da1866f005f2992598b44d0f25"
+            },
+            {
+              "seed": 12,
+              "status": "ok",
+              "seconds": 0.000347473,
+              "memory_mb": 137.3,
+              "passed": true,
+              "encoding_s": null,
+              "encrypt_s": null,
+              "decrypt_s": null,
+              "decoding_s": null,
+              "result_level": null,
+              "ciphertexts_in": null,
+              "ciphertexts_out": null,
+              "note": null,
+              "output_sha": "7bc70f9254eeac870eb8e50361b42b88b6c7a1d2e37abc73288d775ec0959f0e"
+            },
+            {
+              "seed": 16,
+              "status": "ok",
+              "seconds": 0.000343224,
+              "memory_mb": 137.3,
+              "passed": true,
+              "encoding_s": null,
+              "encrypt_s": null,
+              "decrypt_s": null,
+              "decoding_s": null,
+              "result_level": null,
+              "ciphertexts_in": null,
+              "ciphertexts_out": null,
+              "note": null,
+              "output_sha": "d1be71c704cb2c521506da7393c183812ebc63dd35aa22f66109a9c32e65ae6a"
+            },
+            {
+              "seed": 21,
+              "status": "ok",
+              "seconds": 0.000342467,
+              "memory_mb": 137.3,
+              "passed": true,
+              "encoding_s": null,
+              "encrypt_s": null,
+              "decrypt_s": null,
+              "decoding_s": null,
+              "result_level": null,
+              "ciphertexts_in": null,
+              "ciphertexts_out": null,
+              "note": null,
+              "output_sha": "500005828a6a20b3f6d744cc57681b979e9b99ebfc363a8a5d63d9e8556ef700"
+            },
+            {
+              "seed": 26,
+              "status": "ok",
+              "seconds": 0.000338402,
+              "memory_mb": 137.3,
+              "passed": true,
+              "encoding_s": null,
+              "encrypt_s": null,
+              "decrypt_s": null,
+              "decoding_s": null,
+              "result_level": null,
+              "ciphertexts_in": null,
+              "ciphertexts_out": null,
+              "note": null,
+              "output_sha": "c4d17cbe4de2863be820f7edc4996aefea7bc807a6a6df8d7dbf6ed0ee6144e3"
+            },
+            {
+              "seed": 27,
+              "status": "ok",
+              "seconds": 0.000348425,
+              "memory_mb": 137.3,
+              "passed": true,
+              "encoding_s": null,
+              "encrypt_s": null,
+              "decrypt_s": null,
+              "decoding_s": null,
+              "result_level": null,
+              "ciphertexts_in": null,
+              "ciphertexts_out": null,
+              "note": null,
+              "output_sha": "4ef29c1830c11fc42a16588438360e9e807a762c8ac0600b3e0fd42bcb1dc80a"
+            },
+            {
+              "seed": 44,
+              "status": "ok",
+              "seconds": 0.000344313,
+              "memory_mb": 137.3,
+              "passed": true,
+              "encoding_s": null,
+              "encrypt_s": null,
+              "decrypt_s": null,
+              "decoding_s": null,
+              "result_level": null,
+              "ciphertexts_in": null,
+              "ciphertexts_out": null,
+              "note": null,
+              "output_sha": "c2b8743b143de5d320ae5dd8bd4ed9060bc9d879252218160e8234f8471e5040"
+            },
+            {
+              "seed": 49,
+              "status": "ok",
+              "seconds": 0.000344625,
+              "memory_mb": 137.3,
+              "passed": true,
+              "encoding_s": null,
+              "encrypt_s": null,
+              "decrypt_s": null,
+              "decoding_s": null,
+              "result_level": null,
+              "ciphertexts_in": null,
+              "ciphertexts_out": null,
+              "note": null,
+              "output_sha": "151d9a4633b212cf21571d3e03393af996415e2c2f955a5b0bb1ab3b380f8781"
+            },
+            {
+              "seed": 53,
+              "status": "ok",
+              "seconds": 0.000345457,
+              "memory_mb": 137.3,
+              "passed": true,
+              "encoding_s": null,
+              "encrypt_s": null,
+              "decrypt_s": null,
+              "decoding_s": null,
+              "result_level": null,
+              "ciphertexts_in": null,
+              "ciphertexts_out": null,
+              "note": null,
+              "output_sha": "c55d902d02d0584f3a7631e661aad9a5958f06b7b17cb408c56390b4bf54101a"
+            },
+            {
+              "seed": 56,
+              "status": "ok",
+              "seconds": 0.000349968,
+              "memory_mb": 137.3,
+              "passed": true,
+              "encoding_s": null,
+              "encrypt_s": null,
+              "decrypt_s": null,
+              "decoding_s": null,
+              "result_level": null,
+              "ciphertexts_in": null,
+              "ciphertexts_out": null,
+              "note": null,
+              "output_sha": "7a069d62022a6970171a6a2528501de3ddb81f91ec1339b8e5d47bf063453f4f"
+            },
+            {
+              "seed": 57,
+              "status": "ok",
+              "seconds": 0.000340304,
+              "memory_mb": 137.3,
+              "passed": true,
+              "encoding_s": null,
+              "encrypt_s": null,
+              "decrypt_s": null,
+              "decoding_s": null,
+              "result_level": null,
+              "ciphertexts_in": null,
+              "ciphertexts_out": null,
+              "note": null,
+              "output_sha": "204a653b2ee4aac9315427b01fd9556cfa1811ffcae2eaac42e176a7a6fc11ac"
+            },
+            {
+              "seed": 59,
+              "status": "ok",
+              "seconds": 0.000347225,
+              "memory_mb": 137.3,
+              "passed": true,
+              "encoding_s": null,
+              "encrypt_s": null,
+              "decrypt_s": null,
+              "decoding_s": null,
+              "result_level": null,
+              "ciphertexts_in": null,
+              "ciphertexts_out": null,
+              "note": null,
+              "output_sha": "efbfc353f2c954e55c793c56a09a6a31ecfff86428354ed57bcfdb444f649740"
+            },
+            {
+              "seed": 69,
+              "status": "ok",
+              "seconds": 0.000347333,
+              "memory_mb": 137.3,
+              "passed": true,
+              "encoding_s": null,
+              "encrypt_s": null,
+              "decrypt_s": null,
+              "decoding_s": null,
+              "result_level": null,
+              "ciphertexts_in": null,
+              "ciphertexts_out": null,
+              "note": null,
+              "output_sha": "d652c81a03cd81b211f27772e3af17d063451a27830de5fdebf07aa9569382ad"
+            },
+            {
+              "seed": 74,
+              "status": "ok",
+              "seconds": 0.000347864,
+              "memory_mb": 137.3,
+              "passed": true,
+              "encoding_s": null,
+              "encrypt_s": null,
+              "decrypt_s": null,
+              "decoding_s": null,
+              "result_level": null,
+              "ciphertexts_in": null,
+              "ciphertexts_out": null,
+              "note": null,
+              "output_sha": "9ecc6f0fab4d8747cf42a0251a5f180f0a87f6f635ff176ff546d7d080561c3e"
+            },
+            {
+              "seed": 76,
+              "status": "ok",
+              "seconds": 0.000343748,
+              "memory_mb": 137.3,
+              "passed": true,
+              "encoding_s": null,
+              "encrypt_s": null,
+              "decrypt_s": null,
+              "decoding_s": null,
+              "result_level": null,
+              "ciphertexts_in": null,
+              "ciphertexts_out": null,
+              "note": null,
+              "output_sha": "9ad29d2ac603be077c671e82bb93495f4f2f54b9cb67b679d20783d52af234f6"
+            },
+            {
+              "seed": 77,
+              "status": "ok",
+              "seconds": 0.00033665,
+              "memory_mb": 137.3,
+              "passed": true,
+              "encoding_s": null,
+              "encrypt_s": null,
+              "decrypt_s": null,
+              "decoding_s": null,
+              "result_level": null,
+              "ciphertexts_in": null,
+              "ciphertexts_out": null,
+              "note": null,
+              "output_sha": "79f6b5d9f8a2bb2f20415ec1849660dee802d663024a30a665d166b55194276f"
+            },
+            {
+              "seed": 88,
+              "status": "ok",
+              "seconds": 0.000349486,
+              "memory_mb": 137.3,
+              "passed": true,
+              "encoding_s": null,
+              "encrypt_s": null,
+              "decrypt_s": null,
+              "decoding_s": null,
+              "result_level": null,
+              "ciphertexts_in": null,
+              "ciphertexts_out": null,
+              "note": null,
+              "output_sha": "89a42dbe52573603423c4ca09e06fb5de688ad5950803419a79c649c4b2e00d5"
+            },
+            {
+              "seed": 93,
+              "status": "ok",
+              "seconds": 0.000348997,
+              "memory_mb": 137.3,
+              "passed": true,
+              "encoding_s": null,
+              "encrypt_s": null,
+              "decrypt_s": null,
+              "decoding_s": null,
+              "result_level": null,
+              "ciphertexts_in": null,
+              "ciphertexts_out": null,
+              "note": null,
+              "output_sha": "c4f1c66379469693a46a962781f37f254f71ee40ba8093e4a7c22c34a940eadd"
+            }
+          ]
+        },
+        {
+          "point": "N65536-W1747",
+          "seeds": 20,
+          "passed": 20,
+          "unjudged": 0,
+          "lost": 0,
+          "seconds": {
+            "min": 0.001083702,
+            "median": 0.0012838375,
+            "mean": 0.0012792347499999998,
+            "max": 0.001475437
+          },
+          "memory_mb": {
+            "min": 418,
+            "median": 418,
+            "max": 418
+          },
+          "metrics": {
+            "gpu_mem_mb": {
+              "min": 1033,
+              "max": 1033
+            },
+            "gpu_power_w": {
+              "min": 91.5,
+              "max": 91.5
+            },
+            "gpu_util_pct": {
+              "min": 6,
+              "max": 6
+            },
+            "gpu_mem_util_pct": {
+              "min": 1,
+              "max": 1
+            }
+          },
+          "stages": null,
+          "cases": [
+            {
+              "seed": 5,
+              "status": "ok",
+              "seconds": 0.001180854,
+              "memory_mb": 418,
+              "passed": true,
+              "encoding_s": null,
+              "encrypt_s": null,
+              "decrypt_s": null,
+              "decoding_s": null,
+              "result_level": null,
+              "ciphertexts_in": null,
+              "ciphertexts_out": null,
+              "note": null,
+              "output_sha": "b408cbfb597b4f4a7175da7d12de8e0a74efc9e06020c05b9f45e294c44b16b9"
+            },
+            {
+              "seed": 6,
+              "status": "ok",
+              "seconds": 0.00112132,
+              "memory_mb": 418,
+              "passed": true,
+              "encoding_s": null,
+              "encrypt_s": null,
+              "decrypt_s": null,
+              "decoding_s": null,
+              "result_level": null,
+              "ciphertexts_in": null,
+              "ciphertexts_out": null,
+              "note": null,
+              "output_sha": "b19dd739d0c6e0257b30327e12a0013309ade5f304ba5caf30db6a87f6b71f9a"
+            },
+            {
+              "seed": 24,
+              "status": "ok",
+              "seconds": 0.001410654,
+              "memory_mb": 418,
+              "passed": true,
+              "encoding_s": null,
+              "encrypt_s": null,
+              "decrypt_s": null,
+              "decoding_s": null,
+              "result_level": null,
+              "ciphertexts_in": null,
+              "ciphertexts_out": null,
+              "note": null,
+              "output_sha": "28cfc50e23781e06d00d63ac77e916499de439988511986fbe669c3eb5d54944"
+            },
+            {
+              "seed": 26,
+              "status": "ok",
+              "seconds": 0.001107246,
+              "memory_mb": 418,
+              "passed": true,
+              "encoding_s": null,
+              "encrypt_s": null,
+              "decrypt_s": null,
+              "decoding_s": null,
+              "result_level": null,
+              "ciphertexts_in": null,
+              "ciphertexts_out": null,
+              "note": null,
+              "output_sha": "2deb24a4e54fc22462f08b77b47af609bf99f7e741decd9231d2f7dc8e71f995"
+            },
+            {
+              "seed": 30,
+              "status": "ok",
+              "seconds": 0.001470178,
+              "memory_mb": 418,
+              "passed": true,
+              "encoding_s": null,
+              "encrypt_s": null,
+              "decrypt_s": null,
+              "decoding_s": null,
+              "result_level": null,
+              "ciphertexts_in": null,
+              "ciphertexts_out": null,
+              "note": null,
+              "output_sha": "dee057bce1eb07c1c87d763e128a7c27dada669dbee73a497cea3339f540f8e5"
+            },
+            {
+              "seed": 35,
+              "status": "ok",
+              "seconds": 0.001357854,
+              "memory_mb": 418,
+              "passed": true,
+              "encoding_s": null,
+              "encrypt_s": null,
+              "decrypt_s": null,
+              "decoding_s": null,
+              "result_level": null,
+              "ciphertexts_in": null,
+              "ciphertexts_out": null,
+              "note": null,
+              "output_sha": "143a34057e8d979cb58422f93ce660c46aad7e903b5326f7210671683436c152"
+            },
+            {
+              "seed": 36,
+              "status": "ok",
+              "seconds": 0.001193721,
+              "memory_mb": 418,
+              "passed": true,
+              "encoding_s": null,
+              "encrypt_s": null,
+              "decrypt_s": null,
+              "decoding_s": null,
+              "result_level": null,
+              "ciphertexts_in": null,
+              "ciphertexts_out": null,
+              "note": null,
+              "output_sha": "e14207cc13729b2178bc81ec93f43838e6672d1bd31ab05de7bcbb05dfae9c3f"
+            },
+            {
+              "seed": 38,
+              "status": "ok",
+              "seconds": 0.001268118,
+              "memory_mb": 418,
+              "passed": true,
+              "encoding_s": null,
+              "encrypt_s": null,
+              "decrypt_s": null,
+              "decoding_s": null,
+              "result_level": null,
+              "ciphertexts_in": null,
+              "ciphertexts_out": null,
+              "note": null,
+              "output_sha": "536bcec048c79c3ae27548fd91337355b9d06b977a54d686f2d16c28789c18a1"
+            },
+            {
+              "seed": 45,
+              "status": "ok",
+              "seconds": 0.001323222,
+              "memory_mb": 418,
+              "passed": true,
+              "encoding_s": null,
+              "encrypt_s": null,
+              "decrypt_s": null,
+              "decoding_s": null,
+              "result_level": null,
+              "ciphertexts_in": null,
+              "ciphertexts_out": null,
+              "note": null,
+              "output_sha": "946b40a11019408ca75f273d096d727cb329696839516debbcb135ad1bbe9aa7"
+            },
+            {
+              "seed": 46,
+              "status": "ok",
+              "seconds": 0.001178143,
+              "memory_mb": 418,
+              "passed": true,
+              "encoding_s": null,
+              "encrypt_s": null,
+              "decrypt_s": null,
+              "decoding_s": null,
+              "result_level": null,
+              "ciphertexts_in": null,
+              "ciphertexts_out": null,
+              "note": null,
+              "output_sha": "7ecdf9141f00c369052ca9429ac5020a60ebd0779e13d4a1cf5df00856bce93a"
+            },
+            {
+              "seed": 50,
+              "status": "ok",
+              "seconds": 0.001169832,
+              "memory_mb": 418,
+              "passed": true,
+              "encoding_s": null,
+              "encrypt_s": null,
+              "decrypt_s": null,
+              "decoding_s": null,
+              "result_level": null,
+              "ciphertexts_in": null,
+              "ciphertexts_out": null,
+              "note": null,
+              "output_sha": "fa5032c9a6065fe5a37ca5fdf571597e14e5cf09b5da090d88fe9fdc2f4bf44d"
+            },
+            {
+              "seed": 57,
+              "status": "ok",
+              "seconds": 0.001083702,
+              "memory_mb": 418,
+              "passed": true,
+              "encoding_s": null,
+              "encrypt_s": null,
+              "decrypt_s": null,
+              "decoding_s": null,
+              "result_level": null,
+              "ciphertexts_in": null,
+              "ciphertexts_out": null,
+              "note": null,
+              "output_sha": "f0bc5d1c59afd9a1e347914845ee3117181eca618576cbce67500d4cb43533c7"
+            },
+            {
+              "seed": 61,
+              "status": "ok",
+              "seconds": 0.001368873,
+              "memory_mb": 418,
+              "passed": true,
+              "encoding_s": null,
+              "encrypt_s": null,
+              "decrypt_s": null,
+              "decoding_s": null,
+              "result_level": null,
+              "ciphertexts_in": null,
+              "ciphertexts_out": null,
+              "note": null,
+              "output_sha": "aeb0d628d4937201b475027988e567a771f2574bed7fa26bc30dc73703ffcd39"
+            },
+            {
+              "seed": 64,
+              "status": "ok",
+              "seconds": 0.001414514,
+              "memory_mb": 418,
+              "passed": true,
+              "encoding_s": null,
+              "encrypt_s": null,
+              "decrypt_s": null,
+              "decoding_s": null,
+              "result_level": null,
+              "ciphertexts_in": null,
+              "ciphertexts_out": null,
+              "note": null,
+              "output_sha": "0151061a451197065949770fb47d3498270fe8b7859078213d650cbfeed72737"
+            },
+            {
+              "seed": 66,
+              "status": "ok",
+              "seconds": 0.00147445,
+              "memory_mb": 418,
+              "passed": true,
+              "encoding_s": null,
+              "encrypt_s": null,
+              "decrypt_s": null,
+              "decoding_s": null,
+              "result_level": null,
+              "ciphertexts_in": null,
+              "ciphertexts_out": null,
+              "note": null,
+              "output_sha": "71d7f2ede43a7058a6094f2ce026a705600aae17f59775c89297859e0e00f6ce"
+            },
+            {
+              "seed": 68,
+              "status": "ok",
+              "seconds": 0.001299557,
+              "memory_mb": 418,
+              "passed": true,
+              "encoding_s": null,
+              "encrypt_s": null,
+              "decrypt_s": null,
+              "decoding_s": null,
+              "result_level": null,
+              "ciphertexts_in": null,
+              "ciphertexts_out": null,
+              "note": null,
+              "output_sha": "2306d95467755a46839ccfeff0a3300a61bd7e9ad16974e6ced9d26c075a64ec"
+            },
+            {
+              "seed": 73,
+              "status": "ok",
+              "seconds": 0.001346229,
+              "memory_mb": 418,
+              "passed": true,
+              "encoding_s": null,
+              "encrypt_s": null,
+              "decrypt_s": null,
+              "decoding_s": null,
+              "result_level": null,
+              "ciphertexts_in": null,
+              "ciphertexts_out": null,
+              "note": null,
+              "output_sha": "0fc5845ab40ff4c78e023f8e8fb1b03128da4257a933aa3a444b331bee9704e9"
+            },
+            {
+              "seed": 81,
+              "status": "ok",
+              "seconds": 0.001162114,
+              "memory_mb": 418,
+              "passed": true,
+              "encoding_s": null,
+              "encrypt_s": null,
+              "decrypt_s": null,
+              "decoding_s": null,
+              "result_level": null,
+              "ciphertexts_in": null,
+              "ciphertexts_out": null,
+              "note": null,
+              "output_sha": "4d8ef55624a2e9130222179667674ddba5bbd28cd31a1257f79853d53cda46fb"
+            },
+            {
+              "seed": 95,
+              "status": "ok",
+              "seconds": 0.001178677,
+              "memory_mb": 418,
+              "passed": true,
+              "encoding_s": null,
+              "encrypt_s": null,
+              "decrypt_s": null,
+              "decoding_s": null,
+              "result_level": null,
+              "ciphertexts_in": null,
+              "ciphertexts_out": null,
+              "note": null,
+              "output_sha": "06d1186e8efd943272ae7e58318ccf030c28889e9768a2dcbeab68c049f501bd"
+            },
+            {
+              "seed": 99,
+              "status": "ok",
+              "seconds": 0.001475437,
+              "memory_mb": 418,
+              "passed": true,
+              "encoding_s": null,
+              "encrypt_s": null,
+              "decrypt_s": null,
+              "decoding_s": null,
+              "result_level": null,
+              "ciphertexts_in": null,
+              "ciphertexts_out": null,
+              "note": null,
+              "output_sha": "6dad753ac99b7b47edcf2889a5a5e792ccafe33c4d8bfe415c5a8e64c1662c24"
+            }
+          ]
+        }
+      ],
+      "init_s": 0.505926733,
+      "envelope_s": null,
+      "warmup_cases": 2,
+      "memory": [
+        {
+          "point": "N32768-W868",
+          "series": [
+            [
+              0,
+              3.5
+            ],
+            [
+              0.21,
+              5
+            ],
+            [
+              0.41,
+              83.4
+            ]
+          ]
+        },
+        {
+          "point": "N65536-W1747",
+          "series": [
+            [
+              0,
+              4.3
+            ],
+            [
+              0.2,
+              5.9
+            ],
+            [
+              0.4,
+              178.4
+            ],
+            [
+              0.61,
+              163.3
+            ],
+            [
+              0.81,
+              315.3
+            ],
+            [
+              1.01,
+              325.2
+            ]
+          ]
+        }
+      ],
+      "gpu": [
+        {
+          "point": "N32768-W868",
+          "series": [
+            [
+              0.04,
+              0,
+              31.6,
+              0
+            ],
+            [
+              0.22,
+              0,
+              31.6,
+              0
+            ],
+            [
+              0.43,
+              0,
+              31.6,
+              0
+            ],
+            [
+              0.62,
+              0,
+              34.4,
+              22
+            ],
+            [
+              0.78,
+              0,
+              42.4,
+              757
+            ],
+            [
+              0.97,
+              3,
+              50.3,
+              0
+            ],
+            [
+              1.14,
+              3,
+              55.5,
+              0
+            ]
+          ]
+        },
+        {
+          "point": "N65536-W1747",
+          "series": [
+            [
+              0.02,
+              0,
+              31.6,
+              0
+            ],
+            [
+              0.2,
+              0,
+              31.6,
+              0
+            ],
+            [
+              0.37,
+              0,
+              31.6,
+              0
+            ],
+            [
+              0.57,
+              0,
+              31.6,
+              22
+            ],
+            [
+              0.74,
+              0,
+              41.8,
+              559
+            ],
+            [
+              0.91,
+              2,
+              48,
+              1033
+            ],
+            [
+              1.08,
+              2,
+              50.9,
+              1033
+            ],
+            [
+              1.25,
+              6,
+              55.8,
+              1033
+            ],
+            [
+              1.45,
+              6,
+              61,
+              0
+            ],
+            [
+              1.62,
+              5,
+              91.5,
+              0
+            ],
+            [
+              1.79,
+              0,
+              91,
+              0
+            ]
+          ]
+        }
+      ],
+      "fhe_config": null,
+      "image": "fherma/cupqc@sha256:17b7ae721d6effe968f4c2ccf3876cde7a3a77df1eb3f28a1f41ea643a6fa802",
+      "started_at": "2026-11-11T02:26:36.789Z",
+      "finished_at": "2026-11-11T02:28:12.605Z",
+      "created_at": "2026-11-11T02:26:34.860Z",
+      "failure": null,
+      "build_log": "02:26:36 INFO memory capped at 1 GB: 1 GB declared, a tenth to spare\n02:26:36 DONE run 6af3d25a \u00b7 2 point(s) \u00b7 40 case(s)\n02:26:36 INFO solution runs in fherma/cupqc@sha256:17b7ae721d6effe968f4c2ccf3876cde7a3a77df1eb3f28a1f41ea643a6fa802\n02:26:36 INFO bundle runs in fherma/bundle@sha256:9eef998634a0ce718bf001b78415f63f7c3348c8486c38229bffcba0d5d73cc0\n02:26:36 STEP pulling images\n02:26:37 OK images ready\n02:26:37 STEP fetching the bundle\n02:26:37 OK bundle unpacked \u00b7 7 file(s)\n02:26:37 STEP cloning the solution\n02:26:38 OK https://github.com/pokymono/fherma-polynomial-cuda at 7c207701cdd1\n02:26:38 INFO harness written over the clone: fherma.h, main.cpp\n02:26:38 STEP building \u00b7 cmake -B build -DCMAKE_BUILD_TYPE=Release && cmake --build build\n02:26:38 OUT -- The CXX compiler identification is GNU 13.3.0\n02:26:39 OUT -- The CUDA compiler identification is NVIDIA 12.8.61\n02:26:39 OUT -- Detecting CXX compiler ABI info\n02:26:39 OUT -- Detecting CXX compiler ABI info - done\n02:26:39 OUT -- Check for working CXX compiler: /usr/bin/c++ - skipped\n02:26:39 OUT -- Detecting CXX compile features\n02:26:39 OUT -- Detecting CXX compile features - done\n02:26:39 OUT -- Detecting CUDA compiler ABI info\n02:26:43 OUT -- Detecting CUDA compiler ABI info - done\n02:26:43 OUT -- Check for working CUDA compiler: /usr/local/cuda/bin/nvcc - skipped\n02:26:43 OUT -- Detecting CUDA compile features\n02:26:43 OUT -- Detecting CUDA compile features - done\n02:26:43 OUT -- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n02:26:44 OUT -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n02:26:44 OUT -- Found Threads: TRUE  \n02:26:44 OUT -- Found CUDAToolkit: /usr/local/cuda/targets/x86_64-linux/include (found version \"12.8.61\") \n02:26:44 OUT -- Configuring done (5.2s)\n02:26:44 OUT -- Generating done (0.0s)\n02:26:44 OUT -- Build files have been written to: /solution/build\n02:26:44 OUT [ 33%] Building CXX object CMakeFiles/solution.dir/main.cpp.o\n02:26:44 OUT [ 66%] Building CUDA object CMakeFiles/solution.dir/solve.cu.o\n02:26:47 OUT /solution/solve.cu(309): warning #186-D: pointless comparison of unsigned integer with zero\n02:26:47 OUT               if(local<OPERAND_PARTIAL*rows)return (local/OPERAND_PARTIAL)*512+32 +local%OPERAND_PARTIAL;\n02:26:47 OUT                       ^\n02:26:47 OUT \n02:26:47 OUT Remark: The warnings can be suppressed with \"-diag-suppress <warning-number>\"\n02:26:47 OUT \n02:26:47 OUT /solution/solve.cu(309): warning #39-D: division by zero\n02:26:47 OUT               if(local<OPERAND_PARTIAL*rows)return (local/OPERAND_PARTIAL)*512+32 +local%OPERAND_PARTIAL;\n02:26:47 OUT                                                           ^\n02:26:47 OUT \n02:26:47 OUT /solution/solve.cu(309): warning #179-D: right operand of \"%\" is zero\n02:26:47 OUT               if(local<OPERAND_PARTIAL*rows)return (local/OPERAND_PARTIAL)*512+32 +local%OPERAND_PARTIAL;\n02:26:47 OUT                                                                                          ^\n02:26:47 OUT \n02:26:48 OUT /solution/solve.cu(309): warning #186-D: pointless comparison of unsigned integer with zero\n02:26:48 OUT               if(local<OPERAND_PARTIAL*rows)return (local/OPERAND_PARTIAL)*512+32 +local%OPERAND_PARTIAL;\n02:26:48 OUT                       ^\n02:26:48 OUT \n02:26:48 OUT Remark: The warnings can be suppressed with \"-diag-suppress <warning-number>\"\n02:26:48 OUT \n02:26:48 OUT /solution/solve.cu(309): warning #39-D: division by zero\n02:26:48 OUT               if(local<OPERAND_PARTIAL*rows)return (local/OPERAND_PARTIAL)*512+32 +local%OPERAND_PARTIAL;\n02:26:48 OUT                                                           ^\n02:26:48 OUT \n02:26:48 OUT /solution/solve.cu(309): warning #179-D: right operand of \"%\" is zero\n02:26:48 OUT               if(local<OPERAND_PARTIAL*rows)return (local/OPERAND_PARTIAL)*512+32 +local%OPERAND_PARTIAL;\n02:26:48 OUT                                                                                          ^\n02:26:48 OUT \n02:26:48 OUT /solution/solve.cu(2192): warning #177-D: variable \"chunk_words\" was declared but never referenced\n02:26:48 OUT               const size_t row_words=operand_columns(chunk)*s.limbs,chunk_words=rows*row_words;\n02:26:48 OUT                                                                     ^\n02:26:48 OUT \n02:26:48 OUT /solution/solve.cu(969): warning #177-D: variable \"stride\" was declared but never referenced\n02:26:48 OUT           uint32_t half=1u<<(log_length-1),stride=Rows>>log_length;\n02:26:48 OUT                                            ^\n02:26:48 OUT \n02:26:48 OUT /solution/solve.cu(1039): warning #177-D: variable \"stride\" was declared but never referenced\n02:26:48 OUT           uint32_t half=1u<<(log_length-1),stride=Rows>>log_length;\n02:26:48 OUT                                            ^\n02:26:48 OUT \n02:26:48 OUT /solution/solve.cu(1136): warning #177-D: variable \"stride\" was declared but never referenced\n02:26:48 OUT           uint32_t half=1u<<(log_length-1),stride=Rows>>log_length;\n02:26:48 OUT                                            ^\n02:26:48 OUT \n02:26:48 OUT /solution/solve.cu(779): warning #177-D: variable \"source_stride\" was declared but never referenced\n02:26:48 OUT       uint32_t source_stride=Encode&&raw_limbs?raw_limbs*4:k_bytes;\n02:26:48 OUT                ^\n02:26:48 OUT \n02:26:48 OUT /solution/solve.cu(780): warning #177-D: variable \"source\" was declared but never referenced\n02:26:48 OUT       const uint8_t* source=Encode&&raw_limbs?(blockIdx.z?raw_b:inputs):inputs+size_t(blockIdx.z)*n*k_bytes;\n02:26:48 OUT                      ^\n02:26:48 OUT \n02:26:48 OUT /solution/solve.cu(661): warning #177-D: variable \"source_stride\" was declared but never referenced\n02:26:48 OUT       uint32_t source_stride=Encode&&raw_limbs?raw_limbs*4:k_bytes;\n02:26:48 OUT                ^\n02:26:48 OUT \n02:26:48 OUT /solution/solve.cu(662): warning #177-D: variable \"source\" was declared but never referenced\n02:26:48 OUT       const uint8_t* source=Encode&&raw_limbs?(blockIdx.z?raw_b:inputs):inputs+size_t(blockIdx.z)*n*k_bytes;\n02:26:48 OUT                      ^\n02:26:48 OUT \n02:26:48 OUT /solution/solve.cu(558): warning #177-D: variable \"source_stride\" was declared but never referenced\n02:26:48 OUT       uint32_t source_stride=Encode&&raw_limbs?raw_limbs*4:k_bytes;\n02:26:48 OUT                ^\n02:26:48 OUT \n02:26:48 OUT /solution/solve.cu(559): warning #177-D: variable \"source\" was declared but never referenced\n02:26:48 OUT       const uint8_t* source=Encode&&raw_limbs?(blockIdx.z?raw_b:inputs):inputs+size_t(blockIdx.z)*n*k_bytes;\n02:26:48 OUT                      ^\n02:26:48 OUT \n02:26:56 OUT [100%] Linking CXX executable solution\n02:26:56 OUT [100%] Built target solution\n02:26:56 OK built\n02:26:56 STEP N32768-W868: generating 20 case(s) \u00b7 2 warm-up first, never scored \u00b7 every result already known\n02:27:10 STEP running the solution\n02:27:11 OUT crt_tma:enabled=0 rows=64 words=16 bytes=128 stride=30\n02:27:11 STEP verifying by digest\n02:27:11 INFO N32768-W868: 2 warm-up case(s) run first \u00b7 0.978 ms, 0.338 ms \u00b7 not scored\n02:27:11 OK N32768-W868: 20/20 \u00b7 337 \u00b5s \u2013 350 \u00b5s\n02:27:12 STEP N65536-W1747: generating 20 case(s) \u00b7 2 warm-up first, never scored \u00b7 every result already known\n02:28:09 STEP running the solution\n02:28:10 OUT crt_tma:enabled=0 rows=64 words=16 bytes=128 stride=59\n02:28:11 STEP verifying by digest\n02:28:11 INFO N65536-W1747: 2 warm-up case(s) run first \u00b7 2.15 ms, 1.16 ms \u00b7 not scored\n02:28:12 OK N65536-W1747: 20/20 \u00b7 1.08 ms \u2013 1.48 ms\n02:28:12 DONE 40 of 40 seeds passed"
+    }
+  ]
+}
