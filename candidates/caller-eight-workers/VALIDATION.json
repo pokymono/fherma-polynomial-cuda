@@ -1,0 +1,589 @@
+{
+  "ranked": false,
+  "local": {
+    "source_sha256": "ac2a78270483d870bec18984609d42264659c27c8417747ce08026f55fbb22e7",
+    "source_files_sha256": {
+      "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+      "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+      "CMakeLists.txt": "223eb06e48e8ef8e9bdb1bce4f924a1bb7601d45e94fdb82e28916ad1fc36f6d",
+      "solve.cu": "ac2a78270483d870bec18984609d42264659c27c8417747ce08026f55fbb22e7",
+      "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+      "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+      "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503",
+      "output_worker.h": "25c24d15cc8f7f33d08cde3e1debd433fdfc3d032ea009870472cab22380bfbf",
+      "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb"
+    },
+    "binary_sha256": "6c3b473b35241c574e291ca00e18de9719a0d87d197584743e43d02071c89725",
+    "source": "/home/rishitshivam/work/fherma-polynomial/candidates/caller-eight-workers/solve.cu",
+    "binary": "/home/rishitshivam/work/fherma-polynomial/build/caller-eight-workers-local",
+    "hardware": "RTX 3050 Laptop, SM86",
+    "official": false,
+    "points": [
+      {
+        "N": 32768,
+        "W": 868,
+        "L": 28,
+        "directory": "fresh_n32768_w868",
+        "passed": 24,
+        "timings": {
+          "init_s": 1.876294536,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.002814973,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 0.002810424,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 0.002759128,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 0.002799213,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 0.002840391,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 0.002847584,
+              "status": "ok"
+            },
+            {
+              "i": 6,
+              "seconds": 0.002843546,
+              "status": "ok"
+            },
+            {
+              "i": 7,
+              "seconds": 0.002765941,
+              "status": "ok"
+            },
+            {
+              "i": 8,
+              "seconds": 0.002761613,
+              "status": "ok"
+            },
+            {
+              "i": 9,
+              "seconds": 0.002790677,
+              "status": "ok"
+            },
+            {
+              "i": 10,
+              "seconds": 0.002784196,
+              "status": "ok"
+            },
+            {
+              "i": 11,
+              "seconds": 0.002876999,
+              "status": "ok"
+            },
+            {
+              "i": 12,
+              "seconds": 0.002750011,
+              "status": "ok"
+            },
+            {
+              "i": 13,
+              "seconds": 0.002816767,
+              "status": "ok"
+            },
+            {
+              "i": 14,
+              "seconds": 0.002846943,
+              "status": "ok"
+            },
+            {
+              "i": 15,
+              "seconds": 0.002959534,
+              "status": "ok"
+            },
+            {
+              "i": 16,
+              "seconds": 0.002735974,
+              "status": "ok"
+            },
+            {
+              "i": 17,
+              "seconds": 0.00276025,
+              "status": "ok"
+            },
+            {
+              "i": 18,
+              "seconds": 0.002780438,
+              "status": "ok"
+            },
+            {
+              "i": 19,
+              "seconds": 0.00277611,
+              "status": "ok"
+            },
+            {
+              "i": 20,
+              "seconds": 0.002737227,
+              "status": "ok"
+            },
+            {
+              "i": 21,
+              "seconds": 0.002745643,
+              "status": "ok"
+            },
+            {
+              "i": 22,
+              "seconds": 0.002827136,
+              "status": "ok"
+            },
+            {
+              "i": 23,
+              "seconds": 0.002811045,
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      {
+        "N": 65536,
+        "W": 1747,
+        "L": 55,
+        "directory": "fresh_n65536_w1747",
+        "passed": 24,
+        "timings": {
+          "init_s": 0.346834319,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.008102797,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 0.008117033,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 0.008098348,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 0.008105241,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 0.008226419,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 0.008094782,
+              "status": "ok"
+            },
+            {
+              "i": 6,
+              "seconds": 0.008110311,
+              "status": "ok"
+            },
+            {
+              "i": 7,
+              "seconds": 0.008066078,
+              "status": "ok"
+            },
+            {
+              "i": 8,
+              "seconds": 0.008091846,
+              "status": "ok"
+            },
+            {
+              "i": 9,
+              "seconds": 0.008015924,
+              "status": "ok"
+            },
+            {
+              "i": 10,
+              "seconds": 0.008074894,
+              "status": "ok"
+            },
+            {
+              "i": 11,
+              "seconds": 0.008101315,
+              "status": "ok"
+            },
+            {
+              "i": 12,
+              "seconds": 0.008281292,
+              "status": "ok"
+            },
+            {
+              "i": 13,
+              "seconds": 0.008178639,
+              "status": "ok"
+            },
+            {
+              "i": 14,
+              "seconds": 0.008058734,
+              "status": "ok"
+            },
+            {
+              "i": 15,
+              "seconds": 0.008049307,
+              "status": "ok"
+            },
+            {
+              "i": 16,
+              "seconds": 0.008052263,
+              "status": "ok"
+            },
+            {
+              "i": 17,
+              "seconds": 0.008018569,
+              "status": "ok"
+            },
+            {
+              "i": 18,
+              "seconds": 0.008092147,
+              "status": "ok"
+            },
+            {
+              "i": 19,
+              "seconds": 0.008018228,
+              "status": "ok"
+            },
+            {
+              "i": 20,
+              "seconds": 0.007965219,
+              "status": "ok"
+            },
+            {
+              "i": 21,
+              "seconds": 0.008101114,
+              "status": "ok"
+            },
+            {
+              "i": 22,
+              "seconds": 0.008046742,
+              "status": "ok"
+            },
+            {
+              "i": 23,
+              "seconds": 0.008057021,
+              "status": "ok"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "aws_build": {
+    "name": "caller-eight-workers",
+    "exit_code": 0,
+    "command": [
+      "/usr/local/cuda-12.8/bin/nvcc",
+      "-std=c++17",
+      "-O3",
+      "-arch=sm_120",
+      "-Xcompiler=-pthread",
+      "-Xptxas=-v",
+      "experiments/caller-eight-workers/main.cpp",
+      "experiments/caller-eight-workers/solve.cu",
+      "-lcuda",
+      "-o",
+      "build/caller-eight-workers"
+    ],
+    "source_files_sha256": {
+      "CMakeLists.txt": "223eb06e48e8ef8e9bdb1bce4f924a1bb7601d45e94fdb82e28916ad1fc36f6d",
+      "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+      "output_worker.h": "25c24d15cc8f7f33d08cde3e1debd433fdfc3d032ea009870472cab22380bfbf",
+      "solve.cu": "ac2a78270483d870bec18984609d42264659c27c8417747ce08026f55fbb22e7",
+      "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+      "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+      "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+      "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+      "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+    },
+    "binary_sha256": "50b0e4ffd8c43fbfc56db84003f866861c349ab3169f02901450e505139d2658"
+  },
+  "aws_runs": [
+    {
+      "name": "caller-eight-workers",
+      "N": 32768,
+      "W": 868,
+      "exit_code": 0,
+      "passed": 24,
+      "median_ms": 0.34765399999999996,
+      "random_median_ms": 0.34709450000000003,
+      "timings": {
+        "init_s": 0.1945004,
+        "cases": [
+          {
+            "i": 0,
+            "seconds": 0.000517255,
+            "status": "ok"
+          },
+          {
+            "i": 1,
+            "seconds": 0.000349772,
+            "status": "ok"
+          },
+          {
+            "i": 2,
+            "seconds": 0.000350762,
+            "status": "ok"
+          },
+          {
+            "i": 3,
+            "seconds": 0.000342567,
+            "status": "ok"
+          },
+          {
+            "i": 4,
+            "seconds": 0.000349062,
+            "status": "ok"
+          },
+          {
+            "i": 5,
+            "seconds": 0.000359206,
+            "status": "ok"
+          },
+          {
+            "i": 6,
+            "seconds": 0.000363698,
+            "status": "ok"
+          },
+          {
+            "i": 7,
+            "seconds": 0.000366911,
+            "status": "ok"
+          },
+          {
+            "i": 8,
+            "seconds": 0.000347014,
+            "status": "ok"
+          },
+          {
+            "i": 9,
+            "seconds": 0.00035055,
+            "status": "ok"
+          },
+          {
+            "i": 10,
+            "seconds": 0.000337269,
+            "status": "ok"
+          },
+          {
+            "i": 11,
+            "seconds": 0.000333461,
+            "status": "ok"
+          },
+          {
+            "i": 12,
+            "seconds": 0.000348133,
+            "status": "ok"
+          },
+          {
+            "i": 13,
+            "seconds": 0.000346811,
+            "status": "ok"
+          },
+          {
+            "i": 14,
+            "seconds": 0.000351885,
+            "status": "ok"
+          },
+          {
+            "i": 15,
+            "seconds": 0.000346256,
+            "status": "ok"
+          },
+          {
+            "i": 16,
+            "seconds": 0.000347175,
+            "status": "ok"
+          },
+          {
+            "i": 17,
+            "seconds": 0.000341535,
+            "status": "ok"
+          },
+          {
+            "i": 18,
+            "seconds": 0.00034896,
+            "status": "ok"
+          },
+          {
+            "i": 19,
+            "seconds": 0.000345545,
+            "status": "ok"
+          },
+          {
+            "i": 20,
+            "seconds": 0.000360954,
+            "status": "ok"
+          },
+          {
+            "i": 21,
+            "seconds": 0.00034505,
+            "status": "ok"
+          },
+          {
+            "i": 22,
+            "seconds": 0.000332984,
+            "status": "ok"
+          },
+          {
+            "i": 23,
+            "seconds": 0.000328235,
+            "status": "ok"
+          }
+        ]
+      },
+      "binary_sha256": "50b0e4ffd8c43fbfc56db84003f866861c349ab3169f02901450e505139d2658"
+    },
+    {
+      "name": "caller-eight-workers",
+      "N": 65536,
+      "W": 1747,
+      "exit_code": 0,
+      "passed": 24,
+      "median_ms": 1.0501465,
+      "random_median_ms": 1.0501465,
+      "timings": {
+        "init_s": 0.379461662,
+        "cases": [
+          {
+            "i": 0,
+            "seconds": 0.001604555,
+            "status": "ok"
+          },
+          {
+            "i": 1,
+            "seconds": 0.001052254,
+            "status": "ok"
+          },
+          {
+            "i": 2,
+            "seconds": 0.001045466,
+            "status": "ok"
+          },
+          {
+            "i": 3,
+            "seconds": 0.001050066,
+            "status": "ok"
+          },
+          {
+            "i": 4,
+            "seconds": 0.001045045,
+            "status": "ok"
+          },
+          {
+            "i": 5,
+            "seconds": 0.001049985,
+            "status": "ok"
+          },
+          {
+            "i": 6,
+            "seconds": 0.001053756,
+            "status": "ok"
+          },
+          {
+            "i": 7,
+            "seconds": 0.001050187,
+            "status": "ok"
+          },
+          {
+            "i": 8,
+            "seconds": 0.001109343,
+            "status": "ok"
+          },
+          {
+            "i": 9,
+            "seconds": 0.001050106,
+            "status": "ok"
+          },
+          {
+            "i": 10,
+            "seconds": 0.001043718,
+            "status": "ok"
+          },
+          {
+            "i": 11,
+            "seconds": 0.001052251,
+            "status": "ok"
+          },
+          {
+            "i": 12,
+            "seconds": 0.001048038,
+            "status": "ok"
+          },
+          {
+            "i": 13,
+            "seconds": 0.00104841,
+            "status": "ok"
+          },
+          {
+            "i": 14,
+            "seconds": 0.001049585,
+            "status": "ok"
+          },
+          {
+            "i": 15,
+            "seconds": 0.001049761,
+            "status": "ok"
+          },
+          {
+            "i": 16,
+            "seconds": 0.00105718,
+            "status": "ok"
+          },
+          {
+            "i": 17,
+            "seconds": 0.001050793,
+            "status": "ok"
+          },
+          {
+            "i": 18,
+            "seconds": 0.001049656,
+            "status": "ok"
+          },
+          {
+            "i": 19,
+            "seconds": 0.001052088,
+            "status": "ok"
+          },
+          {
+            "i": 20,
+            "seconds": 0.001048433,
+            "status": "ok"
+          },
+          {
+            "i": 21,
+            "seconds": 0.001058756,
+            "status": "ok"
+          },
+          {
+            "i": 22,
+            "seconds": 0.001050427,
+            "status": "ok"
+          },
+          {
+            "i": 23,
+            "seconds": 0.001050806,
+            "status": "ok"
+          }
+        ]
+      },
+      "binary_sha256": "50b0e4ffd8c43fbfc56db84003f866861c349ab3169f02901450e505139d2658"
+    }
+  ]
+}

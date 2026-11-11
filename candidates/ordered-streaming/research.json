@@ -14577,7 +14577,7 @@
     },
     "evidence_boundary": "Development full-call timings and official unscored inner diagnostics remain separate. No ranked submission in this series."
   },
-  "latest_followup_utc": "2026-11-11T01:50:00Z",
+  "latest_followup_utc": "2026-11-11T02:20:17.264265+00:00",
   "followup_206_209": {
     "v206": "Official unscored warm serial arithmetic 0.976912ms versus control0.991442ms; 3/3 outer cases, 162 measured inner samples. Idle timings variable.",
     "v207": "Direct runtime copies saved ~3\u20136us on AWS; all48 cases per config passed.",
@@ -14601,10 +14601,26 @@
       "Packed middle-lane layouts2/4 and direct read-only root loads gave no material gain.",
       "CUDA queue count, stream creation order and stream count changes did not yield a substantial main-point gain."
     ],
-    "small_gains": "Fused output widthB32I64 saved about7us with4copyworkers and14us with7 onAWS; not yet selected for a standalone official check.",
-    "in_progress": [
-      "Small-point inverse transpose fusion and output-width sweep.",
-      "Per-copy-worker progress publication in place of contended strip counters."
-    ]
+    "small_gains": "B32I64 output strips and the small-point inverse transpose fusion were combined with caller output construction. The standalone official result is recorded in followup_235_240.",
+    "in_progress": []
+  },
+  "followup_235_240": {
+    "evidence_boundary": "Local RTX3050 and AWS SM120 full-call proxy timings are separate from the official standalone result. No ranked submission in this series.",
+    "official_standalone": {
+      "candidate": "candidates/caller-fused-strips",
+      "commit": "5ea50f9ad364572a88a6fd175e9d80d956b7a324",
+      "run": "6af3cd14698e99b16a80f3ee",
+      "passed": 40,
+      "main_median_ms": 1.0024405,
+      "small_median_ms": 0.3176965
+    },
+    "results": {
+      "v235_whole_coefficient_encoder": "48 exact per AWS configuration; mapped host loading around1.10-1.12ms at CPU7 and device input around1.071ms. Neither beats the control.",
+      "v236_coarse_input_gates": "48 exact per AWS configuration. Coarse graph readiness preserved separate copies but was still around1.138-1.146ms at CPU7 versus control1.07084ms.",
+      "v237_238_input_graphs": "48 exact per AWS configuration. Joining readiness in graphs or merging copy and compute into one input graph did not improve the standalone proxy. Single1Join1 about1.106-1.109ms at CPU7.",
+      "v239_stream_priorities": "48 local exact and48 per AWS configuration. Baseline0.985732ms CPU4, priorities1/2/3 0.986681/0.986294/0.985732ms. No material improvement.",
+      "v240_tail_node_order": "48 local exact and48 per AWS configuration. Same graph edges, different creation order: CPU4 control0.985601ms, kernels-first0.985079ms, copies-first0.9849885ms; CPU7 variants slightly slower. No selected change."
+    },
+    "next": "A full-call official check will compare the combined candidate with eight requested copy workers. The official host has12 physical cores, versus8 on AWS. A separate instrumented timeline is diagnostic only."
   }
 }
