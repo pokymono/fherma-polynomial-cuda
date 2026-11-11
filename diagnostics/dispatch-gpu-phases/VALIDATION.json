@@ -1,0 +1,1487 @@
+{
+  "ranked": false,
+  "local": {
+    "source_sha256": "668fff3f19ea1ef5c37d40a0c260eea9ca8a65a1110e03e2879ddb9d499eae81",
+    "source_files_sha256": {
+      "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+      "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+      "CMakeLists.txt": "223eb06e48e8ef8e9bdb1bce4f924a1bb7601d45e94fdb82e28916ad1fc36f6d",
+      "solve.cu": "668fff3f19ea1ef5c37d40a0c260eea9ca8a65a1110e03e2879ddb9d499eae81",
+      "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+      "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+      "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503",
+      "output_worker.h": "25c24d15cc8f7f33d08cde3e1debd433fdfc3d032ea009870472cab22380bfbf",
+      "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb"
+    },
+    "binary_sha256": "711b82587f37aa3ccec3b8b933b8f69a6c890652ce947d9650a73ba460efd364",
+    "source": "/home/rishitshivam/work/fherma-polynomial/diagnostics/dispatch-gpu-phases/solve.cu",
+    "binary": "/home/rishitshivam/work/fherma-polynomial/build/dispatch-gpu-phases-local",
+    "hardware": "RTX 3050 Laptop, SM86",
+    "official": false,
+    "points": [
+      {
+        "N": 32768,
+        "W": 868,
+        "L": 28,
+        "directory": "fresh_n32768_w868",
+        "passed": 24,
+        "timings": {
+          "init_s": 1.877518572,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.002907526,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 0.002675721,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 0.0026427,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 0.002683035,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 0.00264299,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 0.002730094,
+              "status": "ok"
+            },
+            {
+              "i": 6,
+              "seconds": 0.002724533,
+              "status": "ok"
+            },
+            {
+              "i": 7,
+              "seconds": 0.002667656,
+              "status": "ok"
+            },
+            {
+              "i": 8,
+              "seconds": 0.002638401,
+              "status": "ok"
+            },
+            {
+              "i": 9,
+              "seconds": 0.002689126,
+              "status": "ok"
+            },
+            {
+              "i": 10,
+              "seconds": 0.002753366,
+              "status": "ok"
+            },
+            {
+              "i": 11,
+              "seconds": 0.002674879,
+              "status": "ok"
+            },
+            {
+              "i": 12,
+              "seconds": 0.002646096,
+              "status": "ok"
+            },
+            {
+              "i": 13,
+              "seconds": 0.002634844,
+              "status": "ok"
+            },
+            {
+              "i": 14,
+              "seconds": 0.002652317,
+              "status": "ok"
+            },
+            {
+              "i": 15,
+              "seconds": 0.002664851,
+              "status": "ok"
+            },
+            {
+              "i": 16,
+              "seconds": 0.002662286,
+              "status": "ok"
+            },
+            {
+              "i": 17,
+              "seconds": 0.002637059,
+              "status": "ok"
+            },
+            {
+              "i": 18,
+              "seconds": 0.002695418,
+              "status": "ok"
+            },
+            {
+              "i": 19,
+              "seconds": 0.002711859,
+              "status": "ok"
+            },
+            {
+              "i": 20,
+              "seconds": 0.002744571,
+              "status": "ok"
+            },
+            {
+              "i": 21,
+              "seconds": 0.002727629,
+              "status": "ok"
+            },
+            {
+              "i": 22,
+              "seconds": 0.002631168,
+              "status": "ok"
+            },
+            {
+              "i": 23,
+              "seconds": 0.002641417,
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      {
+        "N": 65536,
+        "W": 1747,
+        "L": 55,
+        "directory": "fresh_n65536_w1747",
+        "passed": 24,
+        "timings": {
+          "init_s": 0.35086515,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.008129024,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 0.008237558,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 0.008098858,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 0.008391187,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 0.008253248,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 0.008107384,
+              "status": "ok"
+            },
+            {
+              "i": 6,
+              "seconds": 0.008177676,
+              "status": "ok"
+            },
+            {
+              "i": 7,
+              "seconds": 0.008118465,
+              "status": "ok"
+            },
+            {
+              "i": 8,
+              "seconds": 0.008060356,
+              "status": "ok"
+            },
+            {
+              "i": 9,
+              "seconds": 0.00812655,
+              "status": "ok"
+            },
+            {
+              "i": 10,
+              "seconds": 0.008050397,
+              "status": "ok"
+            },
+            {
+              "i": 11,
+              "seconds": 0.008204716,
+              "status": "ok"
+            },
+            {
+              "i": 12,
+              "seconds": 0.008065375,
+              "status": "ok"
+            },
+            {
+              "i": 13,
+              "seconds": 0.008168929,
+              "status": "ok"
+            },
+            {
+              "i": 14,
+              "seconds": 0.008061137,
+              "status": "ok"
+            },
+            {
+              "i": 15,
+              "seconds": 0.008180511,
+              "status": "ok"
+            },
+            {
+              "i": 16,
+              "seconds": 0.008097846,
+              "status": "ok"
+            },
+            {
+              "i": 17,
+              "seconds": 0.008068921,
+              "status": "ok"
+            },
+            {
+              "i": 18,
+              "seconds": 0.008082678,
+              "status": "ok"
+            },
+            {
+              "i": 19,
+              "seconds": 0.008127421,
+              "status": "ok"
+            },
+            {
+              "i": 20,
+              "seconds": 0.008012336,
+              "status": "ok"
+            },
+            {
+              "i": 21,
+              "seconds": 0.008119386,
+              "status": "ok"
+            },
+            {
+              "i": 22,
+              "seconds": 0.008064934,
+              "status": "ok"
+            },
+            {
+              "i": 23,
+              "seconds": 0.008134305,
+              "status": "ok"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "aws": {
+    "official": false,
+    "session": "fherma-20261110-204339",
+    "hardware": "AWS g7e.4xlarge SM120 CUDA12.8, 8 physical CPU cores",
+    "builds": [
+      {
+        "name": "dispatch-gpu-phases-cpu4",
+        "command": [
+          "/usr/local/cuda-12.8/bin/nvcc",
+          "-std=c++17",
+          "-O3",
+          "-arch=sm_120",
+          "-Xcompiler=-pthread",
+          "-DHOST_COPY_LANES=4",
+          "diagnostics/dispatch-gpu-phases/main.cpp",
+          "diagnostics/dispatch-gpu-phases/solve.cu",
+          "-lcuda",
+          "-o",
+          "build/dispatch-gpu-phases-cpu4"
+        ],
+        "exit_code": 0,
+        "source_files_sha256": {
+          "CMakeLists.txt": "223eb06e48e8ef8e9bdb1bce4f924a1bb7601d45e94fdb82e28916ad1fc36f6d",
+          "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+          "output_worker.h": "25c24d15cc8f7f33d08cde3e1debd433fdfc3d032ea009870472cab22380bfbf",
+          "solve.cu": "668fff3f19ea1ef5c37d40a0c260eea9ca8a65a1110e03e2879ddb9d499eae81",
+          "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+          "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+          "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+          "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+          "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+        },
+        "binary_sha256": "026ef21d7888304592a0bd3c6b0b3dee9caabdfffd1b2c26a7c7298cffc40e06"
+      },
+      {
+        "name": "dispatch-gpu-phases-cpu7",
+        "command": [
+          "/usr/local/cuda-12.8/bin/nvcc",
+          "-std=c++17",
+          "-O3",
+          "-arch=sm_120",
+          "-Xcompiler=-pthread",
+          "-DHOST_COPY_LANES=7",
+          "diagnostics/dispatch-gpu-phases/main.cpp",
+          "diagnostics/dispatch-gpu-phases/solve.cu",
+          "-lcuda",
+          "-o",
+          "build/dispatch-gpu-phases-cpu7"
+        ],
+        "exit_code": 0,
+        "source_files_sha256": {
+          "CMakeLists.txt": "223eb06e48e8ef8e9bdb1bce4f924a1bb7601d45e94fdb82e28916ad1fc36f6d",
+          "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+          "output_worker.h": "25c24d15cc8f7f33d08cde3e1debd433fdfc3d032ea009870472cab22380bfbf",
+          "solve.cu": "668fff3f19ea1ef5c37d40a0c260eea9ca8a65a1110e03e2879ddb9d499eae81",
+          "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+          "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+          "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+          "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+          "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+        },
+        "binary_sha256": "0d40698e50348c6784bbb328fa5d92a088ec07cff9ca8850be4d907c5b77d025"
+      }
+    ],
+    "runs": [
+      {
+        "name": "dispatch-gpu-phases-cpu4",
+        "N": 32768,
+        "W": 868,
+        "passed": 24,
+        "phases": [],
+        "summary": {},
+        "harness": {
+          "init_s": 0.313477673,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.001733968,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 0.00033532,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 0.000329155,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 0.000338359,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 0.000330099,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 0.000349368,
+              "status": "ok"
+            },
+            {
+              "i": 6,
+              "seconds": 0.000324208,
+              "status": "ok"
+            },
+            {
+              "i": 7,
+              "seconds": 0.000334028,
+              "status": "ok"
+            },
+            {
+              "i": 8,
+              "seconds": 0.000333977,
+              "status": "ok"
+            },
+            {
+              "i": 9,
+              "seconds": 0.000343757,
+              "status": "ok"
+            },
+            {
+              "i": 10,
+              "seconds": 0.000333256,
+              "status": "ok"
+            },
+            {
+              "i": 11,
+              "seconds": 0.000352681,
+              "status": "ok"
+            },
+            {
+              "i": 12,
+              "seconds": 0.000331111,
+              "status": "ok"
+            },
+            {
+              "i": 13,
+              "seconds": 0.000344568,
+              "status": "ok"
+            },
+            {
+              "i": 14,
+              "seconds": 0.000331467,
+              "status": "ok"
+            },
+            {
+              "i": 15,
+              "seconds": 0.000349968,
+              "status": "ok"
+            },
+            {
+              "i": 16,
+              "seconds": 0.000334135,
+              "status": "ok"
+            },
+            {
+              "i": 17,
+              "seconds": 0.000346206,
+              "status": "ok"
+            },
+            {
+              "i": 18,
+              "seconds": 0.000330176,
+              "status": "ok"
+            },
+            {
+              "i": 19,
+              "seconds": 0.000321725,
+              "status": "ok"
+            },
+            {
+              "i": 20,
+              "seconds": 0.000322741,
+              "status": "ok"
+            },
+            {
+              "i": 21,
+              "seconds": 0.00033332,
+              "status": "ok"
+            },
+            {
+              "i": 22,
+              "seconds": 0.000325376,
+              "status": "ok"
+            },
+            {
+              "i": 23,
+              "seconds": 0.000331976,
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      {
+        "name": "dispatch-gpu-phases-cpu4",
+        "N": 65536,
+        "W": 1747,
+        "passed": 24,
+        "phases": [
+          {
+            "total": 2.228294,
+            "allocation": 0.439904,
+            "allocation_done": 0.469625,
+            "dispatch_done": 1.868464,
+            "A_high": 0.929728,
+            "H2D": 1.785344,
+            "B_high": 1.80976,
+            "middle": 1.849376,
+            "output_first": 1.888736,
+            "output_last": 2.168288
+          },
+          {
+            "total": 1.000252,
+            "allocation": 0.432342,
+            "allocation_done": 0.440678,
+            "dispatch_done": 0.461078,
+            "A_high": 0.57808,
+            "H2D": 0.576128,
+            "B_high": 0.613408,
+            "middle": 0.652832,
+            "output_first": 0.68976,
+            "output_last": 0.965696
+          },
+          {
+            "total": 1.000456,
+            "allocation": 0.440296,
+            "allocation_done": 0.448579,
+            "dispatch_done": 0.450424,
+            "A_high": 0.57536,
+            "H2D": 0.573408,
+            "B_high": 0.60944,
+            "middle": 0.648928,
+            "output_first": 0.68592,
+            "output_last": 0.966976
+          },
+          {
+            "total": 0.994372,
+            "allocation": 0.418058,
+            "allocation_done": 0.424772,
+            "dispatch_done": 0.446096,
+            "A_high": 0.571424,
+            "H2D": 0.570432,
+            "B_high": 0.60736,
+            "middle": 0.646784,
+            "output_first": 0.682816,
+            "output_last": 0.960736
+          },
+          {
+            "total": 0.991509,
+            "allocation": 0.452139,
+            "allocation_done": 0.460215,
+            "dispatch_done": 0.469298,
+            "A_high": 0.571552,
+            "H2D": 0.569696,
+            "B_high": 0.605792,
+            "middle": 0.645216,
+            "output_first": 0.68224,
+            "output_last": 0.95808
+          },
+          {
+            "total": 0.995035,
+            "allocation": 0.441427,
+            "allocation_done": 0.448645,
+            "dispatch_done": 0.4523,
+            "A_high": 0.571712,
+            "H2D": 0.57072,
+            "B_high": 0.607424,
+            "middle": 0.646848,
+            "output_first": 0.685024,
+            "output_last": 0.964864
+          },
+          {
+            "total": 1.000316,
+            "allocation": 0.446485,
+            "allocation_done": 0.454795,
+            "dispatch_done": 0.464432,
+            "A_high": 0.574272,
+            "H2D": 0.57328,
+            "B_high": 0.609472,
+            "middle": 0.648896,
+            "output_first": 0.687328,
+            "output_last": 0.96688
+          },
+          {
+            "total": 0.99041,
+            "allocation": 0.441677,
+            "allocation_done": 0.447813,
+            "dispatch_done": 0.450501,
+            "A_high": 0.570016,
+            "H2D": 0.569024,
+            "B_high": 0.605728,
+            "middle": 0.645152,
+            "output_first": 0.682176,
+            "output_last": 0.957984
+          },
+          {
+            "total": 0.993128,
+            "allocation": 0.457529,
+            "allocation_done": 0.463948,
+            "dispatch_done": 0.466849,
+            "A_high": 0.571456,
+            "H2D": 0.57024,
+            "B_high": 0.605696,
+            "middle": 0.64512,
+            "output_first": 0.6832,
+            "output_last": 0.961088
+          },
+          {
+            "total": 0.990999,
+            "allocation": 0.43562,
+            "allocation_done": 0.442704,
+            "dispatch_done": 0.443433,
+            "A_high": 0.571296,
+            "H2D": 0.570336,
+            "B_high": 0.609216,
+            "middle": 0.648768,
+            "output_first": 0.684672,
+            "output_last": 0.960512
+          },
+          {
+            "total": 0.993647,
+            "allocation": 0.447966,
+            "allocation_done": 0.455386,
+            "dispatch_done": 0.457227,
+            "A_high": 0.570976,
+            "H2D": 0.569696,
+            "B_high": 0.607072,
+            "middle": 0.646592,
+            "output_first": 0.68368,
+            "output_last": 0.961568
+          },
+          {
+            "total": 0.985692,
+            "allocation": 0.460527,
+            "allocation_done": 0.466548,
+            "dispatch_done": 0.478537,
+            "A_high": 0.572768,
+            "H2D": 0.571168,
+            "B_high": 0.606752,
+            "middle": 0.646272,
+            "output_first": 0.683104,
+            "output_last": 0.959136
+          },
+          {
+            "total": 1.009262,
+            "allocation": 0.436175,
+            "allocation_done": 0.442406,
+            "dispatch_done": 0.449088,
+            "A_high": 0.573056,
+            "H2D": 0.571008,
+            "B_high": 0.60832,
+            "middle": 0.647744,
+            "output_first": 0.686048,
+            "output_last": 0.963712
+          },
+          {
+            "total": 1.001723,
+            "allocation": 0.483283,
+            "allocation_done": 0.491488,
+            "dispatch_done": 0.491674,
+            "A_high": 0.576704,
+            "H2D": 0.575712,
+            "B_high": 0.61264,
+            "middle": 0.652096,
+            "output_first": 0.690368,
+            "output_last": 0.968032
+          },
+          {
+            "total": 0.994367,
+            "allocation": 0.440847,
+            "allocation_done": 0.448157,
+            "dispatch_done": 0.453866,
+            "A_high": 0.5704,
+            "H2D": 0.569408,
+            "B_high": 0.605664,
+            "middle": 0.645088,
+            "output_first": 0.681184,
+            "output_last": 0.961056
+          },
+          {
+            "total": 0.995551,
+            "allocation": 0.443733,
+            "allocation_done": 0.450968,
+            "dispatch_done": 0.45139,
+            "A_high": 0.572032,
+            "H2D": 0.57008,
+            "B_high": 0.608096,
+            "middle": 0.647648,
+            "output_first": 0.68448,
+            "output_last": 0.96256
+          },
+          {
+            "total": 0.993184,
+            "allocation": 0.420729,
+            "allocation_done": 0.427537,
+            "dispatch_done": 0.445345,
+            "A_high": 0.57264,
+            "H2D": 0.570912,
+            "B_high": 0.606752,
+            "middle": 0.646272,
+            "output_first": 0.684736,
+            "output_last": 0.962208
+          },
+          {
+            "total": 0.992058,
+            "allocation": 0.451367,
+            "allocation_done": 0.458472,
+            "dispatch_done": 0.460168,
+            "A_high": 0.577184,
+            "H2D": 0.575648,
+            "B_high": 0.609216,
+            "middle": 0.648736,
+            "output_first": 0.68464,
+            "output_last": 0.962752
+          },
+          {
+            "total": 0.992333,
+            "allocation": 0.443525,
+            "allocation_done": 0.4515,
+            "dispatch_done": 0.455824,
+            "A_high": 0.571392,
+            "H2D": 0.5704,
+            "B_high": 0.606688,
+            "middle": 0.646112,
+            "output_first": 0.68416,
+            "output_last": 0.96
+          },
+          {
+            "total": 1.003837,
+            "allocation": 0.480612,
+            "allocation_done": 0.488629,
+            "dispatch_done": 0.488822,
+            "A_high": 0.57696,
+            "H2D": 0.575936,
+            "B_high": 0.614912,
+            "middle": 0.654432,
+            "output_first": 0.69136,
+            "output_last": 0.971392
+          },
+          {
+            "total": 0.990547,
+            "allocation": 0.458831,
+            "allocation_done": 0.465989,
+            "dispatch_done": 0.46618,
+            "A_high": 0.570272,
+            "H2D": 0.56928,
+            "B_high": 0.605536,
+            "middle": 0.64496,
+            "output_first": 0.681952,
+            "output_last": 0.957792
+          },
+          {
+            "total": 0.992184,
+            "allocation": 0.449394,
+            "allocation_done": 0.455275,
+            "dispatch_done": 0.455442,
+            "A_high": 0.572576,
+            "H2D": 0.571136,
+            "B_high": 0.60672,
+            "middle": 0.646144,
+            "output_first": 0.683168,
+            "output_last": 0.958976
+          },
+          {
+            "total": 0.995974,
+            "allocation": 0.445317,
+            "allocation_done": 0.452622,
+            "dispatch_done": 0.467271,
+            "A_high": 0.57072,
+            "H2D": 0.568736,
+            "B_high": 0.606016,
+            "middle": 0.64544,
+            "output_first": 0.68256,
+            "output_last": 0.962432
+          },
+          {
+            "total": 0.996012,
+            "allocation": 0.457097,
+            "allocation_done": 0.464523,
+            "dispatch_done": 0.46732,
+            "A_high": 0.57504,
+            "H2D": 0.574048,
+            "B_high": 0.613088,
+            "middle": 0.652608,
+            "output_first": 0.6896,
+            "output_last": 0.965472
+          }
+        ],
+        "summary": {
+          "total": 0.9934155,
+          "allocation": 0.4472255,
+          "allocation_done": 0.45503499999999997,
+          "dispatch_done": 0.4586975,
+          "A_high": 0.5718719999999999,
+          "H2D": 0.57056,
+          "B_high": 0.6069119999999999,
+          "middle": 0.6464319999999999,
+          "output_first": 0.68432,
+          "output_last": 0.961888
+        },
+        "harness": {
+          "init_s": 0.373891316,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.002264935,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 0.001029162,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 0.00102885,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 0.001021181,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 0.00101881,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 0.001021006,
+              "status": "ok"
+            },
+            {
+              "i": 6,
+              "seconds": 0.001028323,
+              "status": "ok"
+            },
+            {
+              "i": 7,
+              "seconds": 0.00101778,
+              "status": "ok"
+            },
+            {
+              "i": 8,
+              "seconds": 0.001019888,
+              "status": "ok"
+            },
+            {
+              "i": 9,
+              "seconds": 0.001017419,
+              "status": "ok"
+            },
+            {
+              "i": 10,
+              "seconds": 0.001020399,
+              "status": "ok"
+            },
+            {
+              "i": 11,
+              "seconds": 0.001011386,
+              "status": "ok"
+            },
+            {
+              "i": 12,
+              "seconds": 0.001034593,
+              "status": "ok"
+            },
+            {
+              "i": 13,
+              "seconds": 0.001028287,
+              "status": "ok"
+            },
+            {
+              "i": 14,
+              "seconds": 0.001022352,
+              "status": "ok"
+            },
+            {
+              "i": 15,
+              "seconds": 0.001022797,
+              "status": "ok"
+            },
+            {
+              "i": 16,
+              "seconds": 0.00101928,
+              "status": "ok"
+            },
+            {
+              "i": 17,
+              "seconds": 0.001017258,
+              "status": "ok"
+            },
+            {
+              "i": 18,
+              "seconds": 0.001019631,
+              "status": "ok"
+            },
+            {
+              "i": 19,
+              "seconds": 0.001030406,
+              "status": "ok"
+            },
+            {
+              "i": 20,
+              "seconds": 0.001028453,
+              "status": "ok"
+            },
+            {
+              "i": 21,
+              "seconds": 0.001018581,
+              "status": "ok"
+            },
+            {
+              "i": 22,
+              "seconds": 0.001022713,
+              "status": "ok"
+            },
+            {
+              "i": 23,
+              "seconds": 0.001022534,
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      {
+        "name": "dispatch-gpu-phases-cpu7",
+        "N": 32768,
+        "W": 868,
+        "passed": 24,
+        "phases": [],
+        "summary": {},
+        "harness": {
+          "init_s": 0.195954868,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.001704329,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 0.000354983,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 0.000349524,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 0.000355056,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 0.000352175,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 0.00034862,
+              "status": "ok"
+            },
+            {
+              "i": 6,
+              "seconds": 0.000352421,
+              "status": "ok"
+            },
+            {
+              "i": 7,
+              "seconds": 0.000351102,
+              "status": "ok"
+            },
+            {
+              "i": 8,
+              "seconds": 0.000350048,
+              "status": "ok"
+            },
+            {
+              "i": 9,
+              "seconds": 0.000349758,
+              "status": "ok"
+            },
+            {
+              "i": 10,
+              "seconds": 0.000347909,
+              "status": "ok"
+            },
+            {
+              "i": 11,
+              "seconds": 0.000358372,
+              "status": "ok"
+            },
+            {
+              "i": 12,
+              "seconds": 0.000353629,
+              "status": "ok"
+            },
+            {
+              "i": 13,
+              "seconds": 0.000348243,
+              "status": "ok"
+            },
+            {
+              "i": 14,
+              "seconds": 0.000347855,
+              "status": "ok"
+            },
+            {
+              "i": 15,
+              "seconds": 0.000355553,
+              "status": "ok"
+            },
+            {
+              "i": 16,
+              "seconds": 0.000346797,
+              "status": "ok"
+            },
+            {
+              "i": 17,
+              "seconds": 0.000348223,
+              "status": "ok"
+            },
+            {
+              "i": 18,
+              "seconds": 0.000350558,
+              "status": "ok"
+            },
+            {
+              "i": 19,
+              "seconds": 0.000362226,
+              "status": "ok"
+            },
+            {
+              "i": 20,
+              "seconds": 0.00034666,
+              "status": "ok"
+            },
+            {
+              "i": 21,
+              "seconds": 0.000349665,
+              "status": "ok"
+            },
+            {
+              "i": 22,
+              "seconds": 0.000347237,
+              "status": "ok"
+            },
+            {
+              "i": 23,
+              "seconds": 0.000357473,
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      {
+        "name": "dispatch-gpu-phases-cpu7",
+        "N": 65536,
+        "W": 1747,
+        "passed": 24,
+        "phases": [
+          {
+            "total": 1.692718,
+            "allocation": 0.47359,
+            "allocation_done": 0.50295,
+            "dispatch_done": 1.346069,
+            "A_high": 0.67056,
+            "H2D": 1.243488,
+            "B_high": 1.273184,
+            "middle": 1.314848,
+            "output_first": 1.354272,
+            "output_last": 1.63376
+          },
+          {
+            "total": 1.079877,
+            "allocation": 0.494923,
+            "allocation_done": 0.504132,
+            "dispatch_done": 0.504213,
+            "A_high": 0.419808,
+            "H2D": 0.652768,
+            "B_high": 0.68048,
+            "middle": 0.72,
+            "output_first": 0.76016,
+            "output_last": 1.040128
+          },
+          {
+            "total": 1.075465,
+            "allocation": 0.497664,
+            "allocation_done": 0.506217,
+            "dispatch_done": 0.506276,
+            "A_high": 0.416192,
+            "H2D": 0.648416,
+            "B_high": 0.67696,
+            "middle": 0.716448,
+            "output_first": 0.757984,
+            "output_last": 1.037664
+          },
+          {
+            "total": 1.064681,
+            "allocation": 0.527626,
+            "allocation_done": 0.536263,
+            "dispatch_done": 0.53633,
+            "A_high": 0.406912,
+            "H2D": 0.640768,
+            "B_high": 0.669664,
+            "middle": 0.709376,
+            "output_first": 0.748096,
+            "output_last": 1.02624
+          },
+          {
+            "total": 1.07814,
+            "allocation": 0.534,
+            "allocation_done": 0.543699,
+            "dispatch_done": 0.543769,
+            "A_high": 0.418368,
+            "H2D": 0.651008,
+            "B_high": 0.681088,
+            "middle": 0.720608,
+            "output_first": 0.759424,
+            "output_last": 1.03968
+          },
+          {
+            "total": 1.073589,
+            "allocation": 0.495607,
+            "allocation_done": 0.504748,
+            "dispatch_done": 0.504812,
+            "A_high": 0.412864,
+            "H2D": 0.647744,
+            "B_high": 0.675648,
+            "middle": 0.715168,
+            "output_first": 0.75536,
+            "output_last": 1.035264
+          },
+          {
+            "total": 1.077326,
+            "allocation": 0.493792,
+            "allocation_done": 0.501633,
+            "dispatch_done": 0.501692,
+            "A_high": 0.411776,
+            "H2D": 0.644576,
+            "B_high": 0.672512,
+            "middle": 0.712,
+            "output_first": 0.752672,
+            "output_last": 1.033152
+          },
+          {
+            "total": 1.081949,
+            "allocation": 0.525083,
+            "allocation_done": 0.534064,
+            "dispatch_done": 0.534127,
+            "A_high": 0.411904,
+            "H2D": 0.646688,
+            "B_high": 0.674656,
+            "middle": 0.714144,
+            "output_first": 0.75424,
+            "output_last": 1.034336
+          },
+          {
+            "total": 1.068511,
+            "allocation": 0.510519,
+            "allocation_done": 0.520019,
+            "dispatch_done": 0.520086,
+            "A_high": 0.411584,
+            "H2D": 0.645408,
+            "B_high": 0.67232,
+            "middle": 0.711904,
+            "output_first": 0.752832,
+            "output_last": 1.030912
+          },
+          {
+            "total": 1.069746,
+            "allocation": 0.542482,
+            "allocation_done": 0.551152,
+            "dispatch_done": 0.551217,
+            "A_high": 0.41136,
+            "H2D": 0.646144,
+            "B_high": 0.674112,
+            "middle": 0.71408,
+            "output_first": 0.75376,
+            "output_last": 1.03376
+          },
+          {
+            "total": 1.063285,
+            "allocation": 0.531045,
+            "allocation_done": 0.540439,
+            "dispatch_done": 0.540506,
+            "A_high": 0.405056,
+            "H2D": 0.63792,
+            "B_high": 0.66576,
+            "middle": 0.705344,
+            "output_first": 0.745088,
+            "output_last": 1.025376
+          },
+          {
+            "total": 1.071272,
+            "allocation": 0.497971,
+            "allocation_done": 0.507284,
+            "dispatch_done": 0.507366,
+            "A_high": 0.414336,
+            "H2D": 0.646688,
+            "B_high": 0.675008,
+            "middle": 0.714592,
+            "output_first": 0.754528,
+            "output_last": 1.034688
+          },
+          {
+            "total": 1.068914,
+            "allocation": 0.497953,
+            "allocation_done": 0.50726,
+            "dispatch_done": 0.507328,
+            "A_high": 0.410112,
+            "H2D": 0.645888,
+            "B_high": 0.672896,
+            "middle": 0.712416,
+            "output_first": 0.751232,
+            "output_last": 1.031584
+          },
+          {
+            "total": 1.072817,
+            "allocation": 0.504406,
+            "allocation_done": 0.513996,
+            "dispatch_done": 0.514059,
+            "A_high": 0.409568,
+            "H2D": 0.642304,
+            "B_high": 0.670272,
+            "middle": 0.710336,
+            "output_first": 0.749952,
+            "output_last": 1.02992
+          },
+          {
+            "total": 1.070202,
+            "allocation": 0.501165,
+            "allocation_done": 0.509499,
+            "dispatch_done": 0.509566,
+            "A_high": 0.414304,
+            "H2D": 0.647008,
+            "B_high": 0.674976,
+            "middle": 0.714592,
+            "output_first": 0.754304,
+            "output_last": 1.03472
+          },
+          {
+            "total": 1.077244,
+            "allocation": 0.526758,
+            "allocation_done": 0.535701,
+            "dispatch_done": 0.535767,
+            "A_high": 0.423424,
+            "H2D": 0.654272,
+            "B_high": 0.682048,
+            "middle": 0.7216,
+            "output_first": 0.761728,
+            "output_last": 1.041728
+          },
+          {
+            "total": 1.077635,
+            "allocation": 0.53231,
+            "allocation_done": 0.542214,
+            "dispatch_done": 0.542278,
+            "A_high": 0.4192,
+            "H2D": 0.651552,
+            "B_high": 0.681984,
+            "middle": 0.72144,
+            "output_first": 0.760448,
+            "output_last": 1.038496
+          },
+          {
+            "total": 1.073774,
+            "allocation": 0.494418,
+            "allocation_done": 0.503635,
+            "dispatch_done": 0.503724,
+            "A_high": 0.413472,
+            "H2D": 0.645696,
+            "B_high": 0.676192,
+            "middle": 0.716256,
+            "output_first": 0.754848,
+            "output_last": 1.034784
+          },
+          {
+            "total": 1.069806,
+            "allocation": 0.494019,
+            "allocation_done": 0.501692,
+            "dispatch_done": 0.501755,
+            "A_high": 0.415008,
+            "H2D": 0.648224,
+            "B_high": 0.67568,
+            "middle": 0.715264,
+            "output_first": 0.754176,
+            "output_last": 1.034272
+          },
+          {
+            "total": 1.061796,
+            "allocation": 0.482738,
+            "allocation_done": 0.491361,
+            "dispatch_done": 0.491423,
+            "A_high": 0.404704,
+            "H2D": 0.638592,
+            "B_high": 0.66544,
+            "middle": 0.70544,
+            "output_first": 0.743744,
+            "output_last": 1.024096
+          },
+          {
+            "total": 1.066168,
+            "allocation": 0.508284,
+            "allocation_done": 0.517118,
+            "dispatch_done": 0.51718,
+            "A_high": 0.407744,
+            "H2D": 0.643104,
+            "B_high": 0.670464,
+            "middle": 0.70992,
+            "output_first": 0.75008,
+            "output_last": 1.029984
+          },
+          {
+            "total": 1.071198,
+            "allocation": 0.509873,
+            "allocation_done": 0.518386,
+            "dispatch_done": 0.518453,
+            "A_high": 0.410816,
+            "H2D": 0.643296,
+            "B_high": 0.6736,
+            "middle": 0.713184,
+            "output_first": 0.754592,
+            "output_last": 1.034176
+          },
+          {
+            "total": 1.063925,
+            "allocation": 0.503239,
+            "allocation_done": 0.512168,
+            "dispatch_done": 0.512251,
+            "A_high": 0.41056,
+            "H2D": 0.641632,
+            "B_high": 0.671232,
+            "middle": 0.710784,
+            "output_first": 0.749632,
+            "output_last": 1.025696
+          },
+          {
+            "total": 1.064828,
+            "allocation": 0.525684,
+            "allocation_done": 0.534654,
+            "dispatch_done": 0.534725,
+            "A_high": 0.408704,
+            "H2D": 0.642464,
+            "B_high": 0.671488,
+            "middle": 0.710976,
+            "output_first": 0.749952,
+            "output_last": 1.027904
+          }
+        ],
+        "summary": {
+          "total": 1.0707,
+          "allocation": 0.506345,
+          "allocation_done": 0.515557,
+          "dispatch_done": 0.5156195,
+          "A_high": 0.41168,
+          "H2D": 0.645792,
+          "B_high": 0.673856,
+          "middle": 0.713632,
+          "output_first": 0.753968,
+          "output_last": 1.033968
+        },
+        "harness": {
+          "init_s": 0.375418827,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.001734159,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 0.001113376,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 0.001107824,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 0.001097593,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 0.001110014,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 0.001104839,
+              "status": "ok"
+            },
+            {
+              "i": 6,
+              "seconds": 0.001111541,
+              "status": "ok"
+            },
+            {
+              "i": 7,
+              "seconds": 0.001111736,
+              "status": "ok"
+            },
+            {
+              "i": 8,
+              "seconds": 0.001102076,
+              "status": "ok"
+            },
+            {
+              "i": 9,
+              "seconds": 0.001111054,
+              "status": "ok"
+            },
+            {
+              "i": 10,
+              "seconds": 0.001095203,
+              "status": "ok"
+            },
+            {
+              "i": 11,
+              "seconds": 0.001101957,
+              "status": "ok"
+            },
+            {
+              "i": 12,
+              "seconds": 0.001101645,
+              "status": "ok"
+            },
+            {
+              "i": 13,
+              "seconds": 0.001104389,
+              "status": "ok"
+            },
+            {
+              "i": 14,
+              "seconds": 0.001102699,
+              "status": "ok"
+            },
+            {
+              "i": 15,
+              "seconds": 0.001108651,
+              "status": "ok"
+            },
+            {
+              "i": 16,
+              "seconds": 0.001109416,
+              "status": "ok"
+            },
+            {
+              "i": 17,
+              "seconds": 0.0011069,
+              "status": "ok"
+            },
+            {
+              "i": 18,
+              "seconds": 0.001101395,
+              "status": "ok"
+            },
+            {
+              "i": 19,
+              "seconds": 0.001092503,
+              "status": "ok"
+            },
+            {
+              "i": 20,
+              "seconds": 0.001104197,
+              "status": "ok"
+            },
+            {
+              "i": 21,
+              "seconds": 0.001102614,
+              "status": "ok"
+            },
+            {
+              "i": 22,
+              "seconds": 0.001096739,
+              "status": "ok"
+            },
+            {
+              "i": 23,
+              "seconds": 0.001096284,
+              "status": "ok"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
