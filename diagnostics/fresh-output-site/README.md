@@ -16,3 +16,5 @@ resolution and a zero does not mean no CPU work occurred.
 Every fresh output goes to the independent verifier. There are no inner
 repeats, retained answers, extra warmups or sleeps. This is an unscored
 diagnostic, not a candidate score. Outer timings include diagnostic logging.
+
+Official run `6af3c0c4698e99b16a806b08` passed 20/20. Five measured caller-construction cases had a median 1.058058 ms; the other placements were slower. Mixed allocation sites and timed worker affinity changes limit this comparison; standalone fixed candidates are required. See RESULTS.json.

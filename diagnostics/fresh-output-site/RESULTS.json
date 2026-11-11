@@ -1,0 +1,75 @@
+{
+  "official": true,
+  "ranked": false,
+  "run": "6af3c0c4698e99b16a806b08",
+  "commit": "5f30fab44d5931d61b6c1e94218a6279a22f8e2c",
+  "passed": 20,
+  "finished_at": "2026-11-11T01:12:58.999Z",
+  "modes": [
+    {
+      "site": 0,
+      "peer": 0,
+      "cases": 5,
+      "medians": {
+        "total": 1.677374,
+        "allocation_ms": 1.167189,
+        "minor_faults": 0.0,
+        "alloc_done": 1.457761,
+        "all_dispatched": 0.312564,
+        "first_output": 1.463148,
+        "last_output": 1.660401
+      },
+      "official_median_ms": 1.6973699999999998
+    },
+    {
+      "site": 1,
+      "peer": 0,
+      "cases": 5,
+      "medians": {
+        "total": 1.038343,
+        "allocation_ms": 0.494927,
+        "minor_faults": 0.0,
+        "alloc_done": 0.846297,
+        "all_dispatched": 0.297212,
+        "first_output": 0.854741,
+        "last_output": 0.991601
+      },
+      "official_median_ms": 1.058058
+    },
+    {
+      "site": 2,
+      "peer": 0,
+      "cases": 5,
+      "medians": {
+        "total": 1.867531,
+        "allocation_ms": 1.3528,
+        "minor_faults": 0.0,
+        "alloc_done": 1.637291,
+        "all_dispatched": 0.303457,
+        "first_output": 1.644822,
+        "last_output": 1.813797
+      },
+      "official_median_ms": 1.886756
+    },
+    {
+      "site": 0,
+      "peer": 2,
+      "cases": 5,
+      "medians": {
+        "total": 1.845381,
+        "allocation_ms": 1.456479,
+        "minor_faults": 0.0,
+        "alloc_done": 1.626652,
+        "all_dispatched": 0.49117,
+        "first_output": 1.632511,
+        "last_output": 1.827662
+      },
+      "official_median_ms": 1.866444
+    }
+  ],
+  "limitations": [
+    "Five fresh cases per mode; worker affinity changes occur inside the measured call.",
+    "Mixed allocation sites can affect allocator state and thread cache ownership. A fixed standalone candidate is required.",
+    "CPU phase timing excludes diagnostic log formatting; official wall time includes it."
+  ]
+}

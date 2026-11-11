@@ -1,0 +1,1568 @@
+{
+  "official_runs": [],
+  "ranked": false,
+  "local": {
+    "source_sha256": "26f01550beac82212195cd830dda86ec39bf06705956ddd71eee1c0ea77b4b17",
+    "source_files_sha256": {
+      "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+      "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+      "CMakeLists.txt": "223eb06e48e8ef8e9bdb1bce4f924a1bb7601d45e94fdb82e28916ad1fc36f6d",
+      "solve.cu": "26f01550beac82212195cd830dda86ec39bf06705956ddd71eee1c0ea77b4b17",
+      "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+      "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+      "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503",
+      "output_worker.h": "25c24d15cc8f7f33d08cde3e1debd433fdfc3d032ea009870472cab22380bfbf",
+      "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb"
+    },
+    "binary_sha256": "c67f3c5f0f1f208ed0496d68db59cc5f7dff8b4716c235d03ce278fa2a02d3d4",
+    "source": "/home/rishitshivam/work/fherma-polynomial/experiments/v226-worker-dispatch/solve.cu",
+    "binary": "/home/rishitshivam/work/fherma-polynomial/build/worker-dispatch-local",
+    "hardware": "RTX 3050 Laptop, SM86",
+    "official": false,
+    "points": [
+      {
+        "N": 1,
+        "W": 2,
+        "L": 1,
+        "directory": "n1_w2",
+        "passed": 6,
+        "timings": {
+          "init_s": 0.210482624,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.000870504,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 2.5908e-05,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 2.8864e-05,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 2.3524e-05,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 3.0858e-05,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 2.4226e-05,
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      {
+        "N": 2,
+        "W": 5,
+        "L": 1,
+        "directory": "n2_w5",
+        "passed": 6,
+        "timings": {
+          "init_s": 0.137676372,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.001039761,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 3.5988e-05,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 2.8663e-05,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 3.0998e-05,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 3.1539e-05,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 3.181e-05,
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      {
+        "N": 8,
+        "W": 16,
+        "L": 1,
+        "directory": "n8_w16",
+        "passed": 6,
+        "timings": {
+          "init_s": 0.142709227,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.000833795,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 3.4014e-05,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 4.1017e-05,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 3.2381e-05,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 3.183e-05,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 3.1459e-05,
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      {
+        "N": 64,
+        "W": 32,
+        "L": 1,
+        "directory": "small",
+        "passed": 8,
+        "timings": {
+          "init_s": 0.140432393,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.000922851,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 3.8121e-05,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 4.6187e-05,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 3.3964e-05,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 3.3704e-05,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 3.3002e-05,
+              "status": "ok"
+            },
+            {
+              "i": 6,
+              "seconds": 3.2732e-05,
+              "status": "ok"
+            },
+            {
+              "i": 7,
+              "seconds": 3.2561e-05,
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      {
+        "N": 64,
+        "W": 33,
+        "L": 2,
+        "directory": "n64_w33",
+        "passed": 6,
+        "timings": {
+          "init_s": 0.141976612,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.000940245,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 3.5347e-05,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 3.6178e-05,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 3.3633e-05,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 3.3714e-05,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 3.3763e-05,
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      {
+        "N": 64,
+        "W": 31,
+        "L": 1,
+        "directory": "n64_w31",
+        "passed": 6,
+        "timings": {
+          "init_s": 0.138244257,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.000882726,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 3.725e-05,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 3.8732e-05,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 4.3431e-05,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 3.2601e-05,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 3.2652e-05,
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      {
+        "N": 128,
+        "W": 4096,
+        "L": 128,
+        "directory": "fresh_n128_w4096",
+        "passed": 8,
+        "timings": {
+          "init_s": 0.144420367,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.000664607,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 0.000340619,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 0.000370665,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 0.000338025,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 0.000343234,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 0.000353233,
+              "status": "ok"
+            },
+            {
+              "i": 6,
+              "seconds": 0.000358272,
+              "status": "ok"
+            },
+            {
+              "i": 7,
+              "seconds": 0.000335429,
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      {
+        "N": 128,
+        "W": 128,
+        "L": 4,
+        "directory": "n128_w128",
+        "passed": 6,
+        "timings": {
+          "init_s": 0.145303495,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.000849123,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 4.9633e-05,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 4.6648e-05,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 3.9644e-05,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 3.8782e-05,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 3.9083e-05,
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      {
+        "N": 256,
+        "W": 256,
+        "L": 8,
+        "directory": "n256_w256",
+        "passed": 6,
+        "timings": {
+          "init_s": 0.138621174,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.000977735,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 5.0525e-05,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 5.2859e-05,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 4.8591e-05,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 5.5654e-05,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 4.6618e-05,
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      {
+        "N": 1024,
+        "W": 512,
+        "L": 16,
+        "directory": "n1024_w512",
+        "passed": 6,
+        "timings": {
+          "init_s": 0.142912228,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.000890792,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 0.000115838,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 0.000114605,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 0.00011166,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 0.000109365,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 0.000110999,
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      {
+        "N": 8192,
+        "W": 256,
+        "L": 8,
+        "directory": "n8192_w256",
+        "passed": 6,
+        "timings": {
+          "init_s": 0.140775547,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.000614954,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 0.000315562,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 0.000315472,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 0.000310513,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 0.000303239,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 0.000306385,
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      {
+        "N": 32768,
+        "W": 868,
+        "L": 28,
+        "directory": "fresh_n32768_w868",
+        "passed": 24,
+        "timings": {
+          "init_s": 0.197005502,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.002708273,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 0.002686011,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 0.002653009,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 0.002641698,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 0.002658419,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 0.002763807,
+              "status": "ok"
+            },
+            {
+              "i": 6,
+              "seconds": 0.002691301,
+              "status": "ok"
+            },
+            {
+              "i": 7,
+              "seconds": 0.002727779,
+              "status": "ok"
+            },
+            {
+              "i": 8,
+              "seconds": 0.002738921,
+              "status": "ok"
+            },
+            {
+              "i": 9,
+              "seconds": 0.002717299,
+              "status": "ok"
+            },
+            {
+              "i": 10,
+              "seconds": 0.002788093,
+              "status": "ok"
+            },
+            {
+              "i": 11,
+              "seconds": 0.002732247,
+              "status": "ok"
+            },
+            {
+              "i": 12,
+              "seconds": 0.002637991,
+              "status": "ok"
+            },
+            {
+              "i": 13,
+              "seconds": 0.002639493,
+              "status": "ok"
+            },
+            {
+              "i": 14,
+              "seconds": 0.002662286,
+              "status": "ok"
+            },
+            {
+              "i": 15,
+              "seconds": 0.002663258,
+              "status": "ok"
+            },
+            {
+              "i": 16,
+              "seconds": 0.002667807,
+              "status": "ok"
+            },
+            {
+              "i": 17,
+              "seconds": 0.002644212,
+              "status": "ok"
+            },
+            {
+              "i": 18,
+              "seconds": 0.002678887,
+              "status": "ok"
+            },
+            {
+              "i": 19,
+              "seconds": 0.002671794,
+              "status": "ok"
+            },
+            {
+              "i": 20,
+              "seconds": 0.002800916,
+              "status": "ok"
+            },
+            {
+              "i": 21,
+              "seconds": 0.002705989,
+              "status": "ok"
+            },
+            {
+              "i": 22,
+              "seconds": 0.00271751,
+              "status": "ok"
+            },
+            {
+              "i": 23,
+              "seconds": 0.002673918,
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      {
+        "N": 32768,
+        "W": 868,
+        "L": 28,
+        "directory": "diag_transfer_n32768_w868",
+        "passed": 1,
+        "timings": {
+          "init_s": 0.202371943,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.002801487,
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      {
+        "N": 32768,
+        "W": 868,
+        "L": 28,
+        "directory": "n32768_w868",
+        "passed": 6,
+        "timings": {
+          "init_s": 0.200805563,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.002692152,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 0.002655864,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 0.002672676,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 0.002631428,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 0.002638852,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 0.002643832,
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      {
+        "N": 65536,
+        "W": 1747,
+        "L": 55,
+        "directory": "n65536_w1747",
+        "passed": 6,
+        "timings": {
+          "init_s": 0.352268929,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.008080214,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 0.008065997,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 0.008142511,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 0.007918901,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 0.008006897,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 0.008093779,
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      {
+        "N": 65536,
+        "W": 1747,
+        "L": 55,
+        "directory": "fresh_n65536_w1747",
+        "passed": 24,
+        "timings": {
+          "init_s": 0.35410838,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.008144515,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 0.008092167,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 0.008094922,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 0.00803541,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 0.008009501,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 0.008047443,
+              "status": "ok"
+            },
+            {
+              "i": 6,
+              "seconds": 0.008063122,
+              "status": "ok"
+            },
+            {
+              "i": 7,
+              "seconds": 0.008013298,
+              "status": "ok"
+            },
+            {
+              "i": 8,
+              "seconds": 0.008054866,
+              "status": "ok"
+            },
+            {
+              "i": 9,
+              "seconds": 0.008021354,
+              "status": "ok"
+            },
+            {
+              "i": 10,
+              "seconds": 0.008071267,
+              "status": "ok"
+            },
+            {
+              "i": 11,
+              "seconds": 0.008315335,
+              "status": "ok"
+            },
+            {
+              "i": 12,
+              "seconds": 0.008060907,
+              "status": "ok"
+            },
+            {
+              "i": 13,
+              "seconds": 0.00807824,
+              "status": "ok"
+            },
+            {
+              "i": 14,
+              "seconds": 0.008226559,
+              "status": "ok"
+            },
+            {
+              "i": 15,
+              "seconds": 0.008103338,
+              "status": "ok"
+            },
+            {
+              "i": 16,
+              "seconds": 0.008047492,
+              "status": "ok"
+            },
+            {
+              "i": 17,
+              "seconds": 0.008050719,
+              "status": "ok"
+            },
+            {
+              "i": 18,
+              "seconds": 0.008059174,
+              "status": "ok"
+            },
+            {
+              "i": 19,
+              "seconds": 0.008086796,
+              "status": "ok"
+            },
+            {
+              "i": 20,
+              "seconds": 0.007999853,
+              "status": "ok"
+            },
+            {
+              "i": 21,
+              "seconds": 0.008127362,
+              "status": "ok"
+            },
+            {
+              "i": 22,
+              "seconds": 0.008057712,
+              "status": "ok"
+            },
+            {
+              "i": 23,
+              "seconds": 0.008144995,
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      {
+        "N": 65536,
+        "W": 1747,
+        "L": 55,
+        "directory": "diag_transfer_n65536_w1747",
+        "passed": 1,
+        "timings": {
+          "init_s": 0.357958436,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.008202573,
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      {
+        "N": 65536,
+        "W": 1747,
+        "L": 55,
+        "directory": "input_scheduler_one_n65536_w1747",
+        "passed": 1,
+        "timings": {
+          "init_s": 0.355711779,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.008166014,
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      {
+        "N": 131072,
+        "W": 128,
+        "L": 4,
+        "directory": "fresh_n131072_w128",
+        "passed": 8,
+        "timings": {
+          "init_s": 0.158043173,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.00507841,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 0.00497699,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 0.004851575,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 0.0048597,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 0.004832819,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 0.00499252,
+              "status": "ok"
+            },
+            {
+              "i": 6,
+              "seconds": 0.004890658,
+              "status": "ok"
+            },
+            {
+              "i": 7,
+              "seconds": 0.004861253,
+              "status": "ok"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "aws": {
+    "official": false,
+    "session": "fherma-20261110-204339",
+    "hardware": "AWS g7e.4xlarge SM120 8 physical CPU cores CUDA12.8",
+    "seed_start": 81001,
+    "builds": [
+      {
+        "name": "v226-worker-dispatch-cpu4",
+        "exit_code": 0,
+        "command": [
+          "/usr/local/cuda-12.8/bin/nvcc",
+          "-std=c++17",
+          "-O3",
+          "-arch=sm_120",
+          "-Xcompiler=-pthread",
+          "-Xptxas=-v",
+          "-DHOST_COPY_LANES=4",
+          "experiments/v226-worker-dispatch/main.cpp",
+          "experiments/v226-worker-dispatch/solve.cu",
+          "-lcuda",
+          "-o",
+          "build/v226-worker-dispatch-cpu4"
+        ],
+        "source_files_sha256": {
+          "CMakeLists.txt": "223eb06e48e8ef8e9bdb1bce4f924a1bb7601d45e94fdb82e28916ad1fc36f6d",
+          "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+          "output_worker.h": "25c24d15cc8f7f33d08cde3e1debd433fdfc3d032ea009870472cab22380bfbf",
+          "solve.cu": "26f01550beac82212195cd830dda86ec39bf06705956ddd71eee1c0ea77b4b17",
+          "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+          "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+          "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+          "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+          "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+        },
+        "binary_sha256": "52ff819f823c8b55c172eba30037a0f207b663356c08819b564802de7161ca21"
+      },
+      {
+        "name": "v226-worker-dispatch-cpu7",
+        "exit_code": 0,
+        "command": [
+          "/usr/local/cuda-12.8/bin/nvcc",
+          "-std=c++17",
+          "-O3",
+          "-arch=sm_120",
+          "-Xcompiler=-pthread",
+          "-Xptxas=-v",
+          "-DHOST_COPY_LANES=7",
+          "experiments/v226-worker-dispatch/main.cpp",
+          "experiments/v226-worker-dispatch/solve.cu",
+          "-lcuda",
+          "-o",
+          "build/v226-worker-dispatch-cpu7"
+        ],
+        "source_files_sha256": {
+          "CMakeLists.txt": "223eb06e48e8ef8e9bdb1bce4f924a1bb7601d45e94fdb82e28916ad1fc36f6d",
+          "main.cpp": "86b5af2f4d369578b1741bede0b92cc48a9638bf4493e2d55fd85e478b69c7c2",
+          "output_worker.h": "25c24d15cc8f7f33d08cde3e1debd433fdfc3d032ea009870472cab22380bfbf",
+          "solve.cu": "26f01550beac82212195cd830dda86ec39bf06705956ddd71eee1c0ea77b4b17",
+          "fherma.h": "30dece50dc0d1b29609a4394f5b79e91963221d95c8c3e4ed77b35033071cb8b",
+          "big_unsigned.h": "230d0734ed388fd8e7c908232e1871d69522cd7abf85bd471173b5c2f15d9c86",
+          "cpu_affinity.h": "0df79fae9d666795348d68686924679fbe2d4654b3ac0e66056cef90b4bba4b2",
+          "cpu_copy.h": "93077f48bdd81127f0cdc7699901059009a7885afcb907933a15baa88b0b57fb",
+          "streaming_team.h": "11a081a9e611f674dd15dda33ee26d86bfe8901ec24b1589b7706f042a353503"
+        },
+        "binary_sha256": "cccaa5937b97f94850cb3c98ce8ccf284ff8e9ac01a39ce5e3e0be03a15d3f9d"
+      }
+    ],
+    "runs": [
+      {
+        "name": "v226-worker-dispatch-cpu4",
+        "N": 32768,
+        "W": 868,
+        "exit_code": 0,
+        "passed": 24,
+        "median_ms": 0.330954,
+        "random_median_ms": 0.330954,
+        "timings": {
+          "init_s": 0.193392937,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.001625162,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 0.000343112,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 0.000323624,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 0.000329033,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 0.000331623,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 0.000349217,
+              "status": "ok"
+            },
+            {
+              "i": 6,
+              "seconds": 0.000336975,
+              "status": "ok"
+            },
+            {
+              "i": 7,
+              "seconds": 0.000327999,
+              "status": "ok"
+            },
+            {
+              "i": 8,
+              "seconds": 0.000347685,
+              "status": "ok"
+            },
+            {
+              "i": 9,
+              "seconds": 0.000328082,
+              "status": "ok"
+            },
+            {
+              "i": 10,
+              "seconds": 0.000341931,
+              "status": "ok"
+            },
+            {
+              "i": 11,
+              "seconds": 0.000320385,
+              "status": "ok"
+            },
+            {
+              "i": 12,
+              "seconds": 0.000332067,
+              "status": "ok"
+            },
+            {
+              "i": 13,
+              "seconds": 0.000330448,
+              "status": "ok"
+            },
+            {
+              "i": 14,
+              "seconds": 0.000330869,
+              "status": "ok"
+            },
+            {
+              "i": 15,
+              "seconds": 0.000328965,
+              "status": "ok"
+            },
+            {
+              "i": 16,
+              "seconds": 0.000327733,
+              "status": "ok"
+            },
+            {
+              "i": 17,
+              "seconds": 0.000329358,
+              "status": "ok"
+            },
+            {
+              "i": 18,
+              "seconds": 0.000342182,
+              "status": "ok"
+            },
+            {
+              "i": 19,
+              "seconds": 0.000327528,
+              "status": "ok"
+            },
+            {
+              "i": 20,
+              "seconds": 0.000332929,
+              "status": "ok"
+            },
+            {
+              "i": 21,
+              "seconds": 0.000331039,
+              "status": "ok"
+            },
+            {
+              "i": 22,
+              "seconds": 0.000345849,
+              "status": "ok"
+            },
+            {
+              "i": 23,
+              "seconds": 0.00031905,
+              "status": "ok"
+            }
+          ]
+        },
+        "binary_sha256": "52ff819f823c8b55c172eba30037a0f207b663356c08819b564802de7161ca21"
+      },
+      {
+        "name": "v226-worker-dispatch-cpu4",
+        "N": 65536,
+        "W": 1747,
+        "exit_code": 0,
+        "passed": 24,
+        "median_ms": 0.9924574999999999,
+        "random_median_ms": 0.9921435,
+        "timings": {
+          "init_s": 0.384227062,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.002178959,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 0.00099713,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 0.00099473,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 0.000989582,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 0.000990323,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 0.001006919,
+              "status": "ok"
+            },
+            {
+              "i": 6,
+              "seconds": 0.000992087,
+              "status": "ok"
+            },
+            {
+              "i": 7,
+              "seconds": 0.00099348,
+              "status": "ok"
+            },
+            {
+              "i": 8,
+              "seconds": 0.000995019,
+              "status": "ok"
+            },
+            {
+              "i": 9,
+              "seconds": 0.000989137,
+              "status": "ok"
+            },
+            {
+              "i": 10,
+              "seconds": 0.00099561,
+              "status": "ok"
+            },
+            {
+              "i": 11,
+              "seconds": 0.000992015,
+              "status": "ok"
+            },
+            {
+              "i": 12,
+              "seconds": 0.000989566,
+              "status": "ok"
+            },
+            {
+              "i": 13,
+              "seconds": 0.0009922,
+              "status": "ok"
+            },
+            {
+              "i": 14,
+              "seconds": 0.0009872,
+              "status": "ok"
+            },
+            {
+              "i": 15,
+              "seconds": 0.000996371,
+              "status": "ok"
+            },
+            {
+              "i": 16,
+              "seconds": 0.000991749,
+              "status": "ok"
+            },
+            {
+              "i": 17,
+              "seconds": 0.000994253,
+              "status": "ok"
+            },
+            {
+              "i": 18,
+              "seconds": 0.00099587,
+              "status": "ok"
+            },
+            {
+              "i": 19,
+              "seconds": 0.001259259,
+              "status": "ok"
+            },
+            {
+              "i": 20,
+              "seconds": 0.000990416,
+              "status": "ok"
+            },
+            {
+              "i": 21,
+              "seconds": 0.000989702,
+              "status": "ok"
+            },
+            {
+              "i": 22,
+              "seconds": 0.000990452,
+              "status": "ok"
+            },
+            {
+              "i": 23,
+              "seconds": 0.000992715,
+              "status": "ok"
+            }
+          ]
+        },
+        "binary_sha256": "52ff819f823c8b55c172eba30037a0f207b663356c08819b564802de7161ca21"
+      },
+      {
+        "name": "v226-worker-dispatch-cpu7",
+        "N": 32768,
+        "W": 868,
+        "exit_code": 0,
+        "passed": 24,
+        "median_ms": 0.3489745,
+        "random_median_ms": 0.3474575,
+        "timings": {
+          "init_s": 0.193893502,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.001680783,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 0.000352077,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 0.000351165,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 0.000349486,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 0.000349618,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 0.000351502,
+              "status": "ok"
+            },
+            {
+              "i": 6,
+              "seconds": 0.000356742,
+              "status": "ok"
+            },
+            {
+              "i": 7,
+              "seconds": 0.000346134,
+              "status": "ok"
+            },
+            {
+              "i": 8,
+              "seconds": 0.000349194,
+              "status": "ok"
+            },
+            {
+              "i": 9,
+              "seconds": 0.000347575,
+              "status": "ok"
+            },
+            {
+              "i": 10,
+              "seconds": 0.000350672,
+              "status": "ok"
+            },
+            {
+              "i": 11,
+              "seconds": 0.00034688,
+              "status": "ok"
+            },
+            {
+              "i": 12,
+              "seconds": 0.00034734,
+              "status": "ok"
+            },
+            {
+              "i": 13,
+              "seconds": 0.000352577,
+              "status": "ok"
+            },
+            {
+              "i": 14,
+              "seconds": 0.000348755,
+              "status": "ok"
+            },
+            {
+              "i": 15,
+              "seconds": 0.000339167,
+              "status": "ok"
+            },
+            {
+              "i": 16,
+              "seconds": 0.000352386,
+              "status": "ok"
+            },
+            {
+              "i": 17,
+              "seconds": 0.000344391,
+              "status": "ok"
+            },
+            {
+              "i": 18,
+              "seconds": 0.000351004,
+              "status": "ok"
+            },
+            {
+              "i": 19,
+              "seconds": 0.00034507,
+              "status": "ok"
+            },
+            {
+              "i": 20,
+              "seconds": 0.000343697,
+              "status": "ok"
+            },
+            {
+              "i": 21,
+              "seconds": 0.000345855,
+              "status": "ok"
+            },
+            {
+              "i": 22,
+              "seconds": 0.000346949,
+              "status": "ok"
+            },
+            {
+              "i": 23,
+              "seconds": 0.00034549,
+              "status": "ok"
+            }
+          ]
+        },
+        "binary_sha256": "cccaa5937b97f94850cb3c98ce8ccf284ff8e9ac01a39ce5e3e0be03a15d3f9d"
+      },
+      {
+        "name": "v226-worker-dispatch-cpu7",
+        "N": 65536,
+        "W": 1747,
+        "exit_code": 0,
+        "passed": 24,
+        "median_ms": 1.0590259999999998,
+        "random_median_ms": 1.0582595,
+        "timings": {
+          "init_s": 0.384447723,
+          "cases": [
+            {
+              "i": 0,
+              "seconds": 0.001617615,
+              "status": "ok"
+            },
+            {
+              "i": 1,
+              "seconds": 0.001062623,
+              "status": "ok"
+            },
+            {
+              "i": 2,
+              "seconds": 0.001063987,
+              "status": "ok"
+            },
+            {
+              "i": 3,
+              "seconds": 0.001060265,
+              "status": "ok"
+            },
+            {
+              "i": 4,
+              "seconds": 0.001065198,
+              "status": "ok"
+            },
+            {
+              "i": 5,
+              "seconds": 0.001061224,
+              "status": "ok"
+            },
+            {
+              "i": 6,
+              "seconds": 0.001058751,
+              "status": "ok"
+            },
+            {
+              "i": 7,
+              "seconds": 0.001065591,
+              "status": "ok"
+            },
+            {
+              "i": 8,
+              "seconds": 0.001056749,
+              "status": "ok"
+            },
+            {
+              "i": 9,
+              "seconds": 0.001055209,
+              "status": "ok"
+            },
+            {
+              "i": 10,
+              "seconds": 0.001059301,
+              "status": "ok"
+            },
+            {
+              "i": 11,
+              "seconds": 0.001058437,
+              "status": "ok"
+            },
+            {
+              "i": 12,
+              "seconds": 0.001055671,
+              "status": "ok"
+            },
+            {
+              "i": 13,
+              "seconds": 0.001053954,
+              "status": "ok"
+            },
+            {
+              "i": 14,
+              "seconds": 0.001056795,
+              "status": "ok"
+            },
+            {
+              "i": 15,
+              "seconds": 0.001063565,
+              "status": "ok"
+            },
+            {
+              "i": 16,
+              "seconds": 0.001058082,
+              "status": "ok"
+            },
+            {
+              "i": 17,
+              "seconds": 0.001049089,
+              "status": "ok"
+            },
+            {
+              "i": 18,
+              "seconds": 0.001054477,
+              "status": "ok"
+            },
+            {
+              "i": 19,
+              "seconds": 0.00106285,
+              "status": "ok"
+            },
+            {
+              "i": 20,
+              "seconds": 0.001056708,
+              "status": "ok"
+            },
+            {
+              "i": 21,
+              "seconds": 0.00106244,
+              "status": "ok"
+            },
+            {
+              "i": 22,
+              "seconds": 0.001060041,
+              "status": "ok"
+            },
+            {
+              "i": 23,
+              "seconds": 0.001057109,
+              "status": "ok"
+            }
+          ]
+        },
+        "binary_sha256": "cccaa5937b97f94850cb3c98ce8ccf284ff8e9ac01a39ce5e3e0be03a15d3f9d"
+      }
+    ]
+  }
+}
