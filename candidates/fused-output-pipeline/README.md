@@ -26,3 +26,9 @@ AWS medians were 1.066672 ms at N65536/W1747 and 0.348920 ms at
 N32768/W868 on g7e.4xlarge with seven copy workers. These are proxy
 measurements. Source hashes, commands and individual timings are in
 VALIDATION.json; the official standalone check is still pending.
+
+Official fresh-call unscored run `6af3b239698e99b16a7fa562` passed 40/40.
+N65536-W1747: 1.270009 ms median.
+N32768-W868: 0.398521 ms median.
+The main-point result regressed despite the warm diagnostic lead. It has
+not been promoted to the ranked leaderboard. See OFFICIAL.json.
